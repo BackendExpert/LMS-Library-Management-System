@@ -133,10 +133,10 @@ const SummaryDash = () => {
 
                     <div className="mb-8 mx-0">
                        <div className="lg:flex">
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
+                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
-                                    <h1>Model : BMW</h1>
-                                    <p className="">Owner : Jehan</p>
+                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
                                     <Link>
@@ -144,10 +144,10 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
+                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
-                                    <h1>Model : BMW</h1>
-                                    <p className="">Owner : Jehan</p>
+                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
                                     <Link>
@@ -155,10 +155,10 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
+                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
-                                    <h1>Model : BMW</h1>
-                                    <p className="">Owner : Jehan</p>
+                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
                                     <Link>
