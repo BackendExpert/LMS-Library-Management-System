@@ -60,8 +60,32 @@ app.use(express.static('public'));
 
 // endpint for email subscribe
 
-app.post('/EmailSubscribe/:id', (req, res) => {
-    
+app.post('/EmailSubscribe', (req, res) => {
+    const checkSql = "SELECT * FROM email_subscribe WHERE Email = ?"
+    connection.query(checkSql, [req.body.Email], (err, result) => {
+        if(err) throw err
+        
+        if(result.length === 0){
+            const sql = "INSERT INTO email_subscribe(Email, join_at) VALUES (?)";
+            const create_at = new Date()
+            const values = [
+                req.body.Email,
+                create_at
+            ]
+
+            connection.query(sql, [values], (err, result) => {
+                if(err){
+                    return res.json({Error: "Error on Server"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
+        }   
+        else{
+            return res.json({Error: "You Already Subscribe for Updates"})
+        }
+    })
 })
 
 // all end points end
