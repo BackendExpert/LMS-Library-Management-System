@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import MyIcons from '@reacticons/ionicons'
+import Footer from './Footer'
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -90,7 +91,7 @@ const HomePage = () => {
                     <button className='bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400'>Browse more books</button>    
             </div>       
         </div>
-        
+        <Footer />
     </div>
   )
 }
