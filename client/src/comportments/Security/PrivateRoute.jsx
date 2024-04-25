@@ -15,7 +15,7 @@ const PrivateRoute = ({ children }) => {
 
   if (!isLoggedIn()) {
     // Redirect to login if not authenticated
-    return <Navigate to="/SignIn" replace state={{ from: location }} />;
+    return <Navigate to="/" replace state={{ from: location }} />;
   }
 
   // Render the protected component if authenticated
