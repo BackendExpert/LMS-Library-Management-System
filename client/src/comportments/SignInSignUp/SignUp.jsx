@@ -5,6 +5,14 @@ import secureLocalStorage from "react-secure-storage"
 import axios from 'axios';
 
 const SignUp = () => {
+
+    const [UserData, SetUserData] = useState({
+        username: '',
+        email: '',
+        password: ''
+    })
+
+    
   return (
     <div className='bg-gray-200 py-24'>
         <div className='lg:mx-20 mx-8'>
