@@ -18,18 +18,18 @@ const Footer = () => {
     })
 
 
-    // const headleSubmit = (e) => {
-    //     e.preventDefault()
-    //     axios.post('http://localhost:8081/EmailSubscribe', EmailSub)
-    //     .then(res => {
-    //         if(res.data.Status === "Success"){
-    //             alert("Your are Successfully Subscribe to News")
-    //         }
-    //         else{
-    //             alert(res.data.Error)
-    //         }
-    //     })
-    // }
+    const headleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:8081/EmailSubscribe', EmailSub)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Your are Successfully Subscribe to News")
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
   return (
     <footer className='bg-gray-200 px-16 py-12'>
         <div className="lg:flex">
@@ -67,7 +67,7 @@ const Footer = () => {
 
                 <h1 className='mt-8 font-semibold'></h1>
                 <div className="flex">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <input type="email" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4' required placeholder='Email Address'
                         onChange={e => SetEmailSub({...EmailSub, email:e.target.value})}/>
                         <button type="submit" className='bg-blue-500 text-white shadow-md rounded py-2 px-4 w-full text-md text-center duration-500 hover:bg-blue-600'>Subscribe for latest Update</button>
