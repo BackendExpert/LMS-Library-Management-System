@@ -13,10 +13,11 @@ const HomePage = () => {
                 <h1 className="text-3xl font-semibold">Welcome to Library of NIFS</h1>
             </div>
         </div>
-        <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:mt-[-100px] mt-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
-            Library
+        <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sed ratione possimus quia assumenda, in dicta voluptatibus, deserunt et odio veniam ullam voluptate enim ea sit quasi, blanditiis laborum perspiciatis?
+            Deleniti voluptatum eum quod consequatur quas ratione vero illo esse expedita a, architecto totam dolores harum velit molestias non fugit obcaecati quae ipsum at. Suscipit et iste iusto hic eaque.
         </div>
-        <div className="my-8 text-center">
+        <div className="lg:my-8  text-center">
             <h1 className="text-4xl font-semibold text-gray-500">The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
