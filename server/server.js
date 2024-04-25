@@ -56,7 +56,13 @@ app.use(express.json())
 app.use(cors())
 app.use(express.static('public')); 
 
+// all end pints start
 
+// endpint for email subscribe
+
+
+
+// all end points end
 
 //check the server is working
 app.listen(PORT, () => console.log(`Server is Running on PORT ${PORT}`));
