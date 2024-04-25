@@ -5,7 +5,7 @@ import secureLocalStorage from "react-secure-storage"
 import axios from 'axios';
 
 const SignUp = () => {
-    navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [UserData, SetUserData] = useState({
         username: '',
