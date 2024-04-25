@@ -70,7 +70,7 @@ const SignIn = () => {
             </Link>
             <div className="lg:flex bg-white shadow-md rounded w-full h-auto">
             <div className="lg:mx-5 mx-0 py-12 px-10 w-full">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Email : </label>
                             <input type="email" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Email'
