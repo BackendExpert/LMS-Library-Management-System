@@ -38,7 +38,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "db_tbs"
+    database: "db_lms"
 })
 //email Sending - Nodemailer transporter
 
@@ -56,3 +56,7 @@ app.use(express.json())
 app.use(cors())
 app.use(express.static('public')); 
 
+
+
+//check the server is working
+app.listen(PORT, () => console.log(`Server is Running on PORT ${PORT}`));
