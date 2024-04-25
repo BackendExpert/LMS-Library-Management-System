@@ -33,7 +33,7 @@ const SignIn = () => {
                     </form>
                     <p>Don't have an Account ? <Link to={'/SignUp'}><span className='text-blue-500'>SignUp</span></Link></p>
                 </div>
-                <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp12713228.jpg)] bg-center bg-cover h-auto w-full'>
+                <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10395058.jpg)] bg-center bg-cover h-auto w-full'>
                     <div className="text-white font-semibold text-3xl text-center my-16">Welcome Back</div>                    
                 </div>
             </div>
