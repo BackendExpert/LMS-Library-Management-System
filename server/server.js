@@ -146,7 +146,7 @@ app.post('/SignIn', (req, res) => {
 
         if(result.length > 0){
             const password = req.body.password;
-            bcrypt.compare(password, result[0].password, (err, passMatch) => {
+            bcrypt.compare(password, result[0].Password, (err, passMatch) => {
                 if(err) throw err
 
                 if(passMatch){
