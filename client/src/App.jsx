@@ -4,6 +4,7 @@ import SignIn from "./comportments/SignInSignUp/SignIn";
 import SignUp from "./comportments/SignInSignUp/SignUp";
 import PrivateRoute from "./comportments/Security/PrivateRoute";
 import Dashboard from "./comportments/Dashboard/Dashboard";
+import  secureLocalStorage  from  "react-secure-storage";
 
 export default function App() {
   const RoleUser = secureLocalStorage.getItem("Login1");
