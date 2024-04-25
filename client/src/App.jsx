@@ -6,13 +6,29 @@ import PrivateRoute from "./comportments/Security/PrivateRoute";
 import Dashboard from "./comportments/Dashboard/Dashboard";
 
 export default function App() {
+  const RoleUser = secureLocalStorage.getItem("Login1");
+  const EmailUser = secureLocalStorage.getItem("login2");
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
-
+        {/* after login redreact to homepage with login token */}
+            {
+          (() => {
+            if(RoleUser !== null && EmailUser !== null){
+              return (
+                <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>}/>
+              )
+            } 
+            else{
+              return (
+                <Route path="/" element={<HomePage />}/>
+              )
+            }
+          })()
+        }
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
