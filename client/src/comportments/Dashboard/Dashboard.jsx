@@ -2,6 +2,7 @@ import Icons from "@reacticons/ionicons"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
+import SummaryDash from "./SummaryDash"
 
 
 const Dashboard = () => {
@@ -126,7 +127,7 @@ const Dashboard = () => {
                             </div>                      
                         </div>
                         {/* navbar ENd */}
-                        
+                        <SummaryDash />
                     </div>
             </div>
         </div>
