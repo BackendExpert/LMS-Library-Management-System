@@ -5,6 +5,7 @@ import secureLocalStorage from "react-secure-storage"
 import axios from 'axios';
 
 const SignUp = () => {
+    navigate = useNavigate()
 
     const [UserData, SetUserData] = useState({
         username: '',
@@ -12,7 +13,20 @@ const SignUp = () => {
         password: ''
     })
 
-    
+    const headleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:8081/SignUp', UserData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Registation Successful")
+                navigate('/SignIn')
+            }
+            else{
+                alert(res.data.Error)
+            }
+        }) 
+    }
+
   return (
     <div className='bg-gray-200 py-24'>
         <div className='lg:mx-20 mx-8'>
@@ -27,7 +41,7 @@ const SignUp = () => {
                     <div className="text-white font-semibold text-3xl text-center my-16">Welcome to Library</div>                    
                 </div>
                 <div className="py-12 px-10 w-full">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Username : </label>
                             <input type="text" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Username'
