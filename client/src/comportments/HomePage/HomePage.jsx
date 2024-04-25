@@ -27,19 +27,19 @@ const HomePage = () => {
             <div className="lg:flex justify-between my-4">
                 <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
                     <div className="flex">
-                        <span className='my-4 mr-2'><MyIcons name='train' size='large'></MyIcons></span>
+                        <span className='my-4 mr-4'><MyIcons name='book' size='large'></MyIcons></span>
                         <div className="">
                             <h1 className='text-xl font-semibold'>Book Borrowing</h1>
-                            <p className="py-2">Easy to Booking Train ticket via Online</p> 
+                            <p className="py-2">Easy to Find and Borrow Books</p> 
                         </div>
                     </div>
                 </div>
                 <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
                     <div className="flex">
-                        <span className='my-4 mr-2'><MyIcons name='person' size='large'></MyIcons></span>
+                        <span className='my-4 mr-2'><MyIcons name='globe' size='large'></MyIcons></span>
                         <div className="">
-                            <h1 className='text-xl font-semibold'>Passenger Transportation</h1>
-                            <p className="py-2">Fastest, Safety</p> 
+                            <h1 className='text-xl font-semibold'>Online Book Selection</h1>
+                            <p className="py-2">Select any Book Via Online</p> 
                         </div>
                     </div>
                 </div>
