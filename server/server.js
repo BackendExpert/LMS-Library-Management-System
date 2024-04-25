@@ -90,6 +90,26 @@ app.post('/EmailSubscribe', (req, res) => {
     })
 })
 
+// SignUp endPoint
+
+app.post('/SignUp', (req, res) => {
+    // console.log(req.body)
+
+    const checkSql = "SELECT * FROM users WHERE Email = ?"
+    connection.query(checkSql, [req.body.email], (err, result) => {
+        if(err) throw err
+
+        if(result.length === 0){
+
+        }
+        else{
+            return res.json({Error: "You Already Registered"})
+        }
+    })
+})
+
+
+
 // all end points end
 
 //check the server is working
