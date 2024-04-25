@@ -38,6 +38,11 @@ const SignIn = () => {
                     localStorage.clear()
                     navigate('/')
                 }
+                else if(res.data.LoginUser[0].is_active === 0){
+                    alert('Your Account has been Deactive by Administration.')
+                    localStorage.clear()
+                    navigate('/')
+                }
                 else{
                     //get and store login user role and email
                     const userRole = res.data.LoginUser[0].role;
