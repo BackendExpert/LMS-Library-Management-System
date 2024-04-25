@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="bg-none text-white mt-[-20px]">
             <div className="flex justify-between mx-16">
                 <div className="flex">
-                    <MyIcons name='train' size='large' ></MyIcons>
+                    <span className='mr-4'><MyIcons name='book' size='large' ></MyIcons></span>
                     <h1 className="my-1">NIFS Library</h1>
                 </div>
                 <div className="my-1">                   
