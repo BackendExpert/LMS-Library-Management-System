@@ -150,7 +150,14 @@ app.post('/SignIn', (req, res) => {
                 if(err) throw err
 
                 if(passMatch){
-
+                    //generate JWT Token
+                    const token = jwt.sign(
+                        {email: result[0].email, role: result[0].role, is_active: result[0].is_active, is_lock: result[0].is_lock},
+                        'your-secret-key',
+                        {expiresIn: '1h'}
+                    );
+                    res.json({Token: token, Msg: "Success", LoginUser:result})
+                    console.log(result)
                 }
                 else{
                     return res.json({Error: "Password Not Match"})
