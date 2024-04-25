@@ -62,20 +62,22 @@ app.use(express.static('public'));
 
 app.post('/EmailSubscribe', (req, res) => {
     const checkSql = "SELECT * FROM email_subscribe WHERE Email = ?"
-    connection.query(checkSql, [req.body.Email], (err, result) => {
+    connection.query(checkSql, [req.body.email], (err, result) => {
         if(err) throw err
         
         if(result.length === 0){
-            const sql = "INSERT INTO email_subscribe(Email, join_at) VALUES (?)";
+            const sql = "INSERT INTO email_subscribe(Email, join_at) VALUES (?)";            
             const create_at = new Date()
+
             const values = [
-                req.body.Email,
+                req.body.email,
                 create_at
-            ]
+            ]            
 
             connection.query(sql, [values], (err, result) => {
                 if(err){
-                    return res.json({Error: "Error on Server"})
+                    return res.json({Error: "Error on Server1"})
+                    // console.log(err)
                 }
                 else{
                     return res.json({Status: "Success"})
