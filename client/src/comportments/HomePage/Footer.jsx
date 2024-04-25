@@ -40,9 +40,8 @@ const Footer = () => {
             <div className="lg:px-4 px-0 w-full">
                 <h1 className="text-xl font-semibold font-semibold text-gray-500 my-4 ">Our Services</h1>
                 <div className="">
-                    <p className="my-5">Online Ticket Booking</p>   
-                    <p className="my-5">Passenger Transportation</p>  
-                    <p className="my-5">Cargo Transportation</p>  
+                    <p className="my-5">Book Borrowing</p>   
+                    <p className="my-5">Online Book Selection</p>  
                 </div>
                 
             </div>
@@ -62,9 +61,9 @@ const Footer = () => {
             </div>
             <div className="lg:px-4 px-0 w-full">
                 <h1 className="text-xl font-semibold font-semibold text-gray-500 my-4 ">Contact</h1>
-                <p className="my-5">jehan@123.com</p>   
-                <p className="my-5">+94b 711758851</p>  
-                <p className="my-5">88, ABC Street, XYZ</p> 
+                <p className="my-5">lib@123.com</p>   
+                <p className="my-5">+94 XXXXXXXXX</p>  
+                <p className="my-5">Hanthana Road, kandy, Sri Lanka</p> 
 
                 <h1 className='mt-8 font-semibold'></h1>
                 <div className="flex">
