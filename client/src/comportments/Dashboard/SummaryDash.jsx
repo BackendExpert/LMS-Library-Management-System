@@ -129,14 +129,11 @@ const SummaryDash = () => {
                         </div>
                     </div>  
 
-                    <h1 className="px-8 py-8 text-xl font-semibold">Newly Added</h1>   
+                    <h1 className="px-8 py-8 text-xl font-semibold">Newly Added Books</h1>   
 
                     <div className="mb-8 mx-0">
                        <div className="lg:flex">
                             <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
-                                <div className="px-4 -my-4">
-                                    <img src="https://wallpapercave.com/wp/wp9209385.jpg" alt="" srcset="" className="w-auto h-44 rounded shadow-2xl"/>
-                                </div>
                                 <div className="mt-8 mx-4">
                                     <h1>Model : BMW</h1>
                                     <p className="">Owner : Jehan</p>
@@ -148,9 +145,6 @@ const SummaryDash = () => {
                                 </div>
                             </div> 
                             <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
-                                <div className="px-4 -my-4">
-                                    <img src="https://wallpapercave.com/wp/wp9209385.jpg" alt="" srcset="" className="w-auto h-44 rounded shadow-2xl"/>
-                                </div>
                                 <div className="mt-8 mx-4">
                                     <h1>Model : BMW</h1>
                                     <p className="">Owner : Jehan</p>
@@ -162,9 +156,6 @@ const SummaryDash = () => {
                                 </div>
                             </div> 
                             <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl">
-                                <div className="px-4 -my-4">
-                                    <img src="https://wallpapercave.com/wp/wp9209385.jpg" alt="" srcset="" className="w-auto h-44 rounded shadow-2xl"/>
-                                </div>
                                 <div className="mt-8 mx-4">
                                     <h1>Model : BMW</h1>
                                     <p className="">Owner : Jehan</p>
