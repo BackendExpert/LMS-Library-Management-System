@@ -31,6 +31,12 @@ const Dashboard = () => {
         {name: "Logout", desc: "logout", icon: <Icons name="power"></Icons>},        
     ]
 
+    const headlelogout = () => {
+        localStorage.clear()
+        navigate('/')
+        window.location.reload()
+    }
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="bg-gray-200 py-2 h-auto w-full">
