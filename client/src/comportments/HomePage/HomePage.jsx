@@ -50,7 +50,7 @@ const HomePage = () => {
         <div className="bg-white lg:mx-20 mx-6 my-24">
             <h1 className="text-center text-4xl font-semibold text-gray-500 my-8">Latest Books</h1>
             <div className="lg:flex my-24">
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-24 rounded-lg shadow-xl w-full">
+                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full">
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
@@ -62,7 +62,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-24 rounded-lg shadow-xl w-full">
+                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full">
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
@@ -74,7 +74,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-24 rounded-lg shadow-xl w-full">
+                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full">
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
