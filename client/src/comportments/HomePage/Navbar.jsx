@@ -6,6 +6,15 @@ import  secureLocalStorage  from  "react-secure-storage";
 
 
 const Navbar = () => {
+    const navigate = useNavigate()
+    const RoleUser = secureLocalStorage.getItem("Login1");
+    const EmailUser = secureLocalStorage.getItem("login2");
+
+    const logout = () => {
+        localStorage.clear()
+        navigate('/')
+    }
+
   return (
     <div className='mb-20'>
         <div className="bg-none text-white mt-[-20px]">
@@ -15,10 +24,24 @@ const Navbar = () => {
                     <h1 className="my-1">NIFS Library</h1>
                 </div>
                 <div className="my-1">                   
-                    <div className="">                        
-                        <Link to={'/SignIn'}>
-                            <p className="font-semibold duration-500 hover:mr-2" >Sign IN</p>
-                        </Link>
+                    <div className="">    
+                        {
+                            (() => {
+                                if(RoleUser !== null && EmailUser !== null){
+                                    return (
+                                        <p onClick={logout} className="font-semibold duration-500 hover:mr-2 cursor-pointer" >LogOut</p>
+                                    )
+                                }
+                                else{
+                                    return (
+                                        <Link to={'/SignIn'}>
+                                            <p className="font-semibold duration-500 hover:mr-2" >Sign IN</p>
+                                        </Link>
+                                    )
+                                }
+                            })()
+                        }                    
+
                     </div>
                 </div>
                 
