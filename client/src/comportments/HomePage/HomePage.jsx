@@ -43,15 +43,6 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
-                    <div className="flex">
-                        <span className='my-4 mr-2'><MyIcons name='cube' size='large'></MyIcons></span>
-                        <div className="">
-                            <h1 className='text-xl font-semibold'>Cargo  Transportation</h1>
-                            <p className="py-2">Transport Cargo to anywhere in Country</p> 
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
