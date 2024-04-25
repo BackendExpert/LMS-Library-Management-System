@@ -33,8 +33,8 @@ const SignIn = () => {
             //login to system
 
             if(res.data.Msg === "Success"){
-                if(res.data.LoginUser[0].is_active === 0){
-                    alert('Your Account has been Suspended. Unauthorized activity has been detected.')
+                if(res.data.LoginUser[0].is_active === 0 && res.data.LoginUser[0].is_lock === 1){
+                    alert('Your Account has been locked. Unauthorized activity has been detected.')
                     localStorage.clear()
                     navigate('/')
                 }
