@@ -33,7 +33,43 @@ const Dashboard = () => {
 
     if(RoleUser !== null && EmailUser !== null){
         return (
-            <div>Dashboard</div>
+            <div className="bg-gray-200 py-2 h-auto w-full">
+            <div className="flex">
+                <div className={`duration-500 relative border-r-2 border-blue-300 shadow-md my-1 mx-2 rounded-2xl bg-white h-auto pl-4 py-4 ${sideOpen ? "w-64" : "w-20" }`}>
+                    <div className="flex">
+                        <div className="text-[#3B71CA] pt-1" onClick={() => SetsideOpen(!sideOpen)}>{sideOpen ? <Icons size="large" name="close"></Icons> : <Icons size="large" name="menu"></Icons>}</div>
+                        {/* <div className={`text-2xl pb-4 text-[#3B71CA] font-bold ${!sideOpen && 'scale-0'}`}>SuperAdmin</div>                     */}
+                    </div>
+                    <div className="">
+                        {sideOpen ? <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" className="px-6"/>
+                        </div> : <div></div>}
+                    </div>
+                    <div className={`pl-2 text-xl text-gray-400 duration-500 hover:text-[#3B71CA]`}>
+                        <Link to={'/Dashboard'}>
+                            {sideOpen ? <div className="flex pl-2 pt-2">
+                                {
+                                    (() => {
+                                        if(RoleUser === "SuperAdmin"){
+                                            return (
+                                                <p className="">SuperAdmin</p>
+                                            )                            
+                                        }
+                                        else if(RoleUser === "user"){
+                                            return (                                               
+                                                <p className="">User Dashboard</p>
+                                            )    
+                                        }
+                                    })()
+                                }
+                                
+                            </div> : <Icons name="speedometer"></Icons> }
+                        </Link>
+                    </div>
+                    <hr className="mt-2 mr-4 border-b-1 border-blue-300"/>
+                </div>
+            </div>
+        </div>
         )
     }
     else{
