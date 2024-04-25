@@ -55,13 +55,9 @@ const HomePage = () => {
                             <p className='font-semibold'>Book Name: </p>
                             <p className=''>Introduction to Computing</p>
                         </div>
-                    </div>
-                </div>
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-24 rounded-lg shadow-xl w-full">
-                    <div className="my-8 mx-8">
-                        <div className="">
-                            <p className='font-semibold'>Book Name: </p>
-                            <p className=''>Introduction to Computing</p>
+                        <div className="my-2">
+                            <p className='font-semibold'>Authors : </p>
+                            <p className=''>Kamal, Nimali, Perera</p>
                         </div>
                     </div>
                 </div>
@@ -71,11 +67,30 @@ const HomePage = () => {
                             <p className='font-semibold'>Book Name: </p>
                             <p className=''>Introduction to Computing</p>
                         </div>
+                        <div className="my-2">
+                            <p className='font-semibold'>Authors : </p>
+                            <p className=''>Kamal, Nimali, Perera</p>
+                        </div>
                     </div>
                 </div>
-                
+                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-24 rounded-lg shadow-xl w-full">
+                    <div className="my-8 mx-8">
+                        <div className="">
+                            <p className='font-semibold'>Book Name: </p>
+                            <p className=''>Introduction to Computing</p>
+                        </div>
+                        <div className="my-2">
+                            <p className='font-semibold'>Authors : </p>
+                            <p className=''>Kamal, Nimali, Perera</p>
+                        </div>
+                    </div>
+                </div>         
             </div>
+            <div className="text-center">
+                    <button className='bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400'>Browse more books</button>    
+            </div>       
         </div>
+        
     </div>
   )
 }
