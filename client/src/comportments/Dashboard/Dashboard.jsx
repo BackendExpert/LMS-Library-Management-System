@@ -67,6 +67,34 @@ const Dashboard = () => {
                         </Link>
                     </div>
                     <hr className="mt-2 mr-4 border-b-1 border-blue-300"/>
+                    <div className="">
+                        {
+                            allUserSide.map((sidem) => {
+                               if(RoleUser === "SuperAdmin"){
+                                    return (
+                                        <Link to={sidem.link}>
+                                            <div className="flex py-2 text-gray-400 duration-500 hover:text-[#3B71CA] ">                        
+                                                <p>{sidem.icon}</p>
+                                                <p className={`whitespace-nowrap pt-2 pl-2 ${!sideOpen && 'scale-0'}`}>{sidem.name}</p>                        
+                                            </div>
+                                        </Link>
+                                    )
+                                }
+                                if(RoleUser === "user"){
+                                    if(sidem.id === 1 || sidem.id === 2 || sidem.id === 3 || sidem.id === 4){
+                                        return (
+                                            <Link to={sidem.link}>
+                                                <div className="flex py-2 text-gray-400 duration-500 hover:text-[#3B71CA]">                        
+                                                    <p>{sidem.icon}</p>
+                                                    <p className={`pt-2 pl-2 ${!sideOpen && 'scale-0'}`}>{sidem.name}</p>                        
+                                                </div>
+                                            </Link>
+                                        )
+                                    }
+                                }
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         </div>
