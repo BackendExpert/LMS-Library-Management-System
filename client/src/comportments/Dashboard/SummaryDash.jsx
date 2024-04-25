@@ -135,7 +135,7 @@ const SummaryDash = () => {
                        <div className="lg:flex">
                             <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
-                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
@@ -146,7 +146,7 @@ const SummaryDash = () => {
                             </div> 
                             <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
-                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
@@ -155,9 +155,9 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
+                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full ">
                                 <div className="mt-8 mx-4">
-                                    <h1>Book Name : Introducation to Computing</h1>
+                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
                                 </div>
                                 <div className="my-8 text-center">
