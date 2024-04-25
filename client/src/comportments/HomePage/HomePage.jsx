@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import MyIcons from '@reacticons/ionicons'
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -20,6 +21,38 @@ const HomePage = () => {
             <p className="lg:mx-36 mx-8 my-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
             </p>
+        </div>
+        <div className="bg-gray-200 lg:px-24 px-10 py-20 ">
+            <h1 className="text-center text-4xl font-semibold text-gray-500 mb-4">Our Services</h1>
+            <div className="lg:flex justify-between my-4">
+                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
+                    <div className="flex">
+                        <span className='my-4 mr-2'><MyIcons name='train' size='large'></MyIcons></span>
+                        <div className="">
+                            <h1 className='text-xl font-semibold'>Book Borrowing</h1>
+                            <p className="py-2">Easy to Booking Train ticket via Online</p> 
+                        </div>
+                    </div>
+                </div>
+                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
+                    <div className="flex">
+                        <span className='my-4 mr-2'><MyIcons name='person' size='large'></MyIcons></span>
+                        <div className="">
+                            <h1 className='text-xl font-semibold'>Passenger Transportation</h1>
+                            <p className="py-2">Fastest, Safety</p> 
+                        </div>
+                    </div>
+                </div>
+                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
+                    <div className="flex">
+                        <span className='my-4 mr-2'><MyIcons name='cube' size='large'></MyIcons></span>
+                        <div className="">
+                            <h1 className='text-xl font-semibold'>Cargo  Transportation</h1>
+                            <p className="py-2">Transport Cargo to anywhere in Country</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   )
