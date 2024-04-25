@@ -13,6 +13,7 @@ const Navbar = () => {
     const logout = () => {
         localStorage.clear()
         navigate('/')
+        window.location.reload()
     }
 
   return (
@@ -25,22 +26,26 @@ const Navbar = () => {
                 </div>
                 <div className="my-1">                   
                     <div className="">    
-                        {
-                            (() => {
-                                if(RoleUser !== null && EmailUser !== null){
-                                    return (
-                                        <p onClick={logout} className="font-semibold duration-500 hover:mr-2 cursor-pointer" >LogOut</p>
-                                    )
-                                }
-                                else{
-                                    return (
-                                        <Link to={'/SignIn'}>
-                                            <p className="font-semibold duration-500 hover:mr-2" >Sign IN</p>
-                                        </Link>
-                                    )
-                                }
-                            })()
-                        }                    
+                    {
+                        (() => {
+                            if(RoleUser !== null && EmailUser !== null){
+                                return (
+                                    <div className="flex">
+                                        <p className="mx-2">{EmailUser}</p>
+                                        <p className="font-semibold duration-500 hover:mr-2 cursor-pointer" onClick={logout}>Logout</p>
+                                    </div>
+                                    
+                                )
+                            }
+                            else{
+                                return (
+                                    <Link to={'/SignIn'}>
+                                        <p className="font-semibold duration-500 hover:mr-2" >Sign IN</p>
+                                    </Link>
+                                )
+                            }
+                        })()
+                    }                 
 
                     </div>
                 </div>
