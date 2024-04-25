@@ -15,6 +15,12 @@ const HomePage = () => {
         <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:mt-[-100px] mt-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
             Library
         </div>
+        <div className="my-8 text-center">
+            <h1 className="text-4xl font-semibold text-gray-500">The Library of NIFS</h1>
+            <p className="lg:mx-36 mx-8 my-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
+            </p>
+        </div>
     </div>
   )
 }
