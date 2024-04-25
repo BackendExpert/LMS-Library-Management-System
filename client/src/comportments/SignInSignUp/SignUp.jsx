@@ -1,4 +1,8 @@
-import React from 'react'
+import React, {useState } from 'react'
+import MyIcons from '@reacticons/ionicons'
+import { Link, useNavigate } from "react-router-dom";
+import secureLocalStorage from "react-secure-storage"
+import axios from 'axios';
 
 const SignUp = () => {
   return (
@@ -15,7 +19,7 @@ const SignUp = () => {
                     <div className="text-white font-semibold text-3xl text-center my-16">Welcome to Railways</div>                    
                 </div>
                 <div className="py-12 px-10 w-full">
-                    <form onSubmit={headleSubmit}>
+                    <form>
                         <div className="my-5">
                             <label htmlFor="">Username : </label>
                             <input type="text" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Username'
