@@ -24,7 +24,7 @@ const HomePage = () => {
             </p>
         </div>
         <div className="bg-gray-200 lg:px-24 px-10 py-20 ">
-            <h1 className="text-center text-4xl font-semibold text-gray-500 mb-4">Our Services</h1>
+            <h1 className="text-center text-4xl font-semibold text-gray-500 mb-16">Our Services</h1>
             <div className="lg:flex justify-between my-4">
                 <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
                     <div className="flex">
