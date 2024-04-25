@@ -100,7 +100,34 @@ app.post('/SignUp', (req, res) => {
         if(err) throw err
 
         if(result.length === 0){
+            bcrypt.hash(req.body.password, 10, (err, hashPass) => {
+                if(err) throw err
 
+                const role = "user"
+                const is_active = 1
+                const is_lock = 0
+                const create_at = new Date
+
+                const sql = "INSERT INTO users(username, Email, Password, Role, is_active, is_lock, create_at) VALUES (?)"
+                const values = [    
+                    req.body.username,
+                    req.body.email,
+                    hashPass,
+                    role,
+                    is_active,
+                    is_lock,
+                    create_at
+                ]
+
+                connection.query(sql, [values], (err, result) => {
+                    if(err) {
+                        return res.json({Error: "Error on Server"})
+                    }
+                    else{
+                        return res.json({Status: "Success"})
+                    }
+                })
+            })
         }
         else{
             return res.json({Error: "You Already Registered"})
