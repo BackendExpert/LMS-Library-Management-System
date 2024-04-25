@@ -23,7 +23,7 @@ const Footer = () => {
         axios.post('http://localhost:8081/EmailSubscribe', EmailSub)
         .then(res => {
             if(res.data.Status === "Success"){
-                alert("Your are Successfully Subscribe to News")
+                alert("Your are Successfully Subscribe for Updates")
             }
             else{
                 alert(res.data.Error)
