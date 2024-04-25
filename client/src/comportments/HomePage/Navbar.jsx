@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className="flex justify-between mx-16">
                 <div className="flex">
                     <MyIcons name='train' size='large' ></MyIcons>
-                    <h1 className="my-1">Train Booking</h1>
+                    <h1 className="my-1">NIFS Library</h1>
                 </div>
                 <div className="my-1">                   
                     <div className="">                        
