@@ -43,7 +43,7 @@ const SignUp = () => {
                 </div>
             </div>
             <div className="my-1 text-center">
-                &copy; Developed and Design by : JehanKandy
+                &copy; Developed and Design by : National Institute of Fundamental Studies
             </div>
         </div>
     </div>
