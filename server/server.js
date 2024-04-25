@@ -60,7 +60,9 @@ app.use(express.static('public'));
 
 // endpint for email subscribe
 
-
+app.post('/EmailSubscribe/:id', (req, res) => {
+    
+})
 
 // all end points end
 
