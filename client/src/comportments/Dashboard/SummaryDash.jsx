@@ -9,9 +9,16 @@ const SummaryDash = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-  return (
-    <div>SummaryDash</div>
-  )
+    if(RoleUser !== null && EmailUser !== null){
+        return (
+            <div>SummaryDash</div>
+        )
+    }
+    else{
+        localStorage.clear()
+        navigate('/')
+    }
+
 }
 
 export default SummaryDash
