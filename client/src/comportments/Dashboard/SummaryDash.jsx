@@ -14,10 +14,10 @@ const SummaryDash = () => {
     const dataCount = [
         {id: 1, name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
         {id: 2, name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="document-text" size="large"></Icons>, style: "text-green-500"},     
-        {id: 3, name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-yellow-500"},      
-        {id: 4, name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-red-500"},
-        {id: 5, name: "Thesis", link: "#", value: <CountUp end={20}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"},
-        {id: 6, name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="" size="large"></Icons>, style: "text-yellow-500"}, 
+        {id: 3, name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
+        {id: 4, name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
+        {id: 5, name: "Thesis", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-blue-500"},
+        {id: 6, name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
         {id: 7, name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
         {id: 8, name: "Users", link: "#", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
                 
@@ -46,7 +46,7 @@ const SummaryDash = () => {
                         {
                             dataCount.map((data) => {
                                 if(RoleUser === "SuperAdmin"){
-                                    if(data.id !== 8){
+                                    if(data.id !== 9){
                                         return (
                                             <Link to={data.link}>
                                                 <div className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
