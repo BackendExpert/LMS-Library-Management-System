@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
-import DashFooter from "./DashFooter";
 
 const SummaryDash = () => {
     const navigate = useNavigate() 

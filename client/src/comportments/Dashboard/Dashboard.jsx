@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import SummaryDash from "./SummaryDash"
 import Books from "../Books/Books"
+import DashFooter from "./DashFooter"
 
 
 const Dashboard = () => {
@@ -147,8 +148,9 @@ const Dashboard = () => {
                                 }
                             })()
                         }
-                        
+                        <DashFooter />
                     </div>
+                
             </div>
         </div>
         )
