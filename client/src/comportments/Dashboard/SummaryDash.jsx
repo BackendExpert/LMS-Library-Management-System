@@ -13,7 +13,7 @@ const SummaryDash = () => {
 
     const dataCount = [
         {id: 1, name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="car" size="large"></Icons>, style: "text-purple-500"},
-        {id: 2, name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="car" size="large"></Icons>, style: "text-green-500"},     
+        {id: 2, name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="car" size="large"></Icons>, style: "text-green-500"},     
         {id: 3, name: "My Borrow", link: "#", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-yellow-500"},      
         {id: 4, name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-red-500"},
         {id: 5, name: "User Requests", link: "#", value: <CountUp end={20}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"},
@@ -133,7 +133,7 @@ const SummaryDash = () => {
 
                     <div className="mb-8 mx-0">
                        <div className="lg:flex">
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
@@ -144,7 +144,7 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
@@ -155,7 +155,7 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full ">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full ">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
