@@ -146,6 +146,11 @@ const Dashboard = () => {
                                         <Books />
                                     )
                                 }
+                                else if(buttonValue === "add book"){
+                                    return (
+                                        
+                                    )
+                                }
                             })()
                         }
                         <DashFooter />

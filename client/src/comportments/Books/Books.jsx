@@ -10,6 +10,11 @@ const Books = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState(0)
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     const BookData = [
         {id: 1, name: "Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
@@ -38,7 +43,7 @@ const Books = () => {
                                 }
                                 else{
                                     return (
-                                        <div className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                        <div onClick={() => HeadleButtonClick("add book")} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
                                             <p className="font-bold text-xl">{Book.icon}</p>   
                                             <p className="font-semibold pl-2 pt-2">{Book.name}</p>
                                         </div>  
