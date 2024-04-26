@@ -19,7 +19,15 @@ const Books = () => {
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="py-4 px-4">
-                
+                <div className="">
+                    {
+                        BookData.map((Book) => {
+                            return (
+                                
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
