@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import AddJournal from "./AddJournal";
 
 const Journals = () => {
     const navigate = useNavigate() 
@@ -55,9 +56,9 @@ const Journals = () => {
                 {/* <p>{buttonValue}</p> */}
                 {
                     (() => {
-                        if(buttonValue === "add_book"){
+                        if(buttonValue === "add_Journals"){
                             return (
-                                <AddBook />
+                                <AddJournal />
                             )
                         }
                     })()
