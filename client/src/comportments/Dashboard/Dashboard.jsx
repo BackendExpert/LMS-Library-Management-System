@@ -25,7 +25,7 @@ const Dashboard = () => {
     const allUserSide = [
         {id: 1, name: "Books", link: "#", icon: <Icons name="book" size="large"></Icons>, btnValue: "Books"},
         {id: 2, name: "Journals", link: "#", icon: <Icons name="document-text" size="large"></Icons>},
-        {id: 3, name: "Own Vehicle ", link: "#", icon: <Icons name="car" size="large"></Icons>},
+        {id: 3, name: "Magazine ", link: "#", icon: <Icons name="newspaper" size="large"></Icons>},
         {id: 4, name: "Profile", link: "#", icon: <Icons name="person" size="large"></Icons>},
         {id: 5, name: "Users", link: "#", icon: <Icons name="people" size="large"></Icons>},
         {id: 6, name: "Requests", link: "#", icon: <Icons name="help-circle" size="large"></Icons>},
