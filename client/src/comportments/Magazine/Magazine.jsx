@@ -31,21 +31,21 @@ const Magazine = () => {
                 <div className="">
                     <div className="lg:grid grid-cols-4 gap-4">
                         {
-                            JournalsData.map((Journal) => {
+                            MagazineData.map((Magazine) => {
                                 if(Journal.id !== 4){
                                     return (
-                                        <div onClick={() => HeadleButtonClick(Journal.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Journal.style}`}>                                       
-                                            <p className="font-semibold text-xl">{Journal.icon}</p>   
-                                            <p className="font-semibold pl-2 pt-2">{Journal.name}</p>
-                                            <p className="font-semibold text-3xl pl-2 pt-1">{Journal.value}</p>
+                                        <div onClick={() => HeadleButtonClick(Magazine.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Magazine.style}`}>                                       
+                                            <p className="font-semibold text-xl">{Magazine.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{Magazine.name}</p>
+                                            <p className="font-semibold text-3xl pl-2 pt-1">{Magazine.value}</p>
                                         </div>  
                                     )
                                 }
                                 else{
                                     return (
-                                        <div onClick={() => HeadleButtonClick(Journal.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Journal.style}`}>                                       
-                                            <p className="font-bold text-xl">{Journal.icon}</p>   
-                                            <p className="font-semibold pl-2 pt-2">{Journal.name}</p>
+                                        <div onClick={() => HeadleButtonClick(Magazine.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Magazine.style}`}>                                       
+                                            <p className="font-bold text-xl">{Magazine.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{Magazine.name}</p>
                                         </div>  
                                     )
                                 }
@@ -56,7 +56,7 @@ const Magazine = () => {
                 {/* <p>{buttonValue}</p> */}
                 {
                     (() => {
-                        if(buttonValue === "add_Journals"){
+                        if(buttonValue === "add_Magazine"){
                             return (
                                 <AddJournal />
                             )
