@@ -12,21 +12,43 @@ const Books = () => {
 
     const BookData = [
         {id: 1, name: "Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 3, name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 3, name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="py-4 px-4">
                 <div className="">
-                    {
-                        BookData.map((Book) => {
-                            return (
-                                
-                            )
-                        })
-                    }
+                    <h1 className="px-4 py-2 text-xl font-semibold">Books</h1>
+                </div>
+                <div className="">
+                    <div className="lg:grid grid-cols-4 gap-4">
+                        {
+                            BookData.map((Book) => {
+                                if(Book.id !== 4){
+                                    return (
+                                        <div className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                            <p className="font-semibold text-xl">{Book.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{Book.name}</p>
+                                            <p className="font-semibold text-3xl pl-2 pt-1">{Book.value}</p>
+                                        </div>  
+                                    )
+                                }
+                                else{
+                                    return (
+                                        <div className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                            <p className="font-bold text-xl">{Book.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{Book.name}</p>
+                                        </div>  
+                                    )
+                                }
+
+
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         )
