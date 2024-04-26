@@ -17,7 +17,7 @@ const Dashboard = () => {
     const EmailUser = secureLocalStorage.getItem("login2");
     
     const allUserSide = [
-        {id: 1, name: "Vehicles", link: "/Vehicles", icon: <Icons name="car" size="large"></Icons>},
+        {id: 1, name: "Vehicles", link: "/Vehicles", icon: <Icons name="car" size="large"></Icons>, btnValue: ""},
         {id: 2, name: "Rented Vehicle", link: "#", icon: <Icons name="car-sport" size="large"></Icons>},
         {id: 3, name: "Own Vehicle ", link: "#", icon: <Icons name="car" size="large"></Icons>},
         {id: 4, name: "Profile", link: "#", icon: <Icons name="person" size="large"></Icons>},
