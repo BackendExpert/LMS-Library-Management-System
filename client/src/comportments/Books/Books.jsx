@@ -10,10 +10,14 @@ const Books = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const BookData = [
+        {id: 1, name: "Books", valeue: <CountUp end={20}/>, }
+    ]
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="py-4 px-4">
-                
+
             </div>
         )
     }
