@@ -7,6 +7,7 @@ import Books from "../Books/Books"
 import DashFooter from "./DashFooter"
 import AddBook from "../Books/AddBook"
 import Journals from "../Journals/Journals"
+import Magazine from "../Magazine/Magazine"
 
 
 const Dashboard = () => {
@@ -153,6 +154,12 @@ const Dashboard = () => {
                                         <Journals />
                                     )
                                 }
+                                else if(buttonValue === "Magazine"){
+                                    return (
+                                        <Magazine />
+                                    )
+                                }
+
                             })()
                         }
                         <DashFooter />

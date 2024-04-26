@@ -33,7 +33,7 @@ const Magazine = () => {
                     <div className="lg:grid grid-cols-4 gap-4">
                         {
                             MagazineData.map((Magazine) => {
-                                if(Journal.id !== 4){
+                                if(Magazine.id !== 4){
                                     return (
                                         <div onClick={() => HeadleButtonClick(Magazine.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Magazine.style}`}>                                       
                                             <p className="font-semibold text-xl">{Magazine.icon}</p>   
