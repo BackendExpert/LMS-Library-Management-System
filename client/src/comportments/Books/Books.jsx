@@ -44,7 +44,7 @@ const Books = () => {
                                 }
                                 else{
                                     return (
-                                        <div onClick={() => HeadleButtonClick("add book")} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                        <div onClick={() => HeadleButtonClick("add_book")} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
                                             <p className="font-bold text-xl">{Book.icon}</p>   
                                             <p className="font-semibold pl-2 pt-2">{Book.name}</p>
                                         </div>  
