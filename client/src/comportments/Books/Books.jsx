@@ -10,10 +10,18 @@ const Books = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    
-  return (
-    <div>Books</div>
-  )
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>Books</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default Books
