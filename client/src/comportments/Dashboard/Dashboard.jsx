@@ -58,25 +58,23 @@ const Dashboard = () => {
                         </div> : <div></div>}
                     </div>
                     <div className={`pl-2 text-xl text-gray-400 duration-500 hover:text-[#3B71CA]`}>
-                        <Link to={'/Dashboard'}>
                             {sideOpen ? <div className="flex pl-2 pt-2">
                                 {
                                     (() => {
                                         if(RoleUser === "SuperAdmin"){
                                             return (
-                                                <p className="">SuperAdmin</p>
+                                                <p className="" onClick={() => HeadleButtonClick('Dashboard')}>SuperAdmin</p>
                                             )                            
                                         }
                                         else if(RoleUser === "user"){
                                             return (                                               
-                                                <p className="">User Dashboard</p>
+                                                <p className="" onClick={() => HeadleButtonClick('Dashboard')}>User Dashboard</p>
                                             )    
                                         }
                                     })()
                                 }
                                 
                             </div> : <Icons name="speedometer"></Icons> }
-                        </Link>
                     </div>
                     <hr className="mt-2 mr-4 border-b-1 border-blue-300"/>
                     <div className="">
