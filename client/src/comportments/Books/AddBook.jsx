@@ -11,7 +11,9 @@ const AddBook = () => {
 
     if(RoleUser === "SuperAdmin"){
         return (
-            <div>AddBook</div>
+            <div className="bg-white rounded-2xl py-8 px-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam iste dolor explicabo tenetur, voluptas non dolorum! Obcaecati reprehenderit repudiandae, officia modi iusto, aliquid dolorem quisquam fugiat ea, minus tempore.
+            </div>
         )
     }
     else{
