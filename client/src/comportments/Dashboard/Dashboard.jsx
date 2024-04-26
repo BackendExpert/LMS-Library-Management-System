@@ -147,6 +147,9 @@ const Dashboard = () => {
                                         <Books />
                                     )
                                 }
+                                else if(buttonValue === "Journals"){
+                                    
+                                }
                             })()
                         }
                         <DashFooter />
