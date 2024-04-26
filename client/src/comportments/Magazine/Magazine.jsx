@@ -17,10 +17,10 @@ const Magazine = () => {
     }
 
     const MagazineData = [
-        {id: 1, btnValue: "Magazine", name: "Journals", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, btnValue: "MagazineBorrow", name: "Journals Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
-        {id: 3, btnValue: "MagazineSelected", name: "Journals Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, btnValue: "add_Magazine", name: "Add New Journals", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
+        {id: 1, btnValue: "Magazine", name: "Magazine", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, btnValue: "MagazineBorrow", name: "Magazine Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 3, btnValue: "MagazineSelected", name: "Magazine Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, btnValue: "add_Magazine", name: "Add New Magazine", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
     if(RoleUser === "SuperAdmin"){
