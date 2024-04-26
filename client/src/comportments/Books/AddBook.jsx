@@ -9,10 +9,17 @@ const AddBook = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    
-  return (
-    <div>AddBook</div>
-  )
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>AddBook</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
 }
 
 export default AddBook
