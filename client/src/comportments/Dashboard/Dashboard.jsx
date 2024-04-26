@@ -6,6 +6,7 @@ import SummaryDash from "./SummaryDash"
 import Books from "../Books/Books"
 import DashFooter from "./DashFooter"
 import AddBook from "../Books/AddBook"
+import Journals from "../Journals/Journals"
 
 
 const Dashboard = () => {
@@ -148,7 +149,9 @@ const Dashboard = () => {
                                     )
                                 }
                                 else if(buttonValue === "Journals"){
-                                    
+                                    return (
+                                        <Journals />
+                                    )
                                 }
                             })()
                         }
