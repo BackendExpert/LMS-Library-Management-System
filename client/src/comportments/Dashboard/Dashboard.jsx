@@ -18,7 +18,6 @@ const Dashboard = () => {
     //curent login user
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
-    const BtnValue = secureLocalStorage.getItem("ButtonValue");
 
     const [buttonValue, SetButtonValue] = useState(0)
     const HeadleButtonClick = (clickValue) => {
@@ -135,7 +134,7 @@ const Dashboard = () => {
                         </div>
                         {/* navbar ENd */}
                         {/* <p className="">{buttonValue}</p> */}
-                          <p>{BtnValue}</p>              
+      
                         {
                             (() => {
                                 if(buttonValue === 0){
@@ -146,11 +145,6 @@ const Dashboard = () => {
                                 else if(buttonValue === "Books"){
                                     return (
                                         <Books />
-                                    )
-                                }
-                                if(BtnValue === "add_book"){
-                                    return (
-                                        <AddBook />
                                     )
                                 }
                             })()
