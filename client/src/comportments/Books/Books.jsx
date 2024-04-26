@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import AddBook from "./AddBook";
 
 const Books = () => {
     const navigate = useNavigate() 
@@ -16,10 +17,10 @@ const Books = () => {
     }
 
     const BookData = [
-        {id: 1, name: "Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
-        {id: 3, name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
+        {id: 1, btnValue: "Books", name: "Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, btnValue: "bkBorrow", name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 3, btnValue: "bkSelected", name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
     if(RoleUser === "SuperAdmin"){
@@ -34,7 +35,7 @@ const Books = () => {
                             BookData.map((Book) => {
                                 if(Book.id !== 4){
                                     return (
-                                        <div className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                        <div onClick={() => HeadleButtonClick(Book.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
                                             <p className="font-semibold text-xl">{Book.icon}</p>   
                                             <p className="font-semibold pl-2 pt-2">{Book.name}</p>
                                             <p className="font-semibold text-3xl pl-2 pt-1">{Book.value}</p>
@@ -43,18 +44,26 @@ const Books = () => {
                                 }
                                 else{
                                     return (
-                                        <div onClick={() => HeadleButtonClick("add_book")} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
+                                        <div onClick={() => HeadleButtonClick(Book.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
                                             <p className="font-bold text-xl">{Book.icon}</p>   
                                             <p className="font-semibold pl-2 pt-2">{Book.name}</p>
                                         </div>  
                                     )
                                 }
-
-
                             })
                         }
                     </div>
                 </div>
+                {/* <p>{buttonValue}</p> */}
+                {
+                    (() => {
+                        if(buttonValue === "add_book"){
+                            return (
+                                <AddBook />
+                            )
+                        }
+                    })()
+                }
             </div>
         )
     }
