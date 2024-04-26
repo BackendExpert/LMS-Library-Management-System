@@ -12,7 +12,9 @@ const Books = () => {
 
     if(RoleUser === "SuperAdmin"){
         return (
-            <div className="py-4">Books</div>
+            <div className="py-4 px-4">
+                
+            </div>
         )
     }
     else{
