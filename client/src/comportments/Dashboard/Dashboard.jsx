@@ -57,7 +57,7 @@ const Dashboard = () => {
                             <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" className="px-6"/>
                         </div> : <div></div>}
                     </div>
-                    <div className={`pl-2 text-xl text-gray-400 duration-500 hover:text-[#3B71CA]`}>
+                    <div className={`pl-2 text-xl text-gray-400 duration-500 hover:text-[#3B71CA] cursor-pointer`}>
                             {sideOpen ? <div className="flex pl-2 pt-2">
                                 {
                                     (() => {
@@ -74,7 +74,7 @@ const Dashboard = () => {
                                     })()
                                 }
                                 
-                            </div> : <Icons name="speedometer"></Icons> }
+                            </div> : <Icons name="speedometer" onClick={() => HeadleButtonClick('Dashboard')}></Icons> }
                     </div>
                     <hr className="mt-2 mr-4 border-b-1 border-blue-300"/>
                     <div className="">
