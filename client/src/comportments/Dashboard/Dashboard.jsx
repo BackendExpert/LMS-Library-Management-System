@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import SummaryDash from "./SummaryDash"
+import Books from "../Books/Books"
 
 
 const Dashboard = () => {
@@ -16,7 +17,7 @@ const Dashboard = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    const [buttonValue, SetButtonValue] = useState()
+    const [buttonValue, SetButtonValue] = useState(0)
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
     }
@@ -63,18 +64,18 @@ const Dashboard = () => {
                                     (() => {
                                         if(RoleUser === "SuperAdmin"){
                                             return (
-                                                <p className="" onClick={() => HeadleButtonClick('Dashboard')}>SuperAdmin</p>
+                                                <p className="" onClick={() => HeadleButtonClick(0)}>SuperAdmin</p>
                                             )                            
                                         }
                                         else if(RoleUser === "user"){
                                             return (                                               
-                                                <p className="" onClick={() => HeadleButtonClick('Dashboard')}>User Dashboard</p>
+                                                <p className="" onClick={() => HeadleButtonClick(0)}>User Dashboard</p>
                                             )    
                                         }
                                     })()
                                 }
                                 
-                            </div> : <Icons name="speedometer" onClick={() => HeadleButtonClick('Dashboard')}></Icons> }
+                            </div> : <Icons name="speedometer" onClick={() => HeadleButtonClick(0)}></Icons> }
                     </div>
                     <hr className="mt-2 mr-4 border-b-1 border-blue-300"/>
                     <div className="">
@@ -130,8 +131,23 @@ const Dashboard = () => {
                             </div>                      
                         </div>
                         {/* navbar ENd */}
-                        <p className="">{buttonValue}</p>
-                        <SummaryDash />
+                        {/* <p className="">{buttonValue}</p> */}
+
+                        {
+                            (() => {
+                                if(buttonValue === 0){
+                                    return (
+                                        <SummaryDash />
+                                    )
+                                }
+                                else if(buttonValue === "Books"){
+                                    return (
+                                        <Books />
+                                    )
+                                }
+                            })()
+                        }
+                        
                     </div>
             </div>
         </div>
