@@ -13,6 +13,7 @@ const Books = () => {
     const [buttonValue, SetButtonValue] = useState(0)
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
+        secureLocalStorage.setItem("ButtonValue", clickValue);
     }
 
     const BookData = [
