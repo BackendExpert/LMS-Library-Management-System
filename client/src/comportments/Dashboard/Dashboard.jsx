@@ -95,7 +95,7 @@ const Dashboard = () => {
                                     if(sidem.id === 1 || sidem.id === 2 || sidem.id === 3 || sidem.id === 4){
                                         return (
                                             <Link to={sidem.link}>
-                                                <div className="flex py-2 text-gray-400 duration-500 hover:text-[#3B71CA]">                        
+                                                <div onClick={() => HeadleButtonClick(sidem.btnValue)} className="flex py-2 text-gray-400 duration-500 hover:text-[#3B71CA]">                        
                                                     <p>{sidem.icon}</p>
                                                     <p className={`whitespace-nowrap pt-2 pl-2 ${!sideOpen && 'scale-0'}`}>{sidem.name}</p>                        
                                                 </div>
