@@ -78,7 +78,7 @@ const SummaryDash = () => {
                 <h1 className="px-8 py-8 text-xl font-semibold">Personal Data</h1>
                 <div className="mb-8 mx-2">
                     <div className="lg:grid grid-cols-2 gap-4">
-                        <div className="w-full shadow-md rounded-lg bg-white py-6 px-4 lg:mr-5 mr-0 lg:my-0 my-2">
+                        <div className="w-full shadow-md rounded-2xl bg-white py-6 px-4 lg:mr-5 mr-0 lg:my-0 my-2">
                             <h1 className="">My Info</h1>
                             <div className="lg:grid grid-cols-2 gap-4">
                                 <div className="mx-4 my-6">
@@ -101,7 +101,7 @@ const SummaryDash = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className="shadow-md rounded-lg w-full">
+                        <div className="shadow-md rounded-2xl w-full">
                             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
@@ -133,7 +133,7 @@ const SummaryDash = () => {
 
                     <div className="mb-8 mx-0">
                        <div className="lg:flex">
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
@@ -144,7 +144,7 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
@@ -155,7 +155,7 @@ const SummaryDash = () => {
                                     </Link>
                                 </div>
                             </div> 
-                            <div className="bg-white rounded lg:mx-8 mx-0 shadow-xl w-full ">
+                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-xl w-full ">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
                                     <p className="">Authors : Kamal, Nimali, Perera</p>
