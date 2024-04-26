@@ -171,7 +171,7 @@ const SummaryDash = () => {
 
 
                 </div>
-                    <DashFooter />
+
             </div>
         )
     }
