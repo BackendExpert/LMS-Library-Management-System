@@ -11,7 +11,7 @@ const Books = () => {
     const EmailUser = secureLocalStorage.getItem("login2");
 
     const BookData = [
-        {id: 1, name: "Books", valeue: <CountUp end={20}/>, }
+        {id: 1, name: "Books", value: <CountUp end={20}/>, }
     ]
 
     if(RoleUser === "SuperAdmin"){
