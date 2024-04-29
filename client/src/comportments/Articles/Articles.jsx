@@ -14,9 +14,19 @@ const Articles = () => {
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
     }
-  return (
-    <div>Articles</div>
-  )
+
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>Articles</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default Articles
