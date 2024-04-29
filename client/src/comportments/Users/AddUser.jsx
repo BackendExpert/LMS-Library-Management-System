@@ -33,9 +33,16 @@ const AddUser = () => {
                                 <input type="password" name="" id="" required placeholder="Enter Password" className="w-full h-12 rounded shadow-md border border-blue-500 pl-2 my-2" />
                             </div>
                             <div className="my-2">
-                                <label htmlFor="">Password : </label>
-                               
+                                <label htmlFor="">User Type : </label>
+                                <select className="w-full h-12 rounded shadow-md border border-blue-500 pl-2 my-2" required>
+                                    <option value="">Select User</option>
+                                    <option value="user">User</option>
+                                    <option value="SuperAdmin">SuperAdmin</option>
+                                </select>
                             </div>
+                        </div>
+                        <div className="my-2">
+                            <button type="submit" className="py-4 px-8 rounded text-green-500 font-semibold duration-500 hover:ml-2 hover:text-white hover:bg-green-600">Add User</button>
                         </div>
                     </form>
                 </div>
