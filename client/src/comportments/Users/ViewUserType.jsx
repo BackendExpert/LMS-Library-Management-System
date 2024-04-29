@@ -50,61 +50,121 @@ const ViewUserType = () => {
                         <tbody>
                             {
                                 AllUser.map((users, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {users.username}
-                                            </th>
-                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {users.Email}
-                                            </th>
-                                            <td class="px-6 py-4">
-                                                {users.Role}
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                {
-                                                    (() => {
-                                                        if(users.is_active === 1){
-                                                            return (
-                                                                <p className="text-green-500 font-semibold">Active</p>
-                                                            )
-                                                        }
-                                                        else if(users.is_active === 0){
-                                                            return (
-                                                                <p className="text-red-500 font-semibold">Deactive</p>
-                                                            )
-                                                        }
-
-                                                    })()
-                                                }                                                
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                {
-                                                    (() => {
-                                                        if(users.is_active === 1){
-                                                            if(users.Email === EmailUser){
-                                                                return (
-                                                                    <p className="text-green-500 font-semibold">Current Login User</p>
-                                                                ) 
-                                                            }
-                                                            else{
+                                    if(users.Role === "users"){
+                                        return (
+                                            <tr key={index}>
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {users.username}
+                                                </th>
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {users.Email}
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {users.Role}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {
+                                                        (() => {
+                                                            if(users.is_active === 1){
                                                                 return (
                                                                     <p className="text-green-500 font-semibold">Active</p>
                                                                 )
                                                             }
+                                                            else if(users.is_active === 0){
+                                                                return (
+                                                                    <p className="text-red-500 font-semibold">Deactive</p>
+                                                                )
+                                                            }
+    
+                                                        })()
+                                                    }                                                
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {
+                                                        (() => {
+                                                            if(users.is_active === 1){
+                                                                if(users.Email === EmailUser){
+                                                                    return (
+                                                                        <p className="text-green-500 font-semibold">Current Login User</p>
+                                                                    ) 
+                                                                }
+                                                                else{
+                                                                    return (
+                                                                        <p className="text-green-500 font-semibold">Active</p>
+                                                                    )
+                                                                }
+    
+                                                            }
+                                                            else if(users.is_active === 0){
+                                                                return (
+                                                                    <p className="text-red-500 font-semibold">Deactive</p>
+                                                                )
+                                                            }
+    
+                                                        })()
+                                                    }     
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                    else if(users.Role === "SuperAdmin"){
+                                        return (
+                                            <tr key={index}>
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {users.username}
+                                                </th>
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {users.Email}
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {users.Role}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {
+                                                        (() => {
+                                                            if(users.is_active === 1){
+                                                                return (
+                                                                    <p className="text-green-500 font-semibold">Active</p>
+                                                                )
+                                                            }
+                                                            else if(users.is_active === 0){
+                                                                return (
+                                                                    <p className="text-red-500 font-semibold">Deactive</p>
+                                                                )
+                                                            }
+    
+                                                        })()
+                                                    }                                                
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {
+                                                        (() => {
+                                                            if(users.is_active === 1){
+                                                                if(users.Email === EmailUser){
+                                                                    return (
+                                                                        <p className="text-green-500 font-semibold">Current Login User</p>
+                                                                    ) 
+                                                                }
+                                                                else{
+                                                                    return (
+                                                                        <p className="text-green-500 font-semibold">Active</p>
+                                                                    )
+                                                                }
+    
+                                                            }
+                                                            else if(users.is_active === 0){
+                                                                return (
+                                                                    <p className="text-red-500 font-semibold">Deactive</p>
+                                                                )
+                                                            }
+    
+                                                        })()
+                                                    }     
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
 
-                                                        }
-                                                        else if(users.is_active === 0){
-                                                            return (
-                                                                <p className="text-red-500 font-semibold">Deactive</p>
-                                                            )
-                                                        }
-
-                                                    })()
-                                                }     
-                                            </td>
-                                        </tr>
-                                    )
                                 })
                             }
                         </tbody>
