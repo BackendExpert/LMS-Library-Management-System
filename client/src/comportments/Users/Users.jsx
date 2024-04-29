@@ -5,7 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AllUsers from "./AllUsers";
 import axios from "axios";
-import AddUser from "./AddUser";
+
 
 
 const Users = () => {
@@ -57,7 +57,7 @@ const Users = () => {
         {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={UserTypeUsersCount}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
         {id: 3, btnValue: "SuperAdmins", name: "SuperAdmins", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="person" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, btnValue: "Add_New_User", name: "Add New User", icon: <Icons name="person-add" size="large"></Icons>, style: 'text-white bg-green-500'},
+       
     ]
 
 
@@ -80,14 +80,7 @@ const Users = () => {
                                         </div>  
                                     )
                                 }
-                                else{
-                                    return (
-                                        <div onClick={() => HeadleButtonClick(Users.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Users.style}`}>                                       
-                                            <p className="font-bold text-xl">{Users.icon}</p>   
-                                            <p className="font-semibold pl-2 pt-2">{Users.name}</p>
-                                        </div>  
-                                    )
-                                }
+
                             })
                         }
                     </div>

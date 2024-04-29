@@ -12,6 +12,12 @@ const SummaryDash = () => {
     const EmailUser = secureLocalStorage.getItem("login2");
 
     
+    const [buttonValue, SetButtonValue] = useState()
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
+    
     const [AllUserCount, SetAllUserCount] = useState(0)
 
     useEffect(() => {
@@ -114,9 +120,9 @@ const SummaryDash = () => {
                                     <p className="py-2">Address : kandy</p>
                                     <p className="py-2">Name : Jehan </p>
                                     <p className="py-2">Address : kandy</p>
-                                    <Link>
-                                        <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">More</button>
-                                    </Link>
+
+                                    <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
+                                    {/* <p className="">{buttonValue}</p> */}
                                 </div>
                             </div>
                         </div>  

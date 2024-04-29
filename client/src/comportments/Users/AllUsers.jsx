@@ -42,6 +42,9 @@ const AllUsers = () => {
                                 <th scope="col" class="px-6 py-3">
                                     Status
                                 </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,6 +78,25 @@ const AllUsers = () => {
                                                     })()
                                                 }
                                                 
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                {
+                                                    (() => {
+                                                        if(users.Role === "SuperAdmin"){
+                                                            return (
+                                                                <div className=""></div>
+                                                            )
+                                                        }
+                                                        else{
+                                                            return (
+                                                                <button className="text-red-500 font-semibold py-2 px-8 rounded duration-500 hover:bg-red-500 hover:text-white hover:shadow-md">
+                                                                    Set as SuperAdmin
+                                                                </button>
+                                                            )
+                                                        }
+                                                    })()
+                                                }
+
                                             </td>
                                         </tr>
                                     )
