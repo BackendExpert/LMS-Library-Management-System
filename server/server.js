@@ -184,6 +184,12 @@ app.get('/AllUsers', (req, res) => {
     })
 })
 
+// count all user
+
+app.get('/AllCountUsers', (req, res) => {
+    
+})
+
 // all end points end
 
 //check the server is working
