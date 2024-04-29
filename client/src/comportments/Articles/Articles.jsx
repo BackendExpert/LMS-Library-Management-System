@@ -32,21 +32,21 @@ const Articles = () => {
                 <div className="">
                     <div className="lg:grid grid-cols-4 gap-4">
                         {
-                            BookData.map((Book) => {
-                                if(Book.id !== 4){
+                            ArticleData.map((articles) => {
+                                if(articles.id !== 4){
                                     return (
-                                        <div onClick={() => HeadleButtonClick(Book.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
-                                            <p className="font-semibold text-xl">{Book.icon}</p>   
-                                            <p className="font-semibold pl-2 pt-2">{Book.name}</p>
-                                            <p className="font-semibold text-3xl pl-2 pt-1">{Book.value}</p>
+                                        <div onClick={() => HeadleButtonClick(articles.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${articles.style}`}>                                       
+                                            <p className="font-semibold text-xl">{articles.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{articles.name}</p>
+                                            <p className="font-semibold text-3xl pl-2 pt-1">{articles.value}</p>
                                         </div>  
                                     )
                                 }
                                 else{
                                     return (
-                                        <div onClick={() => HeadleButtonClick(Book.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
-                                            <p className="font-bold text-xl">{Book.icon}</p>   
-                                            <p className="font-semibold pl-2 pt-2">{Book.name}</p>
+                                        <div onClick={() => HeadleButtonClick(articles.btnValue)} className={`cursor-pointer text-center shadow-md border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${articles.style}`}>                                       
+                                            <p className="font-bold text-xl">{articles.icon}</p>   
+                                            <p className="font-semibold pl-2 pt-2">{articles.name}</p>
                                         </div>  
                                     )
                                 }
