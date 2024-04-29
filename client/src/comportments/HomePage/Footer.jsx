@@ -78,7 +78,7 @@ const Footer = () => {
 
         <hr className='border-t-2 border-gray-400 mt-8'/>
         <div className="text-center my-2">
-            &copy; The Library System - 2024 || Developed and Designed by : National Institute of Fundamental Studies
+            &copy; The Library System - 2024 
         </div>
     </footer>
   )
