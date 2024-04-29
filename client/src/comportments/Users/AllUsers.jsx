@@ -74,6 +74,7 @@ const AllUsers = () => {
                                                                 <p className="text-red-500 font-semibold">Deactive</p>
                                                             )
                                                         }
+
                                                     })()
                                                 }
                                                 
@@ -93,6 +94,11 @@ const AllUsers = () => {
                                                                 <button className="py-2 px-8 text-blue-500 font-semibold shadow-md rounded duration-500 hover:bg-blue-500 hover:text-white">
                                                                     Activate
                                                                 </button>
+                                                            )
+                                                        }
+                                                        else if(users.Email === EmailUser){
+                                                            return (
+                                                                <p className="text-blue-500 font-semibold">Current login User</p>
                                                             )
                                                         }
                                                     })()
