@@ -12,13 +12,34 @@ const AddUser = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [AddNewUser, SetAddNewUser] = useState({
+        username: '',
+        email:'',
+        password:'',
+        role:'',        
+    })
+
+    const headleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:8081/AddUser', AddNewUser)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("User Added Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Add New User</h1>
                 
                 <div className="my-2">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <div className="lg:grid grid-cols-3 gap-4">
                             <div className="my-2">
                                 <label htmlFor="">Username : </label>
