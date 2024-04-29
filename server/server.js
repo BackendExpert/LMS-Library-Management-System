@@ -269,8 +269,7 @@ app.post('/UpdateMyData/:id', (req, res) => {
 // Test book search
 
 app.get('/BookSearch', (req, res) => {
-    const BookTitle = req.body
-    console.log(BookTitle)
+    console.log(req.body.bookTitle)
 })
 
 // all end points end
