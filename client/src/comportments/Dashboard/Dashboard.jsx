@@ -8,6 +8,7 @@ import DashFooter from "./DashFooter"
 import AddBook from "../Books/AddBook"
 import Journals from "../Journals/Journals"
 import Magazine from "../Magazine/Magazine"
+import Users from "../Users/Users"
 
 
 const Dashboard = () => {
@@ -161,7 +162,7 @@ const Dashboard = () => {
                                 }
                                 else if(buttonValue === "Users"){
                                     return (
-                                        <Magazine />
+                                        <Users />
                                     )
                                 }
 
