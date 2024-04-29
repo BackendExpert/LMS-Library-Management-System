@@ -12,7 +12,7 @@ const AddThesis = () => {
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
-                <h1 className="font-semibold text-gray-500 text-xl">Add New Magazine</h1>
+                <h1 className="font-semibold text-gray-500 text-xl">Add New Thesis</h1>
             </div>
           )
         }
