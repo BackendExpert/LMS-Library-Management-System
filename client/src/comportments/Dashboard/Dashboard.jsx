@@ -9,6 +9,7 @@ import AddBook from "../Books/AddBook"
 import Journals from "../Journals/Journals"
 import Magazine from "../Magazine/Magazine"
 import Users from "../Users/Users"
+import Articles from "../Articles/Articles"
 
 
 const Dashboard = () => {
@@ -163,6 +164,11 @@ const Dashboard = () => {
                                 else if(buttonValue === "Users"){
                                     return (
                                         <Users />
+                                    )
+                                }
+                                else if(buttonValue === "Articles"){
+                                    return (
+                                        <Articles />
                                     )
                                 }
 
