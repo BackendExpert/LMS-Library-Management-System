@@ -100,11 +100,6 @@ const Users = () => {
                                 <AllUsers />
                             )
                         }
-                        if(buttonValue === "Users" || buttonValue === "SuperAdmins"){
-                            return (
-                                <ViewUserType />
-                            )
-                        }
                     })()
                 }
             </div>
