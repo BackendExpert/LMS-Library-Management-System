@@ -170,6 +170,13 @@ app.post('/SignIn', (req, res) => {
     })
 })
 
+// All users
+
+app.get('/AllUsers', (req, res) => {
+    const sql = "SELECT * FROM users"
+    
+})
+
 // all end points end
 
 //check the server is working
