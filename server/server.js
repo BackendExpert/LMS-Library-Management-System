@@ -221,7 +221,7 @@ app.get('/UserTypeUsers', (req, res) => {
 
 app.get('/CountSuperAdmin', (req, res) => {
     const sql = "SELECT COUNT(ID) AS CountUserT FROM users WHERE role = ?";
-    const role = "user"
+    const role = "SuperAdmin"
 
     connection.query(sql, [role], (error, results) => {
       if (error) {
