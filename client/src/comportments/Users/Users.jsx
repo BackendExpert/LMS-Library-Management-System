@@ -15,6 +15,14 @@ const Users = () => {
         SetButtonValue(clickValue)   
     }
 
+    const UserData = [
+        {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 3, btnValue: "SuperAdmins", name: "SuperAdmins", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, btnValue: "Add_New_User", name: "Add New User", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
+    ]
+
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>Users</div>
