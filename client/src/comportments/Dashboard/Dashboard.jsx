@@ -159,6 +159,11 @@ const Dashboard = () => {
                                         <Magazine />
                                     )
                                 }
+                                else if(buttonValue === "Users"){
+                                    return (
+                                        <Magazine />
+                                    )
+                                }
 
                             })()
                         }
