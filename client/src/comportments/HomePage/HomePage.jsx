@@ -68,7 +68,8 @@ const HomePage = () => {
                                     <form onSubmit={headleBookSearch}>
                                         <div className="lg:flex justify-between ">
                                             <div className="w-full">
-                                                <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'/>
+                                                <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'
+                                                onChange={e => SetBooksearch({...Booksearch, bookTitle:e.target.value})}/>
                                                 <p>(For Advanced Search Login to System)</p>
                                             </div>    
                                             <button type="submit" className='py-2 px-24 text-blue-500 font-semibold w-auto mx-8 rounded duration-500 hover:bg-blue-500 hover:text-white'>SearchBook</button>
