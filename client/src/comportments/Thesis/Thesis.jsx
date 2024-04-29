@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import AddThesis from "./AddThesis";
 
 const Thesis = () => {
     const navigate = useNavigate() 
@@ -54,15 +55,15 @@ const Thesis = () => {
                     </div>
                 </div>
                 {/* <p>{buttonValue}</p> */}
-                {/* {
+                {
                     (() => {
                         if(buttonValue === "add_Thesis"){
                             return (
-                                <AddMagazine />
+                                <AddThesis />
                             )
                         }
                     })()
-                } */}
+                }
             </div>
         )
     }
