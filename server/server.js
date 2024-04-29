@@ -217,6 +217,23 @@ app.get('/UserTypeUsers', (req, res) => {
     });
 })
 
+// CountSuperAdmin
+
+app.get('/CountSuperAdmin', (req, res) => {
+    const sql = "SELECT COUNT(ID) AS CountUserT FROM users WHERE role = ?";
+    const role = "user"
+
+    connection.query(sql, [role], (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ CountUserT: results[0].CountUserT }); // Send count in JSON format
+    });
+})
+
 // all end points end
 
 //check the server is working

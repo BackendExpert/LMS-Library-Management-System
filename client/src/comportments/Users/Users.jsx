@@ -20,6 +20,7 @@ const Users = () => {
 
     const [AllUserCount, SetAllUserCount] = useState(0)
     const [UserTypeUsersCount, SetUserTypeUsersCount] = useState(0)
+    const [CountSuperAdmin, SetCountSuperAdmin] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,6 +34,13 @@ const Users = () => {
             try {
                 const TypeUsersCount = await axios.get('http://localhost:8081/UserTypeUsers');
                 SetUserTypeUsersCount(TypeUsersCount.data.CountUserT);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            try {
+                const SuperAdminCount = await axios.get('http://localhost:8081/CountSuperAdmin');
+                SetCountSuperAdmin(SuperAdminCount.data.CountUserT);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
