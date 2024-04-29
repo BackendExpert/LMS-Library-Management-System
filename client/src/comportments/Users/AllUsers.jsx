@@ -23,7 +23,7 @@ const AllUsers = () => {
     if(RoleUser === "SuperAdmin"){
         return (
             <div className='bg-white py-4 px-8 my-8 rounded-2xl shadow-md'>
-            <h1 className='text-gray-500 text-2xl font-semibold my-4'>All Books</h1>
+            <h1 className='text-gray-500 text-2xl font-semibold my-4'>All Users</h1>
     
             <div className="">
                 <div class="relative overflow-x-auto">
@@ -31,13 +31,13 @@ const AllUsers = () => {
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    Book ISBN
+                                    Username
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Books Name
+                                    User Email
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Authors
+                                    Role
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Status
@@ -49,34 +49,29 @@ const AllUsers = () => {
                         </thead>
                         <tbody>
                             {
-                                AllBooks.map((books, index) => {
+                                AllUser.map((users, index) => {
                                     return (
                                         <tr key={index}>
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {books.ISBN_No}
+                                                {users.ISBN_No}
                                             </th>
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {books.Name}
+                                                {users.Name}
                                             </th>
                                             <td class="px-6 py-4">
-                                                {books.author1}, {books.author2}, {books.author3}
+
                                             </td>
                                             <td class="px-6 py-4">
                                                 {
                                                     (() => {
-                                                        if(books.status === "Available"){
+                                                        if(users.status === 1){
                                                             return (
-                                                                <p className="text-green-500 font-semibold">Available</p>
+                                                                <p className="text-green-500 font-semibold">Active</p>
                                                             )
                                                         }
-                                                        else if(books.status === "Borrow"){
+                                                        else if(users.status === 0){
                                                             return (
-                                                                <p className="text-red-500 font-semibold">Borrowed</p>
-                                                            )
-                                                        }
-                                                        else if(books.status === "Selected"){
-                                                            return (
-                                                                <p className="text-yellow-500 font-semibold">Seleted</p>
+                                                                <p className="text-red-500 font-semibold">Deactive</p>
                                                             )
                                                         }
                                                     })()
@@ -86,17 +81,17 @@ const AllUsers = () => {
                                             <td class="px-6 py-4">
                                                 {
                                                     (() => {
-                                                        if(books.status === "Borrow"){
+                                                        if(books.status === 1){
                                                             return (
                                                                 <button className="py-2 px-8 text-red-500 font-semibold shadow-md rounded duration-500 hover:bg-red-500 hover:text-white">
-                                                                    Return
+                                                                    Deactivate
                                                                 </button>
                                                             )
                                                         }
-                                                        else{
+                                                        else if(users.status === 0){
                                                             return (
                                                                 <button className="py-2 px-8 text-blue-500 font-semibold shadow-md rounded duration-500 hover:bg-blue-500 hover:text-white">
-                                                                    Borrow
+                                                                    Activate
                                                                 </button>
                                                             )
                                                         }
