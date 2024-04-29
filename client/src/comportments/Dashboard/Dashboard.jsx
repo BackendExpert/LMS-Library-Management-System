@@ -10,6 +10,7 @@ import Journals from "../Journals/Journals"
 import Magazine from "../Magazine/Magazine"
 import Users from "../Users/Users"
 import Articles from "../Articles/Articles"
+import Thesis from "../Thesis/Thesis"
 
 
 const Dashboard = () => {
@@ -169,6 +170,11 @@ const Dashboard = () => {
                                 else if(buttonValue === "Articles"){
                                     return (
                                         <Articles />
+                                    )
+                                }
+                                else if(buttonValue === "Thesis"){
+                                    return (
+                                        <Thesis />
                                     )
                                 }
 
