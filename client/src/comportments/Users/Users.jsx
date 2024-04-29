@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AllUsers from "./AllUsers";
+import axios from "axios";
+
 
 const Users = () => {
     const navigate = useNavigate() 
@@ -17,12 +19,20 @@ const Users = () => {
     }
 
     const [AllUserCount, SetAllUserCount] = useState(0)
+    const [UserTypeUsersCount, SetUserTypeUsersCount] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const UsersCount = await axios.get('http://localhost:8081/AllCountUsers');
                 SetAllUserCount(UsersCount.data.UserAll);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            try {
+                const TypeUsersCount = await axios.get('http://localhost:8081/UserTypeUsers');
+                SetUserTypeUsersCount(TypeUsersCount.data.UserAll);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
