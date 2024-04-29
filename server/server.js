@@ -234,10 +234,7 @@ app.get('/CountSuperAdmin', (req, res) => {
     });
 })
 
-// Add New User
-app.post('/AddUser', (req, res) => {
-    console.log(req.body)
-})
+
 
 // all end points end
 
