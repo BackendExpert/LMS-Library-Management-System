@@ -234,7 +234,11 @@ app.get('/CountSuperAdmin', (req, res) => {
     });
 })
 
+// GetCurrentUser
 
+app.get('/GetCurrentUser/:id', (req, res) => {
+    const userEmail = req.params.id
+})
 
 // all end points end
 

@@ -49,6 +49,14 @@ const SummaryDash = () => {
                 
     ]
 
+    const [UserData, SetUserData] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/GetCurrentUser/' + EmailUser)
+        .then(res => SetUserData(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="py-4">
@@ -125,18 +133,20 @@ const SummaryDash = () => {
                                     <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
                                     {/* <p className="">{buttonValue}</p> */}
 
-                                    {
-                                        (() => {
-                                            if(buttonValue === "UpdateMyData"){
-                                                return (
-                                                    <UpdateMyData />
-                                                )
-                                            }
-                                        })()
-                                    }
-                                </div>
+
+                                </div>                                
                             </div>
+                            
                         </div>  
+                            {
+                                (() => {
+                                    if(buttonValue === "UpdateMyData"){
+                                        return (
+                                            <UpdateMyData />
+                                        )
+                                    }
+                                })()
+                            }
                         <div className="shadow-md rounded-2xl w-full">
                             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
