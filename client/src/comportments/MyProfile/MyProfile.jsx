@@ -17,8 +17,8 @@ const MyProfile = () => {
 
 
     const BookData = [
-        {id: 1, btnValue: "Books", name: "My Borroed Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, btnValue: "bkBorrow", name: "My Selected Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 1, btnValue: "myBorrowd", name: "My Borroed Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, btnValue: "mySelected", name: "My Selected Books", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
         {id: 3, btnValue: "bkSelected", name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
         {id: 4, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
