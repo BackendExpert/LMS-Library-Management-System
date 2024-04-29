@@ -12,23 +12,6 @@ const AllUsers = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    const [AllUserCount, SetAllUserCount] = useState(0)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const UsersCount = await axios.get('http://localhost:8081/AllCountUsers');
-                SetAllUserCount(UsersCount.data.BKs);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-
-
-
-        }
-        fetchData();
-    }, [])
-
     const [AllUser, SetAllUsers] = useState([])
 
     useEffect(() => {

@@ -16,6 +16,24 @@ const Users = () => {
         SetButtonValue(clickValue)   
     }
 
+    const [AllUserCount, SetAllUserCount] = useState(0)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const UsersCount = await axios.get('http://localhost:8081/AllCountUsers');
+                SetAllUserCount(UsersCount.data.UserAll);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+
+
+        }
+        fetchData();
+    }, [])
+
+
     const UserData = [
         {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={20}/>, icon: <Icons name="people" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={20}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
