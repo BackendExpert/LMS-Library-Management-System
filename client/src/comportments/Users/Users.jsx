@@ -32,7 +32,7 @@ const Users = () => {
 
             try {
                 const TypeUsersCount = await axios.get('http://localhost:8081/UserTypeUsers');
-                SetUserTypeUsersCount(TypeUsersCount.data.UserAll);
+                SetUserTypeUsersCount(TypeUsersCount.data.CountUserT);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -46,7 +46,7 @@ const Users = () => {
 
     const UserData = [
         {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={20}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
+        {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={UserTypeUsersCount}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
         {id: 3, btnValue: "SuperAdmins", name: "SuperAdmins", value: <CountUp end={20}/>, icon: <Icons name="person" size="large"></Icons>, style: 'text-yellow-500'},
         {id: 4, btnValue: "Add_New_User", name: "Add New User", icon: <Icons name="person-add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
