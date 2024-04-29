@@ -15,9 +15,18 @@ const Users = () => {
         SetButtonValue(clickValue)   
     }
 
-  return (
-    <div>Users</div>
-  )
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>Users</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default Users
