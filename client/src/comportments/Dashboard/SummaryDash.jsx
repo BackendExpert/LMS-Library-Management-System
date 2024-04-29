@@ -112,32 +112,38 @@ const SummaryDash = () => {
                 <h1 className="px-8 py-8 text-xl font-semibold">Personal Data</h1>
                 <div className="mb-8 mx-2">
                     <div className="lg:grid grid-cols-2 gap-4">
-                        <div className="w-full shadow-md rounded-2xl bg-white py-6 px-4 lg:mr-5 mr-0 lg:my-0 my-2">
-                            <h1 className="">My Info</h1>
-                            <div className="lg:grid grid-cols-2 gap-4">
-                                <div className="mx-4 my-6">
-                                    <div className="">
-                                        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="" />
+                        {
+                            AddThesis.map((data) => {
+                                return (
+                                    <div className="w-full shadow-md rounded-2xl bg-white py-6 px-4 lg:mr-5 mr-0 lg:my-0 my-2">
+                                    <h1 className="">My Info</h1>
+                                    <div className="lg:grid grid-cols-2 gap-4">
+                                        <div className="mx-4 my-6">
+                                            <div className="">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="" />
+                                            </div>
+                                            <div className="">
+                                                <p className="py-2">Name : {UserData.username} </p>
+                                                <p className="py-2">Email : jehan@123.com</p>
+                                            </div>
+                                        </div>
+                                        <div className="">
+                                            <p className="py-2">Name : Jehan </p>
+                                            <p className="py-2">Address : kandy</p>
+                                            <p className="py-2">Name : Jehan </p>
+                                            <p className="py-2">Address : kandy</p>
+        
+                                            <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
+                                            {/* <p className="">{buttonValue}</p> */}
+        
+        
+                                        </div>                                
                                     </div>
-                                    <div className="">
-                                        <p className="py-2">Name : Jehan </p>
-                                        <p className="py-2">Email : jehan@123.com</p>
-                                    </div>
-                                </div>
-                                <div className="">
-                                    <p className="py-2">Name : Jehan </p>
-                                    <p className="py-2">Address : kandy</p>
-                                    <p className="py-2">Name : Jehan </p>
-                                    <p className="py-2">Address : kandy</p>
-
-                                    <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
-                                    {/* <p className="">{buttonValue}</p> */}
-
-
-                                </div>                                
-                            </div>
-                            
-                        </div>  
+                                    
+                                </div>  
+                                )
+                            })
+                        }
                             {
                                 (() => {
                                     if(buttonValue === "UpdateMyData"){
