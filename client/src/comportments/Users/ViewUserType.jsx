@@ -76,8 +76,32 @@ const ViewUserType = () => {
                                                         }
 
                                                     })()
-                                                }
-                                                
+                                                }                                                
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                {
+                                                    (() => {
+                                                        if(users.is_active === 1){
+                                                            if(users.Email === EmailUser){
+                                                                return (
+                                                                    <p className="text-green-500 font-semibold">Current Login User</p>
+                                                                ) 
+                                                            }
+                                                            else{
+                                                                return (
+                                                                    <p className="text-green-500 font-semibold">Active</p>
+                                                                )
+                                                            }
+
+                                                        }
+                                                        else if(users.is_active === 0){
+                                                            return (
+                                                                <p className="text-red-500 font-semibold">Deactive</p>
+                                                            )
+                                                        }
+
+                                                    })()
+                                                }     
                                             </td>
                                         </tr>
                                     )
