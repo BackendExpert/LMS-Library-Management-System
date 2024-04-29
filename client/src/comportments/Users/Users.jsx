@@ -5,6 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AllUsers from "./AllUsers";
 import axios from "axios";
+import AddUser from "./AddUser";
 
 
 const Users = () => {
@@ -97,6 +98,11 @@ const Users = () => {
                         if(buttonValue === "All_Users"){
                             return (
                                 <AllUsers />
+                            )
+                        }
+                        if(buttonValue === "Add_New_User"){
+                            return (
+                                <AddUser />
                             )
                         }
                     })()
