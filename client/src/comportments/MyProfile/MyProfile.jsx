@@ -15,13 +15,22 @@ const MyProfile = () => {
         SetButtonValue(clickValue)   
     }
 
-  return (
-    <div className="py-4 px-4">
-        <div className="">
-            <h1 className="px-4 py-2 text-xl font-semibold">My Profile</h1>
-        </div>
-    </div>
-  )
+    if(RoleUser !== null && EmailUser !== null){
+        return (
+            <div className="py-4 px-4">
+                <div className="">
+                    <h1 className="px-4 py-2 text-xl font-semibold">My Profile</h1>
+                </div>
+            </div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default MyProfile
