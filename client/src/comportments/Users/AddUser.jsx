@@ -20,7 +20,22 @@ const AddUser = () => {
                 <div className="my-2">
                     <form>
                         <div className="lg:grid grid-cols-3 gap-4">
-                            
+                            <div className="my-2">
+                                <label htmlFor="">Username : </label>
+                                <input type="text" name="" id="" required placeholder="Enter Username" className="w-full h-12 rounded shadow-md border border-blue-500 pl-2 my-2" />
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">Email : </label>
+                                <input type="email" name="" id="" required placeholder="Enter Email" className="w-full h-12 rounded shadow-md border border-blue-500 pl-2 my-2" />
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">Password : </label>
+                                <input type="password" name="" id="" required placeholder="Enter Password" className="w-full h-12 rounded shadow-md border border-blue-500 pl-2 my-2" />
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">Password : </label>
+                               
+                            </div>
                         </div>
                     </form>
                 </div>
