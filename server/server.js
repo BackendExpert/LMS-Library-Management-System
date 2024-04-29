@@ -266,6 +266,13 @@ app.post('/UpdateMyData/:id', (req, res) => {
     })
 })
 
+// Test book search
+
+app.get('/BookSearch/:id', (req, res) => {
+    const BookTitle = req.params.id
+    console.log(BookTitle)
+})
+
 // all end points end
 
 //check the server is working
