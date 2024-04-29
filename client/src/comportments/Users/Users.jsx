@@ -33,7 +33,7 @@ const Users = () => {
                     <div className="lg:grid grid-cols-4 gap-4">
                         {
                             UserData.map((Users) => {
-                                if(Book.id !== 4){
+                                if(Users.id !== 4){
                                     return (
                                         <div onClick={() => HeadleButtonClick(Users.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Users.style}`}>                                       
                                             <p className="font-semibold text-xl">{Users.icon}</p>   
