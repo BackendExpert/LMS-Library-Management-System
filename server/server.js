@@ -203,7 +203,7 @@ app.get('/AllCountUsers', (req, res) => {
 // UserTypeUsers
 
 app.get('/UserTypeUsers', (req, res) => {
-    const sql = "SELECT COUNT(ID) AS UserAll FROM users WHERE role = ?";
+    const sql = "SELECT COUNT(ID) AS CountUserT FROM users WHERE role = ?";
     const role = "user"
 
     connection.query(sql, [role], (error, results) => {
@@ -213,7 +213,7 @@ app.get('/UserTypeUsers', (req, res) => {
         return;
       }
   
-      res.json({ UserAll: results[0].UserAll }); // Send count in JSON format
+      res.json({ CountUserT: results[0].CountUserT }); // Send count in JSON format
     });
 })
 
