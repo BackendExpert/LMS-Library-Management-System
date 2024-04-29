@@ -34,13 +34,30 @@ const HomePage = () => {
             </div>
         </div>
         <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sed ratione possimus quia assumenda, in dicta voluptatibus, deserunt et odio veniam ullam voluptate enim ea sit quasi, blanditiis laborum perspiciatis?
-            Deleniti voluptatum eum quod consequatur quas ratione vero illo esse expedita a, architecto totam dolores harum velit molestias non fugit obcaecati quae ipsum at. Suscipit et iste iusto hic eaque.
+
             {
                 (() => {
                     if(RoleUser !== null && EmailUser !== null){
                         return (
-                            
+                            <div className=""></div>
+                        )
+                    }
+                    else{
+                        return (
+                            <div className="">
+                                <h1 className="text-gray-500 text-xl font-semibold">Search Books</h1>
+                                <div className="my">
+                                    <form>
+                                        <div className="lg:flex justify-between ">
+                                            <div className="w-full">
+                                                <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'/>
+                                            </div>    
+                                            <button type="submit" className='py-2 px-24 text-blue-500 font-semibold w-auto mx-8 rounded duration-500 hover:bg-blue-500 hover:text-white'>SearchBook</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         )
                     }
                 })()
