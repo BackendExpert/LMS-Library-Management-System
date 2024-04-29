@@ -238,6 +238,16 @@ app.get('/CountSuperAdmin', (req, res) => {
 
 app.get('/GetCurrentUser/:id', (req, res) => {
     const userEmail = req.params.id
+
+    const sql = "SELECT * FROM users WHERE Email = ?"
+    connection.query(sql, [userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "ERROR on Server"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
 })
 
 // all end points end
