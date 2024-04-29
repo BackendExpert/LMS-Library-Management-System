@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import MyIcons from '@reacticons/ionicons'
 import Footer from './Footer'
 import  secureLocalStorage  from  "react-secure-storage";
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -11,6 +12,21 @@ const HomePage = () => {
     const navigate = useNavigate()
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
+
+    const [Booksearch, SetBooksearch] = useState({
+        bookTitle: ''
+    })
+
+    const [SearchBookData, SetSearchBookData] = useState([]) 
+
+    const headleBookSearch = (e) => {
+        e.preventDefault();
+
+        axios.get('http://localhost:8081/BookSearch/' + Booksearch)
+        .then(res => SetSearchBookData(res.data))
+        .catch(err => console.log(err))
+    }
+    
 
   return (
     <div>
@@ -40,7 +56,7 @@ const HomePage = () => {
                     if(RoleUser !== null && EmailUser !== null){
                         return (
                             <div className="">
-                                
+
                             </div>
                         )
                     }
@@ -49,7 +65,7 @@ const HomePage = () => {
                             <div className="">
                                 <h1 className="text-gray-500 text-xl font-semibold">Search Books</h1>
                                 <div className="my">
-                                    <form>
+                                    <form onSubmit={headleBookSearch}>
                                         <div className="lg:flex justify-between ">
                                             <div className="w-full">
                                                 <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'/>
