@@ -12,6 +12,23 @@ const AllUsers = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [AllUserCount, SetAllUserCount] = useState(0)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const UsersCount = await axios.get('http://localhost:8081/AllCountUsers');
+                SetAllUserCount(UsersCount.data.BKs);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+
+
+        }
+        fetchData();
+    }, [])
+
     const [AllUser, SetAllUsers] = useState([])
 
     useEffect(() => {
@@ -41,9 +58,6 @@ const AllUsers = () => {
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Status
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Action
                                 </th>
                             </tr>
                         </thead>
@@ -78,35 +92,6 @@ const AllUsers = () => {
                                                     })()
                                                 }
                                                 
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                {
-                                                    (() => {
-                                                        if(users.is_active === 1){
-                                                            if(users.Email === EmailUser){
-                                                                return (
-                                                                    <p className="text-blue-500 font-semibold">Current login User</p>
-                                                                )
-                                                            }
-                                                            else{
-                                                                return (
-                                                                    <button className="py-2 px-8 text-red-500 font-semibold shadow-md rounded duration-500 hover:bg-red-500 hover:text-white">
-                                                                        Deactivate
-                                                                    </button>
-                                                                )
-                                                            }
-                                                        }
-                                                        else if(users.is_active === 0){
-                                                            return (
-                                                                <button className="py-2 px-8 text-blue-500 font-semibold shadow-md rounded duration-500 hover:bg-blue-500 hover:text-white">
-                                                                    Activate
-                                                                </button>
-                                                            )
-                                                        }
-
-                                                    })()
-                                                }
-    
                                             </td>
                                         </tr>
                                     )
