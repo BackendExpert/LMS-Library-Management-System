@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import axios from "axios";
+import UpdateMyData from "./UpdateMyData";
 
 const SummaryDash = () => {
     const navigate = useNavigate() 
@@ -123,6 +124,16 @@ const SummaryDash = () => {
 
                                     <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
                                     {/* <p className="">{buttonValue}</p> */}
+
+                                    {
+                                        (() => {
+                                            if(buttonValue === "UpdateMyData"){
+                                                return (
+                                                    <UpdateMyData />
+                                                )
+                                            }
+                                        })()
+                                    }
                                 </div>
                             </div>
                         </div>  
