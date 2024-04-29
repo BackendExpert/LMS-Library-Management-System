@@ -27,6 +27,19 @@ const UpdateMyData = () => {
                         }
                     })()
                 }
+
+
+                <div className="my-4">
+                    <form>
+                        <div className="my-2">
+                            <label htmlFor="">Username : </label>
+                            <input type="text" name="" id="" className="w-full border border-blue-500 rounded h-12 pl-2 my-2"  required placeholder="Enter New Username"/>
+                        </div>
+                        <div className="my-2">
+                            <button type="submit" className="text-green-500 font-semibold rounded py-2 px-4 duration-500 hover:ml-2 hover:bg-green-500 hover:text-white">Update Data</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

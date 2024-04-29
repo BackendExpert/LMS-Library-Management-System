@@ -113,7 +113,7 @@ const SummaryDash = () => {
                 <div className="mb-8 mx-2">
                     <div className="lg:grid grid-cols-2 gap-4">
                         {
-                            AddThesis.map((data) => {
+                            UserData.map((data) => {
                                 return (
                                     <div className="w-full shadow-md rounded-2xl bg-white py-6 px-4 lg:mr-5 mr-0 lg:my-0 my-2">
                                     <h1 className="">My Info</h1>
@@ -123,15 +123,27 @@ const SummaryDash = () => {
                                                 <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="" />
                                             </div>
                                             <div className="">
-                                                <p className="py-2">Name : {UserData.username} </p>
-                                                <p className="py-2">Email : jehan@123.com</p>
+                                                <p className="py-2">Name : {UserData[0].username} </p>
+                                                <p className="py-2">Email : {UserData[0].Email}</p>
                                             </div>
                                         </div>
                                         <div className="">
-                                            <p className="py-2">Name : Jehan </p>
-                                            <p className="py-2">Address : kandy</p>
-                                            <p className="py-2">Name : Jehan </p>
-                                            <p className="py-2">Address : kandy</p>
+                                            <p className="py-2">Role : {
+                                                (() => {
+                                                    if(UserData[0].Role === "user"){
+                                                        return (
+                                                            <span className="text-yellow-500 font-semibold">User</span>
+                                                        )
+                                                    }
+                                                    else if(UserData[0].Role === "SuperAdmin"){
+                                                        return (
+                                                            <span className="text-red-500 font-semibold">SuperAdmin</span>
+                                                        )
+                                                    }
+                                                })()
+                                            } </p>
+                                            <p className="py-2">Account Status : <span className="text-green-500 font-semibold">Active</span>
+                                            </p>
         
                                             <button onClick={() => HeadleButtonClick('UpdateMyData')} className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">Update</button>
                                             {/* <p className="">{buttonValue}</p> */}
