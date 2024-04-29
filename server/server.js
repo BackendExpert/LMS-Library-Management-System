@@ -250,6 +250,22 @@ app.get('/GetCurrentUser/:id', (req, res) => {
     })
 })
 
+// Update My Data
+
+app.post('/UpdateMyData/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "UPDATE users SET username = ? WHERE Email = ?"
+    connection.query(sql, [req.body.username, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "ERROR on Server"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
