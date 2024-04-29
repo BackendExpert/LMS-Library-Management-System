@@ -22,7 +22,7 @@ const HomePage = () => {
     const headleBookSearch = (e) => {
         e.preventDefault();
 
-        axios.get('http://localhost:8081/BookSearch/' + Booksearch)
+        axios.get('http://localhost:8081/BookSearch', Booksearch)
         .then(res => SetSearchBookData(res.data))
         .catch(err => console.log(err))
     }
