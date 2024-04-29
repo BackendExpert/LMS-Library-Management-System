@@ -5,6 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import axios from "axios";
 import UpdateMyData from "./UpdateMyData";
+import AllUsers from "../Users/AllUsers";
 
 const SummaryDash = () => {
     const navigate = useNavigate() 
@@ -38,14 +39,14 @@ const SummaryDash = () => {
 
 
     const dataCount = [
-        {id: 1, name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
-        {id: 2, name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="document-text" size="large"></Icons>, style: "text-green-500"},     
-        {id: 3, name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
-        {id: 4, name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
-        {id: 5, name: "Thesis", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-blue-500"},
-        {id: 6, name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
-        {id: 7, name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
-        {id: 8, name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
+        {id: 1, btnvalue: "", name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
+        {id: 2, btnvalue: "", name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="document-text" size="large"></Icons>, style: "text-green-500"},     
+        {id: 3, btnvalue: "", name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
+        {id: 4, btnvalue: "", name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
+        {id: 5, btnvalue: "", name: "Thesis", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-blue-500"},
+        {id: 6, btnvalue: "", name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
+        {id: 7, btnvalue: "", name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
+        {id: 8, btnvalue: "Users", name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
                 
     ]
 
@@ -83,7 +84,7 @@ const SummaryDash = () => {
                                     if(data.id !== 9){
                                         return (
                                             <Link to={data.link}>
-                                                <div className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
+                                                <div onClick={() => HeadleButtonClick(data.btnvalue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
                                                     <p className="font-semibold text-xl">{data.icon}</p>   
                                                     <p className="font-semibold pl-2 pt-2">{data.name}</p>
                                                     <p className="font-semibold text-3xl pl-2 pt-1">{data.value}</p>
@@ -96,7 +97,7 @@ const SummaryDash = () => {
                                     if(data.id === 1 || data.id === 2 || data.id === 7){
                                         return (                                    
                                             <Link to={data.link}>
-                                                <div className={`cursor-pointer text-center shadow-2xl bg-white border-2 border-gray-200 rounded py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
+                                                <div onClick={() => HeadleButtonClick(data.btnvalue)} className={`cursor-pointer text-center shadow-2xl bg-white border-2 border-gray-200 rounded py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
                                                     <p className="font-semibold text-xl">{data.icon}</p>   
                                                     <p className="font-semibold pl-2 pt-2">{data.name}</p>
                                                     <p className="font-semibold text-3xl pl-2 pt-1">{data.value}</p>
@@ -109,6 +110,18 @@ const SummaryDash = () => {
                         }
                     </div>
                 </div>
+                {/* <p className="">{buttonValue}</p> */}
+                
+                {
+                    (() => {
+                        if(buttonValue === "Users"){
+                            return (
+                                <AllUsers />
+                            )
+                        }
+                    })()
+                }
+
                 <h1 className="px-8 py-8 text-xl font-semibold">Personal Data</h1>
                 <div className="mb-8 mx-2">
                     <div className="lg:grid grid-cols-2 gap-4">
