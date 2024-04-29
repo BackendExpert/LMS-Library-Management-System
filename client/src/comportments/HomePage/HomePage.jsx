@@ -39,7 +39,9 @@ const HomePage = () => {
                 (() => {
                     if(RoleUser !== null && EmailUser !== null){
                         return (
-                            <div className=""></div>
+                            <div className="">
+                                
+                            </div>
                         )
                     }
                     else{
@@ -51,6 +53,7 @@ const HomePage = () => {
                                         <div className="lg:flex justify-between ">
                                             <div className="w-full">
                                                 <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'/>
+                                                <p>(For Advanced Search Login to System)</p>
                                             </div>    
                                             <button type="submit" className='py-2 px-24 text-blue-500 font-semibold w-auto mx-8 rounded duration-500 hover:bg-blue-500 hover:text-white'>SearchBook</button>
 
