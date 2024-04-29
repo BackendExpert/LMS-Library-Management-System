@@ -1,4 +1,5 @@
 import Icons from "@reacticons/ionicons"
+import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
@@ -12,6 +13,24 @@ const UpdateMyData = () => {
     const [buttonValue, SetButtonValue] = useState(0)
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
+    }
+
+    const [UpdateUserData, SetUpdateUserData] = useState({
+        username: ''
+    })
+
+    const headleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:8081/UpdateMyData/' + EmailUser, UpdateUserData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("User Data Updated Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
     }
 
     if(RoleUser !== null && EmailUser !== null){
@@ -30,7 +49,7 @@ const UpdateMyData = () => {
 
 
                 <div className="my-4">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <div className="my-2">
                             <label htmlFor="">Username : </label>
                             <input type="text" name="" id="" className="w-full border border-blue-500 rounded h-12 pl-2 my-2"  required placeholder="Enter New Username"/>
