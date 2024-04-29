@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import AllUsers from "./AllUsers";
 
 const Users = () => {
     const navigate = useNavigate() 
@@ -55,15 +56,15 @@ const Users = () => {
                     </div>
                 </div>
                 {/* <p>{buttonValue}</p> */}
-                {/* {
+                {
                     (() => {
-                        if(buttonValue === "Add_New_User"){
+                        if(buttonValue === "All_Users"){
                             return (
-                                <AddBook />
+                                <AllUsers />
                             )
                         }
                     })()
-                } */}
+                }
             </div>
         )
     }
