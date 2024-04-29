@@ -268,9 +268,9 @@ app.post('/UpdateMyData/:id', (req, res) => {
 
 // Test book search
 
-app.get('/BookSearch', (req, res) => {
-    console.log(req.body.bookTitle)
-})
+// app.get('/BookSearch', (req, res) => {
+//     console.log(req.body.bookTitle)
+// })
 
 // all end points end
 
