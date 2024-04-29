@@ -83,11 +83,18 @@ const AllUsers = () => {
                                                 {
                                                     (() => {
                                                         if(users.is_active === 1){
-                                                            return (
-                                                                <button className="py-2 px-8 text-red-500 font-semibold shadow-md rounded duration-500 hover:bg-red-500 hover:text-white">
-                                                                    Deactivate
-                                                                </button>
-                                                            )
+                                                            if(users.Email === EmailUser){
+                                                                return (
+                                                                    <p className="text-blue-500 font-semibold">Current login User</p>
+                                                                )
+                                                            }
+                                                            else{
+                                                                return (
+                                                                    <button className="py-2 px-8 text-red-500 font-semibold shadow-md rounded duration-500 hover:bg-red-500 hover:text-white">
+                                                                        Deactivate
+                                                                    </button>
+                                                                )
+                                                            }
                                                         }
                                                         else if(users.is_active === 0){
                                                             return (
@@ -96,11 +103,7 @@ const AllUsers = () => {
                                                                 </button>
                                                             )
                                                         }
-                                                        else if(users.Email === EmailUser){
-                                                            return (
-                                                                <p className="text-blue-500 font-semibold">Current login User</p>
-                                                            )
-                                                        }
+
                                                     })()
                                                 }
     
