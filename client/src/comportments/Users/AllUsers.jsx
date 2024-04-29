@@ -53,23 +53,23 @@ const AllUsers = () => {
                                     return (
                                         <tr key={index}>
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {users.ISBN_No}
+                                                {users.username}
                                             </th>
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {users.Name}
+                                                {users.email}
                                             </th>
                                             <td class="px-6 py-4">
-
+                                                {users.Role}
                                             </td>
                                             <td class="px-6 py-4">
                                                 {
                                                     (() => {
-                                                        if(users.status === 1){
+                                                        if(users.is_active === 1){
                                                             return (
                                                                 <p className="text-green-500 font-semibold">Active</p>
                                                             )
                                                         }
-                                                        else if(users.status === 0){
+                                                        else if(users.is_active === 0){
                                                             return (
                                                                 <p className="text-red-500 font-semibold">Deactive</p>
                                                             )
@@ -81,14 +81,14 @@ const AllUsers = () => {
                                             <td class="px-6 py-4">
                                                 {
                                                     (() => {
-                                                        if(books.status === 1){
+                                                        if(users.is_active === 1){
                                                             return (
                                                                 <button className="py-2 px-8 text-red-500 font-semibold shadow-md rounded duration-500 hover:bg-red-500 hover:text-white">
                                                                     Deactivate
                                                                 </button>
                                                             )
                                                         }
-                                                        else if(users.status === 0){
+                                                        else if(users.is_active === 0){
                                                             return (
                                                                 <button className="py-2 px-8 text-blue-500 font-semibold shadow-md rounded duration-500 hover:bg-blue-500 hover:text-white">
                                                                     Activate
