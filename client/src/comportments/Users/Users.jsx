@@ -5,6 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AllUsers from "./AllUsers";
 import axios from "axios";
+import ViewUserType from "./ViewUserType";
 
 
 const Users = () => {
@@ -97,6 +98,11 @@ const Users = () => {
                         if(buttonValue === "All_Users"){
                             return (
                                 <AllUsers />
+                            )
+                        }
+                        if(buttonValue === "Users" || buttonValue === "SuperAdmins"){
+                            return (
+                                <ViewUserType />
                             )
                         }
                     })()
