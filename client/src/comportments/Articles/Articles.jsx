@@ -15,11 +15,19 @@ const Articles = () => {
         SetButtonValue(clickValue)   
     }
 
+    const ArticleData = [
+        {id: 1, btnValue: "Articles", name: "Articles", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 2, btnValue: "ArticleBorrow", name: "Articles Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        {id: 3, btnValue: "ArticleSelected", name: "Articles Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, btnValue: "add_article", name: "Add New Articles", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
+    ]
+
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="py-4 px-4">
                 <div className="">
-                    <h1 className="px-4 py-2 text-xl font-semibold">Books</h1>
+                    <h1 className="px-4 py-2 text-xl font-semibold">Articles</h1>
                 </div>
                 <div className="">
                     <div className="lg:grid grid-cols-4 gap-4">
