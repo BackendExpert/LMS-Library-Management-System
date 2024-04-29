@@ -5,7 +5,6 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AllUsers from "./AllUsers";
 import axios from "axios";
-import ViewUserType from "./ViewUserType";
 
 
 const Users = () => {
