@@ -29,6 +29,7 @@ const MyProfile = () => {
                     <h1 className="px-4 py-2 text-xl font-semibold">My Profile</h1>
                 </div>
                 <div className="my-2">
+                    <div className="lg:grid grid-cols-4 gap-4">
                     {
                         MyData.map((data) => {
                             return (
@@ -40,6 +41,7 @@ const MyProfile = () => {
                             )
                         })
                     }
+                    </div>
                 </div>
             </div>
         )
