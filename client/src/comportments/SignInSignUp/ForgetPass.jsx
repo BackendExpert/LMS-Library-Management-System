@@ -7,6 +7,11 @@ import  secureLocalStorage  from  "react-secure-storage"
 
 const ForgetPass = () => {
     const navigate = useNavigate()
+
+    const [ForgetPassword, SetForgetPassword] = useState({
+        email: ''
+    })
+
     const headleSubmit = (e) => {
 
     }
