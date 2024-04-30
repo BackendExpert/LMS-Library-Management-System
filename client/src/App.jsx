@@ -6,6 +6,7 @@ import PrivateRoute from "./comportments/Security/PrivateRoute";
 import Dashboard from "./comportments/Dashboard/Dashboard";
 import  secureLocalStorage  from  "react-secure-storage";
 import ForgetPass from "./comportments/SignInSignUp/ForgetPass";
+import CheckOTP from "./comportments/SignInSignUp/CheckOTP";
 
 export default function App() {
   const RoleUser = secureLocalStorage.getItem("Login1");
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/ForgetPass" element={<ForgetPass />} />
+        <Route path="/CheckOTP" element={<CheckOTP />} />
         {/* after login redreact to homepage with login token */}
             {
           (() => {
@@ -33,6 +35,7 @@ export default function App() {
           })()
         }
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        
       </Routes>
     </BrowserRouter>
   )
