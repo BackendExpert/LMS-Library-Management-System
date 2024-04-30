@@ -23,9 +23,6 @@ const CheckOTP = () => {
             }
             else{
                 alert(res.data.Error)
-                localStorage.clear()
-                window.location.reload()
-                navigate('/')
             }
         })
     }
