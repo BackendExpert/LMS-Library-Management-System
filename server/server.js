@@ -339,7 +339,9 @@ app.post('/PassForget', (req, res) => {
 
 app.post('/OTPCheck/:id', (req, res) => {
     const Email = req.params.id
-    console.log(Email)
+    // console.log(Email)
+
+    
 })
 
 // all end points end
