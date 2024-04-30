@@ -276,7 +276,19 @@ app.post('/UpdateMyData/:id', (req, res) => {
 // forgetpass
 
 app.post('/PassForget', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
+
+    const checkSql = "SELECT * FROM users WHERE email = ?"
+    connection.query(checkSql, [req.body.email], (err, result) => {
+        if(err) throw err
+
+        if(result.length === 0){
+            return res.json({Error: "Email Not Found...!"})
+        }
+        else{
+            
+        }
+    })
 })
 
 // all end points end
