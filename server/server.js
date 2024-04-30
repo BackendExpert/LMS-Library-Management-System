@@ -309,6 +309,7 @@ app.post('/PassForget', (req, res) => {
                             return res.json({Error: "Error on Server"})
                         }
                         else{
+                            // sending otp using email
                             var mailOptions = {
                                 from: process.env.EMAIL_USER,
                                 to: req.body.email,
