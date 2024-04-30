@@ -341,7 +341,10 @@ app.post('/OTPCheck/:id', (req, res) => {
     const Email = req.params.id
     // console.log(Email)
 
-    console.log(req.body.otp)
+    // console.log(req.body.otp)
+    const otp = req.body.otp
+
+    
 })
 
 // all end points end
