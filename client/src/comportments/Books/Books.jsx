@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import AddBook from "./AddBook";
 import SearchBook from "./SearchBook";
 import BorrowedBooks from "./BorrowedBooks";
+import SelectedBooks from "./SelectedBooks";
 
 const Books = () => {
     const navigate = useNavigate() 
@@ -72,6 +73,11 @@ const Books = () => {
                         if(buttonValue === "bkBorrow"){
                             return (
                                 <BorrowedBooks />
+                            )
+                        }
+                        if(buttonValue === "bkSelected"){
+                            return (
+                                <SelectedBooks />
                             )
                         }
                     })()
