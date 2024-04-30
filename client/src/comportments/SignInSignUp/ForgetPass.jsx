@@ -20,6 +20,7 @@ const ForgetPass = () => {
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("The OTP has been send to Email")
+                navigate('/CheckOTP')
             }
             else{
                 alert(res.data.Error)
