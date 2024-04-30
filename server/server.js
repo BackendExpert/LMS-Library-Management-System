@@ -294,10 +294,25 @@ app.post('/PassForget', (req, res) => {
             // console.log(otpNumber)
 
             // hash the otpnumber for security purposes
-            bcrypt.hash(StringOTP, 10, (err, hashOtp) => {
+            bcrypt.hash(otpNumber, 10, (err, hashOtp) => {
                 if(err) throw err
 
-                
+                else{
+                    const sql = "INSERT INTO forget_pass (email, otp_no) VALUES(?)"
+                    const values = [
+                        req.body.email,
+                        hashOtp
+                    ]
+
+                    connection.query(sql, [values], (err, result) => {
+                        if(err) {
+                            return res.json({Error: "Error on Server"})
+                        }
+                        else{
+                            
+                        }
+                    })
+                }
             })
         }
     })
