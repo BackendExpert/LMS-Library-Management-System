@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import axios from "axios";
 import UpdateMyData from "./UpdateMyData";
 import AllUsers from "../Users/AllUsers";
+import SearchBook from "../Books/SearchBook";
 
 const SummaryDash = () => {
     const navigate = useNavigate() 
@@ -39,7 +40,7 @@ const SummaryDash = () => {
 
 
     const dataCount = [
-        {id: 1, btnvalue: "", name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
+        {id: 1, btnvalue: "SearchBooks", name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
         {id: 2, btnvalue: "", name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="document-text" size="large"></Icons>, style: "text-green-500"},     
         {id: 3, btnvalue: "", name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
         {id: 4, btnvalue: "", name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
@@ -117,6 +118,11 @@ const SummaryDash = () => {
                         if(buttonValue === "Users"){
                             return (
                                 <AllUsers />
+                            )
+                        }
+                        if(buttonValue === "SearchBooks"){
+                            return (
+                                <SearchBook />
                             )
                         }
                     })()
