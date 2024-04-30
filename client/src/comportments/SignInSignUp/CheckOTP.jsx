@@ -18,7 +18,8 @@ const CheckOTP = () => {
         axios.post('http://localhost:8081/OTPCheck/' + Email, OTPNo)
         .then(res => {
             if(res.data.Status === "Success"){
-                const loginToken = res.data.Token;
+                const loginToken = res.data.token;
+                
                 alert("OTP Check Successful")
                 navigate('/UpdatePass')
             }
