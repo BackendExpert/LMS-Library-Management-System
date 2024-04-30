@@ -12,7 +12,7 @@ const CheckOTP = () => {
     const [OTPNo, SetOTPNo] = useState({
         otp: ''
     })
-
+    // 622220
     const headleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8081/OTPCheck/' + Email, OTPNo)
