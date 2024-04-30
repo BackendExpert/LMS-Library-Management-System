@@ -16,7 +16,7 @@ const ForgetPass = () => {
 
     const headleSubmit = (e) => {
         e.preventDefault();
-        axios('http://localhost:8081/ForgetPass', ForgetPassword)
+        axios.post('http://localhost:8081/ForgetPass', ForgetPassword)
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("The OTP has been send to Email")
