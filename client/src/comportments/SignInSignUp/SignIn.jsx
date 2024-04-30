@@ -90,7 +90,7 @@ const SignIn = () => {
                             <button type='submit' className='w-full bg-blue-500 rounded py-4 px-8 text-white duration-500 hover:bg-blue-600 hover:shadow-md'>SignIn</button>
                         </div>
                     </form>
-                    <p>Don't have an Account ? <Link to={'/SignUp'}><span className='text-blue-500'>SignUp</span></Link></p>
+                    <p>Don't have an Account ? <Link to={'/SignUp'}><span className='text-blue-500'>SignUp</span></Link> || <span className="text-blue-500"><Link to={'/ForgetPass'}>Forget Password</Link></span></p>
                 </div>
                 <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10395058.jpg)] bg-center bg-cover h-auto w-full'>
                     <div className="text-white font-semibold text-3xl text-center my-16">Welcome Back</div>                    
