@@ -344,7 +344,32 @@ app.post('/OTPCheck/:id', (req, res) => {
     // console.log(req.body.otp)
     const otp = req.body.otp
 
-    
+    const checkSql = "SELECT * FROM forget_pass email = ?"
+    connection.query(checkSql, [Email], (err, result) => {
+        if(err) throw err
+
+        if(result.length === 0){
+            return res.json({Error: "No Recodes found"})
+        }
+        else{
+            bcrypt.compare(otp, result[0].otp_no, (err, OTPMatch) => {
+                if(err) throw err
+
+                if(OTPMatch){
+                    // generate JWT Token
+                    const token = jwt.sign(
+                        {email: result[0].email},
+                        'your-secret-key',
+                        {expiresIn: '5m' }
+                    );
+                    return res.json({Status: "Success", token:token, CheckEmail:result})
+                }
+                else{
+                    return res.json({Error: "Error"})
+                }
+            })
+        }
+    }) 
 })
 
 // all end points end
