@@ -291,7 +291,12 @@ app.post('/PassForget', (req, res) => {
             //get randoem number between above given 2 numbers
             const otpNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-            console.log(otpNumber)
+            // console.log(otpNumber)
+
+            // hash the otpnumber for security purposes
+            bcrypt.hash(StringOTP, 10, (err, hashOtp) => {
+                
+            })
         }
     })
 })
