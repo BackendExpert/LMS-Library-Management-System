@@ -11,7 +11,7 @@ const BorrowedBooks = () => {
 
     if(RoleUser === "SuperAdmin"){
         return (
-            <div>BorrowedBooks</div>
+            <div>Borrowed Books</div>
         )
     }
     else{
