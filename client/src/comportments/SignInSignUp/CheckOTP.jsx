@@ -42,7 +42,7 @@ const CheckOTP = () => {
                             <form onSubmit={headleSubmit}>
                                 <div className="my-5">
                                     <label htmlFor="">OTP Number : </label>
-                                    <input type="email" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Email for Reset Password'
+                                    <input type="number" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Email for Reset Password'
                                     onChange={e => SetOTPNo({...OTPNo, otp:e.target.value})}/>
                                 </div>
                                 <div className="">
