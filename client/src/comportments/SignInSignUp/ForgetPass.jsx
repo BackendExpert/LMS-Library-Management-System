@@ -13,7 +13,7 @@ const ForgetPass = () => {
     })
 
     const headleSubmit = (e) => {
-
+        e.preventDefault();
     }
 
     const headleBack = () => {
