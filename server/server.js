@@ -292,9 +292,10 @@ app.post('/PassForget', (req, res) => {
             const otpNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
             // console.log(otpNumber)
+            const StringOTP = otpNumber.toString()
 
             // hash the otpnumber for security purposes
-            bcrypt.hash(otpNumber, 10, (err, hashOtp) => {
+            bcrypt.hash(StringOTP, 10, (err, hashOtp) => {
                 if(err) throw err
 
                 else{
