@@ -295,7 +295,7 @@ app.post('/PassForget', (req, res) => {
 
             // hash the otpnumber for security purposes
             bcrypt.hash(StringOTP, 10, (err, hashOtp) => {
-                
+                if(err) throw err
             })
         }
     })
