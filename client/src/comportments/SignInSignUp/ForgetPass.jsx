@@ -34,7 +34,7 @@ const ForgetPass = () => {
                         <div className="my-5">
                             <label htmlFor="">Email : </label>
                             <input type="email" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Email for Reset Password'
-                            onChange={e => SetLoginData({...LoginData, email:e.target.value})}/>
+                            onChange={e => SetForgetPassword({...ForgetPassword, email:e.target.value})}/>
                         </div>
                         <div className="">
                             <button type='submit' className='w-full bg-red-500 rounded py-4 px-8 text-white duration-500 hover:bg-red-600 hover:shadow-md'>Request OTP</button>
