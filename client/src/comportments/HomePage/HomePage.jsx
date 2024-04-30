@@ -13,19 +13,8 @@ const HomePage = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    const [Booksearch, SetBooksearch] = useState({
-        bookTitle: ''
-    })
-
-    const [SearchBookData, SetSearchBookData] = useState([]) 
-
-    const headleBookSearch = (e) => {
-        e.preventDefault();
-
-        axios.get('http://localhost:8081/BookSearch', Booksearch)
-        .then(res => SetSearchBookData(res.data))
-        .catch(err => console.log(err))
-    }
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
     
 
   return (
@@ -65,7 +54,6 @@ const HomePage = () => {
                             <div className="">
                                 <h1 className="text-gray-500 text-xl font-semibold">Search Books</h1>
                                 <div className="my">
-                                    <form onSubmit={headleBookSearch}>
                                         <div className="lg:flex justify-between ">
                                             <div className="w-full">
                                                 <input type="text" name="" id="" required placeholder='Book Title' className='w-full h-12 rounded border border-blue-500 shadow-md pl-2'
@@ -75,7 +63,7 @@ const HomePage = () => {
                                             <button type="submit" className='py-2 px-24 text-blue-500 font-semibold w-auto mx-8 rounded duration-500 hover:bg-blue-500 hover:text-white'>SearchBook</button>
 
                                         </div>
-                                    </form>
+
                                 </div>
                             </div>
                         )
