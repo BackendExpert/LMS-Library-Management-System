@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AddBook from "./AddBook";
+import SearchBook from "./SearchBook";
 
 const Books = () => {
     const navigate = useNavigate() 
@@ -60,6 +61,11 @@ const Books = () => {
                         if(buttonValue === "add_book"){
                             return (
                                 <AddBook />
+                            )
+                        }
+                        if(buttonValue === "Books"){
+                            return (
+                                <SearchBook />
                             )
                         }
                     })()
