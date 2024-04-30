@@ -14,7 +14,19 @@ const CheckOTP = () => {
     })
 
     const headleSubmit = (e) => {
-
+        e.preventDefault();
+        axios.post('http://localhost:8081/OTPCheck/' + Email, OTPNo)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("OTP Check Successful")
+            }
+            else{
+                alert(res.data.Error)
+                localStorage.clear()
+                window.location.reload()
+                navigate('/')
+            }
+        })
     }
 
     if(Email !== null){
