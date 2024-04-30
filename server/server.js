@@ -275,7 +275,7 @@ app.post('/UpdateMyData/:id', (req, res) => {
 
 // forgetpass
 
-app.post('/ForgetPass', (req, res) => {
+app.post('/PassForget', (req, res) => {
     console.log(req.body)
 })
 
