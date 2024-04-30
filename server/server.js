@@ -272,6 +272,13 @@ app.post('/UpdateMyData/:id', (req, res) => {
 //     console.log(req.body.bookTitle)
 // })
 
+
+// forgetpass
+
+app.post('/ForgetPass', (req, res) => {
+    console.log(req.body)
+})
+
 // all end points end
 
 //check the server is working
