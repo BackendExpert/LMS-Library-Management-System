@@ -5,6 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import AddBook from "./AddBook";
 import SearchBook from "./SearchBook";
+import BorrowedBooks from "./BorrowedBooks";
 
 const Books = () => {
     const navigate = useNavigate() 
@@ -66,6 +67,11 @@ const Books = () => {
                         if(buttonValue === "Books"){
                             return (
                                 <SearchBook />
+                            )
+                        }
+                        if(buttonValue === "bkBorrow"){
+                            return (
+                                <BorrowedBooks />
                             )
                         }
                     })()
