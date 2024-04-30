@@ -286,7 +286,12 @@ app.post('/PassForget', (req, res) => {
             return res.json({Error: "Email Not Found...!"})
         }
         else{
-            
+            const min = 100000;
+            const max = 999999;
+            //get randoem number between above given 2 numbers
+            const otpNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            console.log(otpNumber)
         }
     })
 })
