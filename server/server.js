@@ -344,7 +344,7 @@ app.post('/OTPCheck/:id', (req, res) => {
     // console.log(req.body.otp)
     const otp = req.body.otp
 
-    const checkSql = "SELECT * FROM forget_pass email = ?"
+    const checkSql = "SELECT * FROM forget_pass WHERE email = ?"
     connection.query(checkSql, [Email], (err, result) => {
         if(err) throw err
 
