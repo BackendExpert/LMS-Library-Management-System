@@ -299,7 +299,7 @@ app.post('/PassForget', (req, res) => {
                 if(err) throw err
 
                 else{
-                    const sql = "INSERT INTO forget_pass (email, otp_no) VALUES(?)"
+                    const sql = "INSERT INTO forget_pass(email, otp_no)VALUES(?)"
                     const values = [
                         req.body.email,
                         hashOtp
@@ -307,7 +307,7 @@ app.post('/PassForget', (req, res) => {
 
                     connection.query(sql, [values], (err, result) => {
                         if(err) {
-                            return res.json({Error: "Error on Server"})
+                            return res.json({Error: "Error on Server1"})
                         }
                         else{
                             // sending otp using email
