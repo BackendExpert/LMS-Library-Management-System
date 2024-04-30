@@ -19,6 +19,7 @@ const CheckOTP = () => {
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("OTP Check Successful")
+                navigate('/UpdatePass')
             }
             else{
                 alert(res.data.Error)
