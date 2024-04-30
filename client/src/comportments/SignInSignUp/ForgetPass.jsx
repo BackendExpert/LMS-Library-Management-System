@@ -16,6 +16,16 @@ const ForgetPass = () => {
 
     const headleSubmit = (e) => {
         e.preventDefault();
+        axios('http://localhost:8081/ForgetPass', ForgetPassword)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("The OTP has been send to Email")
+            }
+            else{
+                alert(res.data.Error)
+                localStorage.clear()
+            }
+        })
     }
 
     const headleBack = () => {
@@ -44,8 +54,8 @@ const ForgetPass = () => {
                     </form>
                     <p>The OTP send to the Given Email Address</p>
                 </div>
-                <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10395058.jpg)] bg-center bg-cover h-auto w-full'>
-                    <div className="text-white font-semibold text-3xl text-center my-16">Welcome Back</div>                    
+                <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://c1.wallpaperflare.com/preview/245/572/46/hacking-cyber-hacker-crime.jpg)] bg-center bg-cover h-auto w-full'>
+                    <div className="text-white font-semibold text-3xl text-center my-16">Password Reset</div>                    
                 </div>
             </div>
             <div className="my-1 text-center">
