@@ -334,6 +334,14 @@ app.post('/PassForget', (req, res) => {
     })
 })
 
+
+// check otp
+
+app.post('/OTPCheck/:id', (req, res) => {
+    const Email = req.params.id
+    console.log(Email)
+})
+
 // all end points end
 
 //check the server is working
