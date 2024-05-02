@@ -17,7 +17,17 @@ const UpdatePass = () => {
   })
 
   const headleSubmit = (e) => {
-
+    axios.post('http://localhost:8081/UpdatePassword/' + Email, PassUpdate)
+    .then(res => {
+      if(res.data.Status === "Success"){
+        alert("Password Updated Successful")
+        navigate('/SignIn')
+        localStorage.clear()
+      }
+      else{
+        alert(res.data.Error)
+      }
+    })
   }
 
   if(Email !== null){
