@@ -383,7 +383,7 @@ app.post('/UpdatePassword/:id', (req, res) => {
         return res.json({Error: "Password Not Match"})
     }
     else if(req.body.email !== userEmail){
-        return res.json({Error: "Error"})
+        return res.json({Error: "Check the Email"})
     }
     else{
         // Hash the Password
