@@ -8,6 +8,7 @@ import  secureLocalStorage  from  "react-secure-storage";
 import ForgetPass from "./comportments/SignInSignUp/ForgetPass";
 import CheckOTP from "./comportments/SignInSignUp/CheckOTP";
 import UpdatePass from "./comportments/SignInSignUp/UpdatePass";
+import ViewAllBooks from "./comportments/Books/ViewAllBooks";
 
 export default function App() {
   const RoleUser = secureLocalStorage.getItem("Login1");
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/ForgetPass" element={<ForgetPass />} />
         <Route path="/CheckOTP" element={<CheckOTP />} />
         <Route path="/UpdatePass" element={<UpdatePass />} />
+        <Route path="/ViewAllBooks" element={<ViewAllBooks />} />
         {/* after login redreact to homepage with login token */}
             {
           (() => {
