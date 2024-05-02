@@ -377,7 +377,7 @@ app.post('/OTPCheck/:id', (req, res) => {
 app.post('/UpdatePassword/:id', (req, res) => {
     const userEmail = req.params.id
 
-    console.log(userEmail)
+    console.log(userEmail, req.body)
 })
 
 // all end points end
