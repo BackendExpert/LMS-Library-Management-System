@@ -31,12 +31,12 @@ const UpdatePass = () => {
                             onChange={e => SetPassUpdate({...PassUpdate, email:e.target.value})}/>
                         </div>
                         <div className="my-5">
-                            <label htmlFor="">Password : </label>
+                            <label htmlFor="">New Password : </label>
                             <input type="password" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter New Password'
                             onChange={e => SetPassUpdate({...PassUpdate, newPass:e.target.value})}/>
                         </div>
                         <div className="my-5">
-                            <label htmlFor="">Password : </label>
+                            <label htmlFor="">Again Password : </label>
                             <input type="password" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded pl-4 shadow-md' required placeholder='Enter Again New Password'
                             onChange={e => SetPassUpdate({...PassUpdate, cnewPass:e.target.value})}/>
                         </div>
@@ -46,7 +46,7 @@ const UpdatePass = () => {
                     </form>                    
                 </div>
                 <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://c1.wallpaperflare.com/preview/245/572/46/hacking-cyber-hacker-crime.jpg)] bg-center bg-cover h-auto w-full'>
-                    <div className="text-white font-semibold text-3xl text-center my-16">Welcome Back</div>                    
+                    <div className="text-white font-semibold text-3xl text-center my-16">Reset Password</div>                    
                 </div>
             </div>
             <div className="my-1 text-center">
