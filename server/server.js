@@ -351,9 +351,6 @@ app.post('/OTPCheck/:id', (req, res) => {
         if(result.length === 0){
             return res.json({Error: "No Recodes found"})
         }
-        if(result[0].length !== 1){
-            return res.json({Error: "Your OTP has been send to Email"})
-        }
         else{
             bcrypt.compare(otp, result[0].otp_no, (err, OTPMatch) => {
                 if(err) throw err
