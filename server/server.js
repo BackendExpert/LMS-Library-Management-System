@@ -348,8 +348,8 @@ app.post('/OTPCheck/:id', (req, res) => {
     connection.query(checkSql, [Email], (err, result) => {
         if(err) throw err
 
-        if(result.length === 0){
-            return res.json({Error: "No Recodes found"})
+        if(result.length !== 1){
+            return res.json({Error: "Email Alredy Send"})
         }
         else{
             bcrypt.compare(otp, result[0].otp_no, (err, OTPMatch) => {
@@ -397,7 +397,15 @@ app.post('/UpdatePassword/:id', (req, res) => {
                         return res.json({Error: "Internal Server ERROR"})
                     }
                     else{
-                        return res.json({Status: "Success"})
+                        const deletePassOTP = "DELETE FROM forget_pass WHERE email = ?"
+                        connection.query(deletePassOTP, [userEmail], (err, result) => {
+                            if(err){
+                                return res.json({Error: "Internal Server ERROR"})
+                            }
+                            else{
+                                return res.json({Status: "Success"})
+                            }
+                        })
                     }
                 })
             }
