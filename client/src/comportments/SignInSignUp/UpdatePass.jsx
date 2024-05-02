@@ -17,6 +17,7 @@ const UpdatePass = () => {
   })
 
   const headleSubmit = (e) => {
+    e.preventDefault();
     axios.post('http://localhost:8081/UpdatePassword/' + Email, PassUpdate)
     .then(res => {
       if(res.data.Status === "Success"){
