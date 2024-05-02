@@ -9,6 +9,13 @@ const UpdatePass = () => {
   const navigate = useNavigate()
   const Email = secureLocalStorage.getItem("Token1");
   
+  // update password
+  const [PassUpdate, SetPassUpdate] = useState({
+    newPass: '',
+    cnewPass: ''
+  })
+  
+
   return (
     <div>UpdatePass</div>
   )
