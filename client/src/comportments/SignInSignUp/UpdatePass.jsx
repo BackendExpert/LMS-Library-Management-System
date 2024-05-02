@@ -11,10 +11,11 @@ const UpdatePass = () => {
   
   // update password
   const [PassUpdate, SetPassUpdate] = useState({
+    email: '',
     newPass: '',
     cnewPass: ''
   })
-  
+
 
   return (
     <div>UpdatePass</div>
