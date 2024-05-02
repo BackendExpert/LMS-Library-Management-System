@@ -377,7 +377,32 @@ app.post('/OTPCheck/:id', (req, res) => {
 app.post('/UpdatePassword/:id', (req, res) => {
     const userEmail = req.params.id
 
-    console.log(userEmail, req.body)
+    // console.log(userEmail, req.body)
+
+    if(req.body.newPass !== req.body.cnewPass){
+        return res.json({Error: "Password Not Match"})
+    }
+    else if(req.body.email !== userEmail){
+        return res.json({Error: "Error"})
+    }
+    else{
+        // Hash the Password
+        bcrypt.hash(req.body.newPass, 10, (err, hashNewPass) => {
+            if(err) throw err
+
+            if(hashNewPass){
+                const sql = "UPDATE users SET Password = ? WHERE Email = ?"
+                connection.query(sql, [hashNewPass, userEmail], (err, result) => {
+                    if(err){
+                        return res.json({Error: "Internal Server ERROR"})
+                    }
+                    else{
+                        return res.json({Status: "Success"})
+                    }
+                })
+            }
+        })
+    }
 })
 
 // all end points end
