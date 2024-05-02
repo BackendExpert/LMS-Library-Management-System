@@ -12,6 +12,7 @@ import Users from "../Users/Users"
 import Articles from "../Articles/Articles"
 import Thesis from "../Thesis/Thesis"
 import MyProfile from "../MyProfile/MyProfile"
+import ViewAllBooks from "../Books/ViewAllBooks"
 
 
 const Dashboard = () => {
@@ -39,7 +40,7 @@ const Dashboard = () => {
         {id: 6, name: "Borrowed Books", link: "#", icon: <Icons name="book" size="large"></Icons>, btnValue: "Borrowed Books"},
         {id: 7, name: "Users", link: "#", icon: <Icons name="people" size="large"></Icons>, btnValue: "Users"},
         {id: 8, name: "Profile", link: "#", icon: <Icons name="person" size="large"></Icons>, btnValue: "Profile"}, 
-        {id: 9, name: "All Books", link: "#", icon: <Icons name="person" size="large"></Icons>, btnValue: "AllBooks"},               
+        {id: 9, name: "All Books", link: "#", icon: <Icons name="book" size="large"></Icons>, btnValue: "AllBooks"},               
     ]
 
     const navBar = [
@@ -101,7 +102,7 @@ const Dashboard = () => {
                                     )
                                 }
                                 if(RoleUser === "user"){
-                                    if(sidem.id === 1 || sidem.id === 6 || sidem.id === 8){
+                                    if(sidem.id === 1 || sidem.id === 6 || sidem.id === 8 || sidem.id === 9){
                                         return (
                                             <Link to={sidem.link}>
                                                 <div onClick={() => HeadleButtonClick(sidem.btnValue)} className="flex py-2 text-gray-400 duration-500 hover:text-[#3B71CA]">                        
@@ -182,6 +183,11 @@ const Dashboard = () => {
                                 else if(buttonValue === "Profile"){
                                     return (
                                         <MyProfile />
+                                    )
+                                }
+                                else if(buttonValue === "AllBooks"){
+                                    return (
+                                        <ViewAllBooks />
                                     )
                                 }
 
