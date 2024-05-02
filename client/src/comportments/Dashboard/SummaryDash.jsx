@@ -202,7 +202,7 @@ const SummaryDash = () => {
                                             Computer Science
                                         </th>
                                         <td className="px-6 py-4">
-                                            <Link>
+                                            <Link to={'/MyBookBorrow'}>
                                                 <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">View</button>
                                             </Link>
                                         </td>
