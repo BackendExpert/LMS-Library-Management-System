@@ -15,7 +15,7 @@ import MyProfile from "../MyProfile/MyProfile"
 import ViewAllBooks from "../Books/ViewAllBooks"
 
 
-const Dashboard = () => {
+const NIFSDashboard = () => {
     const navigate = useNavigate() 
 
     //for open and close Side bar
@@ -207,4 +207,4 @@ const Dashboard = () => {
 
 }
 
-export default Dashboard
+export default NIFSDashboard
