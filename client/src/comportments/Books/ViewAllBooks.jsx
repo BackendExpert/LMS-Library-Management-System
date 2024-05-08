@@ -68,6 +68,18 @@ const ViewAllBooks = () => {
                         }
                       })()
                     }
+
+                    {
+                      (() => {
+                        if(Books.Status === "Available"){
+                          return (
+                            <button className="my-2 mx-3 bg-yellow-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-yellow-600">Select Book</button>
+                          )
+                        }
+                      })()
+                    }
+
+                    
                   </p>
 
                   </div>
