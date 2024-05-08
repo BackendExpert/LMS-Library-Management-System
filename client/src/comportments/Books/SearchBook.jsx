@@ -88,7 +88,7 @@ const SearchBook = () => {
                         SearchBookData.map((BookData, index) => {
                             return (
                                 <tr key={index}>
-
+                                    {BookData.title}
                                 </tr>
                             )
                         })
