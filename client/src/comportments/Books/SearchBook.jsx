@@ -29,7 +29,7 @@ const SearchBook = () => {
         e.preventDefault();
         // alert("hellow Work")
 
-        axios.post('http://localhost:8081/SearchBook', SearchBook)
+        axios.get(`http://localhost:8081/SearchBook?searchData=${SearchBook}`)
         .then(res => {
             if(res.data.Status === "Success"){
                 SetSearchBookData(res.data)
@@ -44,6 +44,7 @@ const SearchBook = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
+                {SearchBookData}
 
                 <div className="my-5">
                     <form onSubmit={headleSubmit}>
