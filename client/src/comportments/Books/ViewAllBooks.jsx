@@ -45,9 +45,17 @@ const ViewAllBooks = () => {
 
       </div>
       <div className="lg:grid grid-cols-4 gap-4">
-        <div className="bg-white py-4 px-10 rounded shadow-md">
-          asdasdasd
-        </div>
+        {
+          allBooks.map((Books) => {
+            return (
+              <div className="bg-white py-4 px-10 rounded shadow-md">
+                asdasdasd
+              </div>
+            )
+          })
+        }
+
+
       </div>
     </div>
   )
