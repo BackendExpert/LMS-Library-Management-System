@@ -29,13 +29,13 @@ const SearchBook = () => {
 
     const headleSubmit = (e) => {
         e.preventDefault();
-        // alert("hellow Work")
-        SetisFormSubmited(true)
+        // alert("hellow Work")        
 
         axios.post('http://localhost:8081/SearchBook', SearchBook)
         .then(res => {
             if(res.data.Status === "Success"){
                 SetSearchBookData(res.data.BookData)
+                SetisFormSubmited(true)
             }
             else{
                 alert(res.data.Error)
@@ -92,6 +92,21 @@ const SearchBook = () => {
                 </div>
                 <div className="">
                     {
+                        (() => {
+                            if(isFormSubmited === true){
+                                return (
+                                    <p className="">Form Submited</p>
+                                )
+                            }        
+                            else{
+                                return (
+                                    <p className="">Form Not Submited</p>
+                                )
+                            }                    
+                        })()
+                    }
+
+                    {/* {
                         SearchBookData.map((BookData, index) => {
                             return (
                                 <div className="" key={index}>
@@ -99,7 +114,9 @@ const SearchBook = () => {
                                 </div>
                             )
                         })
-                    }
+                    } */}
+
+                    
                 </div>
             </div>
         )
