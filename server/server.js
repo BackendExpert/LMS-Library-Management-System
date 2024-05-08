@@ -484,11 +484,8 @@ app.get('/BooksCount', (req, res) => {
 // SearchBook
 
 app.get('/SearchBook', (req, res) => {
-    console.log(req.body)
+    console.log(req.query.SearchBook)
 
-    const Bookdata = "hi Alll"
-
-    return res.json({Status: "Success", result: Bookdata})
 })
 
 // all end points end
