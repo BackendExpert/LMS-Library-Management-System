@@ -450,8 +450,8 @@ app.post('/AddBook', (req, res) => {
 
                 connection.query(sql, [values], (err, result) => {
                     if(err) {
-                        // return res.json({Error: "Internal Server Error"})
-                        console.log(err)
+                        return res.json({Error: "Internal Server Error"})
+                        // console.log(err)
                     }
                     else{
                         return res.json({Status: "Success"})
