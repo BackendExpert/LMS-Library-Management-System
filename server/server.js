@@ -487,19 +487,22 @@ app.post('/SearchBook', (req, res) => {
     console.log(req.body)
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
+    // check the above values are empty or not
+    // and get value only colums that value has
+
     let conditions = [];
 
     if(title.trim()){
         conditions.push(`BookTitle LIKE '%${title}%'`);
     }
     if(author.trim()){
-        conditions.push(`AuthorEditor AND AuthorEditor2 LIKE '%${author}%'`);
+        conditions.push(`AuthorEditor LIKE '%${author}%' OR AuthorEditor2 LIKE '%${author}%'`);
     }
     if(isbn.trim()){
         conditions.push(`ISBNNumber LIKE '%${isbn}%'`);
     }
     if(KeyWord.trim()){
-        conditions.push(`Keywords AND Keywords2 LIKE '%${KeyWord}%'`);
+        conditions.push(`Keywords LIKE '%${KeyWord}%' OR Keywords2 LIKE '%${KeyWord}%'`);
     }
     if(Publisher.trim()){
         conditions.push(`Publisher LIKE '%${Publisher}%'`);
