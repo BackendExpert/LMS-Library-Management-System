@@ -485,6 +485,10 @@ app.get('/BooksCount', (req, res) => {
 
 app.post('/SearchBook', (req, res) => {
     console.log(req.body)
+    const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
+
+    // search data
+    const sql = "SELECT * FROM WHERE title LIKE '%${title}%' "
 
 
 })
