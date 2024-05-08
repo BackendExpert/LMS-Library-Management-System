@@ -374,7 +374,7 @@ app.post('/OTPCheck/:id', (req, res) => {
 
 // Update password
 
-app.post('/UpdatePassword/:id', (req, res) => {
+app.get('/UpdatePassword/:id', (req, res) => {
     const userEmail = req.params.id
 
     // console.log(userEmail, req.body)
