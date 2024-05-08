@@ -483,8 +483,12 @@ app.get('/BooksCount', (req, res) => {
 // Search Books
 // SearchBook
 
-app.get('/SearchBook', (req, res) => {
+app.post('/SearchBook', (req, res) => {
     console.log(req.body)
+
+    const Bookdata = "hi Alll"
+
+    return res.json({Status: "Success", result: Bookdata})
 })
 
 // all end points end
