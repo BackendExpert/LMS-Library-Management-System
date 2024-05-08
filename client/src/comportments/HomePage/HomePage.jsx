@@ -45,10 +45,28 @@ const HomePage = () => {
                     </p>
 
                     <div className="">
-                        <div className="lg:flex lg:mx-20 mx-2">
-                            <button onClick={() => HeadleButtonClick("SignUp")} className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
-                            <button onClick={() => HeadleButtonClick("SignIn")} className='w-full lg:my-0 my-2 lg:mx-8 mx-0 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-white hover:text-black'>Sign IN</button>
-                        </div>
+                        
+                            {
+                                (() => {
+                                    if(RoleUser !== null && EmailUser !== null){
+                                        <div className="">
+                                            <Link to={'/Dashboard'}>
+                                                <button className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Dashboard</button>
+                                            </Link>
+                                        </div>
+                                    }
+                                    else{
+                                        return (
+                                            <div className="lg:flex lg:mx-20 mx-2">
+                                                <button onClick={() => HeadleButtonClick("SignUp")} className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
+                                                <button onClick={() => HeadleButtonClick("SignIn")} className='w-full lg:my-0 my-2 lg:mx-8 mx-0 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-white hover:text-black'>Sign IN</button>
+                                            </div>
+                                        )
+                                    }
+                                })()
+                            }
+                            
+
                     </div>
                 </div>
                 <div className="lg:my-0 my-12">
