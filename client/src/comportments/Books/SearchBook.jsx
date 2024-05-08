@@ -10,8 +10,6 @@ const SearchBook = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    // useStates for search datas
-
 
     const [SearchBook, SetSearchBook] = useState({
         title: '',
