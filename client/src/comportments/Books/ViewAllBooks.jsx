@@ -58,7 +58,6 @@ const ViewAllBooks = () => {
               <p onClick={() => HeadleButtonClick('listData')} className="mx-2 text-gray-500 cursor-pointer duration-500 hover:text-gray-600 "><Icons name="list" size="large"></Icons></p>              
             </div>            
           </div>
-          {buttonValue}
         </div>
       </div>
       <div className="lg:grid grid-cols-3 gap-3">
@@ -88,11 +87,21 @@ const ViewAllBooks = () => {
 
                     {
                       (() => {
-                        if(Books.Status === "Available"){
+                        if(RoleUser !== null && EmailUser !== null){
+                          if(Books.Status === "Available"){
+                            return (
+                              <button className="my-2 mx-3 bg-yellow-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-yellow-600">Select Book</button>
+                            )
+                          }
+                        }
+                        else{
                           return (
-                            <button className="my-2 mx-3 bg-yellow-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-yellow-600">Select Book</button>
+                            <Link to={'/'}>
+                              <p className="bg-blue-500">Please Login to System</p>
+                            </Link>
                           )
                         }
+
                       })()
                     }
 
