@@ -29,8 +29,11 @@ const HomePage = () => {
             <Navbar />
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8">
                 <div className="">
-                    <p className="text-white lg:text-5xl text-2xl lib-title">
-                        A library is not a luxury, <br /> but one of the necessities of life
+                    <p className="text-white lg:text-5xl text-2xl lib-title text-center">
+                        "A library is a house of hope. It's a place where we all, whatever our situation, can feed our ideas and develop our dreams"
+                    </p>
+                    <p className="text-white my-8 text-xl text-righ text-center">
+                        —Doug Wilhelm
                     </p>
                 </div>
             </div>
@@ -68,7 +71,7 @@ const HomePage = () => {
                 })()
             }
         </div> */}
-        <div className="lg:my-16 text-center">
+        <div className="lg:my-16 my-20 text-center">
             <h1 className="text-4xl font-semibold text-gray-500">The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
