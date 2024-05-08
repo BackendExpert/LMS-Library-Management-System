@@ -39,9 +39,7 @@ const Navbar = () => {
                             }
                             else{
                                 return (
-                                    <Link to={'/SignIn'}>
-                                        <p className="font-semibold duration-500 hover:mr-2" >Sign IN</p>
-                                    </Link>
+                                    <div className=""></div>
                                 )
                             }
                         })()
