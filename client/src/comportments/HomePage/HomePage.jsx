@@ -15,6 +15,11 @@ const HomePage = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+
+    const [buttonValue, SetButtonValue] = useState(0)
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
     
     // https://wallpapercave.com/wp/wp10055128.jpg
 
@@ -35,7 +40,15 @@ const HomePage = () => {
                     <p className="text-white my-8 text-xl text-righ text-center">
                         —Doug Wilhelm
                     </p>
+
+                    <div className="">
+                        <div className="flex">
+                            <button className='bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
+                            <button className='mx-8 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-whote hover:text-black'>Sign IN</button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
         {/* <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
