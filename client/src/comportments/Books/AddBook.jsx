@@ -53,6 +53,14 @@ const AddBook = () => {
                                 <label htmlFor="">Publisher</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publisher"/>
                             </div>
+                            <div className="my-2">
+                                <label htmlFor="">Publish Year</label>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publish Year"/>
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">Publish Place</label>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publish Place"/>
+                            </div>
                         </div>
                     </form>
                 </div>
