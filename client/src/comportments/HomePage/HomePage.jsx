@@ -5,6 +5,8 @@ import Footer from './Footer'
 import  secureLocalStorage  from  "react-secure-storage";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import SignUp from '../SignInSignUp/SignUp';
+import SignIn from '../SignInSignUp/SignIn';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -32,8 +34,8 @@ const HomePage = () => {
     <div>
         <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
             <Navbar />
-            <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8 lg:my-36 my-auto">
-                <div className="">
+            <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8 ">
+                <div className="lg:my-36 my-auto">
                     <p className="text-white lg:text-5xl text-2xl lib-title text-center">
                         "A library is a house of hope. It's a place where we all, whatever our situation, can feed our ideas and develop our dreams"
                     </p>
@@ -48,7 +50,23 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="">
+                    {/* <p className="text-white text-2xl">{buttonValue}</p> */}
+                    {
+                        (() => {
+                            if(buttonValue === "SignUp"){
+                                return(
+                                    <SignUp />
+                                )
+                            }
+                            if(buttonValue === "SignIn"){
+                                return (
+                                    <SignIn />
+                                )
+                            }
+                        })()
+                    }
+                </div>
             </div>
         </div>
         {/* <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
