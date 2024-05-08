@@ -250,39 +250,6 @@ const SummaryDash = () => {
                                     )
                                 })
                             }
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
-                                <div className="mt-8 mx-4">
-                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
-                                    <p className="">Authors : Kamal, Nimali, Perera</p>
-                                </div>
-                                <div className="my-8 text-center">
-                                    <Link>
-                                    <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">View more</button>
-                                    </Link>
-                                </div>
-                            </div> 
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
-                                <div className="mt-8 mx-4">
-                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
-                                    <p className="">Authors : Kamal, Nimali, Perera</p>
-                                </div>
-                                <div className="my-8 text-center">
-                                    <Link>
-                                    <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">View more</button>
-                                    </Link>
-                                </div>
-                            </div> 
-                            <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full ">
-                                <div className="mt-8 mx-4">
-                                    <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
-                                    <p className="">Authors : Kamal, Nimali, Perera</p>
-                                </div>
-                                <div className="my-8 text-center">
-                                    <Link>
-                                    <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">View more</button>
-                                    </Link>
-                                </div>
-                            </div> 
                        </div>     
                     </div>          
 
