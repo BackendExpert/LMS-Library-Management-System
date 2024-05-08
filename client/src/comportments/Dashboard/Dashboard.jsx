@@ -40,7 +40,7 @@ const Dashboard = () => {
         {id: 6, name: "Borrowed Books", link: "#", icon: <Icons name="book" size="large"></Icons>, btnValue: "Borrowed Books"},
         {id: 7, name: "Users", link: "#", icon: <Icons name="people" size="large"></Icons>, btnValue: "Users"},
         {id: 8, name: "Profile", link: "#", icon: <Icons name="person" size="large"></Icons>, btnValue: "Profile"}, 
-        {id: 9, name: "All Books", link: "/ViewAllBooks", icon: <Icons name="book" size="large"></Icons>, btnValue: "AllBooks"},               
+        {id: 9, name: "All Books", link: "#", icon: <Icons name="book" size="large"></Icons>, btnValue: "AllBooks"},               
     ]
 
     const navBar = [
@@ -187,7 +187,7 @@ const Dashboard = () => {
                                 }
                                 else if(buttonValue === "AllBooks"){
                                     return (
-                                        <ViewAllBooks />
+                                        navigate('/ViewAllBooks')
                                     )
                                 }
 
