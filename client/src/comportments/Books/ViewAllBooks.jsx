@@ -52,13 +52,13 @@ const ViewAllBooks = () => {
 
         </div>
         <div className="my-4">
-          <div className="bg-red-500 ">
+          <div className="lg:visible invisible">
             <div className="flex">
-              <p className=""><Icons name="" size="large"></Icons></p>
-              <p className=""><Icons name="" size="large"></Icons></p>              
-            </div>
-            
+              <p onClick={() => HeadleButtonClick('gridData')} className="mx-2 text-gray-500 cursor-pointer duration-500 hover:text-gray-600 "><Icons name="grid" size="large"></Icons></p>
+              <p onClick={() => HeadleButtonClick('listData')} className="mx-2 text-gray-500 cursor-pointer duration-500 hover:text-gray-600 "><Icons name="list" size="large"></Icons></p>              
+            </div>            
           </div>
+          {buttonValue}
         </div>
       </div>
       <div className="lg:grid grid-cols-3 gap-3">
