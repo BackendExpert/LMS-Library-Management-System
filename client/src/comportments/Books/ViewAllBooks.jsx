@@ -19,6 +19,31 @@ const ViewAllBooks = () => {
 
   return (
     <div className="bg-gray-200 w-auto py-8 px-16">
+      <div className="my-4">
+        {
+          (() => {
+            if(RoleUser !== null && EmailUser !== null){
+              return (
+                <div className="">
+                  <Link to={'/Dashboard'}>
+                    <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
+                  </Link>
+                </div>
+              )
+            }
+            else{
+              return (
+                <div className="">
+                  <Link to={'/'}>
+                    <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
+                  </Link>
+                </div>
+              )
+            }
+          })()
+        }
+
+      </div>
       <div className="lg:grid grid-cols-4 gap-4">
         <div className="bg-white py-4 px-10 rounded shadow-md">
           asdasdasd
