@@ -9,13 +9,18 @@ const SearchBook = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const headleSubmit = (e) => {
+        e.preventDefault();
+        // alert("hellow Work")
+    }
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
 
                 <div className="my-5">
-                    <form>
+                    <form onSubmit={headleSubmit}>
                         <div className="lg:grid grid-cols-4 gap-3">
                             <div className="">
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Title"/>
@@ -38,6 +43,9 @@ const SearchBook = () => {
                             <div className="">
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish place"/>
                             </div>
+                        </div>
+                        <div className="my-3">
+                            <button type="submit" className="py-4 px-8 bg-green-500 rounded text-white duration-500 hover:ml-2">Search Books</button>
                         </div>
                     </form>
                 </div>
