@@ -29,7 +29,7 @@ const HomePage = () => {
             <Navbar />
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8">
                 <div className="">
-                    <p className="text-white lg:text-5xl text-2xl">
+                    <p className="text-white lg:text-5xl text-2xl lib-title">
                         A library is not a luxury, <br /> but one of the necessities of life
                     </p>
                 </div>

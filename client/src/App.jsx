@@ -10,7 +10,6 @@ import CheckOTP from "./comportments/SignInSignUp/CheckOTP";
 import UpdatePass from "./comportments/SignInSignUp/UpdatePass";
 import ViewAllBooks from "./comportments/Books/ViewAllBooks";
 import MyBookBorrow from "./comportments/BorrowBooks/MyBookBorrow";
-import NIFSDashboard from "./comportments/DashboardNIFS/NIFSDashboard";
 
 export default function App() {
   const RoleUser = secureLocalStorage.getItem("Login1");
@@ -41,7 +40,6 @@ export default function App() {
           })()
         }
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/NIFSDash" element={<PrivateRoute><NIFSDashboard /></PrivateRoute>} />
         <Route path="/MyBookBorrow" element={<PrivateRoute><MyBookBorrow /></PrivateRoute>} />
         
       </Routes>
