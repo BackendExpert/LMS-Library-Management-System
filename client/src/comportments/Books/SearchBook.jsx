@@ -45,7 +45,6 @@ const SearchBook = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
-                {SearchBookData}
 
                 <div className="my-5">
                     <form onSubmit={headleSubmit}>
@@ -83,6 +82,17 @@ const SearchBook = () => {
                             <button type="submit" className="py-4 px-8 bg-green-500 rounded text-white duration-500 hover:ml-2">Search Books</button>
                         </div>
                     </form>
+                </div>
+                <div className="">
+                    {
+                        SearchBookData.map((BookData, index) => {
+                            return (
+                                <tr key={index}>
+
+                                </tr>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
