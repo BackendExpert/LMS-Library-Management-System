@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
+import SearchBook from "./SearchBook"
 
 const ViewAllBooks = () => {
     const navigate = useNavigate() 
@@ -51,8 +52,10 @@ const ViewAllBooks = () => {
           }
 
           <div className="mx-4">
-            <button className="py-4 px-8 bg-green-500 text-white rounded duration-500 hover:ml-2">Seach</button>
-          </div>         
+            <button onClick={() => HeadleButtonClick('Search')} className="py-4 px-8 bg-green-500 text-white rounded duration-500 hover:ml-2">Seach</button>
+          </div>     
+
+
 
         </div>
         <div className="my-4">
@@ -64,6 +67,15 @@ const ViewAllBooks = () => {
           </div>
         </div>
       </div>
+      {
+            (() => {
+              if(buttonValue === "Search"){
+                return (
+                  <SearchBook />
+                )
+              }
+            })()
+          }    
       <div className="">
         {
           (() => {
