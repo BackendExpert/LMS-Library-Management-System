@@ -193,7 +193,9 @@ const HomePage = () => {
                 </div>         
             </div>
             <div className="text-center">
+                <Link to={'/ViewAllBooks'}>
                     <button className='bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400'>Browse more books</button>    
+                </Link>
             </div>       
         </div>
         <Footer />
