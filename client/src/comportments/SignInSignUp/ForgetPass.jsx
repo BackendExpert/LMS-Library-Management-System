@@ -31,7 +31,7 @@ const ForgetPass = () => {
 
     const headleBack = () => {
         localStorage.clear()
-        navigate('/SignIn')
+        navigate('/')
     }
   return (
     <div className='bg-gray-200 py-24'>

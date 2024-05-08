@@ -26,21 +26,18 @@ const SignUp = () => {
             }
         }) 
     }
+    const headleBack = () => {
+        window.location.reload()
+    }
 
   return (
-    <div className='bg-gray-200 py-24'>
-        <div className='lg:mx-20 mx-8'>
-            <Link to={'/'}>
-                <div className='mb-1 mx-4 flex duration-500 hover:mx-2'>
+    <div className='bg-gray-200 py-12'>
+        <div className='lg:mx-20 mx-'>
+                <div onClick={headleBack} className='mb-1 mx-4 flex duration-500 hover:mx-2'>
                     <span className='mt-[1px] mx-2'><MyIcons name='arrow-back'></MyIcons></span>
                     <p className="">Back to Home</p>
                 </div>
-            </Link>
-            <div className="lg:flex bg-white shadow-md rounded w-full h-auto">
-                <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10395041.jpg)] bg-center bg-cover h-auto w-full'>
-                    <div className="text-white font-semibold text-3xl text-center my-16">Welcome to Library</div>                    
-                </div>
-                <div className="py-12 px-10 w-full">
+                <div className="py-2 px-10 w-full">
                     <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Username : </label>
@@ -64,11 +61,9 @@ const SignUp = () => {
                     <p>Already have an Account ? <Link to={'/SignIn'}><span className='text-blue-500'>SignIn</span></Link></p>
                 </div>
             </div>
-            <div className="my-1 text-center">
-                &copy; Developed and Design by : National Institute of Fundamental Studies
-            </div>
+
         </div>
-    </div>
+
   )
 }
 
