@@ -232,6 +232,24 @@ const SummaryDash = () => {
 
                     <div className="mb-8 mx-0">
                        <div className="lg:flex">
+                            {
+                                LatestBooks.map((lastBooks) => {
+                                    return (
+                                        <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
+                                            <div className="mt-8 mx-4">
+                                                <h1 className="lg:py-0 pt-10"><span className="font-semibold">Book Name</span> : {lastBooks.BookTitle}</h1>
+                                                <p className=""><span className="font-semibold">Class No</span> : {lastBooks.ClassNo}</p>
+                                                <p className=""><span className="font-semibold">Authors</span> : {lastBooks.AuthorEditor}, {lastBooks.AuthorEditor2}</p>
+                                            </div>
+                                            <div className="my-8 text-center">
+                                                <Link to={'/'}>
+                                                    <button className="font-medium py-2 px-4 text-blue-600 rounded duration-500 hover:bg-blue-500 hover:text-white hover:shadow-xl">View more</button>
+                                                </Link>
+                                            </div>
+                                        </div> 
+                                    )
+                                })
+                            }
                             <div className="bg-white rounded-2xl lg:mx-8 mx-0 shadow-md w-full">
                                 <div className="mt-8 mx-4">
                                     <h1 className="lg:py-0 pt-10">Book Name : Introducation to Computing</h1>
