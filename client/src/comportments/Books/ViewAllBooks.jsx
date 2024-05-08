@@ -13,12 +13,12 @@ const ViewAllBooks = () => {
     const [allBooks, SetAllBooks] = useState([])
     useEffect(() => {
         axios.get('http://localhost:8081/AllBooks')
-        .then(res => SetLatestBooks(res.data))
+        .then(res => SetAllBooks(res.data))
         .catch(err => console.log(err)) 
     }, [])
 
   return (
-    <div className="bg-gray-200 w-auto py-8 px-16">
+    <div className="bg-gray-200 w-auto py-8 lg:px-16 px-8">
       <div className="my-4">
         {
           (() => {
@@ -48,8 +48,11 @@ const ViewAllBooks = () => {
         {
           allBooks.map((Books) => {
             return (
-              <div className="bg-white py-4 px-10 rounded shadow-md">
-                asdasdasd
+              <div className="bg-white py-4 px-10 rounded shadow-md lg:my-0 my-4">
+                <h1 className="font-semibold">{Books.BookTitle}</h1>
+                <p className="my-3"><span className="font-semibold">Class No : </span> {Books.ClassNo}</p>
+                <p className="my-3"><span className="font-semibold">Authors : </span> {Books.AuthorEditor}, {Books.AuthorEditor2}</p>
+                
               </div>
             )
           })
