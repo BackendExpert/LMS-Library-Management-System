@@ -1,4 +1,5 @@
 import Icons from "@reacticons/ionicons"
+import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
@@ -8,6 +9,13 @@ const ViewAllBooks = () => {
     //curent login user
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
+
+    const [allBooks, SetAllBooks] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:8081/AllBooks')
+        .then(res => SetLatestBooks(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
 
   return (
     <div className="bg-gray-200 w-auto py-8 px-16">
