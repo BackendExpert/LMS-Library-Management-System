@@ -96,49 +96,42 @@ const SearchBook = () => {
                             if(isFormSubmited === true){
                                 return (
                                     <div class="relative overflow-x-auto">
-                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                            <tr>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Book Title
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Class No
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Author 1
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Author 2
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Description
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    ISBN Number
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Keywords
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Publisher
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Publish Year
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Publish Place
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Status
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                <tr>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Book Title
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Class No
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Authors 
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        ISBN Number
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Publisher
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Status
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
                                         <tbody>
-
+                                            {
+                                                SearchBookData.map((BookData, index) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </div>
@@ -152,15 +145,7 @@ const SearchBook = () => {
                         })()
                     }
 
-                    {/* {
-                        SearchBookData.map((BookData, index) => {
-                            return (
-                                <div className="" key={index}>
-                                    <p className="">{BookData.BookTitle}</p>
-                                </div>
-                            )
-                        })
-                    } */}
+
 
                     
                 </div>
