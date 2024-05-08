@@ -44,15 +44,42 @@ const ViewAllBooks = () => {
         }
 
       </div>
-      <div className="lg:grid grid-cols-4 gap-4">
+      <div className="lg:grid grid-cols-3 gap-3">
         {
           allBooks.map((Books) => {
             return (
               <div className="bg-white py-4 px-10 rounded shadow-md lg:my-0 my-4">
-                <h1 className="font-semibold">{Books.BookTitle}</h1>
-                <p className="my-3"><span className="font-semibold">Class No : </span> {Books.ClassNo}</p>
-                <p className="my-3"><span className="font-semibold">Authors : </span> {Books.AuthorEditor}, {Books.AuthorEditor2}</p>
-                
+                <div className="lg:flex">
+                  <div className="">
+                    <h1 className="font-semibold">{Books.BookTitle}</h1>
+                    <p className="my-3"><span className="font-semibold">ISBN : </span> <span className="text-red-500">{Books.ISBNNumber} </span></p>
+                    <p className="my-3"><span className="font-semibold">Class No : </span> {Books.ClassNo}</p>
+                    <p className="my-3"><span className="font-semibold">Authors : </span> {Books.AuthorEditor}, {Books.AuthorEditor2}</p>
+
+                  </div>
+                  <div className="">
+                  <p className="mx-4">
+                    {
+                      (() => {
+                        if(Books.Status === "Available"){
+                          return (
+                            <span className="font-semibold pl-2 text-green-500">Available</span>
+                          )
+                        }
+                      })()
+                    }
+                  </p>
+
+                  </div>
+                </div>
+                    <p className="my-3"><span className="font-semibold">Description : </span> {Books.Discription}</p>
+                    <p className="my-3"><span className="font-semibold">Publisher : </span>{Books.Publisher}</p>
+                    <p className="my-3"><span className="font-semibold">Publish Year : </span>{Books.PubYear}</p>
+                    <p className="my-3"><span className="font-semibold">Publish Place : </span>{Books.PubPlace}</p>
+                <div className="my-8">
+
+                </div>
+
               </div>
             )
           })
