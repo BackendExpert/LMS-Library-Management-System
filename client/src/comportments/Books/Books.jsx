@@ -39,9 +39,9 @@ const Books = () => {
     const BookData = [
         {id: 1, btnValue: "Books", name: "Books", value: <CountUp end={CountBook}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "bkBorrow", name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
-        {id: 3, btnValue: "bkSelected", name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, btnValue: "BorrowRequest", name: "Borrow Requests", value: <CountUp end={20}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: 'text-blue-500'},
-        {id: 5, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
+        // {id: 3, btnValue: "bkSelected", name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 3, btnValue: "BorrowRequest", name: "Borrow Requests", value: <CountUp end={20}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: 'text-blue-500'},
+        {id: 4, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
     if(RoleUser === "SuperAdmin" || RoleUser === "user"){
@@ -55,7 +55,7 @@ const Books = () => {
                         {
                             BookData.map((Book) => {
                                 if(RoleUser === "SuperAdmin"){
-                                    if(Book.id !== 5){
+                                    if(Book.id !== 4){
                                         return (
                                             <div onClick={() => HeadleButtonClick(Book.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Book.style}`}>                                       
                                                 <p className="font-semibold text-xl">{Book.icon}</p>   
