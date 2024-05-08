@@ -30,9 +30,9 @@ const HomePage = () => {
       }
   return (
     <div>
-        <div className='py-14 lg:px-16 px-4 h-full lg:h-[80vh] h-auto' style={styles}>
+        <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
             <Navbar />
-            <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8">
+            <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8 lg:my-36 my-auto">
                 <div className="">
                     <p className="text-white lg:text-5xl text-2xl lib-title text-center">
                         "A library is a house of hope. It's a place where we all, whatever our situation, can feed our ideas and develop our dreams"
@@ -42,9 +42,9 @@ const HomePage = () => {
                     </p>
 
                     <div className="">
-                        <div className="flex">
-                            <button className='bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
-                            <button className='mx-8 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-whote hover:text-black'>Sign IN</button>
+                        <div className="lg:flex lg:mx-20 mx-2">
+                            <button onClick={() => HeadleButtonClick("SignUp")} className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
+                            <button onClick={() => HeadleButtonClick("SignIn")} className='w-full lg:my-0 my-2 lg:mx-8 mx-0 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-white hover:text-black'>Sign IN</button>
                         </div>
                     </div>
                 </div>
