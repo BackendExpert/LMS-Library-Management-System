@@ -490,41 +490,47 @@ app.post('/SearchBook', (req, res) => {
     let conditions = [];
 
     if(title.trim()){
-        conditions.push(`title LIKE '%${title}%'`);
+        conditions.push(`BookTitle LIKE '%${title}%'`);
     }
     if(author.trim()){
-        conditions.push(`title LIKE '%${author}%'`);
+        conditions.push(`AuthorEditor AND AuthorEditor2 LIKE '%${author}%'`);
     }
     if(isbn.trim()){
-        conditions.push(`title LIKE '%${isbn}%'`);
+        conditions.push(`ISBNNumber LIKE '%${isbn}%'`);
     }
     if(KeyWord.trim()){
-        conditions.push(`title LIKE '%${KeyWord}%'`);
+        conditions.push(`Keywords AND Keywords2 LIKE '%${KeyWord}%'`);
     }
     if(Publisher.trim()){
-        conditions.push(`title LIKE '%${Publisher}%'`);
+        conditions.push(`Publisher LIKE '%${Publisher}%'`);
     }
     if(pubYear.trim()){
-        conditions.push(`title LIKE '%${pubYear}%'`);
+        conditions.push(`PubYear LIKE '%${pubYear}%'`);
     }
     if(pubplace.trim()){
-        conditions.push(`title LIKE '%${pubplace}%'`);
+        conditions.push(`PubPlace LIKE '%${pubplace}%'`);
     }
-    
 
+    let whereClause = '';
+    if (conditions.length > 0) {
+      whereClause = 'WHERE ' + conditions.join(' AND ');
+    }
 
+    const sql = `SELECT * FROM books ${whereClause}`;
 
     // search data
-    const sql = `SELECT * FROM books WHERE 
-        BookTitle LIKE '%${title}%' AND 
-        AuthorEditor LIKE '%${author}%' OR 
-        AuthorEditor2 LIKE '%${author}%' AND
-        ISBNNumber LIKE '%${isbn}%' AND
-        Keywords LIKE '%${KeyWord}%' OR
-        Keywords2 LIKE '%${KeyWord}%' AND
-        Publisher LIKE '%${Publisher}%' AND 
-        PubYear LIKE '%${pubYear}%' AND
-        PubPlace LIKE '%${pubplace}%'`;
+    // const sql = `SELECT * FROM books WHERE 
+    //     BookTitle LIKE '%${title}%' AND 
+    //     AuthorEditor LIKE '%${author}%' OR 
+    //     AuthorEditor2 LIKE '%${author}%' AND
+    //     ISBNNumber LIKE '%${isbn}%' AND
+    //     Keywords LIKE '%${KeyWord}%' OR
+    //     Keywords2 LIKE '%${KeyWord}%' AND
+    //     Publisher LIKE '%${Publisher}%' AND 
+    //     PubYear LIKE '%${pubYear}%' AND
+    //     PubPlace LIKE '%${pubplace}%'`;
+
+
 
     connection.query(sql, (err, result) => {
         if(err) {
