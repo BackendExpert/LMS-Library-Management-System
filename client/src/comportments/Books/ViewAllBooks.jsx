@@ -10,7 +10,13 @@ const ViewAllBooks = () => {
     const EmailUser = secureLocalStorage.getItem("login2");
 
   return (
-    <div>ViewAllBooks</div>
+    <div className="bg-gray-200 w-auto py-8 px-16">
+      <div className="lg:grid grid-cols-4 gap-4">
+        <div className="bg-white py-4 px-10 rounded shadow-md">
+          asdasdasd
+        </div>
+      </div>
+    </div>
   )
 }
 
