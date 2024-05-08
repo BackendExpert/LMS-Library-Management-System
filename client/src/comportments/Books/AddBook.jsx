@@ -54,52 +54,52 @@ const AddBook = () => {
                             <div className="my-2">
                                 <label htmlFor="">Class No</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Class No"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, classNo:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Author 1</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Author 1"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, Author1:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Author 2</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Author 2"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, Author2:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Description</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Description"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, Description:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">ISBN Number</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Description"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, isbnNo:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">KeyWord 1</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter KeyWord 1"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, KeyWord1:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">KeyWord 2</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter KeyWord 2"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, KeyWord2:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Publisher</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publisher"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, Publisher:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Publish Year</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publish Year"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, pubYear:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Publish Place</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Publish Place"
-                                onChange={e => SetBookData({...BookData, title:e.target.value})}/>
+                                onChange={e => SetBookData({...BookData, pubPlace:e.target.value})}/>
                             </div>
                         </div>
                         <div className="">
