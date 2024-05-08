@@ -487,7 +487,9 @@ app.post('/SearchBook', (req, res) => {
     console.log(req.body)
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
-    
+    if(title === ''){
+        return res.json({Error: "Title is Empty"})
+    }
     
     // check the above values are empty or not
     // and get value only colums that value has
