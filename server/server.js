@@ -374,7 +374,7 @@ app.post('/OTPCheck/:id', (req, res) => {
 
 // Update password
 
-app.get('/UpdatePassword/:id', (req, res) => {
+app.post('/UpdatePassword/:id', (req, res) => {
     const userEmail = req.params.id
 
     // console.log(userEmail, req.body)
@@ -483,7 +483,7 @@ app.get('/BooksCount', (req, res) => {
 // Search Books
 // SearchBook
 
-app.post('/SearchBook', (req, res) => {
+app.get('/SearchBook', (req, res) => {
     console.log(req.body)
 
     const Bookdata = "hi Alll"
