@@ -489,14 +489,14 @@ app.post('/SearchBook', (req, res) => {
 
     // search data
     const sql = `SELECT * FROM books WHERE 
-        BookTitle LIKE '%${title}%' OR 
+        BookTitle LIKE '%${title}%' AND 
         AuthorEditor LIKE '%${author}%' OR 
-        AuthorEditor2 LIKE '%${author}%' OR
-        ISBNNumber LIKE '%${isbn}%' OR
+        AuthorEditor2 LIKE '%${author}%' AND
+        ISBNNumber LIKE '%${isbn}%' AND
         Keywords LIKE '%${KeyWord}%' OR
-        Keywords2 LIKE '%${KeyWord}%' OR
-        Publisher LIKE '%${Publisher}%' OR 
-        PubYear LIKE '%${pubYear}%' OR
+        Keywords2 LIKE '%${KeyWord}%' AND
+        Publisher LIKE '%${Publisher}%' AND 
+        PubYear LIKE '%${pubYear}%' AND
         PubPlace LIKE '%${pubplace}%'`;
 
     connection.query(sql, (err, result) => {
