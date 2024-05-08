@@ -488,7 +488,16 @@ app.post('/SearchBook', (req, res) => {
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
     // search data
-    const sql = "SELECT * FROM WHERE title LIKE '%${title}%' "
+    const sql = `SELECT * FROM WHERE 
+        title LIKE '%${title}%' OR 
+        AuthorEditor LIKE '%${author}%' OR 
+        AuthorEditor2 LIKE '%${author}%' OR
+        ISBNNumber LIKE '%${isbn}%' OR
+        Keywords LIKE '%${KeyWord}%' OR
+        Keywords2 LIKE '%${KeyWord}%' OR
+        Publisher LIKE '%${Publisher}%' OR 
+        PubYear LIKE '%${pubYear}%' OR
+        PubPlace LIKE '%${pubplace}%'` 
 
 
 })
