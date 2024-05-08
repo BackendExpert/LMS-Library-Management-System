@@ -67,6 +67,14 @@ const SummaryDash = () => {
         .catch(err => console.log(err)) 
     }, [])
 
+    // get last 3 recodes in Book table
+    const [LatestBooks, SetLatestBooks] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:8081/GetlastBooks')
+        .then(res => SetLatestBooks(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="py-4">
