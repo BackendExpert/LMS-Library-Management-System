@@ -33,7 +33,7 @@ const SearchBook = () => {
         axios.post('http://localhost:8081/SearchBook', SearchBook)
         .then(res => {
             if(res.data.Status === "Success"){
-                SetSearchBookData(res.data)
+                SetSearchBookData(res.data.BookData)
             }
             else{
                 alert(res.data.Error)
@@ -87,9 +87,9 @@ const SearchBook = () => {
                     {
                         SearchBookData.map((BookData, index) => {
                             return (
-                                <tr key={index}>
-                                    {BookData.title}
-                                </tr>
+                                <div className="" key={index}>
+                                    <p className="">{BookData.BookTitle}</p>
+                                </div>
                             )
                         })
                     }
