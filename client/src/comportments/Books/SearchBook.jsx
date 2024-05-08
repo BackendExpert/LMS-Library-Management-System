@@ -29,6 +29,15 @@ const SearchBook = () => {
                             <div className="">
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book KeyWord"/>
                             </div>
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publisher"/>
+                            </div>
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish Year"/>
+                            </div>
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish place"/>
+                            </div>
                         </div>
                     </form>
                 </div>
