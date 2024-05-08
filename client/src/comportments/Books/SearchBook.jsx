@@ -29,6 +29,7 @@ const SearchBook = () => {
 
     const headleSubmit = (e) => {
         e.preventDefault();
+        SetisFormSubmited(false)
         // alert("hellow Work")        
 
         axios.post('http://localhost:8081/SearchBook', SearchBook)
@@ -126,6 +127,7 @@ const SearchBook = () => {
                                             {
                                                 SearchBookData.map((BookData, index) => {
                                                     return (
+                                                        
                                                         <tr key={index}>
                                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                                 {BookData.BookTitle}
@@ -138,6 +140,20 @@ const SearchBook = () => {
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 {BookData.ISBNNumber}
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                {BookData.Publisher}
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                {
+                                                                    (() => {
+                                                                        if(BookData.Status === "Available"){
+                                                                            return(
+                                                                                <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
+                                                                            )
+                                                                        }
+                                                                    })()
+                                                                }
                                                             </td>
                                                         </tr>
                                                     )
