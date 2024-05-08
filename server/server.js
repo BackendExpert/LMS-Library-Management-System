@@ -467,7 +467,17 @@ app.post('/AddBook', (req, res) => {
 
 // count all books in data base
 app.get('/BooksCount', (req, res) => {
-    
+    const sql = "SELECT COUNT(ID) AS BKs FROM books";
+  
+    connection.query(sql, (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ BKs: results[0].BKs }); // Send count in JSON format
+    });
 })
 
 // all end points end
