@@ -487,10 +487,8 @@ app.post('/SearchBook', (req, res) => {
     console.log(req.body)
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
-    if(title === null || author === null || isbn === null || KeyWord === null || Publisher === null || pubYear === null || pubplace === null){
-        return res.json({Error: "Please Fill at Least one Feild"})
-    }
-
+    
+    
     // check the above values are empty or not
     // and get value only colums that value has
 
