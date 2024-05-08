@@ -487,6 +487,33 @@ app.post('/SearchBook', (req, res) => {
     console.log(req.body)
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
+    let conditions = [];
+
+    if(title.trim()){
+        conditions.push(`title LIKE '%${title}%'`);
+    }
+    if(author.trim()){
+        conditions.push(`title LIKE '%${author}%'`);
+    }
+    if(isbn.trim()){
+        conditions.push(`title LIKE '%${isbn}%'`);
+    }
+    if(KeyWord.trim()){
+        conditions.push(`title LIKE '%${KeyWord}%'`);
+    }
+    if(Publisher.trim()){
+        conditions.push(`title LIKE '%${Publisher}%'`);
+    }
+    if(pubYear.trim()){
+        conditions.push(`title LIKE '%${pubYear}%'`);
+    }
+    if(pubplace.trim()){
+        conditions.push(`title LIKE '%${pubplace}%'`);
+    }
+    
+
+
+
     // search data
     const sql = `SELECT * FROM books WHERE 
         BookTitle LIKE '%${title}%' AND 
