@@ -45,12 +45,12 @@ export default function App() {
           (() => {
             if(RoleUser !== null && EmailUser !== null){
               return (
-                <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>}/>
+                <Route path="/ViewAllBooks" element={<PrivateRoute><ViewAllBooks /></PrivateRoute>}/>
               )
             } 
             else{
               return (
-                <Route path="/" element={<HomePage />}/>
+                <Route path="/ViewAllBooks" element={<ViewAllBooks />}/>
               )
             }
           })()
