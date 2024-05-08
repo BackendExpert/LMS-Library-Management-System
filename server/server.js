@@ -413,6 +413,16 @@ app.post('/UpdatePassword/:id', (req, res) => {
     }
 })
 
+
+// Add new Book
+// AddBook
+
+app.post('/AddBook', (req, res) => {
+    console.log(req.body)
+    // const checkSql = "SELECT * FROM books WHERE ISBNNumber = ?"
+    // connection.query(checkSql, [req.body.])
+})
+
 // all end points end
 
 //check the server is working
