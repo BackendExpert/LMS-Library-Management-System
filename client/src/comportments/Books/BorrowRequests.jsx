@@ -10,10 +10,18 @@ const BorrowRequests = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>BorrowRequests</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
 
-  return (
-    <div>BorrowRequests</div>
-  )
 }
 
 export default BorrowRequests
