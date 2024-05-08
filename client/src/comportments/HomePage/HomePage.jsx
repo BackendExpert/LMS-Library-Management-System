@@ -18,18 +18,19 @@ const HomePage = () => {
     
     // https://wallpapercave.com/wp/wp10055128.jpg
 
-    const styles [
-
-    ]
+    const styles = {
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://wallpapercave.com/wp/wp10055128.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }
   return (
     <div>
-        <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10055128.jpg)] bg-center bg-cover lg:h-[80vh] h-screen w-full'>
+        <div className='py-14 lg:px-16 px-4 h-full lg:h-[80vh] h-auto' style={styles}>
             <Navbar />
-            <div className="lg:grid grid-cols-2 gap-4">
+            <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8">
                 <div className="">
-                    <p className="text-white text-5xl">
+                    <p className="text-white lg:text-5xl text-2xl">
                         A library is not a luxury, <br /> but one of the necessities of life
-                    </p>
                 </div>
             </div>
         </div>
