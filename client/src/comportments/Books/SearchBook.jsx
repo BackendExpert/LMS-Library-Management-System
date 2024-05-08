@@ -47,7 +47,7 @@ const SearchBook = () => {
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="">
-                            <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
+                <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
                     <div className="">
                         <Link>
@@ -93,88 +93,91 @@ const SearchBook = () => {
                     </form>
                 </div>
             </div>
-                            <div className="">
-                            {
-                                (() => {
-                                    if(isFormSubmited === true){
-                                        return (
-                                            <div class="relative overflow-x-auto">
-                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                                        <tr>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Book Title
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Class No
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Authors 
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                ISBN Number
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Publisher
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Status
-                                                            </th>
-                                                            <th scope="col" class="px-6 py-3">
-                                                                Action
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                <tbody>
-                                                    {
-                                                        SearchBookData.map((BookData, index) => {
-                                                            return (
-                                                                
-                                                                <tr key={index}>
-                                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                        {BookData.BookTitle}
-                                                                    </th>
-                                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                        {BookData.ClassNo}
-                                                                    </th>
-                                                                    <td class="px-6 py-4">
-                                                                        {BookData.AuthorEditor}, {BookData.AuthorEditor2}
-                                                                    </td>
-                                                                    <td class="px-6 py-4">
-                                                                        {BookData.ISBNNumber}
-                                                                    </td>
-                                                                    <td class="px-6 py-4">
-                                                                        {BookData.Publisher}
-                                                                    </td>
-                                                                    <td class="px-6 py-4">
-                                                                        {
-                                                                            (() => {
-                                                                                if(BookData.Status === "Available"){
-                                                                                    return(
-                                                                                        <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
-                                                                                    )
-                                                                                }
-                                                                            })()
-                                                                        }
-                                                                    </td>
-                                                                </tr>
-                                                            )
-                                                        })
-                                                    }
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        )
-                                    }        
-                                    else{
-                                        return (
-                                            <div className=""></div>
-                                        )
-                                    }                    
-                                })()
-                            }  
-                     
-                </div>
+            <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
+                <div className="">
+                                {
+                                    (() => {
+                                        if(isFormSubmited === true){
+                                            return (
+                                                <div class="relative overflow-x-auto">
+                                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                            <tr>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Book Title
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Class No
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Authors 
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    ISBN Number
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Publisher
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Status
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3">
+                                                                    Action
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                    <tbody>
+                                                        {
+                                                            SearchBookData.map((BookData, index) => {
+                                                                return (
+                                                                    
+                                                                    <tr key={index}>
+                                                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                            {BookData.BookTitle}
+                                                                        </th>
+                                                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                            {BookData.ClassNo}
+                                                                        </th>
+                                                                        <td class="px-6 py-4">
+                                                                            {BookData.AuthorEditor}, {BookData.AuthorEditor2}
+                                                                        </td>
+                                                                        <td class="px-6 py-4">
+                                                                            {BookData.ISBNNumber}
+                                                                        </td>
+                                                                        <td class="px-6 py-4">
+                                                                            {BookData.Publisher}
+                                                                        </td>
+                                                                        <td class="px-6 py-4">
+                                                                            {
+                                                                                (() => {
+                                                                                    if(BookData.Status === "Available"){
+                                                                                        return(
+                                                                                            <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
+                                                                                        )
+                                                                                    }
+                                                                                })()
+                                                                            }
+                                                                        </td>
+                                                                    </tr>
+                                                                )
+                                                            })
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            )
+                                        }        
+                                        else{
+                                            return (
+                                                <div className=""></div>
+                                            )
+                                        }                    
+                                    })()
+                                }  
+                        
+                    </div>
+            </div>
+
             </div>
         )
     }
