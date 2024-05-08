@@ -484,7 +484,7 @@ app.get('/BooksCount', (req, res) => {
 // SearchBook
 
 app.get('/SearchBook', (req, res) => {
-    
+    console.log(req.body)
 })
 
 // all end points end
