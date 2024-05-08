@@ -31,6 +31,7 @@ const HomePage = () => {
                 <div className="">
                     <p className="text-white lg:text-5xl text-2xl">
                         A library is not a luxury, <br /> but one of the necessities of life
+                    </p>
                 </div>
             </div>
         </div>
