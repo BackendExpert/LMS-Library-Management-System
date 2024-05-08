@@ -484,7 +484,7 @@ app.get('/BooksCount', (req, res) => {
 // SearchBook
 
 app.get('/SearchBook', (req, res) => {
-    console.log(req.query)
+    console.log(req.query.title)
 
 
 })
