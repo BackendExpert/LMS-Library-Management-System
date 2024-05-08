@@ -10,6 +10,9 @@ const SearchBook = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    // useStates for search datas
+
+
     const [SearchBook, SetSearchBook] = useState({
         title: '',
         author: '',
@@ -29,7 +32,7 @@ const SearchBook = () => {
         e.preventDefault();
         // alert("hellow Work")
 
-        axios.get('http://localhost:8081/SearchBook', { params : {SearchBookData} })
+        axios.post('http://localhost:8081/SearchBook', SearchBook)
         .then(res => {
             if(res.data.Status === "Success"){
                 SetSearchBookData(res.data)
