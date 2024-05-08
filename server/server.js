@@ -488,8 +488,8 @@ app.post('/SearchBook', (req, res) => {
     const  {title, author, isbn, KeyWord, Publisher, pubYear, pubplace} = req.body
 
     // search data
-    const sql = `SELECT * FROM WHERE 
-        title LIKE '%${title}%' OR 
+    const sql = `SELECT * FROM books WHERE 
+        BookTitle LIKE '%${title}%' OR 
         AuthorEditor LIKE '%${author}%' OR 
         AuthorEditor2 LIKE '%${author}%' OR
         ISBNNumber LIKE '%${isbn}%' OR
@@ -502,6 +502,7 @@ app.post('/SearchBook', (req, res) => {
     connection.query(sql, (err, result) => {
         if(err) {
             return res.json({Error: "Internal Server Error"})
+            // console.log(err)
         }
         else if(result.length === 0){
             return res.json({Error: "No Recodes Found"})
