@@ -52,7 +52,6 @@ const SearchBook = () => {
         window.location.reload()
     }
 
-    if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="">
                 <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
@@ -195,12 +194,7 @@ const SearchBook = () => {
             </div>
         )
     }
-    else{
-        useEffect(() => {
-            localStorage.clear()
-            navigate('/')
-        }, [])
-    }
-}
+
+
 
 export default SearchBook
