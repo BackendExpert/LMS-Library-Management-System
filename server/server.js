@@ -569,6 +569,22 @@ app.get('/GetlastBooks', (req, res) => {
     })
 })
 
+// fetch all books
+// AllBooks
+
+app.get('/AllBooks', (req, res) => {
+    const sql = "SELECT * FROM books"
+
+    connection.query(sql, (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
