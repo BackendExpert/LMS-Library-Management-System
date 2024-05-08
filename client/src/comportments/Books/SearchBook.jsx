@@ -29,7 +29,7 @@ const SearchBook = () => {
         e.preventDefault();
         // alert("hellow Work")
 
-        axios.post('http://localhost:8081/SearchBook', SearchBook)
+        axios.get('http://localhost:8081/SearchBook', SearchBook)
         .then(res => {
             if(res.data.Status === "Success"){
                 SetSearchBookData(res.data)
