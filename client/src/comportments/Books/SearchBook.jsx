@@ -134,7 +134,10 @@ const SearchBook = () => {
                                                                 {BookData.ClassNo}
                                                             </th>
                                                             <td class="px-6 py-4">
-                                                                {BookData.AuthorEditor},{BookData.AuthorEditor2}
+                                                                {BookData.AuthorEditor}, {BookData.AuthorEditor2}
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                {BookData.ISBNNumber}
                                                             </td>
                                                         </tr>
                                                     )
