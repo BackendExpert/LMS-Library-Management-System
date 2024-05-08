@@ -44,7 +44,7 @@ const Books = () => {
         {id: 5, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
-    if(RoleUser === "SuperAdmin"){
+    if(RoleUser === "SuperAdmin" || RoleUser === "user"){
         return (
             <div className="py-4 px-4">
                 <div className="">
