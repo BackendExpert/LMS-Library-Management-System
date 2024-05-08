@@ -19,26 +19,15 @@ const HomePage = () => {
 
   return (
     <div>
-        <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10395041.jpg)] bg-center bg-cover lg:h-[80vh] h-screen w-full'>
+        <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10055128.jpg)] bg-center bg-cover lg:h-[80vh] h-screen w-full'>
             <Navbar />
-            <div className="text-white text-center my-12">
-                <h1 className="text-3xl font-semibold">Welcome to Library of NIFS</h1>
-                {
-                    (() => {
-                        if(RoleUser !== null && EmailUser !== null){
-                            return (
-                                <div className="my-4">
-                                    <Link to={'/Dashboard'}>
-                                        <button className='bg-white rounded py-2 px-8 text-gray-500 duration-500 hover:ml-4'>to Dashbord</button>
-                                    </Link>
-                                </div>
-                            )
-                        }
-                    })()
-                }
+            <div className="lg:grid grid-cols-2 gap-4">
+                <div className="">
+                    
+                </div>
             </div>
         </div>
-        <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
+        {/* <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
 
             {
                 (() => {
@@ -70,8 +59,8 @@ const HomePage = () => {
                     }
                 })()
             }
-        </div>
-        <div className="lg:my-8  text-center">
+        </div> */}
+        <div className="lg:my-16 text-center">
             <h1 className="text-4xl font-semibold text-gray-500">The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
