@@ -425,7 +425,7 @@ app.post('/AddBook', (req, res) => {
         if(err) throw err
 
         if(result.length === 0){
-            if(req.body.KeyWord1 === req.body.KeyWord1){
+            if(req.body.KeyWord1 === req.body.KeyWord2){
                 return res.json({Error: "KeyWrods are Same, Enter Defferent KeyWords"})
             }
             else{
@@ -438,6 +438,7 @@ app.post('/AddBook', (req, res) => {
                     req.body.Author1, 
                     req.body.Author2, 
                     req.body.Description, 
+                    req.body.isbnNo,                     
                     req.body.KeyWord1, 
                     req.body.KeyWord2, 
                     req.body.Publisher, 
@@ -449,7 +450,8 @@ app.post('/AddBook', (req, res) => {
 
                 connection.query(sql, [values], (err, result) => {
                     if(err) {
-                        return res.json({Error: "Internal Server Error"})
+                        // return res.json({Error: "Internal Server Error"})
+                        console.log(err)
                     }
                     else{
                         return res.json({Status: "Success"})
