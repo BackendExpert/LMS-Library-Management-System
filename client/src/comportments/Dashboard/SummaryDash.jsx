@@ -22,12 +22,20 @@ const SummaryDash = () => {
 
     
     const [AllUserCount, SetAllUserCount] = useState(0)
+    const [CountBook, SetCoutBooks] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const UsersCount = await axios.get('http://localhost:8081/AllCountUsers');
                 SetAllUserCount(UsersCount.data.UserAll);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            try {
+                const BKCount = await axios.get('http://localhost:8081/BooksCount');
+                SetCoutBooks(BKCount.data.BKCount);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -40,7 +48,7 @@ const SummaryDash = () => {
 
 
     const dataCount = [
-        {id: 1, btnvalue: "SearchBooks", name: "Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
+        {id: 1, btnvalue: "SearchBooks", name: "Books", link: "#", value: <CountUp end={CountBook}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-purple-500"},
         {id: 2, btnvalue: "", name: "Journals", link: "#", value: <CountUp end={20}/>, icon: <Icons name="document-text" size="large"></Icons>, style: "text-green-500"},     
         {id: 3, btnvalue: "", name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
         {id: 4, btnvalue: "", name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
