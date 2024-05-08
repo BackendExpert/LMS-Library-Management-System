@@ -95,12 +95,12 @@ const SearchBook = () => {
                         (() => {
                             if(isFormSubmited === true){
                                 return (
-                                    <p className="">Form Submited</p>
+                                    
                                 )
                             }        
                             else{
                                 return (
-                                    <p className="">Form Not Submited</p>
+                                    <div className=""></div>
                                 )
                             }                    
                         })()
