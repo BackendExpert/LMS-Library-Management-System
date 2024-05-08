@@ -33,7 +33,7 @@ const SignUp = () => {
   return (
     <div className='bg-gray-200 py-12'>
         <div className='lg:mx-10'>
-                <div onClick={headleBack} className='mb-1 mx-4 flex duration-500 hover:mx-2'>
+                <div onClick={headleBack} className='mb-1 mx-4 flex duration-500 hover:mx-2 cursor-pointer'>
                     <span className='mt-[1px] mx-2'><MyIcons name='arrow-back'></MyIcons></span>
                     <p className="">Back to Home</p>
                 </div>
