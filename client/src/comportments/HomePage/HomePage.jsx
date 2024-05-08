@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SignUp from '../SignInSignUp/SignUp';
 import SignIn from '../SignInSignUp/SignIn';
+import Welcome from './Welcome';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -62,6 +63,11 @@ const HomePage = () => {
                             if(buttonValue === "SignIn"){
                                 return (
                                     <SignIn />
+                                )
+                            }
+                            if(buttonValue === 0){
+                                return (
+                                    <Welcome />
                                 )
                             }
                         })()
