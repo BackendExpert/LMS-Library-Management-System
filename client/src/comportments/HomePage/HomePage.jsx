@@ -16,14 +16,20 @@ const HomePage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     
+    // https://wallpapercave.com/wp/wp10055128.jpg
 
+    const styles [
+
+    ]
   return (
     <div>
         <div className='lg:py-[4%] py-12 lg:px-16 bg-[url(https://wallpapercave.com/wp/wp10055128.jpg)] bg-center bg-cover lg:h-[80vh] h-screen w-full'>
             <Navbar />
             <div className="lg:grid grid-cols-2 gap-4">
                 <div className="">
-                    
+                    <p className="text-white text-5xl">
+                        A library is not a luxury, <br /> but one of the necessities of life
+                    </p>
                 </div>
             </div>
         </div>
