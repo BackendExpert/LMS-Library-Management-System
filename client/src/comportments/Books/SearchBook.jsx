@@ -14,6 +14,21 @@ const SearchBook = () => {
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
 
+                <div className="my-5">
+                    <form>
+                        <div className="lg:grid grid-cols-4 gap-3">
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Title"/>
+                            </div>
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Author"/>
+                            </div>
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book ISBN Number"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }
