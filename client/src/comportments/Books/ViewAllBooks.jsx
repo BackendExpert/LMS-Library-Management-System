@@ -97,7 +97,7 @@ const ViewAllBooks = () => {
                         else{
                           return (
                             <Link to={'/'}>
-                              <p className="bg-blue-500">Please Login to System</p>
+                              <p className="text-blue-500">Please Login to System</p>
                             </Link>
                           )
                         }
