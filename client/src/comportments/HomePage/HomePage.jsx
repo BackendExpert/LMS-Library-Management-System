@@ -49,11 +49,13 @@ const HomePage = () => {
                             {
                                 (() => {
                                     if(RoleUser !== null && EmailUser !== null){
-                                        <div className="">
-                                            <Link to={'/Dashboard'}>
-                                                <button className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Dashboard</button>
-                                            </Link>
-                                        </div>
+                                        return (
+                                            <div className="">
+                                                <Link to={'/Dashboard'}>
+                                                    <button className='w-auto lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Dashboard</button>
+                                                </Link>
+                                            </div>
+                                        )
                                     }
                                     else{
                                         return (
