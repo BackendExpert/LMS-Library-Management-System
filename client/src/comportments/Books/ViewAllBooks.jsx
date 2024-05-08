@@ -50,6 +50,10 @@ const ViewAllBooks = () => {
             })()
           }
 
+          <div className="">
+            <button className="py-4 px-8 bg-green-500 text-white rounded duration-500 hover:ml-2">Seach</button>
+          </div>         
+
         </div>
         <div className="my-4">
           <div className="lg:visible invisible">
