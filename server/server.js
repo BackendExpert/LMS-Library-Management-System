@@ -465,6 +465,11 @@ app.post('/AddBook', (req, res) => {
     })
 })
 
+// count all books in data base
+app.get('/BooksCount', (req, res) => {
+    
+})
+
 // all end points end
 
 //check the server is working
