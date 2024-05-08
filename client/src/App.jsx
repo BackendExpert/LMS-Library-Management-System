@@ -18,8 +18,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/SignUp" element={<SignUp />} />
+        {/* <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />} /> */}
         <Route path="/ForgetPass" element={<ForgetPass />} />
         <Route path="/CheckOTP" element={<CheckOTP />} />
         <Route path="/UpdatePass" element={<UpdatePass />} />
