@@ -425,7 +425,37 @@ app.post('/AddBook', (req, res) => {
         if(err) throw err
 
         if(result.length === 0){
-            
+            if(req.body.KeyWord1 === req.body.KeyWord1){
+                return res.json({Error: "KeyWrods are Same, Enter Defferent KeyWords"})
+            }
+            else{
+                const sql = "INSERT INTO books(BookTitle, ClassNo, AuthorEditor, AuthorEditor2, Discription, ISBNNumber, Keywords, Keywords2, Publisher, PubYear, PubPlace, Create_at, Status) VALUES(?)"
+                const create_at = new Date()
+                const Status = "Available"
+                const values = [
+                    req.body.title, 
+                    req.body.classNo, 
+                    req.body.Author1, 
+                    req.body.Author2, 
+                    req.body.Description, 
+                    req.body.KeyWord1, 
+                    req.body.KeyWord2, 
+                    req.body.Publisher, 
+                    req.body.pubYear, 
+                    req.body.pubPlace, 
+                    create_at,
+                    Status
+                ]
+
+                connection.query(sql, [values], (err, result) => {
+                    if(err) {
+                        return res.json({Error: "Internal Server Error"})
+                    }
+                    else{
+                        return res.json({Status: "Success"})
+                    }
+                })
+            }
         }
         else{
             return res.json({Error: "The Book Already in Database"})
