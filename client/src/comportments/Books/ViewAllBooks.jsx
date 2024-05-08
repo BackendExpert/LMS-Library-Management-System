@@ -10,6 +10,12 @@ const ViewAllBooks = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState()
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
+
     const [allBooks, SetAllBooks] = useState([])
     useEffect(() => {
         axios.get('http://localhost:8081/AllBooks')
