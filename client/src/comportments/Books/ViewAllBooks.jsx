@@ -25,30 +25,41 @@ const ViewAllBooks = () => {
 
   return (
     <div className="bg-gray-200 w-auto py-8 lg:px-16 px-8">
-      <div className="my-4">
-        {
-          (() => {
-            if(RoleUser !== null && EmailUser !== null){
-              return (
-                <div className="">
-                  <Link to={'/Dashboard'}>
-                    <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
-                  </Link>
-                </div>
-              )
-            }
-            else{
-              return (
-                <div className="">
-                  <Link to={'/'}>
-                    <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
-                  </Link>
-                </div>
-              )
-            }
-          })()
-        }
+      <div className="lg:flex justify-between">
+        <div className="my-4 ">
+          {
+            (() => {
+              if(RoleUser !== null && EmailUser !== null){
+                return (
+                  <div className="">
+                    <Link to={'/Dashboard'}>
+                      <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
+                    </Link>
+                  </div>
+                )
+              }
+              else{
+                return (
+                  <div className="">
+                    <Link to={'/'}>
+                      <button className="bg-blue-500 text-white py-4 px-8 rounded duration-500 hover:ml-2">Back</button>
+                    </Link>
+                  </div>
+                )
+              }
+            })()
+          }
 
+        </div>
+        <div className="my-4">
+          <div className="bg-red-500 ">
+            <div className="flex">
+              <p className=""><Icons name="" size="large"></Icons></p>
+              <p className=""><Icons name="" size="large"></Icons></p>              
+            </div>
+            
+          </div>
+        </div>
       </div>
       <div className="lg:grid grid-cols-3 gap-3">
         {
