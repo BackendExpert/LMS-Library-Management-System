@@ -557,7 +557,16 @@ app.post('/SearchBook', (req, res) => {
 // GetlastBooks
 
 app.get('/GetlastBooks', (req, res) => {
-    const sql = ""
+    const sql = "SELECT * FROM books ORDER BY ID DESC LIMIT 3"
+
+    connection.query(sql, (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
 })
 
 // all end points end
