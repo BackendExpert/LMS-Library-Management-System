@@ -1,4 +1,5 @@
 import Icons from "@reacticons/ionicons"
+import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
@@ -19,9 +20,21 @@ const SearchBook = () => {
         pubplace: ''
     })
 
+    // search Books  
+
+    // search book data
+    const [SearchBookData, SetSearchBookData] = useState([])
+
     const headleSubmit = (e) => {
         e.preventDefault();
         // alert("hellow Work")
+
+        axios.post('http://localhost:8081/SearchBook', SearchBook)
+        .then(res => {
+            if(res.data.Status === "Success"){
+
+            }
+        })
     }
 
     if(RoleUser !== null && EmailUser !== null){
@@ -33,25 +46,32 @@ const SearchBook = () => {
                     <form onSubmit={headleSubmit}>
                         <div className="lg:grid grid-cols-4 gap-3">
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Title"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Title"
+                                onChange={e => SetSearchBook({...SearchBook, title:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Author"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Author"
+                                onChange={e => SetSearchBook({...SearchBook, author:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book ISBN Number"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book ISBN Number"
+                                onChange={e => SetSearchBook({...SearchBook, isbn:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book KeyWord"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book KeyWord"
+                                onChange={e => SetSearchBook({...SearchBook, KeyWord:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publisher"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publisher"
+                                onChange={e => SetSearchBook({...SearchBook, Publisher:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish Year"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish Year"
+                                onChange={e => SetSearchBook({...SearchBook, pubYear:e.target.value})}/>
                             </div>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish place"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Book Publish place"
+                                onChange={e => SetSearchBook({...SearchBook, pubplace:e.target.value})}/>
                             </div>
                         </div>
                         <div className="my-3">
