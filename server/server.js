@@ -418,7 +418,7 @@ app.post('/UpdatePassword/:id', (req, res) => {
 // AddBook
 
 app.post('/AddBook', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
 
     const checkSql = "SELECT * FROM books WHERE ISBNNumber = ?"
     connection.query(checkSql, [req.body.isbnNo], (err, result) => {
