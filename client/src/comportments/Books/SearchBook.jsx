@@ -25,10 +25,12 @@ const SearchBook = () => {
 
     // search book data
     const [SearchBookData, SetSearchBookData] = useState([])
+    const [isFormSubmited, SetisFormSubmited] = useState(false)
 
     const headleSubmit = (e) => {
         e.preventDefault();
         // alert("hellow Work")
+        SetisFormSubmited(true)
 
         axios.post('http://localhost:8081/SearchBook', SearchBook)
         .then(res => {
