@@ -9,6 +9,16 @@ const SearchBook = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [SearchBook, SetSearchBook] = useState({
+        title: '',
+        author: '',
+        isbn: '',
+        KeyWord: '',
+        Publisher: '',
+        pubYear: '',
+        pubplace: ''
+    })
+
     const headleSubmit = (e) => {
         e.preventDefault();
         // alert("hellow Work")
