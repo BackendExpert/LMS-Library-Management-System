@@ -65,8 +65,8 @@ const SignIn = () => {
 
     }
   return (
-    <div className='bg-gray-200 py-24'>
-        <div className='lg:mx-20 mx-8'>
+    <div className='bg-gray-200 py-8 rounded'>
+        <div className=''>
             <Link to={'/'}>
                 <div className='mb-1 mx-4 flex duration-500 hover:mx-2'>
                     <span className='mt-[1px] mx-2'><MyIcons name='arrow-back'></MyIcons></span>
