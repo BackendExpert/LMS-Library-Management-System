@@ -497,9 +497,19 @@ app.post('/SearchBook', (req, res) => {
         Keywords2 LIKE '%${KeyWord}%' OR
         Publisher LIKE '%${Publisher}%' OR 
         PubYear LIKE '%${pubYear}%' OR
-        PubPlace LIKE '%${pubplace}%'` 
+        PubPlace LIKE '%${pubplace}%'`;
 
-
+    connection.query(sql, (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else if(result.length === 0){
+            return res.json({Error: "No Recodes Found"})
+        }
+        else{
+             return res.json({Status: "Success", BookData: result})
+        }
+    })
 })
 
 // all end points end
