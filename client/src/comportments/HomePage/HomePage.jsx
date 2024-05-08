@@ -65,11 +65,6 @@ const HomePage = () => {
                                     <SignIn />
                                 )
                             }
-                            if(buttonValue === 0){
-                                return (
-                                    <Welcome />
-                                )
-                            }
                         })()
                     }
                 </div>
