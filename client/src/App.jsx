@@ -41,6 +41,20 @@ export default function App() {
         }
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/MyBookBorrow" element={<PrivateRoute><MyBookBorrow /></PrivateRoute>} />
+        {
+          (() => {
+            if(RoleUser !== null && EmailUser !== null){
+              return (
+                <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>}/>
+              )
+            } 
+            else{
+              return (
+                <Route path="/" element={<HomePage />}/>
+              )
+            }
+          })()
+        }
         
       </Routes>
     </BrowserRouter>
