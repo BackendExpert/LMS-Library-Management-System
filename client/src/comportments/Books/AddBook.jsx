@@ -1,4 +1,5 @@
 import Icons from "@reacticons/ionicons"
+import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
@@ -24,7 +25,17 @@ const AddBook = () => {
     })
 
     const headleSubmit = (e) => {
-        
+        e.preventDefault();
+        axios.post('http://localhost:8081/AddBook', BookData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("New Book Added Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
     }
 
     if(RoleUser === "SuperAdmin"){
