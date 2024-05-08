@@ -8,6 +8,7 @@ import SearchBook from "./SearchBook";
 import BorrowedBooks from "./BorrowedBooks";
 import SelectedBooks from "./SelectedBooks";
 import axios from "axios";
+import BorrowRequests from "./BorrowRequests";
 
 
 const Books = () => {
@@ -95,6 +96,11 @@ const Books = () => {
                         if(buttonValue === "bkSelected"){
                             return (
                                 <SelectedBooks />
+                            )
+                        }
+                        if(buttonValue === "BorrowRequest"){
+                            return (
+                                <BorrowRequests />
                             )
                         }
                     })()
