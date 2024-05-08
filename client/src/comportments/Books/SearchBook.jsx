@@ -169,6 +169,22 @@ const SearchBook = () => {
                                                                                     })()
                                                                                 }
                                                                             </td>
+                                                                            <td class="px-6 py-4">
+                                                                                {
+                                                                                    (() => {
+                                                                                    if(RoleUser !== null && EmailUser !== null){
+                                                                                        return (
+                                                                                        <div className=""></div>
+                                                                                        )
+                                                                                    }
+                                                                                    else{
+                                                                                        return (
+                                                                                        <p className="text-blue-500 font-semibold">Please login to System</p>
+                                                                                        )
+                                                                                    }
+                                                                                    })()
+                                                                                }
+                                                                            </td>
                                                                         </tr>
                                                                     )
                                                                 })
