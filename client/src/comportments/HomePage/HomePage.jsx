@@ -35,7 +35,7 @@ const HomePage = () => {
         <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
             <Navbar />
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-16 mx-8 ">
-                <div className="lg:my-36 my-auto">
+                <div className="lg:my-24 my-auto">
                     <p className="text-white lg:text-5xl text-2xl lib-title text-center">
                         "A library is a house of hope. It's a place where we all, whatever our situation, can feed our ideas and develop our dreams"
                     </p>
