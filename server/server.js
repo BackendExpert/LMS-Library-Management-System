@@ -467,7 +467,7 @@ app.post('/AddBook', (req, res) => {
 
 // count all books in data base
 app.get('/BooksCount', (req, res) => {
-    const sql = "SELECT COUNT(ID) AS BKs FROM books";
+    const sql = "SELECT COUNT(ID) AS BKCount FROM books";
   
     connection.query(sql, (error, results) => {
       if (error) {
@@ -476,7 +476,7 @@ app.get('/BooksCount', (req, res) => {
         return;
       }
   
-      res.json({ BKs: results[0].BKs }); // Send count in JSON format
+      res.json({ BKCount: results[0].BKCount }); // Send count in JSON format
     });
 })
 
