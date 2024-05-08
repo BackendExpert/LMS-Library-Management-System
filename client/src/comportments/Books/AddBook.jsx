@@ -41,6 +41,14 @@ const AddBook = () => {
                                 <label htmlFor="">ISBN Number</label>
                                 <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter Description"/>
                             </div>
+                            <div className="my-2">
+                                <label htmlFor="">KeyWord 1</label>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter KeyWord 1"/>
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">KeyWord 2</label>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" required placeholder="Enter KeyWord 2"/>
+                            </div>
                         </div>
                     </form>
                 </div>
