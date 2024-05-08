@@ -26,7 +26,7 @@ const ViewAllBooks = () => {
   return (
     <div className="bg-gray-200 w-auto py-8 lg:px-16 px-8">
       <div className="lg:flex justify-between">
-        <div className="my-4 ">
+        <div className="my-4 flex">
           {
             (() => {
               if(RoleUser !== null && EmailUser !== null){
@@ -50,7 +50,7 @@ const ViewAllBooks = () => {
             })()
           }
 
-          <div className="">
+          <div className="mx-4">
             <button className="py-4 px-8 bg-green-500 text-white rounded duration-500 hover:ml-2">Seach</button>
           </div>         
 
