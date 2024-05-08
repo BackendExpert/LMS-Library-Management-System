@@ -553,6 +553,13 @@ app.post('/SearchBook', (req, res) => {
     })
 })
 
+// get last 3 recodes in books table
+// GetlastBooks
+
+app.get('/GetlastBooks', (req, res) => {
+    const sql = ""
+})
+
 // all end points end
 
 //check the server is working
