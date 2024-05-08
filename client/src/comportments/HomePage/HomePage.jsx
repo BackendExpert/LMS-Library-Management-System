@@ -51,7 +51,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="">
+                <div className="lg:my-0 my-12">
                     {/* <p className="text-white text-2xl">{buttonValue}</p> */}
                     {
                         (() => {
