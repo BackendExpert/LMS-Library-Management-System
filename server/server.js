@@ -616,6 +616,15 @@ app.post('/DisabledBook/:id', (req, res) => {
     })
 })
 
+// Enable book
+// EnableBook
+
+app.post('/EnableBook/:id', (req, res) => {
+    const BookISBN = req.params.id
+
+    
+})
+
 // all end points end
 
 //check the server is working
