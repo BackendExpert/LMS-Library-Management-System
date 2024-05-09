@@ -59,7 +59,22 @@ const SearchBook = () => {
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("Book Has been Disabled Successful")
-                window.location.reload()
+                SetisFormSubmited(false)
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
+    // for enable book
+
+    const HeadleEnabled = (id) => {
+        axios.post('http://localhost:8081/EnableBook/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Has been Enabled Successful")
+                SetisFormSubmited(false)
             }
             else{
                 alert(res.data.Error)
@@ -272,7 +287,7 @@ const SearchBook = () => {
                                                                                                                 }
                                                                                                                 else if(BookData.Status === "Disabled"){
                                                                                                                     return (
-                                                                                                                        <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-green-500 text-white rounded py-2 px-6 duration-500 hover:bg-green-600">Enable</button>
+                                                                                                                        <button onClick={() => HeadleEnabled(BookData.ISBNNumber)} className="bg-green-500 text-white rounded py-2 px-6 duration-500 hover:bg-green-600">Enable</button>
                                                                                                                     )
                                                                                                                 }
                                                                                                             })()
