@@ -692,6 +692,12 @@ app.post('/RejectUserRequest/:id', (req, res) => {
 
 app.post('/AcceptUserRequest/:id', (req, res) => {
     const userEmail = req.params.id
+
+    // update user
+    const sql = "UPDATE users SET is_active = ? WHERE Email = ?"
+    const is_active = 1;
+
+    connection.query(sql, [is_active, userEmail], (err))
 })
 
 // all end points end
