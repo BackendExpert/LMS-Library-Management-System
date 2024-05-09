@@ -173,7 +173,14 @@ const SearchBook = () => {
                                                                                 {
                                                                                     (() => {
                                                                                     if(RoleUser !== null && EmailUser !== null){
-                                                                                        if(BookData.Status === "Available"){
+                                                                                        if(RoleUser === "SuperAdmin"){
+                                                                                            return (
+                                                                                                <div className="">
+                                                                                                  <button className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Request to Borrow</button>
+                                                                                                </div>
+                                                                                            )
+                                                                                        }
+                                                                                        else if(BookData.Status === "Available"){
                                                                                             return (
                                                                                                 <div className="">
                                                                                                   <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
