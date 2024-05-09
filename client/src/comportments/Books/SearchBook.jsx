@@ -155,72 +155,74 @@ const SearchBook = () => {
                                                         <tbody>
                                                             {
                                                                 SearchBookData.map((BookData, index) => {
-                                                                    return (
-                                                                        
-                                                                        <tr key={index}>
-                                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                                {BookData.BookTitle}
-                                                                            </th>
-                                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                                {BookData.ClassNo}
-                                                                            </th>
-                                                                            <td class="px-6 py-4">
-                                                                                {BookData.AuthorEditor}, {BookData.AuthorEditor2}
-                                                                            </td>
-                                                                            <td class="px-6 py-4">
-                                                                                {BookData.ISBNNumber}
-                                                                            </td>
-                                                                            <td class="px-6 py-4">
-                                                                                {BookData.Publisher}
-                                                                            </td>
-                                                                            <td class="px-6 py-4">
-                                                                                {
-                                                                                    (() => {
-                                                                                        if(BookData.Status === "Available"){
-                                                                                            return(
-                                                                                                <span className="font-semibold text-green-500">Available</span>
-                                                                                            )
-                                                                                        }
-                                                                                    })()
-                                                                                }
-                                                                            </td>
-                                                                            <td class="px-6 py-4">
-                                                                                {
-                                                                                    (() => {
-                                                                                    if(RoleUser !== null && EmailUser !== null){
-                                                                                        if(RoleUser === "SuperAdmin"){
-                                                                                            return (
-                                                                                                <div className="flex">
-                                                                                                  <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
-                                                                                                  <button className="mx-2 bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Update</button>
-                                                                                                </div>
-                                                                                            )
-                                                                                        }
-                                                                                        else if(BookData.Status === "Available"){
-                                                                                            return (
-                                                                                                <div className="">
-                                                                                                  <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
-                                                                                                </div>
-                                                                                            )
-                                                                                        }
+                                                                    if(BookData.Status !== "Disabled"){
+                                                                        return (                                                                        
+                                                                            <tr key={index}>
+                                                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                                    {BookData.BookTitle}
+                                                                                </th>
+                                                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                                    {BookData.ClassNo}
+                                                                                </th>
+                                                                                <td class="px-6 py-4">
+                                                                                    {BookData.AuthorEditor}, {BookData.AuthorEditor2}
+                                                                                </td>
+                                                                                <td class="px-6 py-4">
+                                                                                    {BookData.ISBNNumber}
+                                                                                </td>
+                                                                                <td class="px-6 py-4">
+                                                                                    {BookData.Publisher}
+                                                                                </td>
+                                                                                <td class="px-6 py-4">
+                                                                                    {
+                                                                                        (() => {
+                                                                                            if(BookData.Status === "Available"){
+                                                                                                return(
+                                                                                                    <span className="font-semibold text-green-500">Available</span>
+                                                                                                )
+                                                                                            }
+                                                                                        })()
                                                                                     }
-                                                                                    else{
-                                                                                        return (
-                                                                                        <p className="text-blue-500 font-semibold">Please login to System</p>
-                                                                                        )
+                                                                                </td>
+                                                                                <td class="px-6 py-4">
+                                                                                    {
+                                                                                        (() => {
+                                                                                        if(RoleUser !== null && EmailUser !== null){
+                                                                                            if(RoleUser === "SuperAdmin"){
+                                                                                                return (
+                                                                                                    <div className="flex">
+                                                                                                      <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
+                                                                                                      <button className="mx-2 bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Update</button>
+                                                                                                    </div>
+                                                                                                )
+                                                                                            }
+                                                                                            else if(BookData.Status === "Available"){
+                                                                                                return (
+                                                                                                    <div className="">
+                                                                                                      <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                                                                                    </div>
+                                                                                                )
+                                                                                            }
+                                                                                        }
+                                                                                        else{
+                                                                                            return (
+                                                                                            <p className="text-blue-500 font-semibold">Please login to System</p>
+                                                                                            )
+                                                                                        }
+                                                                                        })()
                                                                                     }
-                                                                                    })()
-                                                                                }
-                                                                            </td>
-                                                                            <td class="px-6 py-4">
-                                                                                {
-                                                                                    (() => {
+                                                                                </td>
+                                                                                <td class="px-6 py-4">
+                                                                                    {
+                                                                                        (() => {
+    
+                                                                                        })()
+                                                                                    }
+                                                                                </td>
+                                                                            </tr>
+                                                                        )
+                                                                    }
 
-                                                                                    })()
-                                                                                }
-                                                                            </td>
-                                                                        </tr>
-                                                                    )
                                                                 })
                                                             }
                                                         </tbody>
