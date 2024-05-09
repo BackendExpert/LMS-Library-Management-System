@@ -96,11 +96,10 @@ app.post('/SignUp', (req, res) => {
     // console.log(req.body)
 
     // check the email end with @nifs.ac.lk
-    const {email} = req.body
 
-    const checkEmail =  email.endsWith('@123.ac.uk');
+    // const checkEmail =  email.endsWith('@123.ac.uk');
 
-    if(checkEmail){
+    if(req.body.email.endsWith('@123.ac.uk')){
         const checkSql = "SELECT * FROM users WHERE Email = ?"
         connection.query(checkSql, [req.body.email], (err, result) => {
             if(err) throw err
