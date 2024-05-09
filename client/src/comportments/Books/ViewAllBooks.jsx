@@ -84,58 +84,60 @@ const ViewAllBooks = () => {
                 <div className="lg:grid grid-cols-3 gap-4">
                 {
                   allBooks.map((Books, index) => {
-                    return (
-                      <div className="bg-white py-4 px-10 rounded shadow-md lg:my-0 my-4">
-                        <div className="lg:flex">
+                    if(Books.Status !== "Disabled"){
+                      return (
+                        <div className="bg-white py-4 px-10 rounded shadow-md lg:my-0 my-4">
+                          <div className="lg:flex">
+                            <div className="">
+                              <h1 className="font-semibold">{Books.BookTitle}</h1>
+                              <p className="my-3"><span className="font-semibold">ISBN : </span> <span className="text-red-500">{Books.ISBNNumber} </span></p>
+                              <p className="my-3"><span className="font-semibold">Class No : </span> {Books.ClassNo}</p>
+                              <p className="my-3"><span className="font-semibold">Authors : </span> {Books.AuthorEditor}, {Books.AuthorEditor2}</p>
+                            </div>
                           <div className="">
-                            <h1 className="font-semibold">{Books.BookTitle}</h1>
-                            <p className="my-3"><span className="font-semibold">ISBN : </span> <span className="text-red-500">{Books.ISBNNumber} </span></p>
-                            <p className="my-3"><span className="font-semibold">Class No : </span> {Books.ClassNo}</p>
-                            <p className="my-3"><span className="font-semibold">Authors : </span> {Books.AuthorEditor}, {Books.AuthorEditor2}</p>
-                          </div>
-                        <div className="">
-                          <p className="mx-4">
-                            {
-                              (() => {
-                                if(Books.Status === "Available"){
-                                  return (
-                                    <span className="font-semibold pl-2 text-green-500">Available</span>
-                                  )
-                                }
-                              })()
-                            }
-    
-                            {
-                              (() => {
-                                if(RoleUser !== null && EmailUser !== null){
+                            <p className="mx-4">
+                              {
+                                (() => {
                                   if(Books.Status === "Available"){
                                     return (
-                                      <button className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                      <span className="font-semibold pl-2 text-green-500">Available</span>
                                     )
                                   }
-                                }
-                                else{
-                                  return (
-                                    <Link to={'/'}>
-                                      <p className="text-blue-500">Please Login to System</p>
-                                    </Link>
-                                  )
-                                }
-        
-                              })()
-                            }
-                          </p>    
+                                })()
+                              }
+      
+                              {
+                                (() => {
+                                  if(RoleUser !== null && EmailUser !== null){
+                                    if(Books.Status === "Available"){
+                                      return (
+                                        <button className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                      )
+                                    }
+                                  }
+                                  else{
+                                    return (
+                                      <Link to={'/'}>
+                                        <p className="text-blue-500">Please Login to System</p>
+                                      </Link>
+                                    )
+                                  }
+          
+                                })()
+                              }
+                            </p>    
+                          </div>
+                          </div>
+                            <p className="my-3"><span className="font-semibold">Description : </span> {Books.Discription}</p>
+                            <p className="my-3"><span className="font-semibold">Publisher : </span>{Books.Publisher}</p>
+                            <p className="my-3"><span className="font-semibold">Publish Year : </span>{Books.PubYear}</p>
+                            <p className="my-3"><span className="font-semibold">Publish Place : </span>{Books.PubPlace}</p>
+                          <div className="my-8">    
+                          </div>    
                         </div>
-                        </div>
-                          <p className="my-3"><span className="font-semibold">Description : </span> {Books.Discription}</p>
-                          <p className="my-3"><span className="font-semibold">Publisher : </span>{Books.Publisher}</p>
-                          <p className="my-3"><span className="font-semibold">Publish Year : </span>{Books.PubYear}</p>
-                          <p className="my-3"><span className="font-semibold">Publish Place : </span>{Books.PubPlace}</p>
-                        <div className="my-8">    
-                        </div>    
-                      </div>
-                    )
-                
+                      )
+                  
+                    }
                   })
                 }
                 </div>
