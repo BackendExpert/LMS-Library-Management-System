@@ -52,6 +52,21 @@ const SearchBook = () => {
         window.location.reload()
     }
 
+    // for disable book 
+    
+    const HeadleDisabled = (id) => {
+        axios.post('http://localhost:8081/DisabledBook/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Has been Disabled Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
         return (
             <div className="">
                 <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
