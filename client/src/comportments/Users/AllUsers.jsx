@@ -95,7 +95,7 @@ const AllUsers = () => {
                                                         if(users.is_active === 0){
                                                             return (
                                                                 <div className="flex">
-                                                                    <button className="py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red-600">Reject Request</button>
+                                                                    <button onClick={() => headleRejectRequest(users.Email)} className="py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red-600">Reject Request</button>
                                                                     <button className="mx-2 py-2 px-4 rounded bg-green-500 text-white duration-500 hover:bg-green-600">Accept Request</button>
                                                                 </div>
                                                             )
