@@ -185,6 +185,19 @@ const SearchBook = () => {
                                                                                     })()
                                                                                 }
                                                                             </td>
+                                                                            <td class="px-6 py-4">
+                                                                                {
+                                                                                    (() => {
+                                                                                        if(BookData.Status === "Available"){
+                                                                                            return (
+                                                                                                <div className="">
+                                                                                                  <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                                                                                </div>
+                                                                                            )
+                                                                                        }
+                                                                                    })()
+                                                                                }
+                                                                            </td>
                                                                         </tr>
                                                                     )
                                                                 })
