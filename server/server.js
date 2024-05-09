@@ -113,7 +113,7 @@ app.post('/SignUp', (req, res) => {
                     if(err) throw err
     
                     const role = "user"
-                    const is_active = 1
+                    const is_active = 0
                     const is_lock = 0
                     const create_at = new Date
     
