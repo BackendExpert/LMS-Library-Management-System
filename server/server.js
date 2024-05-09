@@ -585,6 +585,13 @@ app.get('/AllBooks', (req, res) => {
     })
 })
 
+// Disabled a book
+// DisabledBook
+
+app.post('/DisabledBook/:id', (req, res) => {
+    
+})
+
 // all end points end
 
 //check the server is working
