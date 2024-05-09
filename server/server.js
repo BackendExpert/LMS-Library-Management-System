@@ -667,7 +667,22 @@ app.post('/RejectUserRequest/:id', (req, res) => {
         else{
             // insert Data to reject table
 
-            const rejectUsersql = "INSERT INTO rejected_user_requests ()"
+            const rejectUsersql = "INSERT INTO rejected_user_requests (Email, reject_at) VALUES(?)"
+            const reject_at = new Date()
+
+            const values = [
+                userEmail,
+                reject_at
+            ]
+
+            connection.query(rejectUsersql, [values], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error while data inserting"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
         }
     })
 })
