@@ -95,44 +95,57 @@ app.post('/EmailSubscribe', (req, res) => {
 app.post('/SignUp', (req, res) => {
     // console.log(req.body)
 
-    const checkSql = "SELECT * FROM users WHERE Email = ?"
-    connection.query(checkSql, [req.body.email], (err, result) => {
-        if(err) throw err
+    // check the email end with @nifs.ac.lk
+    const {email} = req.body
 
-        if(result.length === 0){
-            bcrypt.hash(req.body.password, 10, (err, hashPass) => {
-                if(err) throw err
+    const checkEmail =  email.endsWith('@123.ac.uk');
 
-                const role = "user"
-                const is_active = 1
-                const is_lock = 0
-                const create_at = new Date
-
-                const sql = "INSERT INTO users(username, Email, Password, Role, is_active, is_lock, create_at) VALUES (?)"
-                const values = [    
-                    req.body.username,
-                    req.body.email,
-                    hashPass,
-                    role,
-                    is_active,
-                    is_lock,
-                    create_at
-                ]
-
-                connection.query(sql, [values], (err, result) => {
-                    if(err) {
-                        return res.json({Error: "Error on Server"})
-                    }
-                    else{
-                        return res.json({Status: "Success"})
-                    }
+    if(checkEmail){
+        const checkSql = "SELECT * FROM users WHERE Email = ?"
+        connection.query(checkSql, [req.body.email], (err, result) => {
+            if(err) throw err
+    
+            if(result.length === 0){
+                
+                bcrypt.hash(req.body.password, 10, (err, hashPass) => {
+                    if(err) throw err
+    
+                    const role = "user"
+                    const is_active = 1
+                    const is_lock = 0
+                    const create_at = new Date
+    
+                    const sql = "INSERT INTO users(username, Email, Password, Role, is_active, is_lock, create_at) VALUES (?)"
+                    const values = [    
+                        req.body.username,
+                        req.body.email,
+                        hashPass,
+                        role,
+                        is_active,
+                        is_lock,
+                        create_at
+                    ]
+    
+                    connection.query(sql, [values], (err, result) => {
+                        if(err) {
+                            return res.json({Error: "Error on Server"})
+                        }
+                        else{
+                            return res.json({Status: "Success"})
+                        }
+                    })
                 })
-            })
-        }
-        else{
-            return res.json({Error: "You Already Registered"})
-        }
-    })
+            }
+            else{
+                return res.json({Error: "You Already Registered"})
+            }
+        })
+    }
+    else{
+        return res.json({Error: "Noooooooooooooooooooooooo"})
+    }
+
+ 
 })
 
 // end point for SignIn
