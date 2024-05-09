@@ -687,6 +687,13 @@ app.post('/RejectUserRequest/:id', (req, res) => {
     })
 })
 
+// accept user Request
+// AcceptUserRequest
+
+app.post('/AcceptUserRequest/:id', (req, res) => {
+    const userEmail = req.params.id
+})
+
 // all end points end
 
 //check the server is working
