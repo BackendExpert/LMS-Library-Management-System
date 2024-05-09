@@ -176,7 +176,7 @@ const SearchBook = () => {
                                                                                         if(RoleUser === "SuperAdmin"){
                                                                                             return (
                                                                                                 <div className="">
-                                                                                                  <button className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Request to Borrow</button>
+                                                                                                  <button className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
                                                                                                 </div>
                                                                                             )
                                                                                         }
