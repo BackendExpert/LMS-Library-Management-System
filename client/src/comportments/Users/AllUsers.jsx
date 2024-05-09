@@ -12,6 +12,11 @@ const AllUsers = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState()
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     const [AllUser, SetAllUsers] = useState([])
 
     useEffect(() => {
@@ -19,6 +24,19 @@ const AllUsers = () => {
         .then(res => SetAllUsers(res.data))
         .catch(err => console.log(err))
     }, [])
+
+
+    // reject user Request
+
+    const headleRejectRequest = (id) => {
+        axios.post('http://localhost:8081/RejectUserRequest/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("User Request has been Rejected")
+
+            }
+        })
+    }
 
     if(RoleUser === "SuperAdmin"){
         return (
