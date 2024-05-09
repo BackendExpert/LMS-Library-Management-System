@@ -267,12 +267,12 @@ const SearchBook = () => {
                                                                                                             (() => {
                                                                                                                 if(BookData.Status === "Available"){
                                                                                                                     return (
-                                                                                                                        <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
+                                                                                                                        <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disable</button>
                                                                                                                     )
                                                                                                                 }
                                                                                                                 else if(BookData.Status === "Disabled"){
                                                                                                                     return (
-                                                                                                                        <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-green-500 text-white rounded py-2 px-6 duration-500 hover:bg-green-600">Enabled</button>
+                                                                                                                        <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-green-500 text-white rounded py-2 px-6 duration-500 hover:bg-green-600">Enable</button>
                                                                                                                     )
                                                                                                                 }
                                                                                                             })()
