@@ -176,7 +176,7 @@ const SearchBook = () => {
                                                                                         if(RoleUser === "SuperAdmin"){
                                                                                             return (
                                                                                                 <div className="flex">
-                                                                                                  <button className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
+                                                                                                  <button onClick={() => HeadleDisabled(BookData.ISBNNumber)} className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
                                                                                                   <button className="mx-2 bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Update</button>
                                                                                                 </div>
                                                                                             )
