@@ -591,16 +591,27 @@ app.get('/AllBooks', (req, res) => {
 app.post('/DisabledBook/:id', (req, res) => {
     const BookISBN = req.params.id
 
-    // disabled query
-    const sql = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
-    const status = "Disabled"
+    // check the book is already Disabled
+    const checkDis = "SELECT * FROM books WHERE ISBNNumber = ?"
+    connection.query(checkDis, [BookISBN], (err, result) => {
+        if(err) throw err
 
-    connection.query(sql, [status, BookISBN], (err, result) => {
-        if(err) {
-            return res.json({Error: "Internal Server Error"})
+        if(result[0].Status === "Disabled"){
+            return res.json({Error: "The Book is Already Disabled"})            
         }
         else{
-            return res.json({Status: "Success"})
+            // disabled query
+            const sql = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
+            const status = "Disabled"
+
+            connection.query(sql, [status, BookISBN], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
         }
     })
 })
