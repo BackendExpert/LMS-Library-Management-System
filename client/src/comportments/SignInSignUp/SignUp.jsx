@@ -19,7 +19,7 @@ const SignUp = () => {
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("Wait for Approve By the Admin")
-                navigate('/')
+                window.location.reload()
             }
             else{
                 alert(res.data.Error)
