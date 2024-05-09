@@ -145,6 +145,7 @@ const ViewAllBooks = () => {
             }
 
             else if(buttonValue === "listData"){
+              
               return (
                 <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                   <div class="relative overflow-x-auto">
@@ -177,54 +178,56 @@ const ViewAllBooks = () => {
                     <tbody>
                       {
                         allBooks.map((Books, index) => {
-                          return (
-                            <tr key={index}>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {Books.BookTitle}
-                            </th>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {Books.ClassNo}
-                            </th>
-                            <td class="px-6 py-4">
-                                {Books.AuthorEditor}, {Books.AuthorEditor2}
-                            </td>
-                            <td class="px-6 py-4">
-                                {Books.ISBNNumber}
-                            </td>
-                            <td class="px-6 py-4">
-                                {Books.Publisher}
-                            </td>
-                            <td class="px-6 py-4">
+                          if(Books.Status !== "Disabled"){
+                            return (
+                              <tr key={index}>
+                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                  {Books.BookTitle}
+                              </th>
+                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                  {Books.ClassNo}
+                              </th>
+                              <td class="px-6 py-4">
+                                  {Books.AuthorEditor}, {Books.AuthorEditor2}
+                              </td>
+                              <td class="px-6 py-4">
+                                  {Books.ISBNNumber}
+                              </td>
+                              <td class="px-6 py-4">
+                                  {Books.Publisher}
+                              </td>
+                              <td class="px-6 py-4">
+                                  {
+                                      (() => {
+                                          if(Books.Status === "Available"){
+                                              return(
+                                                  <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
+                                              )
+                                          }
+                                      })()
+                                  }
+                              </td>
+                              <td class="px-6 py-4">
                                 {
-                                    (() => {
-                                        if(Books.Status === "Available"){
-                                            return(
-                                                <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
-                                            )
-                                        }
-                                    })()
+                                  (() => {
+                                    if(RoleUser !== null && EmailUser !== null){
+                                      return (
+                                        <div className="">
+                                          <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                        </div>
+                                      )
+                                    }
+                                    else{
+                                      return (
+                                        <p className="text-blue-500 font-semibold">Please login to System</p>
+                                      )
+                                    }
+                                  })()
                                 }
-                            </td>
-                            <td class="px-6 py-4">
-                              {
-                                (() => {
-                                  if(RoleUser !== null && EmailUser !== null){
-                                    return (
-                                      <div className="">
-                                        <button className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
-                                      </div>
-                                    )
-                                  }
-                                  else{
-                                    return (
-                                      <p className="text-blue-500 font-semibold">Please login to System</p>
-                                    )
-                                  }
-                                })()
-                              }
-                            </td>
-                        </tr>
-                          )
+                              </td>
+                          </tr>
+                            )
+                          }
                         })
                       }                                 
                     </tbody>
