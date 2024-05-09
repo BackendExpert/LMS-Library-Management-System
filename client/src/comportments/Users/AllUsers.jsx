@@ -117,9 +117,15 @@ const AllUsers = () => {
                                                                             }
                                                                             if(users.is_lock === 1){
                                                                                 return (
-                                                                                    <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
-                                                                                        Unlock Account
-                                                                                    </button> 
+                                                                                    <div className="">
+                                                                                        <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
+                                                                                            Unlock Account
+                                                                                        </button>
+                                                                                        <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
+                                                                                            Reject Account
+                                                                                        </button>  
+                                                                                    </div>
+                                                                                    
                                                                                 )
                                                                             }
                                                                         })()
