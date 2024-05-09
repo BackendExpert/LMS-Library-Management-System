@@ -590,7 +590,19 @@ app.get('/AllBooks', (req, res) => {
 
 app.post('/DisabledBook/:id', (req, res) => {
     const BookISBN = req.params.id
-    
+
+    // disabled query
+    const sql = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
+    const status = "Disabled"
+
+    connection.query(sql, [status, BookISBN], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
 })
 
 // all end points end
