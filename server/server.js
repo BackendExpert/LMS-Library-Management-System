@@ -624,7 +624,7 @@ app.post('/EnableBook/:id', (req, res) => {
 
     // enable book
     const sql = "UPDATE books SET Status = ? WHERE ISBNNumber = ? "
-    const status = "Enabled"
+    const status = "Available"
 
     connection.query(sql, [status, BookISBN], (err, result) => {
         if(err) {
