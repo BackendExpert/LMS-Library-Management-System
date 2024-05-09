@@ -39,7 +39,7 @@ const SignIn = () => {
                     navigate('/')
                 }
                 else if(res.data.LoginUser[0].is_active === 0){
-                    alert('Your Account has been Deactive by Administration.')
+                    alert('Your Account is still not Activate Wait for Activate from Admin')
                     localStorage.clear()
                     navigate('/')
                 }
