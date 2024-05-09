@@ -71,7 +71,7 @@ const AllUsers = () => {
                                                         }
                                                         else if(users.is_active === 0){
                                                             return (
-                                                                <p className="text-red-500 font-semibold">Deactive</p>
+                                                                <p className="text-blue-500 font-semibold">Waiting for Activate</p>
                                                             )
                                                         }
 
@@ -82,6 +82,11 @@ const AllUsers = () => {
                                             <td class="px-6 py-4">
                                                 {
                                                     (() => {
+                                                        if(users.Email === EmailUser){
+                                                            return (
+                                                                <div className="text-red-500 font-semibold">Current Login SuperAdmin</div>
+                                                            )
+                                                        }
                                                         if(users.Role === "SuperAdmin"){
                                                             return (
                                                                 <div className=""></div>
