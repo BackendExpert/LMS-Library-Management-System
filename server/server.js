@@ -100,9 +100,9 @@ app.post('/SignUp', (req, res) => {
         check the user is already have an nifs email address
     */
 
-    // const checkEmail =  email.endsWith('@123.ac.uk');
+    // const checkEmail =  email.endsWith('@nifs.ac.lk');
 
-    if(req.body.email.endsWith('@123.ac.uk')){
+    if(req.body.email.endsWith('@nifs.ac.lk')){
         const checkSql = "SELECT * FROM users WHERE Email = ?"
         connection.query(checkSql, [req.body.email], (err, result) => {
             if(err) throw err
@@ -144,7 +144,7 @@ app.post('/SignUp', (req, res) => {
         })
     }
     else{
-        return res.json({Error: "Noooooooooooooooooooooooo"})
+        return res.json({Error: "Your are not a NIFS Member"})
     }
 
  
