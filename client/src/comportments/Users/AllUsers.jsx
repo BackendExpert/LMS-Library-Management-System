@@ -92,11 +92,40 @@ const AllUsers = () => {
                                                                 <div className=""></div>
                                                             )
                                                         }
+                                                        if(users.is_active === 0){
+                                                            return (
+                                                                <div className="flex">
+                                                                    <button className="py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red-600">Reject Request</button>
+                                                                    <button className="mx-2 py-2 px-4 rounded bg-green-500 text-white duration-500 hover:bg-green-600">Accept Request</button>
+                                                                </div>
+                                                            )
+                                                        }
                                                         else{
                                                             return (
-                                                                <button className="text-red-500 font-semibold py-2 px-8 rounded duration-500 hover:bg-red-500 hover:text-white hover:shadow-md">
-                                                                    Set as SuperAdmin
-                                                                </button>
+                                                                <div className="flex">
+                                                                    <button className="text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
+                                                                        Set as SuperAdmin
+                                                                    </button>
+                                                                    {
+                                                                        (() => {
+                                                                            if(users.is_lock === 0){
+                                                                                return (
+                                                                                    <button className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
+                                                                                        Lock Account
+                                                                                    </button> 
+                                                                                )
+                                                                            }
+                                                                            if(users.is_lock === 1){
+                                                                                return (
+                                                                                    <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
+                                                                                        Unlock Account
+                                                                                    </button> 
+                                                                                )
+                                                                            }
+                                                                        })()
+                                                                    }
+                                                                </div>
+
                                                             )
                                                         }
                                                     })()
