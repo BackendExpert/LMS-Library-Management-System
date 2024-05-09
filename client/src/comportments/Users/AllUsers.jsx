@@ -117,7 +117,7 @@ const AllUsers = () => {
                                                             return (
                                                                 <div className="flex">
                                                                     <button onClick={() => headleRejectRequest(users.Email)} className="py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red-600">Reject Request</button>
-                                                                    <button className="mx-2 py-2 px-4 rounded bg-green-500 text-white duration-500 hover:bg-green-600">Accept Request</button>
+                                                                    <button onClick={() => headleAcceptRequest(users.Email)} className="mx-2 py-2 px-4 rounded bg-green-500 text-white duration-500 hover:bg-green-600">Accept Request</button>
                                                                 </div>
                                                             )
                                                         }
