@@ -18,7 +18,7 @@ const SignUp = () => {
         axios.post('http://localhost:8081/SignUp', UserData)
         .then(res => {
             if(res.data.Status === "Success"){
-                alert("Registation Successful")
+                alert("Wait for Approve By the Admin")
                 navigate('/')
             }
             else{
