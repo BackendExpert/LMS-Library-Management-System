@@ -163,7 +163,7 @@ const SearchBook = () => {
                                                                                     (() => {
                                                                                         if(BookData.Status === "Available"){
                                                                                             return(
-                                                                                                <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
+                                                                                                <span className="font-semibold text-green-500">Available</span>
                                                                                             )
                                                                                         }
                                                                                     })()
@@ -175,8 +175,9 @@ const SearchBook = () => {
                                                                                     if(RoleUser !== null && EmailUser !== null){
                                                                                         if(RoleUser === "SuperAdmin"){
                                                                                             return (
-                                                                                                <div className="">
+                                                                                                <div className="flex">
                                                                                                   <button className="bg-red-500 text-white rounded py-2 px-6 duration-500 hover:bg-red-600">Disabled</button>
+                                                                                                  <button className="mx-2 bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Update</button>
                                                                                                 </div>
                                                                                             )
                                                                                         }
