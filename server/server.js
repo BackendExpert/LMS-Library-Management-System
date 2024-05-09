@@ -96,6 +96,9 @@ app.post('/SignUp', (req, res) => {
     // console.log(req.body)
 
     // check the email end with @nifs.ac.lk
+    /*
+        check the user is already have an nifs email address
+    */
 
     // const checkEmail =  email.endsWith('@123.ac.uk');
 
