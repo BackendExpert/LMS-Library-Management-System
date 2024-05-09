@@ -651,6 +651,27 @@ app.post('/EnableBook/:id', (req, res) => {
     })
 })
 
+// Reject User Request
+// RejectUserRequest
+
+app.post('/RejectUserRequest/:id', (req, res) => {
+    userEmail = req.params.id
+
+    // reject query
+
+    const sql = "DELETE FROM users WHERE Email = ?"
+    connection.query(sql, [userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error Wihle Deleting User"})
+        }
+        else{
+            // insert Data to reject table
+
+            const rejectUsersql = "INSERT INTO rejected_user_requests ()"
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
