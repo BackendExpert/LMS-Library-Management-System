@@ -752,8 +752,7 @@ app.post('/SearchUsers', (req, res) => {
             conditions.push(`Email = '${req.body.UserSearchData}'`);
         }
         if(req.body.RadioInputData.trim()){
-            conditions.push(`Role = '${req.body.UserSearchData}' OR Role = '${req.body.UserSearchData}' OR `)
-            conditions.push(`AuthorEditor LIKE '%${author}%' OR AuthorEditor2 LIKE '%${author}%'`);
+            conditions.push(`Role = '${req.body.RadioInputData}' OR Role = '${req.body.RadioInputData}' OR is_active = '${parseInt(req.body.RadioInputData)}' OR is_lock = ${parseInt(req.body.RadioInputData)}`)
         }
     }
 })
