@@ -102,11 +102,6 @@ const Users = () => {
                                 <AllUsers />
                             )
                         }
-                        if(buttonValue === "Add_New_User"){
-                            return (
-                                <AddUser />
-                            )
-                        }
                         if(buttonValue === "RejectRequest"){
                             return (
                                 <RejectUserRequests />
