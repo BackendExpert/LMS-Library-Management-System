@@ -67,7 +67,7 @@ const AllUsers = () => {
                             (() => {
                                 if(buttonValue === "FilterUsers"){
                                     return (
-                                        <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 py-4 px-8 rounded text-white duration-500 hover:bg-red-600">Filter Users</button>                        
+                                        <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 py-4 px-8 rounded text-white duration-500 hover:bg-red-600">Close Filter Users</button>                        
                                     )
                                 }
                                 if(buttonValue === 0){
@@ -83,10 +83,7 @@ const AllUsers = () => {
                         (() => {
                             if(buttonValue === "FilterUsers"){
                                 return (
-                                    <div className="">
-                                        <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 text-white rounded py-2 px-4">close</button>
-                                    </div>
-
+                                    <div className="">Hi all</div>
                                 )
                             }
                             if(buttonValue === 0){
