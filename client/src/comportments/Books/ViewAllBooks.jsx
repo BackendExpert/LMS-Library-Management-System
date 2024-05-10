@@ -285,6 +285,11 @@ const ViewAllBooks = () => {
                                             </div>
                                           )
                                         }
+                                        else{
+                                          return (
+                                            <div className="">asd</div>
+                                          )
+                                        }
                                       }
                                     }
                                     else{
