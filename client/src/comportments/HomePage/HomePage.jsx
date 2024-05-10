@@ -8,6 +8,7 @@ import axios from 'axios';
 import SignUp from '../SignInSignUp/SignUp';
 import SignIn from '../SignInSignUp/SignIn';
 import Welcome from './Welcome';
+import HomeQuote from './HomeQuote';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -36,9 +37,8 @@ const HomePage = () => {
         <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
             <Navbar />
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-8 mx-8 ">
-                <div className="lg:my-12 my-auto">
-                    <div className="">
-                        
+                <div className="lg:my-0 my-auto">
+                    <div className="">                        
                             {
                                 (() => {
                                     if(RoleUser !== null && EmailUser !== null){
@@ -69,7 +69,9 @@ const HomePage = () => {
                     {
                         (() => {
                             if(buttonValue === 0){
-
+                                return (
+                                    <HomeQuote />
+                                )
                             }
                             if(buttonValue === "SignUp"){
                                 return(
