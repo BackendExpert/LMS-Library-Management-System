@@ -752,7 +752,7 @@ app.post('/SearchUsers', (req, res) => {
             conditions.push(`Email = '${req.body.UserSearchData}'`);
         }
         if(req.body.RadioInputData.trim()){
-            conditions.push(`Role = '${req.body.RadioInputData}' OR Role = '${req.body.RadioInputData}' OR is_active = '${ req.body.RadioInputData === 0 ? parseInt(req.body.RadioInputData) : '' }' OR is_lock = ${ req.body.RadioInputData === 1 ? parseInt(req.body.RadioInputData) : '' }`)
+            conditions.push(`Role = '${ req.body.RadioInputData === "SuperAdmin" ? "SuperAdmin" : "user"}' OR is_active = '${ req.body.RadioInputData === 0 ? parseInt(req.body.RadioInputData) : null }' OR is_lock = ${ req.body.RadioInputData === 1 ? parseInt(req.body.RadioInputData) : null }`)
         }
 
         let whereClause = '';
