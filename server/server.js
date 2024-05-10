@@ -754,6 +754,13 @@ app.post('/SearchUsers', (req, res) => {
         if(req.body.RadioInputData.trim()){
             conditions.push(`Role = '${req.body.RadioInputData}' OR Role = '${req.body.RadioInputData}' OR is_active = '${parseInt(req.body.RadioInputData)}' OR is_lock = ${parseInt(req.body.RadioInputData)}`)
         }
+
+        let whereClause = '';
+        if (conditions.length > 0) {
+          whereClause = 'WHERE ' + conditions.join(' AND ');
+        }
+    
+        const sql = `SELECT * FROM users ${whereClause}`;
     }
 })
 
