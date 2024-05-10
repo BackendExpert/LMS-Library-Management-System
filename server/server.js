@@ -723,6 +723,15 @@ app.get('/CountUsersReject', (req, res) => {
 
 app.get('/RejectAllUsers', (req, res) => {
     const sql = "SELECT * FROM rejected_user_requests"
+
+    connection.query(sql, (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
 })
 
 // all end points end
