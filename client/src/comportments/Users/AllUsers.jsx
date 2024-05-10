@@ -72,6 +72,21 @@ const AllUsers = () => {
         }) 
     }
 
+    // unlock account
+
+    const headleUnLockAccount = (id) => {
+        axios.post('http://localhost:8081/UnLockAccount/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Account has been Unlocked Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){ 
         return (
             <div className='bg-white py-4 px-8 my-8 rounded-2xl shadow-md'>
@@ -197,10 +212,10 @@ const AllUsers = () => {
                                                                                             if(users.is_lock === 1){
                                                                                                 return (
                                                                                                     <div className="">
-                                                                                                        <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
+                                                                                                        <button  onClick={() => headleUnLockAccount(users.Email)} className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
                                                                                                             Unlock Account
                                                                                                         </button>
-                                                                                                        <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
+                                                                                                        <button className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
                                                                                                             Reject Account
                                                                                                         </button>  
                                                                                                     </div>
