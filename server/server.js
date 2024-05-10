@@ -996,6 +996,23 @@ app.get('/CountMyRequests/:id', (req, res) => {
 })
 
 
+// fetch my book requests
+// MyRequestsBook
+
+app.get('/MyRequestsBook/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
+    connection.query(sql, [userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
