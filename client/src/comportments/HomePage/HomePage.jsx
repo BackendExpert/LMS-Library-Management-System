@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Navbar from './Navbar'
 import MyIcons from '@reacticons/ionicons'
 import Footer from './Footer'
 import  secureLocalStorage  from  "react-secure-storage";
@@ -7,8 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SignUp from '../SignInSignUp/SignUp';
 import SignIn from '../SignInSignUp/SignIn';
-import Welcome from './Welcome';
 import HomeQuote from './HomeQuote';
+import NIFSLogo from '../../assets/nifs_logo.png';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -35,7 +34,43 @@ const HomePage = () => {
   return (
     <div>
         <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
-            <Navbar />
+            <div className="bg-none text-white mt-[-20px]">
+                <div className="lg:flex justify-between mx-16">
+                    <div className="flex">
+                        <div className="lg:flex">
+                            <div className="lg:flex">
+                                <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
+                                <h1 className="my-4 whitespace-nowrap">NIFS Library</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="my-1">                   
+                        <div className="">    
+                        {
+                            (() => {
+                                if(RoleUser !== null && EmailUser !== null){
+                                    return (
+                                        <div className="flex">
+                                            <p className="mx-2">{EmailUser}</p>
+                                            <p className="font-semibold duration-500 hover:mr-2 cursor-pointer" onClick={logout}>Logout</p>
+                                        </div>
+                                        
+                                    )
+                                }
+                                else{
+                                    return (
+                                        <div className=""></div>
+                                    )
+                                }
+                            })()
+                        }                 
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-8 mx-8 ">
                 <div className="lg:my-0 my-auto">
                     <div className="">                        
