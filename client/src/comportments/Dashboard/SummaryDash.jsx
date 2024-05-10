@@ -44,7 +44,7 @@ const SummaryDash = () => {
             // count my book requests
             try {
                 const MyRequests = await axios.get('http://localhost:8081/CountMyRequests/' + EmailUser);
-                SetMyBookReqeusts(MyRequests.data.BKCount);
+                SetMyBookReqeusts(MyRequests.data.CountMyBooks);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -66,7 +66,7 @@ const SummaryDash = () => {
         {id: 6, btnvalue: "", name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
         {id: 7, btnvalue: "", name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
         {id: 8, btnvalue: "Users", name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
-        {id: 9, btnvalue: "myRequests", name: "My Book Requests", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"},        
+        {id: 9, btnvalue: "myRequests", name: "My Book Requests", link: "#", value: <CountUp end={MyBookReqeusts}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"},        
     ]
 
     const [UserData, SetUserData] = useState([])
@@ -108,7 +108,7 @@ const SummaryDash = () => {
                         {
                             dataCount.map((data) => {
                                 if(RoleUser === "SuperAdmin"){
-                                    if(data.id !== 9){
+                                    if(data.id !== 10){
                                         return (
                                             <Link to={data.link}>
                                                 <div onClick={() => HeadleButtonClick(data.btnvalue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
