@@ -142,9 +142,17 @@ const ViewAllBooks = () => {
                                 (() => {
                                   if(RoleUser !== null && EmailUser !== null){
                                     if(Books.Status === "Available"){
-                                      return (
-                                        <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
-                                      )
+                                      if(myBkRequest <= 3){
+                                        return (
+                                          <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                        )
+                                      }
+                                      else{
+                                        return (
+                                          <div className=""></div>
+                                        )
+                                      }
+
                                     }
                                   }
                                   else{
