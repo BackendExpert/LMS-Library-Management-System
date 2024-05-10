@@ -38,9 +38,33 @@ const HomePage = () => {
                 <div className="lg:flex justify-between mx-16">
                     <div className="flex">
                         <div className="lg:flex">
-                            <div className="lg:flex">
+                            <div className="lg:flex text-gray-300">
                                 <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
                                 <h1 className="my-4 whitespace-nowrap">NIFS Library</h1>
+
+                                {
+                                    (() => {
+                                        if(RoleUser !== null && EmailUser !== null){
+                                            return (
+                                                <div className="">
+                                                    <h1 className="">Dashboard</h1>
+                                                </div>
+                                            )
+                                        }
+                                        else{
+                                            return (
+                                                <div className="lg:flex my-4 mx-8 ">
+                                                    <div className="">
+                                                        <h1 className="mx-4 cursor-pointer duration-500 hover:text-white">Home</h1>
+                                                    </div>
+                                                    <div className="">
+                                                        <h1 className="mx-4 cursor-pointer duration-500 hover:text-white">Join</h1>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                    })()
+                                }
                             </div>
                         </div>
 
