@@ -21,12 +21,17 @@ const SearchFilterUsers = () => {
     // search and Filter data
     const [UserSearchData, SetUserSearchData] = useState('')
 
+    // check the form is submited or not
+    const [isFormSubmited, SetisFormSubmited] = useState(false)
+
     const handleOptionChange = (event) => {
         SetRadioInputData(event.target.value);
     };
 
     const headleSearch = (e) => {
-        
+        e.preventDefault();
+
+
     }
 
     if(RoleUser === "SuperAdmin"){
