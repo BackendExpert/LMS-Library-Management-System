@@ -69,15 +69,16 @@ const SignIn = () => {
     <div className='bg-none py-8 rounded text-white'>
         <div className=''>
             <div className="mx-0 py-12 px-10 w-full">
+                    <h1 className="text-gray-500 font-semibold">WELCOME TO LIBRARY</h1>
                     <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Email : </label>
-                            <input type="email" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded-xl pl-4 shadow-md' required placeholder='Enter Email'
+                            <input type="email" name="" id="" className='bg-transparent w-full border border-gray-300 my-2 h-12 rounded-xl pl-4 shadow-md' required placeholder='Enter Email'
                             onChange={e => SetLoginData({...LoginData, email:e.target.value})}/>
                         </div>
                         <div className="my-5">
                             <label htmlFor="">Password : </label>
-                            <input type="password" name="" id="" className='w-full border border-gray-300 my-2 h-12 rounded-xl pl-4 shadow-md' required placeholder='Enter Password'
+                            <input type="password" name="" id="" className='bg-transparent w-full border border-gray-300 my-2 h-12 rounded-xl pl-4 shadow-md' required placeholder='Enter Password'
                             onChange={e => SetLoginData({...LoginData, password:e.target.value})}/>
                         </div>
                         <div className="">
