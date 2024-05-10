@@ -863,7 +863,7 @@ app.post('/RejectAccount/:id', (req, res) => {
                         from: process.env.EMAIL_USER,
                         to: req.body.email,
                         subject: 'Account Rejected Message NIFS Library',
-                        text: 'Your Account has been Rejected', 
+                        text: 'Your Account has been Rejected from System', 
                     };
 
                     transporter.sendMail(mailOptions, function(error, info){
