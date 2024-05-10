@@ -799,6 +799,24 @@ app.post('/LockUserAccount/:id', (req, res) => {
     })
 })
 
+// unlock Account
+app.post('/UnLockAccount/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "UPDATE users SET is_lock = ? WHERE Email = ?"
+
+    const is_lock = 0
+
+    connection.query(sql, [is_lock, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
