@@ -25,11 +25,15 @@ const SearchFilterUsers = () => {
         SetRadioInputData(event.target.value);
     };
 
+    const headleSearch = (e) => {
+        
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>
                 <div className="my-4">
-                    <form>
+                    <form onSubmit={headleSearch}>
                         <div className="lg:grid grid-cols-3 gap-4">
                             <div className="my-2">
                                 <label htmlFor="">Email Address</label>
