@@ -87,6 +87,20 @@ const AllUsers = () => {
         })
     }
 
+    // reject account
+    const headleRejectAccount = (id) => {
+        axios.post('http://localhost:8081/RejectAccount/' + id)
+        .then(res => {
+            if(res.data.Status === "Succcess"){
+                alert("Account has been Rejected Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){ 
         return (
             <div className='bg-white py-4 px-8 my-8 rounded-2xl shadow-md'>
