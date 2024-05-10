@@ -23,6 +23,7 @@ const SummaryDash = () => {
     
     const [AllUserCount, SetAllUserCount] = useState(0)
     const [CountBook, SetCoutBooks] = useState(0)
+    const [MyBookReqeusts, SetMyBookReqeusts] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,7 +44,7 @@ const SummaryDash = () => {
             // count my book requests
             try {
                 const MyRequests = await axios.get('http://localhost:8081/CountMyRequests');
-                SetCoutBooks(BKCount.data.BKCount);
+                SetMyBookReqeusts(MyRequests.data.BKCount);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
