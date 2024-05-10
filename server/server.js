@@ -925,7 +925,27 @@ app.post('/BorrowBook/:id', (req, res) => {
             return res.json({Error: "Internal Server Error"})
         }
         else{
-            return res.json({Status: "Success"})
+            const makeRequest = "INSERT INTO book_borrow_request(bookISBN, borrowEmail, borrow_at, status) VALUES (?)"
+
+            const borrow_at = new Date()
+            const status = "Request"
+
+            const values = [
+                BookID,
+                EmailUser,
+                borrow_at,
+                status
+            ]
+
+            connection.query(makeRequest, [values], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
+            
         }
     })
 
