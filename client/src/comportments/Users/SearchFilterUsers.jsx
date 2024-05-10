@@ -76,12 +76,12 @@ const SearchFilterUsers = () => {
                             <div className="my-6">
                                 <div className="">                                    
                                     <label htmlFor="" className="">
-                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value={0} checked={RadioInputData === 0} onChange={handleOptionChange}/>    
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value='1' checked={RadioInputData === '1'} onChange={handleOptionChange}/>    
                                     Locked User</label>
                                 </div>
                                 <div className="">                                    
                                     <label htmlFor="" className="">
-                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value={0} checked={RadioInputData === 0} onChange={handleOptionChange}/>    
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value='0' checked={RadioInputData === '0'} onChange={handleOptionChange}/>    
                                     User Requests</label>
                                 </div>
                             </div>
