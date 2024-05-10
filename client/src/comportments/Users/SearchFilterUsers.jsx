@@ -120,7 +120,15 @@ const SearchFilterUsers = () => {
                                                 SearchData.map((searchUser, index) => {
                                                     return (
                                                         <tr key={index}>
-                                                            
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {searchUser.ID}
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                {searchUser.Email}
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                {searchUser.Role}
+                                                            </td>
                                                         </tr>
                                                     )
                                                 })
