@@ -817,6 +817,13 @@ app.post('/UnLockAccount/:id', (req, res) => {
     })
 })
 
+// Reject Account
+app.post('/RejectAccount/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    
+})
+
 // all end points end
 
 //check the server is working
