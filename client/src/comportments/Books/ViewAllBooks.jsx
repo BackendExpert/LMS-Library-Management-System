@@ -278,11 +278,13 @@ const ViewAllBooks = () => {
                                         )
                                       }
                                       else if(Books.Status === "Available"){
-                                        return (
-                                          <div className="">
-                                            <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
-                                          </div>
-                                        )
+                                        if(myBkRequest <= 3){
+                                          return (
+                                            <div className="">
+                                              <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                            </div>
+                                          )
+                                        }
                                       }
                                     }
                                     else{
