@@ -741,6 +741,10 @@ app.get('/RejectAllUsers', (req, res) => {
 
 app.post('/SearchUsers', (req, res) => {
     console.log(req.body)
+
+    if(req.body.UserSearchData && req.body.RadioInputData){
+        return res.json({Error: "Please Fill or Select on input"})
+    }
 })
 
 // all end points end
