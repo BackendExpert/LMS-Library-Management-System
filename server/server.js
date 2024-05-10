@@ -761,6 +761,18 @@ app.post('/SearchUsers', (req, res) => {
         }
     
         const sql = `SELECT * FROM users ${whereClause}`;
+
+        connection.query(sql, (err, result) => {
+            if(err) {
+                return res.json({Error: "Internal Server ERROR"})
+            }
+            else if(result.length === 0){
+                return res.json({Error: "No recodes Found"})
+            }
+            else{
+                return res.json({Status: "Success", UserData:result})
+            }
+        })
     }
 })
 
