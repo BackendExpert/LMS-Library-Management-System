@@ -16,13 +16,23 @@ const MyBorrowRequests = () => {
         SetButtonValue(clickValue)   
     }
 
+    // fetch data from book requst according to login email
+    const [BookData, SetBookData] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/MyRequestsBook/' + EmailUser)
+        .then(res => SetBookData(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
+
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div>
                 <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                     <h1 className="font-semibold text-gray-500 text-xl">My Borrow Requests</h1>
 
-                    
+
 
                 </div>
             </div>
