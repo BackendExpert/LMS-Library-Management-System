@@ -39,8 +39,8 @@ const SearchFilterUsers = () => {
                                     <label htmlFor="" className="mx-2">SuperAdmins</label>
                                 </div>
                                 <div className="">
-                                    <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="SuperAdmins" checked={SetRadioInputData === 'SuperAdmins'}/>
-                                    <label htmlFor="" className="mx-2">SuperAdmins</label>
+                                    <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="Users" checked={SetRadioInputData === 'Users'}/>
+                                    <label htmlFor="" className="mx-2">Users</label>
                                 </div>
                             </div>
                         </div>
