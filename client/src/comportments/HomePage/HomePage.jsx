@@ -55,7 +55,7 @@ const HomePage = () => {
                                             return (
                                                 <div className="lg:flex my-4 mx-8 ">
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('Home')} className="mx-4 cursor-pointer duration-500 hover:text-white">Home</h1>
+                                                        <h1 onClick={() => HeadleButtonClick(0)} className="mx-4 cursor-pointer duration-500 hover:text-white">Home</h1>
                                                     </div>
                                                     <div className="">
                                                         <h1 onClick={() => HeadleButtonClick('Join')} className="mx-4 cursor-pointer duration-500 hover:text-white">Join</h1>
