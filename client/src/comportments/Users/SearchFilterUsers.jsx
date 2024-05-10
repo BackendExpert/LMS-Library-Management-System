@@ -14,9 +14,19 @@ const SearchFilterUsers = () => {
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
     }
-  return (
-    <div>SearchFilterUsers</div>
-  )
+
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>SearchFilterUsers</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default SearchFilterUsers
