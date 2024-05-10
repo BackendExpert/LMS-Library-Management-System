@@ -22,7 +22,7 @@ const ViewAllBooks = () => {
       const fetchData = async () => {
           try {
               const BookMy = await axios.get('http://localhost:8081/MyCountRequests/' + EmailUser);
-              SetmyBkRequest(BookMy.data.BKCount);
+              SetmyBkRequest(BookMy.data.MyBookRequests);
           } catch (error) {
               console.error('Error fetching data:', error);
           }
