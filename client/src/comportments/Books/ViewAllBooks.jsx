@@ -56,7 +56,7 @@ const ViewAllBooks = () => {
 
       {
         (() => {
-          if(myBkRequest <= 3){
+          if(myBkRequest >= 3){
             return (
               <p className="text-red-500 font-semibold">Sorry.., Your reach your maximum Book Reqeust quota</p>
             )
