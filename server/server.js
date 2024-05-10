@@ -859,7 +859,21 @@ app.post('/RejectAccount/:id', (req, res) => {
                     return res.json({Error: "Internal Server Error While adding data to rejected_user_requests"})
                 }
                 else{
-                    return res.json({Status: "Succcess"})
+                    var mailOptions = {
+                        from: process.env.EMAIL_USER,
+                        to: req.body.email,
+                        subject: 'Account Rejected Message NIFS Library',
+                        text: 'Your Account has been Rejected', 
+                    };
+
+                    transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                          return res.json({Status: "Success"})
+                        }
+                    });
                 }
             })
         }
