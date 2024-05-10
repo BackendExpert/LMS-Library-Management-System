@@ -72,7 +72,7 @@ const AllUsers = () => {
         }) 
     }
 
-    if(RoleUser === "SuperAdmin"){
+    if(RoleUser === "SuperAdmin"){ 
         return (
             <div className='bg-white py-4 px-8 my-8 rounded-2xl shadow-md'>
             <h1 className='text-gray-500 text-2xl font-semibold my-4'>All Users</h1>
