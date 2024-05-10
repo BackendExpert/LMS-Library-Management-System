@@ -53,6 +53,17 @@ const ViewAllBooks = () => {
   return (
     <div className="bg-gray-200 w-auto py-8 lg:px-16 px-8">
       {myBkRequest}
+
+      {
+        (() => {
+          if(myBkRequest <= 3){
+            return (
+              <p className="text-red-500 font-semibold">Sorry.., Your reach your maximum Book Reqeust quota</p>
+            )
+          }
+        })()
+      }
+
       <div className="lg:flex justify-between">
         <div className="my-4 flex">
           {
