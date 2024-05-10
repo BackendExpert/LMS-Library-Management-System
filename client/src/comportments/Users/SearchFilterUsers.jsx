@@ -51,8 +51,13 @@ const SearchFilterUsers = () => {
                             <div className="my-6">
                                 <div className="">                                    
                                     <label htmlFor="" className="">
-                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="Users" checked={RadioInputData === 'Users'} onChange={handleOptionChange}/>    
-                                    Users</label>
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="is_lock" checked={RadioInputData === 'is_lock'} onChange={handleOptionChange}/>    
+                                    Locked User</label>
+                                </div>
+                                <div className="">                                    
+                                    <label htmlFor="" className="">
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="userRequests" checked={RadioInputData === 'userRequests'} onChange={handleOptionChange}/>    
+                                    User Requests</label>
                                 </div>
                             </div>
                         </div>
