@@ -26,7 +26,7 @@ const ViewAllBooks = () => {
 
     // Borrow Book
     const headleBorrowBook = (id) => {
-      axios.post('http://localhost:8081/BorrowBook/' + id, EmailUser)
+      axios.post('http://localhost:8081/BorrowBook/' + {id, EmailUser})
       .then(res => {
         if(res.data.Status === "Success"){
           alert("The Borrow Request Send to Admin Successful")
