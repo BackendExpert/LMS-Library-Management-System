@@ -174,7 +174,7 @@ const AllUsers = () => {
                                                                                         (() => {
                                                                                             if(users.is_lock === 0){
                                                                                                 return (
-                                                                                                    <button className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
+                                                                                                    <button onClick={() => headleLockAccount(users.Email)} className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
                                                                                                         Lock Account
                                                                                                     </button> 
                                                                                                 )
