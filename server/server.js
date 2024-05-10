@@ -821,7 +821,22 @@ app.post('/UnLockAccount/:id', (req, res) => {
 app.post('/RejectAccount/:id', (req, res) => {
     const userEmail = req.params.id
 
-    
+    // frst delete from user tabel
+    const deleteUser = "DELETE FROM users WHERE Email = ?"
+    connection.query(deleteUser, [userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error While deleting from user table"})
+        }
+        else{
+            // now inset to rejected_user_requests table
+
+            const rejectSql = "INSERT INTO rejected_user_requests () VALUES (?)"
+            const values = [
+                userEmail,
+            ]
+        }
+    })
+
 })
 
 // all end points end
