@@ -771,7 +771,8 @@ app.post('/SearchUsers', (req, res) => {
                 return res.json({Error: "No recodes Found"})
             }
             else{
-                return res.json({Status: "Success", UserData:result})
+                console.log(result)
+                // return res.json({Status: "Success", UserData:result})
             }
         })
     }
