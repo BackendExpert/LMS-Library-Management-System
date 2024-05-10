@@ -568,6 +568,7 @@ app.post('/SearchBook', (req, res) => {
     })
 })
 
+
 // get last 3 recodes in books table
 // GetlastBooks
 
@@ -732,6 +733,14 @@ app.get('/RejectAllUsers', (req, res) => {
             return res.json(result)
         }
     })
+})
+
+
+// search users
+// SearchUsers
+
+app.post('/SearchUsers', (req, res) => {
+    console.log(req.body)
 })
 
 // all end points end
