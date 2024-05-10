@@ -24,13 +24,17 @@ const SearchFilterUsers = () => {
     // check the form is submited or not (default value is false)
     const [isFormSubmited, SetisFormSubmited] = useState(false)
 
+    const handleTextInputChange = (event) => {
+        setTextInputValue(event.target.value);
+      };
+
     const handleOptionChange = (event) => {
         SetRadioInputData(event.target.value);
     };
 
     const headleSearch = (e) => {
         e.preventDefault();
-
+        axios.post('http://localhost:8081/SearchUsers', )
 
     }
 
@@ -42,7 +46,8 @@ const SearchFilterUsers = () => {
                         <div className="lg:grid grid-cols-3 gap-4">
                             <div className="my-2">
                                 <label htmlFor="">Email Address</label>
-                                <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"/>
+                                <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"
+                                value={UserSearchData} onChange={handleTextInputChange}/>
                             </div>
                             <div className="my-6">
                                 <div className="">
