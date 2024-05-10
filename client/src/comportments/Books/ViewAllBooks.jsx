@@ -124,7 +124,7 @@ const ViewAllBooks = () => {
                                   if(RoleUser !== null && EmailUser !== null){
                                     if(Books.Status === "Available"){
                                       return (
-                                        <button onClick={() => headleBorrowBook(EmailUser)} className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                        <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
                                       )
                                     }
                                   }
@@ -226,7 +226,7 @@ const ViewAllBooks = () => {
                                     if(RoleUser !== null && EmailUser !== null){
                                       return (
                                         <div className="">
-                                          <button onClick={() => headleBorrowBook(EmailUser)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                          <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
                                         </div>
                                       )
                                     }
