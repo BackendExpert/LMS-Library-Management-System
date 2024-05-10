@@ -727,7 +727,21 @@ app.post('/AcceptUserRequest/:id', (req, res) => {
             return res.json({Error: "Intenal Server Error"})
         }
         else{
-            return res.json({Status: "Success"})
+            var mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: userEmail,
+                subject: 'SignUp Request NIFS Library',
+                text: 'Your SignUp Request has been Approved from System', 
+            };
+
+            transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                  return res.json({Status: "Success"})
+                }
+            });
         }
     })
 })
