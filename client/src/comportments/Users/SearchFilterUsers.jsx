@@ -34,8 +34,14 @@ const SearchFilterUsers = () => {
                                 <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"/>
                             </div>
                             <div className="my-2">
-                                <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="SuperAdmins"/>
-                                <label htmlFor="" className="mx-2">SuperAdmins</label>
+                                <div className="">
+                                    <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="SuperAdmins" checked={SetRadioInputData === 'SuperAdmins'}/>
+                                    <label htmlFor="" className="mx-2">SuperAdmins</label>
+                                </div>
+                                <div className="">
+                                    <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="SuperAdmins" checked={SetRadioInputData === 'SuperAdmins'}/>
+                                    <label htmlFor="" className="mx-2">SuperAdmins</label>
+                                </div>
                             </div>
                         </div>
                     </form>
