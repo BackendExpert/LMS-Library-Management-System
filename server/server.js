@@ -752,7 +752,7 @@ app.post('/SearchUsers', (req, res) => {
             conditions.push(`Email = '${req.body.UserSearchData}'`);
         }
         if(req.body.RadioInputData.trim()){
-            conditions.push(`Role = '${req.body.RadioInputData}' OR Role = '${req.body.RadioInputData}' OR is_active = '${parseInt(req.body.RadioInputData)}' OR is_lock = ${parseInt(req.body.RadioInputData)}`)
+            conditions.push(`Role = '${req.body.RadioInputData}' OR Role = '${req.body.RadioInputData}' OR is_active = '${ req.body.RadioInputData === 0 ? parseInt(req.body.RadioInputData) : '' }' OR is_lock = ${parseInt(req.body.RadioInputData)}`)
         }
 
         let whereClause = '';
