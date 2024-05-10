@@ -63,8 +63,9 @@ const AllUsers = () => {
     
             <div className="">
                 <div class="relative overflow-x-auto">
-                    <div className="my-2">
+                    <div className="flex my-2">
                         <button onClick={() => HeadleButtonClick("FilterUsers")} className="bg-blue-500 py-4 px-8 rounded text-white duration-500 hover:bg-blue-600">Filter Users</button>
+                        <button onClick={() => HeadleButtonClick("FilterUsers")} className="mx-2 bg-blue-500 py-4 px-8 rounded text-white duration-500 hover:bg-blue-600">Filter Users</button>
                     </div>
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
