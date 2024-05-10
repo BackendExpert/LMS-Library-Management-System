@@ -36,117 +36,18 @@ const RejectUserRequests = () => {
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">
-                                            Username
+                                            ID
                                         </th>
                                         <th scope="col" class="px-6 py-3">
-                                            User Email
+                                            Email
                                         </th>
                                         <th scope="col" class="px-6 py-3">
-                                            Role
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Status
-                                        </th>
-                                        <th scope="col" class="px-6 py-3">
-                                            Action
+                                            Reject At
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        AllUser.map((users, index) => {
-                                            return (
-                                                <tr key={index}>
-                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        {users.username}
-                                                    </th>
-                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        {users.Email}
-                                                    </th>
-                                                    <td class="px-6 py-4">
-                                                        {users.Role}
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        {
-                                                            (() => {
-                                                                if(users.is_active === 1){
-                                                                    return (
-                                                                        <p className="text-green-500 font-semibold">Active</p>
-                                                                    )
-                                                                }
-                                                                else if(users.is_active === 0){
-                                                                    return (
-                                                                        <p className="text-blue-500 font-semibold">Waiting for Activate</p>
-                                                                    )
-                                                                }
 
-                                                            })()
-                                                        }
-                                                        
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        {
-                                                            (() => {
-                                                                if(users.Email === EmailUser){
-                                                                    return (
-                                                                        <div className="text-red-500 font-semibold">Current Login SuperAdmin</div>
-                                                                    )
-                                                                }
-                                                                if(users.Role === "SuperAdmin"){
-                                                                    return (
-                                                                        <div className=""></div>
-                                                                    )
-                                                                }
-                                                                if(users.is_active === 0){
-                                                                    return (
-                                                                        <div className="flex">
-                                                                            <button onClick={() => headleRejectRequest(users.Email)} className="py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red-600">Reject Request</button>
-                                                                            <button onClick={() => headleAcceptRequest(users.Email)} className="mx-2 py-2 px-4 rounded bg-green-500 text-white duration-500 hover:bg-green-600">Accept Request</button>
-                                                                        </div>
-                                                                    )
-                                                                }
-                                                                else{
-                                                                    return (
-                                                                        <div className="flex">
-                                                                            <button className="text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
-                                                                                Set as SuperAdmin
-                                                                            </button>
-                                                                            {
-                                                                                (() => {
-                                                                                    if(users.is_lock === 0){
-                                                                                        return (
-                                                                                            <button className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
-                                                                                                Lock Account
-                                                                                            </button> 
-                                                                                        )
-                                                                                    }
-                                                                                    if(users.is_lock === 1){
-                                                                                        return (
-                                                                                            <div className="">
-                                                                                                <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
-                                                                                                    Unlock Account
-                                                                                                </button>
-                                                                                                <button className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
-                                                                                                    Reject Account
-                                                                                                </button>  
-                                                                                            </div>
-                                                                                            
-                                                                                        )
-                                                                                    }
-                                                                                })()
-                                                                            }
-                                                                        </div>
-
-                                                                    )
-                                                                }
-                                                            })()
-                                                        }
-
-                                                    </td>
-                                                </tr>
-                                            )
-                                        })
-                                    }
                                 </tbody>
                             </table>
                         </div>
