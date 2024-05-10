@@ -839,7 +839,7 @@ app.post('/RejectAccount/:id', (req, res) => {
 
             connection.query(rejectSql, [values], (err, result) => {
                 if(err) {
-                    return res.json({ERROR: "Internal Server Error While adding data to rejected_user_requests"})
+                    return res.json({Error: "Internal Server Error While adding data to rejected_user_requests"})
                 }
                 else{
                     return res.json({Status: "Success"})
