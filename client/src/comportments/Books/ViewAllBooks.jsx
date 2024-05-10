@@ -24,6 +24,19 @@ const ViewAllBooks = () => {
         .catch(err => console.log(err)) 
     }, [])
 
+    // Borrow Book
+    const headleBorrowBook = (id) => {
+      axios.post('http://locahost:8081/BorrowBook/' + id)
+      .then(res => {
+        if(res.data.Status === "Success"){
+          alert("The Borrow Request Send to Admin Successful")
+          window.location.reload()
+        }
+        else{
+          alert(res.data.Error)
+        }
+      })
+    }
   return (
     <div className="bg-gray-200 w-auto py-8 lg:px-16 px-8">
       <div className="lg:flex justify-between">
