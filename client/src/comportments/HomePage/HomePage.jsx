@@ -75,6 +75,9 @@ const HomePage = () => {
                     {/* <p className="text-white text-2xl">{buttonValue}</p> */}
                     {
                         (() => {
+                            if(buttonValue === 0){
+                                
+                            }
                             if(buttonValue === "SignUp"){
                                 return(
                                     <SignUp />
