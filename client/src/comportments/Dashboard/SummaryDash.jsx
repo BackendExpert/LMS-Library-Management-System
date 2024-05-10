@@ -7,6 +7,7 @@ import axios from "axios";
 import UpdateMyData from "./UpdateMyData";
 import AllUsers from "../Users/AllUsers";
 import SearchBook from "../Books/SearchBook";
+import MyBorrowRequests from "../MyProfile/MyBorrowRequests";
 
 const SummaryDash = () => {
     const navigate = useNavigate() 
@@ -149,6 +150,11 @@ const SummaryDash = () => {
                         if(buttonValue === "SearchBooks"){
                             return (
                                 <SearchBook />
+                            )
+                        }
+                        if(buttonValue === "myRequests"){
+                            return (
+                                <MyBorrowRequests />
                             )
                         }
                     })()
