@@ -956,6 +956,20 @@ app.post('/BorrowBook/:id', (req, res) => {
 
 app.get('/MyCountRequests/:id', (req, res) => {
     const userEmail = req.params.id
+
+    const sql = "SELECT COUNT(ID) AS MyBookRequests FROM book_borrow_request WHERE status = ? && borrowEmail = ?";
+  
+    connection.query(sql, (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ MyBookRequests: results[0].MyBookRequests }); // Send count in JSON format
+    });
+
+
 })
 
 // all end points end
