@@ -49,7 +49,7 @@ const Users = () => {
 
             try {
                 const RejectUsers = await axios.get('http://localhost:8081/CountUsersReject');
-                SetRejectUsers(RejectUsers.data.CountUserT);
+                SetRejectUsers(RejectUsers.data.UserRejectDB);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -65,7 +65,7 @@ const Users = () => {
         {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={UserTypeUsersCount}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
         {id: 3, btnValue: "SuperAdmins", name: "SuperAdmins", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="person" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, btnValue: "RejectRequest", name: "Reject User Requests", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="close-circle" size="large"></Icons>, style: 'text-red-500'},
+        {id: 4, btnValue: "RejectRequest", name: "Reject User Requests", value: <CountUp end={CountRejectUsers}/>, icon: <Icons name="close-circle" size="large"></Icons>, style: 'text-red-500'},
     ]
 
 
