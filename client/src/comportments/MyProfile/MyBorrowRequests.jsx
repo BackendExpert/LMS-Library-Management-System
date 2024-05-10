@@ -28,7 +28,7 @@ const MyBorrowRequests = () => {
 
     // unselect books
     const headleUnSelect = (id) => {
-        axios.post('http://localhost:8081/UnSelectBooks/' + {id, EmailUser})
+        axios.post('http://localhost:8081/UnSelectBooks/' + id, {EmailUser})
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("THe Book Reqeust Cancelled")

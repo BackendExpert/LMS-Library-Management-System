@@ -1018,18 +1018,19 @@ app.get('/MyRequestsBook/:id', (req, res) => {
 
 app.post('/UnSelectBooks/:id', (req, res) => {
     const BookISBN = req.params.id
+    console.log(BookISBN, req.body)
 
-    const sql = "UPDATE books SET Status = ? WHERE Email = ?"
-    const status = "Available"
-    connection.query(sql, [status, BookISBN], (err, result) => {
-        if(err){
-            return res.json({Error: "Internal Server Error"})
-        }
-        else{
-            // delete from book request
-            const deleteRequest = "DELETE FROM book_borrow_request WHERE bookISBN = ? "
-        }
-    })
+    // const sql = "UPDATE books SET Status = ? WHERE Email = ?"
+    // const status = "Available"
+    // connection.query(sql, [status, BookISBN], (err, result) => {
+    //     if(err){
+    //         return res.json({Error: "Internal Server Error"})
+    //     }
+    //     else{
+    //         // delete from book request
+    //         const deleteRequest = "DELETE FROM book_borrow_request WHERE bookISBN = ? "
+    //     }
+    // })
 })
 
 // all end points end
