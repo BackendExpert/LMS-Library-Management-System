@@ -57,6 +57,21 @@ const AllUsers = () => {
         })
     }
 
+    // to lock account
+
+    const headleLockAccount = (id) => {
+        axios.post('http://localhost:8081/LockUserAccount/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Account has been Locked Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        }) 
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className='bg-white py-4 px-8 my-8 rounded-2xl shadow-md'>
