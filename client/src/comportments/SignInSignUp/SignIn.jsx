@@ -65,16 +65,9 @@ const SignIn = () => {
 
     }
 
-    const headleBack = () => {
-        window.location.reload()
-    }
   return (
     <div className='bg-gray-200 py-8 rounded'>
         <div className=''>
-                <div onClick={headleBack} className='mb-1 mx-4 flex duration-500 hover:mx-2 cursor-pointer'>
-                    <span className='mt-[1px] mx-2'><MyIcons name='arrow-back'></MyIcons></span>
-                    <p className="">Back to Home</p>
-                </div>
             <div className="mx-0 py-12 px-10 w-full">
                     <form onSubmit={headleSubmit}>
                         <div className="my-5">
