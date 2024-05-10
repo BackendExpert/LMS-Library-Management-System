@@ -116,6 +116,11 @@ const ViewAllBooks = () => {
                                       <span className="font-semibold pl-2 text-green-500">Available</span>
                                     )
                                   }
+                                  if(Books.Status === "Requested"){
+                                    return (
+                                      <span className="font-semibold pl-2 text-yellow-500">Seleted</span>
+                                    )
+                                  }
                                 })()
                               }
       
