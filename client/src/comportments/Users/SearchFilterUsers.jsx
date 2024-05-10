@@ -32,9 +32,20 @@ const SearchFilterUsers = () => {
         SetRadioInputData(event.target.value);
     };
 
+    const [SearchData, SetSearchData] = useState([])
+
     const headleSearch = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/SearchUsers', )
+        axios.post('http://localhost:8081/SearchUsers', UserSearchData, RadioInputData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                SetSearchData(res.data.UserData)
+                SetisFormSubmited(true)
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
 
     }
 
