@@ -24,10 +24,10 @@ const HomePage = () => {
         SetButtonValue(clickValue)   
     }
     
-    // https://wallpapercave.com/wp/wp10055128.jpg
+    // https://wallpapercave.com/wp/wp12420121.jpg
 
     const styles = {
-        background: 'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://wallpapercave.com/wp/wp10055128.jpg")',
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
