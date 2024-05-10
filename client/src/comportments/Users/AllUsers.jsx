@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import axios from "axios";
+import SearchFilterUsers from "./SearchFilterUsers";
 
 
 const AllUsers = () => {
@@ -83,7 +84,7 @@ const AllUsers = () => {
                         (() => {
                             if(buttonValue === "FilterUsers"){
                                 return (
-                                    <div className="">Hi all</div>
+                                    <SearchFilterUsers />
                                 )
                             }
                             if(buttonValue === 0){
