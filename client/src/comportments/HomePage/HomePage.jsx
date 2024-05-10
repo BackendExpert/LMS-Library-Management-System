@@ -89,7 +89,7 @@ const HomePage = () => {
                     }
                 </div>
             </div>
-        </div>
+        </div>        
         {/* <div className="bg-white lg:mx-24 mx-8 py-16 px-12 lg:my-[-100px] my-[-280px] rounded shadow-2xl lg:mb-40 mb-20">
 
             {
