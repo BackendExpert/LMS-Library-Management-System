@@ -21,7 +21,7 @@ const SearchFilterUsers = () => {
     // search and Filter data
     const [UserSearchData, SetUserSearchData] = useState('')
 
-    // check the form is submited or not
+    // check the form is submited or not (default value is false)
     const [isFormSubmited, SetisFormSubmited] = useState(false)
 
     const handleOptionChange = (event) => {
