@@ -26,6 +26,20 @@ const MyBorrowRequests = () => {
         .catch(err => console.log(err)) 
     }, [])
 
+    // unselect books
+    const headleUnSelect = (id) => {
+        axios.post('http://localhost:8081/UnSelectBooks/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("THe Book Reqeust Cancelled")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
 
     if(RoleUser !== null && EmailUser !== null){
         return (
