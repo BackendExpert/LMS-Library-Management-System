@@ -215,7 +215,7 @@ const AllUsers = () => {
                                                                                                         <button  onClick={() => headleUnLockAccount(users.Email)} className="mx-2 text-white bg-green-500 py-2 px-4 rounded duration-500 hover:bg-green-600 hover:text-white hover:shadow-md">
                                                                                                             Unlock Account
                                                                                                         </button>
-                                                                                                        <button className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
+                                                                                                        <button  onClick={() => headleRejectAccount(users.Email)}className="mx-2 text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
                                                                                                             Reject Account
                                                                                                         </button>  
                                                                                                     </div>
