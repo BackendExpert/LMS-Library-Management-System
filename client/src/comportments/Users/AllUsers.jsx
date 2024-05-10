@@ -63,19 +63,33 @@ const AllUsers = () => {
     
             <div className="">
                     <div className="my-2">
-                        <button onClick={() => HeadleButtonClick("FilterUsers")} className="bg-blue-500 py-4 px-8 rounded text-white duration-500 hover:bg-blue-600">Filter Users</button>                        
+                        {
+                            (() => {
+                                if(buttonValue === "FilterUsers"){
+                                    return (
+                                        <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 py-4 px-8 rounded text-white duration-500 hover:bg-red-600">Filter Users</button>                        
+                                    )
+                                }
+                                if(buttonValue === 0){
+                                    return (
+                                        <button onClick={() => HeadleButtonClick("FilterUsers")} className="bg-blue-500 py-4 px-8 rounded text-white duration-500 hover:bg-blue-600">Filter Users</button>                        
+                                    )
+                                }
+                            })()
+                        }
+                        
                     </div>
                     {
                         (() => {
                             if(buttonValue === "FilterUsers"){
                                 return (
                                     <div className="">
-                                        <button onClick={() => HeadleButtonClick("")} className="bg-red-500 text-white rounded py-2 px-4">close</button>
+                                        <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 text-white rounded py-2 px-4">close</button>
                                     </div>
 
                                 )
                             }
-                            else{
+                            if(buttonValue === 0){
                                 return (
                                     
                                     <div class="relative overflow-x-auto">
