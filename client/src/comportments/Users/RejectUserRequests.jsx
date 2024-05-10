@@ -47,7 +47,17 @@ const RejectUserRequests = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    {
+                                        RejectUsers.map((rejectuser, index) => {
+                                            return (
+                                                <tr key={index}>
+                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        {rejectuser.ID}
+                                                    </th>
+                                                </tr>
+                                            )
+                                        })
+                                    }
                                 </tbody>
                             </table>
                         </div>
