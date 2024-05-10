@@ -36,6 +36,8 @@ const SearchFilterUsers = () => {
 
     const headleSearch = (e) => {
         e.preventDefault();
+        SetisFormSubmited(false)
+        
         axios.post('http://localhost:8081/SearchUsers', {UserSearchData, RadioInputData})
         .then(res => {
             if(res.data.Status === "Success"){
