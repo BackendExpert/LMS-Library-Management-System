@@ -51,6 +51,10 @@ const SearchFilterUsers = () => {
 
     }
 
+    const headleSearchClose = () => {
+        SetisFormSubmited(false)
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>
@@ -97,45 +101,52 @@ const SearchFilterUsers = () => {
                     (() => {
                         if(isFormSubmited === true){
                             return (
-                                <div class="relative overflow-x-auto">
-                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                            <tr>
-                                                <th scope="col" class="px-6 py-3">
-                                                    ID
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Email
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Role
-                                                </th>
-                                                <th scope="col" class="px-6 py-3">
-                                                    Status
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                SearchData.map((searchUser, index) => {
-                                                    return (
-                                                        <tr key={index}>
-                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                {searchUser.ID}
-                                                            </th>
-                                                            <td class="px-6 py-4">
-                                                                {searchUser.Email}
-                                                            </td>
-                                                            <td class="px-6 py-4">
-                                                                {searchUser.Role}
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </tbody>
-                                    </table>
+                                <div className="">
+                                   <div className="my-4">
+                                        <button onClick={headleSearchClose} className="py-2 px-4 bg-red-500 rounded text-white duration-500 hover:bg-red-600">Close</button>
+                                   </div>
+                                   <div class="relative overflow-x-auto">
+                                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                <tr>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        ID
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Email
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Role
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Status
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    SearchData.map((searchUser, index) => {
+                                                        return (
+                                                            <tr key={index}>
+                                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                    {searchUser.ID}
+                                                                </th>
+                                                                <td class="px-6 py-4">
+                                                                    {searchUser.Email}
+                                                                </td>
+                                                                <td class="px-6 py-4">
+                                                                    {searchUser.Role}
+                                                                </td>
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+
+
                             )
                         }
                     })()
