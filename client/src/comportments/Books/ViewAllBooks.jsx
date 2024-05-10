@@ -222,6 +222,11 @@ const ViewAllBooks = () => {
                                                   <span className="py-2 px-6 bg-green-500 text-white rounded">Available</span>
                                               )
                                           }
+                                          if(Books.Status === "Requested"){
+                                            return(
+                                                <span className="py-2 px-6 bg-yellow-500 text-white rounded">Selected</span>
+                                            )
+                                        }
                                       })()
                                   }
                               </td>
@@ -229,11 +234,18 @@ const ViewAllBooks = () => {
                                 {
                                   (() => {
                                     if(RoleUser !== null && EmailUser !== null){
-                                      return (
-                                        <div className="">
-                                          <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
-                                        </div>
-                                      )
+                                      if(Books.Status === "Requested"){
+                                        return (
+                                          <span className="font-semibold pl-2 text-yellow-500">Seleted</span>
+                                        )
+                                      }
+                                      else if(Books.Status === "Available"){
+                                        return (
+                                          <div className="">
+                                            <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
+                                          </div>
+                                        )
+                                      }
                                     }
                                     else{
                                       return (
