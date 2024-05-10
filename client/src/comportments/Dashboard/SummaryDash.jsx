@@ -40,6 +40,15 @@ const SummaryDash = () => {
                 console.error('Error fetching data:', error);
             }
 
+            // count my book requests
+            try {
+                const MyRequests = await axios.get('http://localhost:8081/CountMyRequests');
+                SetCoutBooks(BKCount.data.BKCount);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+
 
 
         }
@@ -111,7 +120,7 @@ const SummaryDash = () => {
                                     }
                                 }
                                 if(RoleUser === "user"){
-                                    if(data.id === 1){
+                                    if(data.id === 1 || data.id === 9){
                                         return (                                    
                                             <Link to={data.link}>
                                                 <div onClick={() => HeadleButtonClick(data.btnvalue)} className={`cursor-pointer text-center shadow-2xl bg-white border-2 border-gray-200 rounded py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
