@@ -717,6 +717,14 @@ app.get('/CountUsersReject', (req, res) => {
     });
 })
 
+
+// get all data from reject user requests
+// RejectAllUsers
+
+app.get('/RejectAllUsers', (req, res) => {
+    const sql = "SELECT * FROM rejected_user_requests"
+})
+
 // all end points end
 
 //check the server is working
