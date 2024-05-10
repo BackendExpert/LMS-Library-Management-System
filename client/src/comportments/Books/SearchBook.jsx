@@ -196,6 +196,11 @@ const SearchBook = () => {
                                                                                                     <span className="font-semibold text-green-500">Available</span>
                                                                                                 )
                                                                                             }
+                                                                                            if(BookData.Status === "Requested"){
+                                                                                                return(
+                                                                                                    <span className="font-semibold text-yellow-500">Selected</span>
+                                                                                                )
+                                                                                            }
                                                                                         })()
                                                                                     }
                                                                                 </td>
