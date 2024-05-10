@@ -15,6 +15,14 @@ const SearchFilterUsers = () => {
         SetButtonValue(clickValue)   
     }
 
+    // user radio input data
+    const [RadioInputData, SetRadioInputData] = useState('')
+
+    // search and Filter data
+    const [UserSearchData, SetUserSearchData] = useState({
+        email:''
+    })
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>
@@ -24,6 +32,9 @@ const SearchFilterUsers = () => {
                             <div className="my-2">
                                 <label htmlFor="">Email Address</label>
                                 <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"/>
+                            </div>
+                            <div className="my-2">
+                                <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="SuperAdmins"/>
                             </div>
                         </div>
                     </form>
