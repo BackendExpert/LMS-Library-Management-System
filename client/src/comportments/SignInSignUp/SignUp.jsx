@@ -34,6 +34,8 @@ const SignUp = () => {
     <div className='bg-none-200 py-12 text-white'>
         <div className='lg:mx-10'>
                 <div className="py-2 px-10 w-full">
+                    <h1 className="text-gray-500 font-semibold">WELCOME TO LIBRARY</h1>
+                    <h1 className="text-3xl my-4 lib-title">Create New Account</h1>
                     <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Username : </label>
