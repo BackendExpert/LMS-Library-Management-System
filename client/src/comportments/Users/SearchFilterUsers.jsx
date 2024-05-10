@@ -22,7 +22,7 @@ const SearchFilterUsers = () => {
                     <form>
                         <div className="my-2">
                             <label htmlFor="">Email Address</label>
-                            <input type="email" name="" id="" className="" />
+                            <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"/>
                         </div>
                     </form>
                 </div>
