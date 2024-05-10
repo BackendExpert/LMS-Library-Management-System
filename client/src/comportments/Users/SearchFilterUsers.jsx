@@ -62,7 +62,7 @@ const SearchFilterUsers = () => {
                             </div>
                         </div>
                         <div className="">
-                            <button className="bg-blue-500 text-white rounded py-4 px-8 duration-500 hover:bg-blue-600">Search</button>
+                            <button type="submit" className="bg-blue-500 text-white rounded py-4 px-8 duration-500 hover:bg-blue-600">Search</button>
                         </div>
                     </form>
                 </div>
