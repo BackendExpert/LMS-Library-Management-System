@@ -698,7 +698,14 @@ app.post('/AcceptUserRequest/:id', (req, res) => {
     const sql = "UPDATE users SET is_active = ? WHERE Email = ?"
     const is_active = 1;
 
-    connection.query(sql, [is_active, userEmail], (err))
+    connection.query(sql, [is_active, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Intenal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
 })
 
 
