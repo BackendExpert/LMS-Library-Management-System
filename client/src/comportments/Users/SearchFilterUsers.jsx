@@ -19,9 +19,9 @@ const SearchFilterUsers = () => {
     const [RadioInputData, SetRadioInputData] = useState('')
 
     // search and Filter data
-    const [UserSearchData, SetUserSearchData] = useState({
-        email:''
-    })
+    const [UserSearchData, SetUserSearchData] = useState('')
+
+    
 
     if(RoleUser === "SuperAdmin"){
         return (
