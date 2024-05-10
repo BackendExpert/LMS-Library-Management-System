@@ -35,16 +35,24 @@ const SearchFilterUsers = () => {
                                 <label htmlFor="">Email Address</label>
                                 <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"/>
                             </div>
-                            <div className="my-2">
+                            <div className="my-6">
                                 <div className="">
                                     <label htmlFor="" >
                                     <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="SuperAdmins" checked={RadioInputData === 'SuperAdmins'} onChange={handleOptionChange}/>
                                     
                                     SuperAdmins</label>
                                 </div>
-                                <div className="">
-                                    <input type="radio" name="" id="" className="rounded bg-gray-200 pl-2 my-2" value="Users" checked={RadioInputData === 'Users'} onChange={handleOptionChange}/>
-                                    <label htmlFor="" className="mx-2">Users</label>
+                                <div className="">                                    
+                                    <label htmlFor="" className="">
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="Users" checked={RadioInputData === 'Users'} onChange={handleOptionChange}/>    
+                                    Users</label>
+                                </div>
+                            </div>
+                            <div className="my-6">
+                                <div className="">                                    
+                                    <label htmlFor="" className="">
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="Users" checked={RadioInputData === 'Users'} onChange={handleOptionChange}/>    
+                                    Users</label>
                                 </div>
                             </div>
                         </div>
