@@ -932,7 +932,7 @@ app.post('/BorrowBook/:id', (req, res) => {
 
             const values = [
                 BookID,
-                EmailUser,
+                req.body.EmailUser,
                 borrow_at,
                 status
             ]
