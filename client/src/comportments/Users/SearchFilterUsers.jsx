@@ -108,7 +108,10 @@ const SearchFilterUsers = () => {
                                                     Email
                                                 </th>
                                                 <th scope="col" class="px-6 py-3">
-                                                    Reject At
+                                                    Role
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Status
                                                 </th>
                                             </tr>
                                         </thead>
