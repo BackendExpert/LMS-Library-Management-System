@@ -70,6 +70,7 @@ const SignIn = () => {
         <div className=''>
             <div className="mx-0 py-12 px-10 w-full">
                     <h1 className="text-gray-500 font-semibold">WELCOME TO LIBRARY</h1>
+                    <h1 className="">Create New Account</h1>
                     <form onSubmit={headleSubmit}>
                         <div className="my-5">
                             <label htmlFor="">Email : </label>
