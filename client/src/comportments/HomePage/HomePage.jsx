@@ -72,33 +72,6 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="lg:grid grid-cols-2 gap-4 lg:mx-8 mx-8 ">
-                <div className="lg:my-0 my-auto">
-                    <div className="">                        
-                            {
-                                (() => {
-                                    if(RoleUser !== null && EmailUser !== null){
-                                        return (
-                                            <div className="">
-                                                <Link to={'/Dashboard'}>
-                                                    <button className='w-auto lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Dashboard</button>
-                                                </Link>
-                                            </div>
-                                        )
-                                    }
-                                    else{
-                                        return (
-                                            <div className="lg:flex lg:mx-20 mx-2">
-                                                <button onClick={() => HeadleButtonClick("SignUp")} className='w-full lg:my-0 my-2 bg-white text-black py-4 px-8 rounded-full duration-500 hover:bg-transparent hover:text-white hover:border border-white'>Be a Member</button>
-                                                <button onClick={() => HeadleButtonClick("SignIn")} className='w-full lg:my-0 my-2 lg:mx-8 mx-0 bg-transparent border border-white text-white py-4 px-8 rounded-full duration-500 hover:bg-white hover:text-black'>Sign IN</button>
-                                            </div>
-                                        )
-                                    }
-                                })()
-                            }
-                            
-
-                    </div>
-                </div>
                 <div className="lg:my-0 my-12">
                     {/* <p className="text-white text-2xl">{buttonValue}</p> */}
                     {
