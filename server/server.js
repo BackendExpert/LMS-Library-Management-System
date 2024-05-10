@@ -703,8 +703,8 @@ app.post('/AcceptUserRequest/:id', (req, res) => {
 
 // Count all reject user Requests
 
-app.get('/asdas', (req, res) => {
-    const sql = "SELECT COUNT(ID) AS UserAll FROM users";
+app.get('/CountUsersReject', (req, res) => {
+    const sql = "SELECT COUNT(ID) AS UserRejectDB FROM rejected_user_requests";
   
     connection.query(sql, (error, results) => {
       if (error) {
@@ -713,7 +713,7 @@ app.get('/asdas', (req, res) => {
         return;
       }
   
-      res.json({ UserAll: results[0].UserAll }); // Send count in JSON format
+      res.json({ UserRejectDB: results[0].UserRejectDB }); // Send count in JSON format
     });
 })
 
