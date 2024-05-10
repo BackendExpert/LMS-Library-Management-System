@@ -700,6 +700,23 @@ app.post('/AcceptUserRequest/:id', (req, res) => {
     connection.query(sql, [is_active, userEmail], (err))
 })
 
+
+// Count all reject user Requests
+
+app.get('/asdas', (req, res) => {
+    const sql = "SELECT COUNT(ID) AS UserAll FROM users";
+  
+    connection.query(sql, (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ UserAll: results[0].UserAll }); // Send count in JSON format
+    });
+})
+
 // all end points end
 
 //check the server is working
