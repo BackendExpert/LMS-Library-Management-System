@@ -913,9 +913,19 @@ app.post('/RejectAccount/:id', (req, res) => {
 // BorrowBook
 
 app.post('/BorrowBook/:id', (req, res) => {
-    const userEmail = req.params.id
+    const BookID = req.params.id
 
-    const sql = "UPDATE book SET "    
+    const sql = "UPDATE book SET Status = ? WHERE ISBNNumber = ?"
+    const status = "Requested"
+    
+    connection.query(sql, [status, BookID], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
 
 })
 
