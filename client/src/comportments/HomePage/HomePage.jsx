@@ -58,7 +58,10 @@ const HomePage = () => {
                                                         <h1 onClick={() => HeadleButtonClick(0)} className="mx-4 cursor-pointer duration-500 hover:text-white">Home</h1>
                                                     </div>
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('Join')} className="mx-4 cursor-pointer duration-500 hover:text-white">Join</h1>
+                                                        <h1 onClick={() => HeadleButtonClick('SignUp')} className="mx-4 cursor-pointer duration-500 hover:text-white">Join</h1>
+                                                    </div>
+                                                    <div className="">
+                                                        <h1 onClick={() => HeadleButtonClick('SignIn')} className="mx-4 cursor-pointer duration-500 hover:text-white">SignIn</h1>
                                                     </div>
                                                 </div>
                                             )
