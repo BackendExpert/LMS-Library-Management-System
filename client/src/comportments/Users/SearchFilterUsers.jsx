@@ -17,7 +17,16 @@ const SearchFilterUsers = () => {
 
     if(RoleUser === "SuperAdmin"){
         return (
-            <div>SearchFilterUsers</div>
+            <div>
+                <div className="my-4">
+                    <form>
+                        <div className="my-2">
+                            <label htmlFor="">Email Address</label>
+                            <input type="email" name="" id="" className="" />
+                        </div>
+                    </form>
+                </div>
+            </div>
         )
     }
     else{
