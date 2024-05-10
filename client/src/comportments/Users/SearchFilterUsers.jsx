@@ -65,13 +65,13 @@ const SearchFilterUsers = () => {
                             <div className="my-6">
                                 <div className="">
                                     <label htmlFor="" >
-                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="SuperAdmins" checked={RadioInputData === 'SuperAdmins'} onChange={handleOptionChange}/>
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="SuperAdmin" checked={RadioInputData === 'SuperAdmin'} onChange={handleOptionChange}/>
                                     
                                     SuperAdmins</label>
                                 </div>
                                 <div className="">                                    
                                     <label htmlFor="" className="">
-                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="Users" checked={RadioInputData === 'Users'} onChange={handleOptionChange}/>    
+                                    <input type="radio" name="" id="" className="mr-2 rounded bg-gray-200 pl-2 my-2" value="user" checked={RadioInputData === 'user'} onChange={handleOptionChange}/>    
                                     Users</label>
                                 </div>
                             </div>
