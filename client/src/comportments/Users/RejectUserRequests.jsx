@@ -16,6 +16,14 @@ const RejectUserRequests = () => {
         SetButtonValue(clickValue)   
     }
 
+    const [RejectUsers, SetRejectUsers] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:8081/RejectAllUsers')
+        .then(res => SetRejectUsers(res.data))
+        .catch(err => console.log(err))
+    }, [])
+    
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>
