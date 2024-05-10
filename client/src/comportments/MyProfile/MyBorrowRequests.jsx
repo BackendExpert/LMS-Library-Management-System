@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import axios from "axios";
 
 
 const MyBorrowRequests = () => {
@@ -31,19 +32,37 @@ const MyBorrowRequests = () => {
             <div>
                 <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                     <h1 className="font-semibold text-gray-500 text-xl">My Borrow Requests</h1>
+                    <div class="relative overflow-x-auto my-8">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Book ISBN Number
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Borrow at
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Action
+                                    </th>
+                                </tr>
 
-                    {
-                        BookData.map((books, index) => {
-                            if(books.status == "Request"){
-                                return (
-                                    <tr key={index}>
-                                        
-                                    </tr>
-                                )
-                            }
-                        })
-                    }
-
+                            </thead>
+                            <tbody>
+                                    {
+                                        BookData.map((books, index) => {
+                                            if(books.status == "Request"){
+                                                return (
+                                                    <tr key={index}>
+                                                        
+                                                    </tr>
+                                                )
+                                            }
+                                        })
+                                    }
+                            </tbody>
+                        </table>
+                    </div>                   
                 </div>
             </div>
         )
