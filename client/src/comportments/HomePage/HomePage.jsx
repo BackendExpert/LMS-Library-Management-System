@@ -27,7 +27,7 @@ const HomePage = () => {
     // https://wallpapercave.com/wp/wp12420121.jpg
 
     const styles = {
-        background: 'linear-gradient(to right, #001B3A, rgba(0,0,0,0.8)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
+        background: 'linear-gradient(to right, #001B3A, rgba(0,0,0,0.9)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
