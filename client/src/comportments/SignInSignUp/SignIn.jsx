@@ -66,7 +66,7 @@ const SignIn = () => {
     }
 
   return (
-    <div className='bg-gray-200 py-8 rounded'>
+    <div className='bg-none py-8 rounded text-white'>
         <div className=''>
             <div className="mx-0 py-12 px-10 w-full">
                     <form onSubmit={headleSubmit}>
