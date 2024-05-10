@@ -272,11 +272,6 @@ const ViewAllBooks = () => {
                                           <span className="font-semibold pl-2 text-yellow-500">Seleted</span>
                                         )
                                       }
-                                      else if(myBkRequest <= 3) {
-                                        return (
-                                          <div className=""></div>
-                                        )
-                                      }
                                       else if(Books.Status === "Available"){
                                         if(myBkRequest <= 3){
                                           return (
@@ -287,7 +282,7 @@ const ViewAllBooks = () => {
                                         }
                                         else{
                                           return (
-                                            <div className="">asd</div>
+                                            <div className=""></div>
                                           )
                                         }
                                       }
