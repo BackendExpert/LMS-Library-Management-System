@@ -939,7 +939,7 @@ app.post('/BorrowBook/:id', (req, res) => {
 
             connection.query(makeRequest, [values], (err, result) => {
                 if(err) {
-                    return res.json({Error: "Internal Server Error"})
+                    return res.json({Error: "Internal Server Error making Request"})
                 }
                 else{
                     return res.json({Status: "Success"})
