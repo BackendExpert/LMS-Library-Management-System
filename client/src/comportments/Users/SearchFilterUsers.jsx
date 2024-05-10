@@ -36,7 +36,7 @@ const SearchFilterUsers = () => {
 
     const headleSearch = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/SearchUsers', UserSearchData, RadioInputData)
+        axios.post('http://localhost:8081/SearchUsers', {UserSearchData, RadioInputData})
         .then(res => {
             if(res.data.Status === "Success"){
                 SetSearchData(res.data.UserData)
