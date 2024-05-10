@@ -25,7 +25,7 @@ const SearchFilterUsers = () => {
     const [isFormSubmited, SetisFormSubmited] = useState(false)
 
     const handleTextInputChange = (event) => {
-        setTextInputValue(event.target.value);
+        SetUserSearchData(event.target.value);
       };
 
     const handleOptionChange = (event) => {
