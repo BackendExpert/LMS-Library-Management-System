@@ -21,7 +21,7 @@ const ViewAllBooks = () => {
     useEffect(() => {
       const fetchData = async () => {
           try {
-              const BookMy = await axios.get('http://localhost:8081/MyCountRequests');
+              const BookMy = await axios.get('http://localhost:8081/MyCountRequests/' + EmailUser);
               SetmyBkRequest(BookMy.data.BKCount);
           } catch (error) {
               console.error('Error fetching data:', error);
