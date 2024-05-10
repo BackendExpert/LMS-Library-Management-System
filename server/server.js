@@ -914,8 +914,8 @@ app.post('/RejectAccount/:id', (req, res) => {
 
 app.post('/BorrowBook/:id', (req, res) => {
     const userEmail = req.params.id
+    console.log(userEmail, req.body)
 
-    
 })
 
 // all end points end
