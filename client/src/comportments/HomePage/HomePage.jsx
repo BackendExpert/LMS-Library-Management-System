@@ -23,6 +23,13 @@ const HomePage = () => {
     const HeadleButtonClick = (clickValue) => {
         SetButtonValue(clickValue)   
     }
+
+    const logout = () => {
+        localStorage.clear()
+        navigate('/')
+        window.location.reload()
+    }
+
     
     // https://wallpapercave.com/wp/wp12420121.jpg
 
@@ -47,7 +54,9 @@ const HomePage = () => {
                                         if(RoleUser !== null && EmailUser !== null){
                                             return (
                                                 <div className="">
-                                                    <h1 className="">Dashboard</h1>
+                                                    <Link to={'/Dashboard'}>
+                                                        <h1 className="my-4 mx-8">Dashboard</h1>
+                                                    </Link>
                                                 </div>
                                             )
                                         }
