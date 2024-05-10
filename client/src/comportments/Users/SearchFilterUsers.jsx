@@ -116,7 +116,15 @@ const SearchFilterUsers = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            {
+                                                SearchData.map((searchUser, index) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </div>
