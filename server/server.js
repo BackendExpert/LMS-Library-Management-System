@@ -914,7 +914,7 @@ app.post('/RejectAccount/:id', (req, res) => {
 
 app.post('/BorrowBook/:id', (req, res) => {
     const BookID = req.params.id
-    console.log(BookID)
+    console.log(BookID, req.body)
     // const sql = "UPDATE book SET Status = ? WHERE ISBNNumber = ?"
     // const status = "Requested"
     
