@@ -740,7 +740,7 @@ app.get('/RejectAllUsers', (req, res) => {
 // SearchUsers
 
 app.post('/SearchUsers', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
 
     if(req.body.UserSearchData === '' && req.body.RadioInputData === ''){
         return res.json({Error: "Please Fill or Select on input"})
@@ -752,7 +752,7 @@ app.post('/SearchUsers', (req, res) => {
             conditions.push(`Email = '${req.body.UserSearchData}'`);
         }
         if(req.body.RadioInputData.trim()){
-            conditions.push(`Role = '${ req.body.RadioInputData === "SuperAdmin" ? "SuperAdmin" : "user"}' OR is_active = '${ req.body.RadioInputData === 0 ? parseInt(req.body.RadioInputData) : null }' OR is_lock = ${ req.body.RadioInputData === 1 ? parseInt(req.body.RadioInputData) : null }`)
+            conditions.push(`Role = '${ req.body.RadioInputData === "SuperAdmin" ? "SuperAdmin" : null }' OR Role = '${ req.body.RadioInputData === "user" ? "user" : null }' OR is_active = '${ req.body.RadioInputData === '0' ? parseInt(req.body.RadioInputData) : null }' OR is_lock = ${ req.body.RadioInputData === '1' ? parseInt(req.body.RadioInputData) : null }`)
         }
 
         let whereClause = '';
@@ -764,15 +764,18 @@ app.post('/SearchUsers', (req, res) => {
 
         connection.query(sql, (err, result) => {
             if(err) {
-                // return res.json({Error: "Internal Server ERROR"})
-                console.log(err)
+                return res.json({Error: "Internal Server ERROR"})
+                // console.log(err)
+                // console.log(sql)
             }
             else if(result.length === 0){
                 return res.json({Error: "No recodes Found"})
+                // console.log(sql)
             }
             else{
-                console.log(result)
-                // return res.json({Status: "Success", UserData:result})
+                // console.log(result)
+                // console.log(sql)
+                return res.json({Status: "Success", UserData:result})
             }
         })
     }
