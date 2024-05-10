@@ -22,6 +22,7 @@ const Users = () => {
     const [AllUserCount, SetAllUserCount] = useState(0)
     const [UserTypeUsersCount, SetUserTypeUsersCount] = useState(0)
     const [CountSuperAdmin, SetCountSuperAdmin] = useState(0)
+    const [CountRejectUsers, SetRejectUsers] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,6 +47,13 @@ const Users = () => {
                 console.error('Error fetching data:', error);
             }
 
+            try {
+                const RejectUsers = await axios.get('http://localhost:8081/CountUsersReject');
+                SetRejectUsers(RejectUsers.data.CountUserT);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
 
 
         }
@@ -57,7 +65,7 @@ const Users = () => {
         {id: 1, btnValue: "All_Users", name: "All Users", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "Users", name: "Users", value: <CountUp end={UserTypeUsersCount}/>, icon: <Icons name="people-circle" size="large"></Icons>, style: 'text-red-500'},
         {id: 3, btnValue: "SuperAdmins", name: "SuperAdmins", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="person" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 4, btnValue: "RejectRequest", name: "Reject User Requests", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="person" size="large"></Icons>, style: 'text-yellow-500'},
+        {id: 4, btnValue: "RejectRequest", name: "Reject User Requests", value: <CountUp end={CountSuperAdmin}/>, icon: <Icons name="close-circle" size="large"></Icons>, style: 'text-red-500'},
     ]
 
 
@@ -71,7 +79,7 @@ const Users = () => {
                     <div className="lg:grid grid-cols-4 gap-4">
                         {
                             UserData.map((Users) => {
-                                if(Users.id !== 4){
+                                if(Users.id !== 5){
                                     return (
                                         <div onClick={() => HeadleButtonClick(Users.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${Users.style}`}>                                       
                                             <p className="font-semibold text-xl">{Users.icon}</p>   
