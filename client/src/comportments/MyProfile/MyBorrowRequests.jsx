@@ -16,9 +16,18 @@ const MyBorrowRequests = () => {
         SetButtonValue(clickValue)   
     }
 
-  return (
-    <div>MyBorrowRequests</div>
-  )
+    if(RoleUser !== null && EmailUser !== null){
+        return (
+            <div>MyBorrowRequests</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default MyBorrowRequests
