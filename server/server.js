@@ -1089,20 +1089,22 @@ app.post('/AcceptBookRequest/:id', (req, res) => {
     connection.query(checkBook, [BookISBN, req.body.Email, status], (err, result) => {
         if (err) throw err
 
-        if()
+        if(result){
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ?"
+            const status = "Accept"
+
+            connection.query(sql, [status, BookISBN], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Interal Server Error"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
+        }
     })
 
-    // const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ?"
-    // const status = "Accept"
 
-    // connection.query(sql, [status, BookISBN], (err, result) => {
-    //     if(err) {
-    //         return res.json({Error: "Interal Server Error"})
-    //     }
-    //     else{
-    //         return res.json({Status: "Success"})
-    //     }
-    // })
 })
 
 
