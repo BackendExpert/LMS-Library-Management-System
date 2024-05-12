@@ -1078,6 +1078,26 @@ app.get('/BookBorrowRequest', (req, res) => {
     })
 })
 
+// Accept Book request
+// AcceptBookRequest
+
+app.post('/AcceptBookRequest/:id', (req, res) => {
+    const BookISBN = req.params.id
+
+    const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ?"
+    const status = "Accept"
+
+    connection.query(sql, [status, BookISBN], (err, result) => {
+        if(err) {
+            return res.json({Error: "Interal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+})
+
+
 // all end points end
 
 //check the server is working
