@@ -54,6 +54,9 @@ const BorrowRequests = () => {
                                                 <td class="px-6 py-4">
                                                     {BookBorrow.borrow_at}
                                                 </td>
+                                                <td class="px-6 py-4">
+                                                    {BookBorrow.borrow_at}
+                                                </td>                                            
                                             </tr>
                                         )
                                     })
