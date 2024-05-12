@@ -65,6 +65,11 @@ const BorrowRequests = () => {
                                                                     <span className="text-yellow-500 font-semibold">Waiting for Approve</span>
                                                                 )
                                                             }
+                                                            else if(BookBorrow.status === "Accept"){
+                                                                return (
+                                                                    <span className="text-green-500 font-semibold">Approved, Waiting for Borrow</span>
+                                                                )
+                                                            }
                                                         })()
                                                     }
                                                 </td>
