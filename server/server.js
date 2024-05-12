@@ -1061,6 +1061,23 @@ app.get('/CountBorrowRequests', (req, res) => {
     });
 })
 
+// fetch book borrow Requests
+// BookBorrowRequest
+
+app.get('/BookBorrowRequest', (req, res) => {
+    const slq = "SELECT * FROM book_borrow_request WHERE status = ?"
+    const status = "Request"
+
+    connection.query(sql, [status], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
+})
+
 // all end points end
 
 //check the server is working
