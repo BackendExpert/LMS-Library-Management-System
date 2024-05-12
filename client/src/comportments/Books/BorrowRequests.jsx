@@ -57,7 +57,11 @@ const BorrowRequests = () => {
                                                 <td class="px-6 py-4">
                                                     {
                                                         (() => {
-                                                            if(BookBorrow.)
+                                                            if(BookBorrow.status === "Request"){
+                                                                return(
+                                                                    <button className="py-2 px-8 bg-green-500 text-white rounded duraion-500 hover:bg-green-500">Accept Request</button>
+                                                                )
+                                                            }
                                                         })()
                                                     }
                                                 </td>                                            
