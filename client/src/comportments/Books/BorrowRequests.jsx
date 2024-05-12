@@ -21,7 +21,53 @@ const BorrowRequests = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrow Requests</h1>
-                
+                <div class="relative overflow-x-auto my-8">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Book ISBN Number
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Borrow at
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Action
+                                    </th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                    {
+                                        BookData.map((books, index) => {
+                                            if(books.status == "Request"){
+                                                return (
+                                                    <tr key={index}>
+                                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            {books.bookISBN}
+                                                        </th>
+                                                        <td class="px-6 py-4">
+                                                            {books.borrow_at}
+                                                        </td>
+                                                        <td class="px-6 py-4">
+                                                            {
+                                                                (() => {
+                                                                    if(books.status === "Request"){
+                                                                        return (
+                                                                            <button onClick={() => headleUnSelect(books.bookISBN)} className="bg-red-500 text-white py-2 px-4 rounded duration-500 hover:bg-red-600">UnSelect</button>
+                                                                        )
+                                                                    }
+                                                                })()
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            }
+                                        })
+                                    }
+                            </tbody>
+                        </table>
+                    </div>   
             </div>
         )
     }
