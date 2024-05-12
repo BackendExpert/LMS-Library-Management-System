@@ -1143,7 +1143,6 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
                           return res.json({Status: "Success"})
                         }
                     });
-
                 }
             })
         }
