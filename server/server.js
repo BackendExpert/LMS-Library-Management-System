@@ -1185,7 +1185,21 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
                     return res.json({Error: "Interal Server Error"})
                 }
                 else{
-                    return res.json({})
+                    var mailOptions = {
+                        from: process.env.EMAIL_USER,
+                        to: req.body.Email,
+                        subject: 'Notification From Library NIFS',
+                        text: 'You Successfully Borrow Book ISBN Number : ' + BookISBN, 
+                    };
+
+                    transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                          return res.json({Status: "Success"})
+                        }
+                    });
                 }
             })
         }
