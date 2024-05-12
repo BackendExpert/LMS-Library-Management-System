@@ -1044,6 +1044,13 @@ app.post('/UnSelectBooks/:id', (req, res) => {
     })
 })
 
+// count book borrow requests
+// CountBorrowRequests
+
+app.get('/CountBorrowRequests', (req, res) => {
+    
+})
+
 // all end points end
 
 //check the server is working
