@@ -27,7 +27,7 @@ const SummaryDash = () => {
     const [AllUserCount, SetAllUserCount] = useState(0)
     const [CountBook, SetCoutBooks] = useState(0)
     const [MyBookReqeusts, SetMyBookReqeusts] = useState(0)
-    const [BorrowRequests, SetBorrowRequests] = useState(0)
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -52,17 +52,6 @@ const SummaryDash = () => {
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-
-            // / count book borrow request
-            try {
-                const BorrowRequests = await axios.get('http://localhost:8081/CountBorrowRequests');
-                SetBorrowRequests(BorrowRequests.data.BorrowRequestBooks);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-
-
-
 
         }
         fetchData();
