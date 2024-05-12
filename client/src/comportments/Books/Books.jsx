@@ -46,13 +46,7 @@ const Books = () => {
         fetchData();
     }, [])
 
-    // fetch book borrow Requests
-    const [BookBorrowRequest, SetBookBorrowRequest] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:8081/BookBorrowRequest')
-        .then(res => SetAllBooks(res.data))
-        .catch(err => console.log(err)) 
-    }, [])
+
 
     const BookData = [
         {id: 1, btnValue: "Books", name: "Books", value: <CountUp end={CountBook}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
