@@ -54,7 +54,7 @@ const SummaryDash = () => {
             // / count book borrow request
             try {
                 const BorrowRequests = await axios.get('http://localhost:8081/CountBorrowRequests');
-                SetMyBookReqeusts(BorrowRequests.data.CountMyBooks);
+                SetBorrowRequests(BorrowRequests.data.CountMyBooks);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
