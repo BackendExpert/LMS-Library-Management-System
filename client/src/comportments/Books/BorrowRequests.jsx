@@ -32,6 +32,21 @@ const BorrowRequests = () => {
         })
     }
 
+    // headleReject
+
+    const headleReject = (id, Email) => {
+        axios.post('http://localhost:8081/RejecttBookRequest/' + id, {Email})
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Request has been Accepted")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     // headleBorrow
 
     const headleBorrow = (id, Email) => {
@@ -46,6 +61,8 @@ const BorrowRequests = () => {
             }
         })
     }
+
+    
 
     if(RoleUser === "SuperAdmin"){
         return (
