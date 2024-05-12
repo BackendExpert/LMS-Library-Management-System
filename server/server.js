@@ -1145,7 +1145,7 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
                         from: process.env.EMAIL_USER,
                         to: req.body.Email,
                         subject: 'Notification From Library NIFS',
-                        text: 'Your Book Request has been Accepted..', 
+                        text: 'Your Book Request has been Rejected..', 
                     };
 
                     transporter.sendMail(mailOptions, function(error, info){
