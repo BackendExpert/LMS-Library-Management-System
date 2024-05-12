@@ -1120,21 +1120,34 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
         if (err) throw err
 
         if(result){
-            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ?"
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? borrowEmail = ?"
             const status = "Borrowed"
 
-            connection.query(sql, [status, BookISBN], (err, result) => {
+            connection.query(sql, [status, BookISBN, borrower], (err, result) => {
                 if(err) {
                     return res.json({Error: "Interal Server Error"})
                 }
                 else{
-                    return res.json({Status: "Success"})
+                    var mailOptions = {
+                        from: process.env.EMAIL_USER,
+                        to: borrower,
+                        subject: 'Notification From Library NIFS',
+                        text: 'Your Book Request has been Accepted..', 
+                    };
+
+                    transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                          return res.json({Status: "Success"})
+                        }
+                    });
+
                 }
             })
         }
-    })
-
-    
+    })    
 })
 
 // all end points end
