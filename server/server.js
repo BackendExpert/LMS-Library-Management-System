@@ -1065,10 +1065,8 @@ app.get('/CountBorrowRequests', (req, res) => {
 // BookBorrowRequest
 
 app.get('/BookBorrowRequest', (req, res) => {
-    const sql = "SELECT * FROM book_borrow_request WHERE status = ?"
-    const status = "Request"
-
-    connection.query(sql, [status], (err, result) => {
+    const sql = "SELECT * FROM book_borrow_request"
+    connection.query(sql,  (err, result) => {
         if(err) {
             return res.json({Error: "Internal Server Error"})
         }
