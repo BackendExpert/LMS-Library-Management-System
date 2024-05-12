@@ -17,6 +17,12 @@ const BorrowRequests = () => {
         .catch(err => console.log(err)) 
     }, [])
 
+    // headleAccept
+
+    const headleAccept = (id) => {
+        axios.post('http://localhost:8081/')
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
