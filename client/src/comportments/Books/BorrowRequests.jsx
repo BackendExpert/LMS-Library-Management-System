@@ -10,6 +10,13 @@ const BorrowRequests = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [BookBorrowRequests, SetBookBorrowRequests] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:8081/BookBorrowRequest')
+        .then(res => SetBookBorrowRequests(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
