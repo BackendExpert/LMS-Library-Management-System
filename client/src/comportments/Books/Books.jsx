@@ -42,6 +42,14 @@ const Books = () => {
                 console.error('Error fetching data:', error);
             }
 
+            // / count book borrow request
+            try {
+                const BKBorrowRequests = await axios.get('http://localhost:8081/CountBorrowRequests');
+                SetBorrowRequests(BKBorrowRequests.data.BorrowRequestBooks);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
         }
         fetchData();
     }, [])
