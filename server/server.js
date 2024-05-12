@@ -1105,6 +1105,14 @@ app.post('/AcceptBookRequest/:id', (req, res) => {
     })
 })
 
+// when user borrow book
+// BorrowAcceptBook
+
+app.post('/BorrowAcceptBook/:id', (req, res) => {
+    const BookISBN = req.params.id
+
+    
+})
 
 // all end points end
 
