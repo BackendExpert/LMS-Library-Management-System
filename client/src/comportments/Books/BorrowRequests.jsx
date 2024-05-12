@@ -32,6 +32,21 @@ const BorrowRequests = () => {
         })
     }
 
+    // headleBorrow
+
+    const headleBorrow = (id, Email) => {
+        axios.post('http://localhost:8081/BorrowAcceptBook/' + id, {Email})
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book has been Borrowed")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
@@ -100,7 +115,7 @@ const BorrowRequests = () => {
                                                                 if(BookBorrow.status === "Accept"){
                                                                     return(
                                                                         <div className="flex">
-                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
+                                                                            <button onClick={() => headleBorrow(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
                                                                             <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
                                                                         </div>
                                                                     )
