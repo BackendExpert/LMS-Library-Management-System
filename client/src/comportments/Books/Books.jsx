@@ -23,13 +23,21 @@ const Books = () => {
     }
 
     const [CountBook, SetCoutBooks] = useState(0)
-    const [BorrowRequests, SetBorrowRequests] = useState(0)
+    const [BookBorrowRequests, SetBorrowRequests] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const BKCount = await axios.get('http://localhost:8081/BooksCount');
                 SetCoutBooks(BKCount.data.BKCount);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            // / count book borrow request
+            try {
+                const BKBorrowRequests = await axios.get('http://localhost:8081/CountBorrowRequests');
+                SetBorrowRequests(BKBorrowRequests.data.BorrowRequestBooks);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -42,7 +50,7 @@ const Books = () => {
         {id: 1, btnValue: "Books", name: "Books", value: <CountUp end={CountBook}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
         {id: 2, btnValue: "bkBorrow", name: "Books Borrowed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
         // {id: 3, btnValue: "bkSelected", name: "Books Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-yellow-500'},
-        {id: 3, btnValue: "BorrowRequest", name: "Borrow Requests", value: <CountUp end={2}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: 'text-blue-500'},
+        {id: 3, btnValue: "BorrowRequest", name: "Borrow Requests", value: <CountUp end={BookBorrowRequests}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: 'text-blue-500'},
         {id: 4, btnValue: "add_book", name: "Add New Book", icon: <Icons name="add" size="large"></Icons>, style: 'text-white bg-green-500'},
     ]
 
