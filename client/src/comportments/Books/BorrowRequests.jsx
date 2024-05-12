@@ -19,8 +19,8 @@ const BorrowRequests = () => {
 
     // headleAccept
 
-    const headleAccept = (id) => {
-        axios.post('http://localhost:8081/AcceptBookRequest/' + id)
+    const headleAccept = (id, Email) => {
+        axios.post('http://localhost:8081/AcceptBookRequest/' + id, {Email})
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("Book Request has been Accepted")
@@ -94,7 +94,7 @@ const BorrowRequests = () => {
                                                             (() => {
                                                                 if(BookBorrow.status === "Request"){
                                                                     return(
-                                                                        <button onClick={() => headleAccept(BookBorrow.bookISBN)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
+                                                                        <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
                                                                     )
                                                                 }
                                                             })()
