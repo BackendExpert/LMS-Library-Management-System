@@ -1065,7 +1065,7 @@ app.get('/CountBorrowRequests', (req, res) => {
 // BookBorrowRequest
 
 app.get('/BookBorrowRequest', (req, res) => {
-    const slq = "SELECT * FROM book_borrow_request WHERE status = ?"
+    const sql = "SELECT * FROM book_borrow_request WHERE status = ?"
     const status = "Request"
 
     connection.query(sql, [status], (err, result) => {

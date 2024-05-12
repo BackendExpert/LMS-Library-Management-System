@@ -45,7 +45,15 @@ const BorrowRequests = () => {
                                     BookBorrowRequests.map((BookBorrow, index) => {
                                         return (
                                             <tr key={index}>
-                                                
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {books.bookISBN}
+                                                </th>
+                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {books.borrowEmail}
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {books.borrow_at}
+                                                </td>
                                             </tr>
                                         )
                                     })
