@@ -167,6 +167,11 @@ const SummaryDash = () => {
                                 <MyBorrowRequests />
                             )
                         }
+                        if(buttonValue === "borrowRequests"){
+                            return (
+                                <BorrowRequests />
+                            )
+                        }
                     })()
                 }
 
