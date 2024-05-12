@@ -169,10 +169,11 @@ const SummaryDash = () => {
                                 <MyBorrowRequests />
                             )
                         }
-                        if(buttonValue === "borrowRequests")
+                        if(buttonValue === "borrowRequests"){
                             return (
                                 <BorrowRequests />
                             )
+                        }
                     })()
                 }
 
