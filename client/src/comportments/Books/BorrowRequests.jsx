@@ -78,7 +78,7 @@ const BorrowRequests = () => {
                                                         (() => {
                                                             if(BookBorrow.status === "Request"){
                                                                 return(
-                                                                    <button className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
+                                                                    <button onClick={() => headleAccept(BookBorrow.bookISBN)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
                                                                 )
                                                             }
                                                         })()
