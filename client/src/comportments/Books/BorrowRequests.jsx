@@ -38,33 +38,7 @@ const BorrowRequests = () => {
 
                             </thead>
                             <tbody>
-                                    {
-                                        BookData.map((books, index) => {
-                                            if(books.status == "Request"){
-                                                return (
-                                                    <tr key={index}>
-                                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                            {books.bookISBN}
-                                                        </th>
-                                                        <td class="px-6 py-4">
-                                                            {books.borrow_at}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            {
-                                                                (() => {
-                                                                    if(books.status === "Request"){
-                                                                        return (
-                                                                            <button onClick={() => headleUnSelect(books.bookISBN)} className="bg-red-500 text-white py-2 px-4 rounded duration-500 hover:bg-red-600">UnSelect</button>
-                                                                        )
-                                                                    }
-                                                                })()
-                                                            }
-                                                        </td>
-                                                    </tr>
-                                                )
-                                            }
-                                        })
-                                    }
+
                             </tbody>
                         </table>
                     </div>   
