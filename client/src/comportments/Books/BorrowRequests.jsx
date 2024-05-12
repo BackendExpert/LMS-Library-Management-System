@@ -100,8 +100,8 @@ const BorrowRequests = () => {
                                                                 if(BookBorrow.status === "Accept"){
                                                                     return(
                                                                         <div className="flex">
-                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Borrow</button>
-                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
+                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
+                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
                                                                         </div>
                                                                     )
                                                                 }
