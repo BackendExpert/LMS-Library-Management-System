@@ -20,7 +20,16 @@ const BorrowRequests = () => {
     // headleAccept
 
     const headleAccept = (id) => {
-        axios.post('http://localhost:8081/')
+        axios.post('http://localhost:8081/AcceptBookRequest/' + id)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Request has been Accepted")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
     }
 
     if(RoleUser === "SuperAdmin"){
