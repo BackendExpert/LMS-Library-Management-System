@@ -29,6 +29,9 @@ const BorrowRequests = () => {
                                         Book ISBN Number
                                     </th>
                                     <th scope="col" class="px-6 py-3">
+                                        Borrower Email
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
                                         Borrow at
                                     </th>
                                     <th scope="col" class="px-6 py-3">
