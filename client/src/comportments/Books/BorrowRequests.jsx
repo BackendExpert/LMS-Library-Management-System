@@ -38,7 +38,7 @@ const BorrowRequests = () => {
         axios.post('http://localhost:8081/RejecttBookRequest/' + id, {Email})
         .then(res => {
             if(res.data.Status === "Success"){
-                alert("Book Request has been Accepted")
+                alert("Book Request has been Rejected")
                 window.location.reload()
             }
             else{

@@ -1177,7 +1177,7 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
         if (err) throw err
 
         if(result){
-            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? borrowEmail = ?"
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ?"
             const status = "Borrowed"
 
             connection.query(sql, [status, BookISBN, borrower], (err, result) => {
