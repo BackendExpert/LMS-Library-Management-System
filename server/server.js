@@ -1103,8 +1103,6 @@ app.post('/AcceptBookRequest/:id', (req, res) => {
             })
         }
     })
-
-
 })
 
 
