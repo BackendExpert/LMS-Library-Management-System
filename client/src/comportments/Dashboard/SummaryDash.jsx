@@ -79,7 +79,6 @@ const SummaryDash = () => {
         {id: 7, btnvalue: "", name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
         {id: 8, btnvalue: "Users", name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
         {id: 9, btnvalue: "myRequests", name: "My Book Requests", link: "#", value: <CountUp end={MyBookReqeusts}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"}, 
-        {id: 10, btnvalue: "borrowRequests", name: "Book Borrow Requests", link: "#", value: <CountUp end={BorrowRequests}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},               
     ]
 
     const [UserData, SetUserData] = useState([])
@@ -169,11 +168,7 @@ const SummaryDash = () => {
                                 <MyBorrowRequests />
                             )
                         }
-                        if(buttonValue === "borrowRequests"){
-                            return (
-                                <BorrowRequests />
-                            )
-                        }
+
                     })()
                 }
 
