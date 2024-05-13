@@ -18,7 +18,7 @@ const BorrowedBooks = () => {
     const [BookBorroed, SetBookBorrowed] = useState([])
     useEffect(() => {
         axios.get('http://localhost:8081/BookBorrowedData')
-        .then(res => SetBookBorrowRequests(res.data))
+        .then(res => SetBookBorrowed(res.data))
         .catch(err => console.log(err)) 
     }, [])
 
