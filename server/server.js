@@ -1295,7 +1295,11 @@ app.post('/SearchBookRequest', (req, res) => {
 
     connection.query(sql, (err, result) => {
         if(err) {
-            return res.json({Error: "Internal Server Error"})
+            // return res.json({Error: "Internal Server Error"})
+            console.log(err)
+        }
+        else if(result.length === 0){
+            return res.json({Error: "Recodes not Found"})
         }
         else{
             return res.json(result)
