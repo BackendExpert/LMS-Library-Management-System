@@ -43,6 +43,13 @@ const SearchBookRequest = () => {
         })
     }
 
+    // headleCloseData
+    // for this use SetIsFormSubmited to false
+
+    const headleCloseData = () => {
+        SetIsFormSubmited(false)
+    }
+
     if(RoleUser === "SuperAdmin") {
         return (
             <div className="">
