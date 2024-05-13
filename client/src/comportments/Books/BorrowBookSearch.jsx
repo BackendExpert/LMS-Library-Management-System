@@ -48,11 +48,13 @@ const BorrowBookSearch = () => {
                         <div className="lg:grid grid-cols-2 gap-4">
                             <div className="my-2">
                                 <label htmlFor="">Book ISBN : </label>
-                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  placeholder="Enter Book ISBN Number"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  placeholder="Enter Book ISBN Number"
+                                onChange={e => SetbookBorrowData({...bookBorrowData, bookISBN:e.target.value})}/>
                             </div>
                             <div className="my-2">
                                 <label htmlFor="">Borrower Email : </label>
-                                <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  placeholder="Enter Book Borrower Email"/>
+                                <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  placeholder="Enter Book Borrower Email"
+                                onChange={e => SetbookBorrowData({...bookBorrowData, borrower:e.target.value})}/>
                             </div>
                             <div className="">
                                 <button type="submit" className="bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Search</button>
