@@ -1137,7 +1137,6 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
             const update_status = "Reject"
             const status = "Request"
 
-
             connection.query(sql, [update_status, BookISBN, req.body.Email, status], (err, result) => {
                 if(err) {
                     return res.json({Error: "Interal Server Error"})
