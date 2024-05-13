@@ -45,7 +45,7 @@ const SearchBookRequest = () => {
                     <div className="">
                         <form onSubmit={headleSearch}>
                             <label htmlFor="">Email</label>
-                            <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"
+                            <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address" required
                             onChange={e => SetbookReqSearch({...bookReqSearch, email:e.target.value})}/>
 
                             <div className="">
