@@ -68,6 +68,16 @@ const BorrowedBooks = () => {
                                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                                 {book.borrowEmail}
                                                             </th>
+                                                            <td class="px-6 py-4">
+                                                                {book.borrow_at}
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <span className="text-blue-500 font-semibold">{book.status}</span>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <button onClick={() => headleReturn(book.bookISBN, book.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
+                                                            </td>
+
                                                         </tr>
                                                     )
                                                 })
