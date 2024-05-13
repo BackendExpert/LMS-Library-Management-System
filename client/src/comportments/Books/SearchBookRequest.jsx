@@ -10,6 +10,11 @@ const SearchBookRequest = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState()
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     if(RoleUser !== "SuperAdmin") {
         return (
             <div className="">
