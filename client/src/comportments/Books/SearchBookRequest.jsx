@@ -98,7 +98,7 @@ const SearchBookRequest = () => {
                                                                                 {bookData.borrowEmail}
                                                                             </th>
                                                                             <td class="px-6 py-4">
-                                                                                {BookBorrow.borrow_at}
+                                                                                {bookData.borrow_at}
                                                                             </td>
                                                                         </tr>
                                                                     )
