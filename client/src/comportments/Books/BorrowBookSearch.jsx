@@ -108,6 +108,12 @@ const BorrowBookSearch = () => {
                                                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                                     {borrowData.borrowEmail}
                                                                 </th>
+                                                                <td class="px-6 py-4">
+                                                                    {borrowData.borrow_at}
+                                                                </td>
+                                                                <td class="px-6 py-4">
+                                                                    <span className="text-blue-500 font-semibold">{borrowData.status}</span>
+                                                                </td>
                                                             </tr>
                                                         )
                                                     })
