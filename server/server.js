@@ -1314,7 +1314,18 @@ app.post('/SearchBookRequest', (req, res) => {
 // CountBorrowedBooks
 
 app.get('/CountBorrowedBooks', (req, res) => {
-    
+    const sql = "SELECT COUNT(ID) AS BorrowedBooks FROM book_borrow_request WHERE status = ?";
+    const status = "Borrowed"
+    connection.query(sql, [status], (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ BorrowedBooks: results[0].BorrowedBooks }); // Send count in JSON format
+    });
+
 })
 
 // all end points end
