@@ -90,7 +90,7 @@ const BorrowRequests = () => {
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrow Requests</h1>
                 <div className="my-2">
-                    <button onClick={() => HeadleButtonClick("BookReqeustSearch")}></button>
+                    <button onClick={() => HeadleButtonClick("BookReqeustSearch")} className="py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600"></button>
                 </div>
 
                 {
@@ -185,12 +185,12 @@ const BorrowRequests = () => {
                                 </div>   
                             )
                         }
-                        if(buttonValue === "BookReqeustSearch"){
+                        else if(buttonValue === "BookReqeustSearch"){
                             return (
                                 <BookBorrowRequests />
                             )
                         }
-                    })
+                    })()
                 }
 
             </div>
