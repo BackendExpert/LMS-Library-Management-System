@@ -14,6 +14,11 @@ const BorrowedBooks = () => {
         SetButtonValue(clickValue)   
     }
 
+    // fetch data from book_borrowed_request status as borrowed
+    const [BookBorroed, SetBookBorrowed] = useState([])
+
+    
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
