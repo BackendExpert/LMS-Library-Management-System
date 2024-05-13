@@ -120,6 +120,16 @@ const SearchBookRequest = () => {
                                                                                                 <p className="text-green-500 font-semibold">Accept</p>
                                                                                             )
                                                                                         }
+                                                                                        else if(bookData.status === "Borrowed"){
+                                                                                            return (
+                                                                                                <p className="text-blue-500 font-semibold">Borrowed</p>
+                                                                                            )
+                                                                                        }
+                                                                                        else if(bookData.status === "Borrowed"){
+                                                                                            return (
+                                                                                                <p className="text-blue-500 font-semibold">Borrowed</p>
+                                                                                            )
+                                                                                        }
                                                                                     })()
                                                                                 }
                                                                             </td>
