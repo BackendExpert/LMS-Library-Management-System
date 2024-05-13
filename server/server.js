@@ -1143,21 +1143,32 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
                     return res.json({Error: "Interal Server Error"})
                 }
                 else{
-                    var mailOptions = {
-                        from: process.env.EMAIL_USER,
-                        to: req.body.Email,
-                        subject: 'Notification From Library NIFS',
-                        text: 'Your Book Request has been Rejected..', 
-                    };
+                    // update book 
+                    const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
+                    const status = "Available"
 
-                    transporter.sendMail(mailOptions, function(error, info){
-                        if (error) {
-                          console.log(error);
-                        } else {
-                          console.log('Email sent: ' + info.response);
-                          return res.json({Status: "Success"})
+                    connection.query(updateBook, [status, BookISBN], (err, result) => {
+                        if(err) {
+                            return req.join({Error: "Internal Server Error"})
                         }
-                    });
+                        else{
+                            var mailOptions = {
+                                from: process.env.EMAIL_USER,
+                                to: req.body.Email,
+                                subject: 'Notification From Library NIFS',
+                                text: 'Your Book Request has been Rejected..', 
+                            };
+        
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                  console.log(error);
+                                } else {
+                                  console.log('Email sent: ' + info.response);
+                                  return res.json({Status: "Success"})
+                                }
+                            });
+                        }
+                    })
                 }
             })
         }
