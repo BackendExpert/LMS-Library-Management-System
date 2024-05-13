@@ -19,7 +19,7 @@ const SearchBookRequest = () => {
     if(RoleUser === "SuperAdmin") {
         return (
             <div className="">
-                <div className="bg-white py-8 px-10 mt-6">
+                <div className="bg-white py-4 px-10 mt-6">
                     <h1 className="font-semibold text-gray-500 text-xl">Search</h1>
 
                 </div>
