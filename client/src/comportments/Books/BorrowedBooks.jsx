@@ -9,6 +9,11 @@ const BorrowedBooks = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState(0)
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
