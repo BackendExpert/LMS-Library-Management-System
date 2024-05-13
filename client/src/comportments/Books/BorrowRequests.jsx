@@ -138,7 +138,7 @@ const BorrowRequests = () => {
                                                                     return(
                                                                         <div className="flex">
                                                                             <button onClick={() => headleBorrow(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
-                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
+                                                                            <button onClick={() => headleCancelRequest(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
                                                                         </div>
                                                                     )
                                                                 }
