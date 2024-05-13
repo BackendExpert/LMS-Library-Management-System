@@ -153,7 +153,7 @@ const ViewAllBooks = () => {
                                 (() => {
                                   if(RoleUser !== null && EmailUser !== null){
                                     if(Books.Status === "Available"){
-                                      if(myBkRequest <= 3){
+                                      if(myBkRequest < 3){
                                         return (
                                           <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="my-2 mx-3 bg-blue-500 text-white font-semibold rounded py-2 px-4 duration-500 hover:bg-blue-600">Request to Borrow</button>
                                         )
@@ -273,7 +273,7 @@ const ViewAllBooks = () => {
                                         )
                                       }
                                       else if(Books.Status === "Available"){
-                                        if(myBkRequest <= 3){
+                                        if(myBkRequest < 3){
                                           return (
                                             <div className="">
                                               <button onClick={() => headleBorrowBook(Books.ISBNNumber)} className="bg-blue-500 text-white rounded py-2 px-6 duration-500 hover:bg-blue-600">Request to Borrow</button>
