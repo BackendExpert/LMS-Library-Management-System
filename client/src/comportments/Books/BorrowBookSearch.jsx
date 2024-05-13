@@ -60,6 +60,18 @@ const BorrowBookSearch = () => {
                         </div>
                     </form>
                 </div>
+
+                <div className="">
+                    {
+                        (() => {
+                            if(IsFormSubmited === true){
+                                return (
+                                    
+                                )
+                            }
+                        })()
+                    }
+                </div>
             </div>
         )
     }
