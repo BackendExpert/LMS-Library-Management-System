@@ -1291,7 +1291,7 @@ app.post('/BorrowCancelBook/:id', (req, res) => {
 
 app.post('/SearchBookRequest', (req, res) => {
     const Useremail = req.body.email
-    console.log(Useremail)
+    // console.log(Useremail)
     const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
 
     connection.query(sql, [Useremail], (err, result) => {
