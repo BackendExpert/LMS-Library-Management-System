@@ -1303,7 +1303,7 @@ app.post('/SearchBookRequest', (req, res) => {
             return res.json({Error: "Recodes not Found"})
         }
         else{
-            return res.json(result)
+            return res.json({Status: "Success", Result:result})
             // console.log(result)
         }
     })
