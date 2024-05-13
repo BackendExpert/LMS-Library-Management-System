@@ -1366,7 +1366,7 @@ app.post('/SearchBookBorrow', (req, res) => {
                 return res.json({Error: "No recodes Found"})
             }
             else{
-                return res.json({Status: "Success", })
+                return res.json({Status: "Success", SearchBorrow:result})
             }
         })
     }
