@@ -1133,10 +1133,12 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
         if (err) throw err
 
         if(result){
-            const sql = "DELETE FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ? && status = ? "
+            const update_status = "Reject"
             const status = "Request"
 
-            connection.query(sql, [BookISBN, req.body.Email, status], (err, result) => {
+
+            connection.query(sql, [update_status, BookISBN, req.body.Email, status], (err, result) => {
                 if(err) {
                     return res.json({Error: "Interal Server Error"})
                 }
