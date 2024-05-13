@@ -125,9 +125,14 @@ const SearchBookRequest = () => {
                                                                                                 <p className="text-blue-500 font-semibold">Borrowed</p>
                                                                                             )
                                                                                         }
-                                                                                        else if(bookData.status === "Borrowed"){
+                                                                                        else if(bookData.status === "Cancelled"){
                                                                                             return (
-                                                                                                <p className="text-blue-500 font-semibold">Borrowed</p>
+                                                                                                <p className="text-red-500 font-semibold">Cancelled</p>
+                                                                                            )
+                                                                                        }
+                                                                                        else if(bookData.status === "Cancelled"){
+                                                                                            return (
+                                                                                                <p className="text-red-500 font-semibold">Cancelled</p>
                                                                                             )
                                                                                         }
                                                                                     })()
