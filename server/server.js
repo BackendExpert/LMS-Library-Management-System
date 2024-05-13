@@ -1291,9 +1291,9 @@ app.post('/BorrowCancelBook/:id', (req, res) => {
 
 app.post('/SearchBookRequest', (req, res) => {
     const Useremail = req.body.email
-    const sql = `SELECT * FROM book_borrow_request WHERE borrowEmail LIKE '%${Useremail}%'`
+    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
 
-    connection.query(sql, (err, result) => {
+    connection.query(sql, [Useremail], (err, result) => {
         if(err) {
             return res.json({Error: "Internal Server Error"})
             // console.log(err)
