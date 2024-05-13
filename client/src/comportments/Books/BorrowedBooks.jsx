@@ -16,8 +16,12 @@ const BorrowedBooks = () => {
 
     // fetch data from book_borrowed_request status as borrowed
     const [BookBorroed, SetBookBorrowed] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:8081/BookBorrowedData')
+        .then(res => SetBookBorrowRequests(res.data))
+        .catch(err => console.log(err)) 
+    }, [])
 
-    
 
     if(RoleUser === "SuperAdmin"){
         return (
