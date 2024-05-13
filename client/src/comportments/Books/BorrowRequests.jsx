@@ -89,6 +89,9 @@ const BorrowRequests = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrow Requests</h1>
+                <div className="my-2">
+                    <button onClick={() => HeadleButtonClick("BookReqeustSearch")}></button>
+                </div>
                 <div class="relative overflow-x-auto my-8">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
