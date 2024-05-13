@@ -59,7 +59,12 @@ const BorrowedBooks = () => {
                                                 BookBorroed.map((book, index) => {
                                                     return (
                                                         <tr key={index}>
-                                                            
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {book.bookISBN}
+                                                            </th>
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {book.borrowEmail}
+                                                            </th>
                                                         </tr>
                                                     )
                                                 })
