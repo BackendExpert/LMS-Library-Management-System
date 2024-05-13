@@ -1352,7 +1352,7 @@ app.post('/SearchBookBorrow', (req, res) => {
     const bookISBN = req.body.bookISBN
     const bookBorrower = req.body.borrower
 
-    if(bookISBN === '' || bookBorrower === '') {
+    if(bookISBN === '' && bookBorrower === '') {
         return res.json({Error: "Please fill at least one Input Feild"})
     }
     else{
