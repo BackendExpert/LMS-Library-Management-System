@@ -1290,7 +1290,17 @@ app.post('/BorrowCancelBook/:id', (req, res) => {
 // SearchBookRequest
 
 app.post('/SearchBookRequest', (req, res) => {
-    
+    const Useremail = req.body.email
+    const sql = `SELECT * FROM book_borrow_request WHERE borrowEmail LIKE '%${Useremail}%`
+
+    connection.query(sql, (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
 })
 
 // all end points end
