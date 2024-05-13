@@ -30,6 +30,22 @@ const BorrowedBooks = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrowed Books</h1>
+                <div className="my-4">
+                    {
+                        (() => {
+                            if(buttonValue === 0){
+                                return (
+                                    <button onClick={() => HeadleButtonClick("BookReqSearch")} className="bg-blue-500 text-white rounded py-4 px-8 duration-500 hover:bg-blue-500">Search</button>
+                                )
+                            }
+                            else if(buttonValue === "BookReqSearch"){
+                                return (
+                                    <button onClick={() => HeadleButtonClick(0)} className="bg-red-500 text-white rounded py-4 px-8 duration-500 hover:bg-red-500">close</button>
+                                )
+                            }
+                        })()
+                    }
+                </div>
 
                 {
                     (() => {
@@ -87,6 +103,7 @@ const BorrowedBooks = () => {
                                 </div>   
                             )
                         }
+                        
                     })()
                 }
             </div>
