@@ -27,6 +27,18 @@ const BorrowedBooks = () => {
     }, [])
 
     // return book
+    const headleReturn = (id, Email) => {
+        axios.post('http://localhost:8081/ReturnBook/' + id, { Email })
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Return Successfull")
+                HeadleButtonClick(0)
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
 
     if(RoleUser === "SuperAdmin"){
         return (
