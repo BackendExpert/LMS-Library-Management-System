@@ -73,7 +73,7 @@ const BorrowBookSearch = () => {
                             if(IsFormSubmited === true){
                                 return (
                                     <div class="relative overflow-x-auto my-8">
-                                    <div className="">
+                                    <div className="my-4">
                                         <button onClick={headleclose} className="bg-red-500 text-white py-2 px-8 rounded duration-500 hover:bg-red-600">Close</button>
                                     </div>
                                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -98,7 +98,15 @@ const BorrowBookSearch = () => {
                 
                                             </thead>
                                             <tbody>
-
+                                                {
+                                                    SearchbookBorrowData.map((borrowData, index) => {
+                                                        return (
+                                                            <tr key={index}>
+                                                                
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
                                             </tbody>
                                         </table>
                                     </div>   
