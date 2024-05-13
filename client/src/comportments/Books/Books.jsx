@@ -24,6 +24,7 @@ const Books = () => {
 
     const [CountBook, SetCoutBooks] = useState(0)
     const [BookBorrowRequests, SetBorrowRequests] = useState(0)
+    const [borrowedBooks, SetborrowedBooks] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
