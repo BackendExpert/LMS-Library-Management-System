@@ -1324,8 +1324,16 @@ app.get('/CountBorrowedBooks', (req, res) => {
       }
   
       res.json({ BorrowedBooks: results[0].BorrowedBooks }); // Send count in JSON format
-    });
+    });    
+})
 
+
+// fetch book borrow data
+// BookBorrowedData
+
+app.get('/BookBorrowedData', (req, res) => {
+    const sql = "SELECT* FROM book_borrow_request WHERE status = ?"
+    const status = ""
 })
 
 // all end points end
