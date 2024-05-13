@@ -16,12 +16,22 @@ const SearchBookRequest = () => {
         SetButtonValue(clickValue)   
     }
 
+    const [bookReqSearch, SetbookReqSearch] = useState({
+        email:'',
+    })
+
     if(RoleUser === "SuperAdmin") {
         return (
             <div className="">
                 <div className="bg-white py-4 px-10 mt-6">
-                    <h1 className="font-semibold text-gray-500 text-xl">Search</h1>
 
+                    <div className="">
+                        <form>
+                            <label htmlFor="">Email</label>
+                            <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"
+                            onChange={e => SetbookReqSearch({...bookReqSearch, email:e.target.value})}/>
+                        </form>
+                    </div>
                 </div>
             </div>
         )
