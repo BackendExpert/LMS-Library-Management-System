@@ -100,7 +100,7 @@ const BorrowRequests = () => {
                             }
                             if(buttonValue === "SearchBookReqeust"){
                                 return (
-                                    <button onClick={() => HeadleButtonClick("SearchBookReqeust")} className="py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600">Close</button>
+                                    <button onClick={() => HeadleButtonClick(0)} className="py-2 px-8 bg-red-500 rounded text-white duration-500 hover:bg-red-600">Close</button>
                                 )
                             }
                         })()
