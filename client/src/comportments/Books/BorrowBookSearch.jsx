@@ -29,7 +29,11 @@ const BorrowBookSearch = () => {
                         <div className="lg:grid grid-cols-2 gap-4">
                             <div className="my-2">
                                 <label htmlFor="">Book ISBN : </label>
-                                <input type="text" name="" id="" className=""  required placeholder="Enter Book ISBN Number"/>
+                                <input type="text" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder="Enter Book ISBN Number"/>
+                            </div>
+                            <div className="my-2">
+                                <label htmlFor="">Borrower Email : </label>
+                                <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder="Enter Book Borrower Email"/>
                             </div>
                         </div>
                     </form>
