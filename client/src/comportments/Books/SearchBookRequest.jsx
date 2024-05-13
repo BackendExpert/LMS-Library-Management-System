@@ -20,8 +20,21 @@ const SearchBookRequest = () => {
         email:'',
     })
 
+    // for fetch search data
+    const [bookreqData, SetBookReqData] = useState([])
+
     const headleSearch = (e) => {
         e.preventDefault();
+
+        axios.post('http://localhost:8081/SearchBookRequest', bookReqSearch)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                SetBookReqData(res.data)                
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
     }
 
     if(RoleUser === "SuperAdmin") {
