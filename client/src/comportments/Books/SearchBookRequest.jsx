@@ -28,6 +28,7 @@ const SearchBookRequest = () => {
 
     const headleSearch = (e) => {
         e.preventDefault();
+        SetIsFormSubmited(false)    
 
         axios.post('http://localhost:8081/SearchBookRequest', bookReqSearch)
         .then(res => {
@@ -61,7 +62,7 @@ const SearchBookRequest = () => {
                     (() => {
                         if(IsFormSubmited === true){
                             <div className="">
-                                asdasd {bookreqData}
+                                asdasd 
                             </div>
                         }
                     })()
