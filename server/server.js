@@ -957,12 +957,13 @@ app.post('/BorrowBook/:id', (req, res) => {
 app.get('/MyCountRequests/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT COUNT(ID) AS MyBookRequests FROM book_borrow_request WHERE status = ? && borrowEmail = ?";
+    const sql = "SELECT COUNT(ID) AS MyBookRequests FROM book_borrow_request WHERE status = ? || status = ? && borrowEmail = ?";
 
     const status = "Request"
+    const status1 = "Borrowed"
     
   
-    connection.query(sql, [status, userEmail], (error, results) => {
+    connection.query(sql, [status, status1, userEmail], (error, results) => {
       if (error) {
         console.error('Error fetching data:', error);
         res.status(500).send({ message: 'Error fetching data' });
