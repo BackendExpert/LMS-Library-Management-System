@@ -1310,6 +1310,13 @@ app.post('/SearchBookRequest', (req, res) => {
     })
 })
 
+// count borrowed books
+// CountBorrowedBooks
+
+app.get('/CountBorrowedBooks', (req, res) => {
+    
+})
+
 // all end points end
 
 //check the server is working
