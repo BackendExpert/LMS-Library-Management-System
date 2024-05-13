@@ -64,6 +64,9 @@ const SearchBookRequest = () => {
                         if(IsFormSubmited === true){
                             return (
                                 <div className="">
+                                    <div className="">
+                                        <button onClick={headleCloseData} className="py-1 px-8 rounded-full bg-red-500 text-white duration-500 hover:bg-red-600">close</button>
+                                    </div>
                                             <div class="relative overflow-x-auto my-8">
                                                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
