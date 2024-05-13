@@ -64,6 +64,9 @@ const BorrowBookSearch = () => {
                 </div>
 
                 <div className="">
+                    <div className="">
+                        <button className="bg-red-500 text-white py-2 px-8 rounded duration-500 hover:bg-red-600">Close</button>
+                    </div>
                     {
                         (() => {
                             if(IsFormSubmited === true){
