@@ -39,6 +39,10 @@ const BorrowBookSearch = () => {
         })
     }
 
+    // headleclose for close result of submited form
+    const headleclose = () => {
+        SetIsFormSubmited(false)
+    }
 
     if(RoleUser === "SuperAdmin"){
         return (
