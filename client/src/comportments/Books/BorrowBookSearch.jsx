@@ -35,6 +35,9 @@ const BorrowBookSearch = () => {
                                 <label htmlFor="">Borrower Email : </label>
                                 <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder="Enter Book Borrower Email"/>
                             </div>
+                            <div className="">
+                                <button type="submit" className="bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Search</button>
+                            </div>
                         </div>
                     </form>
                 </div>
