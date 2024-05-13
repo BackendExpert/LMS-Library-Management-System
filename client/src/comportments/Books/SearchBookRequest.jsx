@@ -115,6 +115,11 @@ const SearchBookRequest = () => {
                                                                                                 <p className="text-blue-500 font-semibold">Request</p>
                                                                                             )
                                                                                         }
+                                                                                        else if(bookData.status === "Accept"){
+                                                                                            return (
+                                                                                                <p className="text-green-500 font-semibold">Accept</p>
+                                                                                            )
+                                                                                        }
                                                                                     })()
                                                                                 }
                                                                             </td>
