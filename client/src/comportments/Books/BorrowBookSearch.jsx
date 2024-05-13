@@ -25,7 +25,10 @@ const BorrowBookSearch = () => {
         )
     }
     else{
-
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
     }
 
 }
