@@ -1100,7 +1100,7 @@ app.post('/AcceptBookRequest/:id', (req, res) => {
                 else{
                     var mailOptions = {
                         from: process.env.EMAIL_USER,
-                        to: borrower,
+                        to: req.body.Email,
                         subject: 'Notification From Library NIFS',
                         text: 'Your Book Request has been Accepted..', 
                     };
