@@ -20,10 +20,23 @@ const BorrowBookSearch = () => {
         borrower: '',
     })
 
+    // search data
+    const [SearchbookBorrowData, SetSearchbookBorrowData] = useState([])
+
     // headleSearch
     const headleSearch = (e) => {
         e.preventDefault();
-        
+
+        axios.post('http://localhost:8081/SearchBookBorrow', bookBorrowData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                SetSearchbookBorrowData(res.data.SearchBorrow)
+                SetIsFormSubmited(true)
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
     }
 
 
