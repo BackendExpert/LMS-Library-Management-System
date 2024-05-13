@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
+import BorrowBookSearch from "./BorrowBookSearch"
 
 
 
@@ -101,6 +102,11 @@ const BorrowedBooks = () => {
                                         </tbody>
                                     </table>
                                 </div>   
+                            )
+                        }
+                        else if(buttonValue === "BookReqSearch"){
+                            return (
+                                <BorrowBookSearch />
                             )
                         }
                         
