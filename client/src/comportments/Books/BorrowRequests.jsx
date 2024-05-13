@@ -62,6 +62,21 @@ const BorrowRequests = () => {
         })
     }
 
+    // headleCancelRequest
+
+    const headleCancelRequest = (id, Email) => {
+        axios.post('http://localhost:8081/BorrowAcceptBook/' + id, {Email})
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Book Request has been Cancelled")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     
 
     if(RoleUser === "SuperAdmin"){
