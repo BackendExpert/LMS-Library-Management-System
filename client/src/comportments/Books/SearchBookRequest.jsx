@@ -20,16 +20,24 @@ const SearchBookRequest = () => {
         email:'',
     })
 
+    const headleSearch = (e) => {
+        e.preventDefault();
+    }
+
     if(RoleUser === "SuperAdmin") {
         return (
             <div className="">
                 <div className="bg-white py-4 px-10 mt-6">
 
                     <div className="">
-                        <form>
+                        <form onSubmit={headleSearch}>
                             <label htmlFor="">Email</label>
                             <input type="email" name="" id="" className="w-full h-12 rounded bg-gray-200 pl-2 my-2" placeholder="Enter Email Address"
                             onChange={e => SetbookReqSearch({...bookReqSearch, email:e.target.value})}/>
+
+                            <div className="">
+                                <button type="submit" className="bg-green-500 rounded text-white py-2 px-8 duration-500 hover:bg-green-600">Search</button>
+                            </div>
                         </form>
                     </div>
                 </div>
