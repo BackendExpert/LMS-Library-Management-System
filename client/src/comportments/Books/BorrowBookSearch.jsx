@@ -23,7 +23,18 @@ const BorrowBookSearch = () => {
 
     if(RoleUser === "SuperAdmin"){
         return (
-            <div>BorrowBookSearch</div>
+            <div>
+                <div className="my-3">
+                    <form>
+                        <div className="lg:grid grid-cols-2 gap-4">
+                            <div className="my-2">
+                                <label htmlFor="">Book ISBN : </label>
+                                <input type="text" name="" id="" className=""  required placeholder="Enter Book ISBN Number"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         )
     }
     else{
