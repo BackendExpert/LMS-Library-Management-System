@@ -11,11 +11,6 @@ const BorrowBookSearch = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    const [buttonValue, SetButtonValue] = useState(0)
-    const HeadleButtonClick = (clickValue) => {
-        SetButtonValue(clickValue)   
-    }
-
     // check form is submit or not
     const [IsFormSubmited, SetIsFormSubmited] = useState(false)
 
