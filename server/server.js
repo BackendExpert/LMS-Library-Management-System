@@ -1255,7 +1255,7 @@ app.post('/BorrowCancelBook/:id', (req, res) => {
                 else{
                     // update book 
                     const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
-                    const status = "Borrow"
+                    const status = "Available"
 
                     connection.query(updateBook, [status, BookISBN], (err, result) => {
                         if(err) {
