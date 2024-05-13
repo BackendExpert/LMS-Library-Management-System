@@ -70,7 +70,7 @@ const BorrowBookSearch = () => {
                                 return (
                                     <div class="relative overflow-x-auto my-8">
                                     <div className="">
-                                        <button className="bg-red-500 text-white py-2 px-8 rounded duration-500 hover:bg-red-600">Close</button>
+                                        <button onClick={headleclose} className="bg-red-500 text-white py-2 px-8 rounded duration-500 hover:bg-red-600">Close</button>
                                     </div>
                                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
