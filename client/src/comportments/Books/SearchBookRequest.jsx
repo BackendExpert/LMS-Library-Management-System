@@ -33,7 +33,7 @@ const SearchBookRequest = () => {
         axios.post('http://localhost:8081/SearchBookRequest', bookReqSearch)
         .then(res => {
             if(res.data.Status === "Success"){
-                SetBookReqData(res.data)    
+                SetBookReqData(res.data.Result)    
                 SetIsFormSubmited(true)            
             }
             else{
