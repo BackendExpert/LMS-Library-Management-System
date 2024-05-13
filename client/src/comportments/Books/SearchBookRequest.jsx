@@ -64,10 +64,7 @@ const SearchBookRequest = () => {
                         if(IsFormSubmited === true){
                             return (
                                 <div className="">
-                                    {
-                                        bookreqData.map((bookData, index) => {
-                                            return (
-                                                <div class="relative overflow-x-auto my-8">
+                                            <div class="relative overflow-x-auto my-8">
                                                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                             <tr>
@@ -90,13 +87,24 @@ const SearchBookRequest = () => {
                             
                                                         </thead>
                                                         <tbody>
-
+                                                            {
+                                                                bookreqData.map((bookData, index) => {
+                                                                    return (
+                                                                        <tr key={index}>
+                                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                                {bookData.bookISBN}
+                                                                            </th>
+                                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                                {bookData.borrowEmail}
+                                                                            </th>
+                                                                        </tr>
+                                                                    )
+                                                                })
+                                                            }
                                                         </tbody>
                                                     </table>
                                                 </div>   
-                                            )
-                                        })
-                                    } 
+
                                 </div>
                             )
                         }
