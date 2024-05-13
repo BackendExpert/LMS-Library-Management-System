@@ -20,7 +20,7 @@ const SearchBookRequest = () => {
         return (
             <div className="">
                 <div className="bg-white py-8 px-10 mt-6">
-                    <h1 className="font-semibold text-gray-500 text-xl">Search Book</h1>
+                    <h1 className="font-semibold text-gray-500 text-xl">Search</h1>
                     <button className="bg-red-500 py-2 px-8 rounded text-white duration-500 hover:bg-red--600">Close</button>
                     {
                         (() => {
