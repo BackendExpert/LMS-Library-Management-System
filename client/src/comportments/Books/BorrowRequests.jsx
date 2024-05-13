@@ -10,6 +10,11 @@ const BorrowRequests = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    const [buttonValue, SetButtonValue] = useState(0)
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     const [BookBorrowRequests, SetBookBorrowRequests] = useState([])
     useEffect(() => {
         axios.get('http://localhost:8081/BookBorrowRequest')
