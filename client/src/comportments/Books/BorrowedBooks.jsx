@@ -55,7 +55,15 @@ const BorrowedBooks = () => {
             
                                         </thead>
                                         <tbody>
-
+                                            {
+                                                BookBorroed.map((book, index) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </div>   
