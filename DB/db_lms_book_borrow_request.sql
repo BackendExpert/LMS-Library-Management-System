@@ -29,7 +29,7 @@ CREATE TABLE `book_borrow_request` (
   `borrow_at` datetime NOT NULL,
   `status` varchar(30) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `book_borrow_request` (
 
 LOCK TABLES `book_borrow_request` WRITE;
 /*!40000 ALTER TABLE `book_borrow_request` DISABLE KEYS */;
-INSERT INTO `book_borrow_request` VALUES (1,'456879IT','jehan@456.com','2024-05-10 16:04:03','Request'),(2,'789456IT','jehan@456.com','2024-05-10 16:18:27','Request'),(3,'789456GEO','jehan@456.com','2024-05-10 16:18:32','Request');
 /*!40000 ALTER TABLE `book_borrow_request` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-10 16:21:37
+-- Dump completed on 2024-05-13  8:09:39
