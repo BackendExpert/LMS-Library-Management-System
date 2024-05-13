@@ -97,6 +97,13 @@ const SearchBookRequest = () => {
                                                                             <td class="px-6 py-4">
                                                                                 {bookData.borrow_at}
                                                                             </td>
+                                                                            <td>
+                                                                                {
+                                                                                    (() => {
+                                                                                        if(bookData.sta)
+                                                                                    })()
+                                                                                }
+                                                                            </td>
                                                                         </tr>
                                                                     )
                                                                 })
