@@ -130,9 +130,9 @@ const SearchBookRequest = () => {
                                                                                                 <p className="text-red-500 font-semibold">Cancelled</p>
                                                                                             )
                                                                                         }
-                                                                                        else if(bookData.status === "Cancelled"){
+                                                                                        else if(bookData.status === "Reject"){
                                                                                             return (
-                                                                                                <p className="text-red-500 font-semibold">Cancelled</p>
+                                                                                                <p className="text-red-500 font-semibold">Reject</p>
                                                                                             )
                                                                                         }
                                                                                     })()
