@@ -92,92 +92,107 @@ const BorrowRequests = () => {
                 <div className="my-2">
                     <button onClick={() => HeadleButtonClick("BookReqeustSearch")}></button>
                 </div>
-                <div class="relative overflow-x-auto my-8">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Book ISBN Number
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Borrower Email
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Borrow at
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Status
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-                                </tr>
 
-                            </thead>
-                            <tbody>
-                                {
-                                    BookBorrowRequests.map((BookBorrow, index) => {
-                                        if(BookBorrow.status === "Request" || BookBorrow.status === "Accept"){
-                                            return (
-                                                <tr key={index}>
-                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        {BookBorrow.bookISBN}
-                                                    </th>
-                                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        {BookBorrow.borrowEmail}
-                                                    </th>
-                                                    <td class="px-6 py-4">
-                                                        {BookBorrow.borrow_at}
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        {
-                                                            (() => {
-                                                                if(BookBorrow.status === "Request"){
-                                                                    return (
-                                                                        <span className="text-yellow-500 font-semibold">Waiting for Approve</span>
-                                                                    )
-                                                                }
-                                                                else if(BookBorrow.status === "Accept"){
-                                                                    return (
-                                                                        <span className="text-green-500 font-semibold">Approved, Waiting for Borrow</span>
-                                                                    )
-                                                                }
-                                                            })()
-                                                        }
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        {
-                                                            (() => {
-                                                                if(BookBorrow.status === "Request"){
-                                                                    return(
-                                                                        <div className="flex">
-                                                                            <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
-                                                                            <button onClick={() => headleReject(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Reject Request</button>
-                                                                        </div>
-                                                                        // continue from headleReject                                                                        
-                                                                        // request search function
-                                                                    )
-                                                                }
-                                                                if(BookBorrow.status === "Accept"){
-                                                                    return(
-                                                                        <div className="flex">
-                                                                            <button onClick={() => headleBorrow(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
-                                                                            <button onClick={() => headleCancelRequest(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
-                                                                        </div>
-                                                                    )
-                                                                }
-                                                            })()
-                                                        }
-                                                    </td>                                            
-                                                </tr>
-                                            )
-                                        }
+                {
+                    (() => {
+                        if(buttonValue === 0){
+                            return (
+                                <div class="relative overflow-x-auto my-8">
+                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Book ISBN Number
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Borrower Email
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Borrow at
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Status
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Action
+                                                </th>
+                                            </tr>
+            
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                BookBorrowRequests.map((BookBorrow, index) => {
+                                                    if(BookBorrow.status === "Request" || BookBorrow.status === "Accept"){
+                                                        return (
+                                                            <tr key={index}>
+                                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                    {BookBorrow.bookISBN}
+                                                                </th>
+                                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                    {BookBorrow.borrowEmail}
+                                                                </th>
+                                                                <td class="px-6 py-4">
+                                                                    {BookBorrow.borrow_at}
+                                                                </td>
+                                                                <td class="px-6 py-4">
+                                                                    {
+                                                                        (() => {
+                                                                            if(BookBorrow.status === "Request"){
+                                                                                return (
+                                                                                    <span className="text-yellow-500 font-semibold">Waiting for Approve</span>
+                                                                                )
+                                                                            }
+                                                                            else if(BookBorrow.status === "Accept"){
+                                                                                return (
+                                                                                    <span className="text-green-500 font-semibold">Approved, Waiting for Borrow</span>
+                                                                                )
+                                                                            }
+                                                                        })()
+                                                                    }
+                                                                </td>
+                                                                <td class="px-6 py-4">
+                                                                    {
+                                                                        (() => {
+                                                                            if(BookBorrow.status === "Request"){
+                                                                                return(
+                                                                                    <div className="flex">
+                                                                                        <button onClick={() => headleAccept(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-green-500 text-white rounded duration-500 hover:bg-green-600">Accept Request</button>
+                                                                                        <button onClick={() => headleReject(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Reject Request</button>
+                                                                                    </div>
+                                                                                    // continue from headleReject                                                                        
+                                                                                    // request search function
+                                                                                )
+                                                                            }
+                                                                            if(BookBorrow.status === "Accept"){
+                                                                                return(
+                                                                                    <div className="flex">
+                                                                                        <button onClick={() => headleBorrow(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="py-2 px-8 bg-blue-500 text-white rounded duration-500 hover:bg-blue-600">Borrow</button>
+                                                                                        <button onClick={() => headleCancelRequest(BookBorrow.bookISBN, BookBorrow.borrowEmail)} className="mx-2 py-2 px-8 bg-red-500 text-white rounded duration-500 hover:bg-red-600">Cancel Request</button>
+                                                                                    </div>
+                                                                                )
+                                                                            }
+                                                                        })()
+                                                                    }
+                                                                </td>                                            
+                                                            </tr>
+                                                        )
+                                                    }
+            
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>   
+                            )
+                        }
+                        if(buttonValue === "BookReqeustSearch"){
+                            return (
+                                <BookBorrowRequests />
+                            )
+                        }
+                    })
+                }
 
-                                    })
-                                }
-                            </tbody>
-                        </table>
-                    </div>   
             </div>
         )
     }
