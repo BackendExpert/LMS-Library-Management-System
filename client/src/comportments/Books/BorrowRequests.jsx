@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
+import SearchBookRequest from "./SearchBookRequest"
 
 const BorrowRequests = () => {
     const navigate = useNavigate() 
@@ -90,7 +91,7 @@ const BorrowRequests = () => {
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrow Requests</h1>
                 <div className="my-2">
-                    <button onClick={() => HeadleButtonClick("BookReqeustSearch")} className="py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600"></button>
+                    <button onClick={() => HeadleButtonClick("SearchBookReqeust")} className="py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600">Search</button>
                 </div>
 
                 {
@@ -185,9 +186,9 @@ const BorrowRequests = () => {
                                 </div>   
                             )
                         }
-                        else if(buttonValue === "BookReqeustSearch"){
+                        if(buttonValue === "SearchBookReqeust"){
                             return (
-                                <BookBorrowRequests />
+                                <SearchBookRequest />
                             )
                         }
                     })()
