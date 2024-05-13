@@ -100,7 +100,11 @@ const SearchBookRequest = () => {
                                                                             <td>
                                                                                 {
                                                                                     (() => {
-                                                                                        if(bookData.sta)
+                                                                                        if(bookData.status === "Request"){
+                                                                                            return (
+                                                                                                <p className="text-blue-500 font-semibold">Request</p>
+                                                                                            )
+                                                                                        }
                                                                                     })()
                                                                                 }
                                                                             </td>
