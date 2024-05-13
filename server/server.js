@@ -1356,7 +1356,19 @@ app.post('/SearchBookBorrow', (req, res) => {
         return res.json({Error: "Please fill at least one Input Feild"})
     }
     else{
+        const sql = "SELECT * FROM book_borrow_request WHERE bookISBN = ? || borrowEmail = ?"
         
+        connection.query(sql, [bookISBN, bookBorrower], (err, result) => {
+            if(err ) {
+                return res.json({Error: "Internal Server Error"})
+            }
+            else if(result.length === 0){
+                return res.json({Error: "No recodes Found"})
+            }
+            else{
+                return res.json({Status: "Success", })
+            }
+        })
     }
 
 })
