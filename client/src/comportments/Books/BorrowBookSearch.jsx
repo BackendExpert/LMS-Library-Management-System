@@ -18,11 +18,16 @@ const BorrowBookSearch = () => {
 
     // check form is submit or not
     const [IsFormSubmited, SetIsFormSubmited] = useState(false)
-    
 
-  return (
-    <div>BorrowBookSearch</div>
-  )
+    if(RoleUser === "SuperAdmin"){
+        return (
+            <div>BorrowBookSearch</div>
+        )
+    }
+    else{
+
+    }
+
 }
 
 export default BorrowBookSearch
