@@ -50,7 +50,7 @@ const HomePage = () => {
             <div className="bg-none text-white mt-[-20px]">
                 <div className="lg:flex justify-between mx-16">
                     <div className="flex">
-                        <div className="lg:flex">
+                        <div className="lg:flex justify-between">
                             <div className="lg:flex text-gray-300">
                                 <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
                                 <h1 className="my-4 whitespace-nowrap">NIFS Library</h1>
@@ -85,7 +85,7 @@ const HomePage = () => {
                                 }
                             </div>
                         </div>
-                        <div className="">hi allllll</div>
+                        <div className="my-4">hi allllll</div>
 
                     </div>
                     <div className="my-1">                   
