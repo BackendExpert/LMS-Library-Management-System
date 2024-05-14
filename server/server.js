@@ -1388,7 +1388,17 @@ app.post('/ReturnBook/:id', (req, res) => {
             return res.json({Error: "Internal Server Error"})
         }
         else{
-            return res.json({Status: "Success"})
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ?"
+            const status = "Waiting"
+
+            connection.query(sql, [status, BookISBN, borrower], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
         }
     })
 
