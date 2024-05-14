@@ -1522,6 +1522,27 @@ app.post('/ReturnContinue/:id', (req, res) => {
     }) 
     
 })
+
+// CountProcessingReqs
+app.get('/CountProcessingReqs/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT COUNT(ID) AS ProcessingReqMy FROM book_borrow_request WHERE status = ? || status = ?  && borrowEmail = ?";
+    const status = "Request"
+    const status1 = "Accept"
+    const status2 = "Waiting"
+
+    connection.query(sql, [status, userEmail], (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ ProcessingReqMy: results[0].ProcessingReqMy }); // Send count in JSON format
+    });
+})
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
