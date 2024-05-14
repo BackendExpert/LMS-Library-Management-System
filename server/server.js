@@ -1435,6 +1435,61 @@ app.post('/RallBackCall/:id', (req, res) => {
     })    
 })
 
+// return back book
+// ReturnContinue
+
+app.post('/ReturnContinue/:id', (req, res) => {
+    const BookISBN = req.params.id
+
+    const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    const status = "Waiting"
+    const borrower =  req.body.Email
+
+    connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error 1"})
+        }
+        else{
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ?"
+            const status = "Returned"
+
+            connection.query(sql, [status, BookISBN, borrower], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error 2"})
+                }
+                else{
+                    const bookUpdate = "UPDATE books SET Status = ? WHERE ISBNNumber = ? "
+                    const status = "Available"
+
+                    connection.query(bookUpdate, [status, BookISBN], (err, result) => {
+                        if(err) {
+                            return res.json({Error: "Internal Server Error 3"})
+                        }
+                        else{
+                            var mailOptions = {
+                                from: process.env.EMAIL_USER,
+                                to: req.body.Email,
+                                subject: 'Notification From Library NIFS',
+                                text: 'You Successfully Returned Book ISBN Number : ' + BookISBN, 
+                            };
+        
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                  console.log(error);
+                                } else {
+                                  console.log('Email sent: ' + info.response);
+                                  return res.json({Status: "Success"})
+                                }
+                            });
+                        }
+                    })
+                }
+            })
+        }
+    }) 
+    
+})
+
 // all end points end
 
 //check the server is working
