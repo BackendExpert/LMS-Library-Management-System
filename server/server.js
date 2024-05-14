@@ -1181,55 +1181,55 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
 
 app.post('/BorrowAcceptBook/:id', (req, res) => {
     const BookISBN = req.params.id
-    // console.log(BookISBN, req.body)
+    console.log(BookISBN, req.body)
 
-    const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
-    const status = "Accept"
-    const borrower =  req.body.Email
+    // const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    // const status = "Accept"
+    // const borrower =  req.body.Email
 
-    connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
-        if (err) throw err
+    // connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
+    //     if (err) throw err
 
-        if(result){
-            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ? && status = ?"
-            const Updatestatus = "Borrowed"
-            const status = "Accept"
+    //     if(result){
+    //         const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    //         const Updatestatus = "Borrowed"
+    //         const status = "Accept"
 
-            connection.query(sql, [Updatestatus, BookISBN, borrower, status], (err, result) => {
-                if(err) {
-                    return res.json({Error: "Interal Server Error"})
-                }
-                else{
-                    // update book 
-                    const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
-                    const status = "Borrow"
+    //         connection.query(sql, [Updatestatus, BookISBN, borrower, status], (err, result) => {
+    //             if(err) {
+    //                 return res.json({Error: "Interal Server Error"})
+    //             }
+    //             else{
+    //                 // update book 
+    //                 const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
+    //                 const status = "Borrow"
 
-                    connection.query(updateBook, [status, BookISBN], (err, result) => {
-                        if(err) {
-                            return req.join({Error: "Internal Server Error"})
-                        }
-                        else{
-                            var mailOptions = {
-                                from: process.env.EMAIL_USER,
-                                to: req.body.Email,
-                                subject: 'Notification From Library NIFS',
-                                text: 'You Successfully Borrow Book ISBN Number : ' + BookISBN, 
-                            };
+    //                 connection.query(updateBook, [status, BookISBN], (err, result) => {
+    //                     if(err) {
+    //                         return req.join({Error: "Internal Server Error"})
+    //                     }
+    //                     else{
+    //                         var mailOptions = {
+    //                             from: process.env.EMAIL_USER,
+    //                             to: req.body.Email,
+    //                             subject: 'Notification From Library NIFS',
+    //                             text: 'You Successfully Borrow Book ISBN Number : ' + BookISBN, 
+    //                         };
         
-                            transporter.sendMail(mailOptions, function(error, info){
-                                if (error) {
-                                  console.log(error);
-                                } else {
-                                  console.log('Email sent: ' + info.response);
-                                  return res.json({Status: "Success"})
-                                }
-                            });
-                        }
-                    })
-                }
-            })
-        }
-    })    
+    //                         transporter.sendMail(mailOptions, function(error, info){
+    //                             if (error) {
+    //                               console.log(error);
+    //                             } else {
+    //                               console.log('Email sent: ' + info.response);
+    //                               return res.json({Status: "Success"})
+    //                             }
+    //                         });
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     }
+    // })    
 })
 
 // Cancel Book Accepted Requests
