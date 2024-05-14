@@ -1410,8 +1410,29 @@ app.post('/ReturnBook/:id', (req, res) => {
 
 app.post('/RallBackCall/:id', (req, res) => {
     const BookISBN = req.params.id
-
     
+    const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    const status = "Waiting"
+    const borrower =  req.body.Email
+
+    connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ?"
+            const status = "Borrowed"
+
+            connection.query(sql, [status, BookISBN, borrower], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Internal Server Error"})
+                }
+                else{
+                    return res.json({Status: "Success"})
+                }
+            })
+        }
+    })    
 })
 
 // all end points end
