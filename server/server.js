@@ -1538,6 +1538,23 @@ function onServerStart() {
 
             if(todayOnly === dateOnly){
                 console.log("Hellow")
+
+                var mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: result[0].borrowEmail,
+                    subject: 'Notification From Library NIFS',
+                    text: 'Your Return Date is today on BookNumber : ' + result[0].bookISBN, 
+                };
+
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                      console.log(error);
+                    } else {
+                      console.log('Email sent: ' + info.response);
+                      return res.json({Status: "Success"})
+                    }
+                });
+
             }
             else{
                 console.log(todayOnly, dateOnly)
@@ -1559,11 +1576,13 @@ function onServerStart() {
 }
   
 
+// test with real email address above
+
 
 // all end points end
 
 //check the server is working
 app.listen(PORT, () => {
-    onServerStart()
+    // onServerStart()
     console.log(`Server is Running on PORT ${PORT}`)
 })
