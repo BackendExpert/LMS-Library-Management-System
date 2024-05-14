@@ -1184,63 +1184,59 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
     // console.log(BookISBN, req.body)
 
     let currentDate = new Date();
-
-    // Add 30 days to the current date
     currentDate.setDate(currentDate.getDate() + 30);
-    
-    // Format the date if needed
-    let formattedDate = currentDate.toISOString().split('T')[0]; // This will give you the date in YYYY-MM-DD format
-    
-    console.log("Date after adding 30 days:", formattedDate);
+    let formattedDate = currentDate.toISOString(); 
+    // console.log("Date after adding 30 days:", today, "Adndndajksdjakls",  formattedDate);
 
 
-    // const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
-    // const status = "Accept"
-    // const borrower =  req.body.Email
+    const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    const status = "Accept"
+    const borrower =  req.body.Email
 
-    // connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
-    //     if (err) throw err
+    connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
+        if (err) throw err
 
-    //     if(result){
-    //         const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ? && status = ?"
-    //         const Updatestatus = "Borrowed"
-    //         const status = "Accept"
+        if(result){
+            const sql = "UPDATE book_borrow_request SET status = ?, confarmRetuenDate = ? WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+            const Updatestatus = "Borrowed"
+            const retuenData = formattedDate
+            const status = "Accept"
 
-    //         connection.query(sql, [Updatestatus, BookISBN, borrower, status], (err, result) => {
-    //             if(err) {
-    //                 return res.json({Error: "Interal Server Error"})
-    //             }
-    //             else{
-    //                 // update book 
-    //                 const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
-    //                 const status = "Borrow"
+            connection.query(sql, [Updatestatus, retuenData, BookISBN, borrower, status], (err, result) => {
+                if(err) {
+                    return res.json({Error: "Interal Server Error"})
+                }
+                else{
+                    // update book 
+                    const updateBook = "UPDATE books SET Status = ? WHERE ISBNNumber = ?"
+                    const status = "Borrow"
 
-    //                 connection.query(updateBook, [status, BookISBN], (err, result) => {
-    //                     if(err) {
-    //                         return req.join({Error: "Internal Server Error"})
-    //                     }
-    //                     else{
-    //                         var mailOptions = {
-    //                             from: process.env.EMAIL_USER,
-    //                             to: req.body.Email,
-    //                             subject: 'Notification From Library NIFS',
-    //                             text: 'You Successfully Borrow Book ISBN Number : ' + BookISBN, 
-    //                         };
+                    connection.query(updateBook, [status, BookISBN], (err, result) => {
+                        if(err) {
+                            return req.join({Error: "Internal Server Error"})
+                        }
+                        else{
+                            var mailOptions = {
+                                from: process.env.EMAIL_USER,
+                                to: req.body.Email,
+                                subject: 'Notification From Library NIFS',
+                                text: 'You Successfully Borrow Book ISBN Number : ' + BookISBN, 
+                            };
         
-    //                         transporter.sendMail(mailOptions, function(error, info){
-    //                             if (error) {
-    //                               console.log(error);
-    //                             } else {
-    //                               console.log('Email sent: ' + info.response);
-    //                               return res.json({Status: "Success"})
-    //                             }
-    //                         });
-    //                     }
-    //                 })
-    //             }
-    //         })
-    //     }
-    // })    
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                  console.log(error);
+                                } else {
+                                  console.log('Email sent: ' + info.response);
+                                  return res.json({Status: "Success"})
+                                }
+                            });
+                        }
+                    })
+                }
+            })
+        }
+    })    
 })
 
 // Cancel Book Accepted Requests
