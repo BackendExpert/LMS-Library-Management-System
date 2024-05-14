@@ -1521,7 +1521,30 @@ app.post('/ReturnContinue/:id', (req, res) => {
     
 })
 function onServerStart() {
-    console.log('Het all bla');
+    const sql = "SELECT * FROM book_borrow_request"
+    connection.query(sql, (err, result) => {
+        if(err){
+            console.log(err)
+        }
+        else if(result) {
+            const IsDataOk = result[0].confarmRetuenDate
+            const dataObject = new Date(IsDataOk)
+
+            console.log(dataObject)
+        }
+    })
+
+    // Assuming your date is in string format
+let dateString = "2024-05-14T10:30:00";
+
+// Create a new Date object from the string
+let dateObject = new Date(dateString);
+
+// Extract the date portion without the time
+let dateOnly = dateObject.toISOString().split('T')[0];
+
+// Now dateOnly contains only the date portion without the time
+console.log(dateOnly); // Output: 2024-05-14
 }
   
 
@@ -1529,4 +1552,7 @@ function onServerStart() {
 // all end points end
 
 //check the server is working
-app.listen(PORT, () => console.log(`Server is Running on PORT ${PORT}`));
+app.listen(PORT, () => {
+    onServerStart()
+    console.log(`Server is Running on PORT ${PORT}`)
+})
