@@ -59,6 +59,20 @@ const BorrowBookSearch = () => {
         SetIsFormSubmited(false)
     }
 
+    // CallRollBack for when mistakly click the return button
+    const CallRollBack = (id, Email) => {
+        axios.post('http://localhost:8081/RallBackCall/' + id, { Email })
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Rollback Successful")
+                SetIsFormSubmited(false)
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div>
@@ -146,15 +160,15 @@ const BorrowBookSearch = () => {
                                                                 <td class="px-6 py-4">
                                                                     {
                                                                         (() => {
-                                                                            if(book.status === "Borrowed"){
+                                                                            if(borrowData.status === "Borrowed"){
                                                                                 return (
-                                                                                    <button onClick={() => headleReturn(book.bookISBN, book.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
+                                                                                    <button onClick={() => headleReturn(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
                                                                                 )
                                                                             }
-                                                                            else if(book.status === "Waiting"){
+                                                                            else if(borrowData.status === "Waiting"){
                                                                                 return (
                                                                                     <div className="flex">
-                                                                                        <button onClick={() => CallRollBack(book.bookISBN, book.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                        <button onClick={() => CallRollBack(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
                                                                                         <button className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
                                                                                     </div>
                                                                                 )
@@ -162,9 +176,6 @@ const BorrowBookSearch = () => {
                                                                         })()
                                                                     }
                                                                     
-                                                                </td>
-                                                                <td class="px-6 py-4">
-                                                                    <button onClick={() => headleReturn(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
                                                                 </td>
                                                             </tr>
                                                         )
