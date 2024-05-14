@@ -33,6 +33,9 @@ const HomePage = () => {
         window.location.reload()
     }
 
+    // use for all sites to set dark mode
+    localStorage.setItem("darkMode", Darkmode)
+
     
     // https://wallpapercave.com/wp/wp12420121.jpg
 
