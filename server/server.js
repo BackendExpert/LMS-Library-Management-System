@@ -1332,10 +1332,11 @@ app.get('/CountBorrowedBooks', (req, res) => {
 // BookBorrowedData
 
 app.get('/BookBorrowedData', (req, res) => {
-    const sql = "SELECT* FROM book_borrow_request WHERE status = ?"
+    const sql = "SELECT* FROM book_borrow_request WHERE status = ? || status = ?"
     const status = "Borrowed"
+    const status1 = "Waiting"
 
-    connection.query(sql, [status], (err, result) => {
+    connection.query(sql, [status, status1], (err, result) => {
         if(err) {
             return res.json({Error: "Internal Server Error"})
         }
