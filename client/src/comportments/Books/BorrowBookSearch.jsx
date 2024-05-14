@@ -66,6 +66,7 @@ const BorrowBookSearch = () => {
             if(res.data.Status === "Success"){
                 alert("Rollback Successful")
                 SetIsFormSubmited(false)
+                window.location.reload()
             }
             else{
                 alert(res.data.Error)
