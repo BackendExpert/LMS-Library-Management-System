@@ -57,15 +57,15 @@ const HomePage = () => {
                 <div className="lg:flex justify-between mx-16">
                     <div className="flex">
                         <div className="lg:flex">
-                            <div className="lg:flex text-gray-300">
-                                <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
+                            <div className="lg:flex text-gray-300">                              
                                 
                                 
-                                <div onClick={()=>SetnavOpen(!navOpen)} className='text-3xl absolute right-8 top-12 cursor-pointer md:hidden'>
+                                <div onClick={()=>SetnavOpen(!navOpen)} className='text-3xl absolute right-8 top-2 cursor-pointer md:hidden'>
                                     <MyIcons name={navOpen ? 'close':'menu'}></MyIcons>
                                 </div>
 
-                                <ul className={`backdrop-blur-xl uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'top-24 ':'top-[-300px]'}`}>
+                                <ul className={`backdrop-blur-md py-4 lg:bg-transparent uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'left-0 ':'left-[-400px]'}`}>
+                                <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
                                     <h1 className="whitespace-nowrap">NIFS Library</h1>
                                     {
                                     (() => {
@@ -80,15 +80,15 @@ const HomePage = () => {
                                         }
                                         else{
                                             return (
-                                                <div className="lg:flex my-4 mx-8 ">
+                                                <div className="lg:flex lg:my-0 my-4">
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick(0)} className="mx-4 cursor-pointer duration-500 hover:text-white">Home</h1>
+                                                        <h1 onClick={() => HeadleButtonClick(0)} className="my-4 cursor-pointer duration-500 hover:text-white">Home</h1>
                                                     </div>
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('SignUp')} className="mx-4 cursor-pointer duration-500 hover:text-white">Join</h1>
+                                                        <h1 onClick={() => HeadleButtonClick('SignUp')} className="my-4 cursor-pointer duration-500 hover:text-white">Join</h1>
                                                     </div>
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('SignIn')} className="mx-4 cursor-pointer duration-500 hover:text-white">SignIn</h1>
+                                                        <h1 onClick={() => HeadleButtonClick('SignIn')} className="my-4 cursor-pointer duration-500 hover:text-white">SignIn</h1>
                                                     </div>
                                                 </div>
                                             )
