@@ -168,7 +168,7 @@ const HomePage = () => {
                 })()
             }
         </div> */}
-        <div className="lg:my-16 my-20 text-center">
+        <div className={`lg:my-16 my-20 text-center `}>
             <h1 className="text-4xl font-semibold text-gray-500">The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
