@@ -4,5 +4,5 @@
 
 .dark-mode{
     color: white;
-    background: #000;
+    background: linear-gradient(to right, #001B3A, rgba(0,0,0,0.8));
 }
