@@ -29,6 +29,7 @@ const SummaryDash = () => {
     const [MyBookReqeusts, SetMyBookReqeusts] = useState(0)
     const [BorrowedBooks, SetBorrowedBooks] = useState(0)
     const [MyBorrowedBook, SetMyBorrowedBook] = useState(0)
+    const [ProcessingRequests, SetProcessingRequests] = useState(0)
 
 
     useEffect(() => {
@@ -67,6 +68,14 @@ const SummaryDash = () => {
             try {
                 const MyBorrowedBooks = await axios.get('http://localhost:8081/CountBorrowedBooks');
                 SetMyBorrowedBook(MyBorrowedBooks.data.BorrowedBooksMy);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            // count My Processing Requests
+            try {
+                const ProcessingBookMy = await axios.get('http://localhost:8081/CountProcessingReqs/' + EmailUser);
+                SetProcessingRequests(ProcessingBookMy.data.BorrowedBooksMy);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
