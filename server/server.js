@@ -1450,7 +1450,7 @@ app.post('/ReturnContinue/:id', (req, res) => {
             return res.json({Error: "Internal Server Error 1"})
         }
         else{
-            const sql = "UPDATE book_borrow_request SET status = ? WHERE bookISBN = ? && borrowEmail = ?"
+            const sql = "UPDATE book_borrow_request SET status = ?,  WHERE bookISBN = ? && borrowEmail = ?"
             const status = "Returned"
 
             connection.query(sql, [status, BookISBN, borrower], (err, result) => {
