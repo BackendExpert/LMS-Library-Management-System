@@ -1383,7 +1383,15 @@ app.post('/ReturnBook/:id', (req, res) => {
     const status = "Borrowed"
     const borrower =  req.body.Email
 
-    
+    connection.query(checkBook, [BookISBN, borrower, status], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+
 })
 
 // all end points end
