@@ -1548,9 +1548,9 @@ app.get('/CountProcessingReqs/:id', (req, res) => {
 app.get('/CountRejectReqMy/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT COUNT(ID) AS ProcessingReqMy FROM book_borrow_request WHERE status = ? || status = ? && borrowEmail = ?";
-    const status = "Request"
-    const status1 = "Accept"
+    const sql = "SELECT COUNT(ID) AS RejectMyReq FROM book_borrow_request WHERE status = ? || status = ? && borrowEmail = ?";
+    const status = "Reject"
+    const status1 = "Cancelled"
 
     connection.query(sql, [status, status1, userEmail], (error, results) => {
       if (error) {
@@ -1559,7 +1559,7 @@ app.get('/CountRejectReqMy/:id', (req, res) => {
         return;
       }
   
-      res.json({ ProcessingReqMy: results[0].ProcessingReqMy }); // Send count in JSON format
+      res.json({ RejectMyReq: results[0].RejectMyReq }); // Send count in JSON format
     });
 })
 

@@ -76,7 +76,7 @@ const SummaryDash = () => {
             // count My Processing Requests
             try {
                 const ProcessingBookMy = await axios.get('http://localhost:8081/CountProcessingReqs/' + EmailUser);
-                SetProcessingRequests(ProcessingBookMy.data.BorrowedBooksMy);
+                SetProcessingRequests(ProcessingBookMy.data.ProcessingReqMy);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -84,7 +84,7 @@ const SummaryDash = () => {
             // count My Reject
             try {
                 const MyRejectRequs = await axios.get('http://localhost:8081/CountRejectReqMy/' + EmailUser);
-                SetRejectReq(MyRejectRequs.data.BorrowedBooksMy);
+                SetRejectReq(MyRejectRequs.data.RejectMyReq);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
