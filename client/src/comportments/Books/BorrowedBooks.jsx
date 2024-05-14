@@ -145,7 +145,7 @@ const BorrowedBooks = () => {
                                                                             return (
                                                                                 <div className="flex">
                                                                                     <button onClick={() => CallRollBack(book.bookISBN, book.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
-                                                                                    <button className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
+                                                                                    <button onClick={() => HeadleContinue(book.bookISBN, book.borrowEmail)} className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
                                                                                 </div>
                                                                             )
                                                                         }
