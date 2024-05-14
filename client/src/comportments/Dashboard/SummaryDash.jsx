@@ -73,7 +73,7 @@ const SummaryDash = () => {
         {id: 3, btnvalue: "", name: "Magazine", link: "#", value: <CountUp end={20}/>, icon: <Icons name="newspaper" size="large"></Icons>, style: "text-yellow-500"},      
         {id: 4, btnvalue: "", name: "Articles", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-red-500"},
         {id: 5, btnvalue: "", name: "Thesis", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-blue-500"},
-        {id: 6, btnvalue: "", name: "Borrowed Books", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
+        {id: 6, btnvalue: "", name: "Borrowed Books", link: "#", value: <CountUp end={BorrowedBooks}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-yellow-500"}, 
         {id: 7, btnvalue: "", name: "My Borrowed", link: "#", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: "text-green-500"},
         {id: 8, btnvalue: "Users", name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
         {id: 9, btnvalue: "myRequests", name: "My Book Requests", link: "#", value: <CountUp end={MyBookReqeusts}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"}, 
