@@ -32,7 +32,21 @@ const BorrowedBooks = () => {
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("Book Return Successfull")
-                HeadleButtonClick(0)
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
+    // CallRollBack for when mistakly click the return button
+    const CallRollBack = (id, Email) => {
+        axios.post('http://localhost:8081/RallBackCall/' + id, { Email })
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Rollback Successful")
+                window.location.reload()
             }
             else{
                 alert(res.data.Error)
