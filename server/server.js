@@ -1185,7 +1185,9 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
 
     let currentDate = new Date();
     currentDate.setDate(currentDate.getDate() + 30);
-    let formattedDate = currentDate.toISOString(); 
+    // let formattedDate = currentDate.toISOString(); 
+    let formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' '); // Truncate milliseconds and 'T' character
+
     // console.log("Date after adding 30 days:", today, "Adndndajksdjakls",  formattedDate);
 
 
@@ -1204,7 +1206,8 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
 
             connection.query(sql, [Updatestatus, retuenData, BookISBN, borrower, status], (err, result) => {
                 if(err) {
-                    return res.json({Error: "Interal Server Error"})
+                    // return res.json({Error: "Interal Server Error 1"})
+                    console.log(err)
                 }
                 else{
                     // update book 
@@ -1213,7 +1216,8 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
 
                     connection.query(updateBook, [status, BookISBN], (err, result) => {
                         if(err) {
-                            return req.join({Error: "Internal Server Error"})
+                            return req.join({Error: "Internal Server Error 2"})
+
                         }
                         else{
                             var mailOptions = {
