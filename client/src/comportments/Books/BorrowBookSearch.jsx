@@ -168,6 +168,11 @@ const BorrowBookSearch = () => {
                                                                                     <span className="text-red-500 font-semibold">{borrowData.status}</span>
                                                                                 )
                                                                             }
+                                                                            else if(borrowData.status === "Returned"){
+                                                                                return (
+                                                                                    <span className="text-blue-700 font-semibold">{borrowData.status}</span>
+                                                                                )
+                                                                            }
                                                                         })()
                                                                     }
                                                                     
@@ -186,6 +191,11 @@ const BorrowBookSearch = () => {
                                                                                         <button onClick={() => CallRollBack(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
                                                                                         <button onClick={() => HeadleContinue(borrowData.bookISBN, borrowData.borrowEmail)} className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
                                                                                     </div>
+                                                                                )
+                                                                            }
+                                                                            else if(borrowData.status === "Returned"){
+                                                                                return (
+                                                                                    <p className="">Book Successfully Returned at : {borrowData.return_at}</p>
                                                                                 )
                                                                             }
                                                                         })()
