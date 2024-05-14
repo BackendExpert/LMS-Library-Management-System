@@ -59,7 +59,7 @@ const BorrowedBooks = () => {
         axios.post('http://localhost:8081/ReturnContinue/' + id, { Email })
         .then(res => {
             if(res.data.Status === "Success"){
-                alert("Rollback Successful")
+                alert("Continue Successfull")
                 window.location.reload()
             }
             else{
