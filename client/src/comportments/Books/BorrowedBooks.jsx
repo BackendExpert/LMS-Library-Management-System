@@ -44,6 +44,7 @@ const BorrowedBooks = () => {
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">Borrowed Books</h1>
+                <p className="text-red-500">Use Rollback for when mistakly click return button</p>
                 <div className="my-4">
                     {
                         (() => {
@@ -129,7 +130,7 @@ const BorrowedBooks = () => {
                                                                         else if(book.status === "Waiting"){
                                                                             return (
                                                                                 <div className="flex">
-                                                                                    <button className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                    <button onClick={() => CallRollBack(book.bookISBN, book.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
                                                                                     <button className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
                                                                                 </div>
                                                                             )
