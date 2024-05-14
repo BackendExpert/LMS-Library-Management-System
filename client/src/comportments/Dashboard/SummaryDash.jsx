@@ -30,6 +30,7 @@ const SummaryDash = () => {
     const [BorrowedBooks, SetBorrowedBooks] = useState(0)
     const [MyBorrowedBook, SetMyBorrowedBook] = useState(0)
     const [ProcessingRequests, SetProcessingRequests] = useState(0)
+    const [RejectReq, SetRejectReq] = useState(0)
 
 
     useEffect(() => {
