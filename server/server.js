@@ -1328,6 +1328,15 @@ app.get('/CountBorrowedBooks', (req, res) => {
 })
 
 
+// count my borrowed books
+// MyBorrowedBooks
+
+app.get('/MyBorrowedBooks/:id', (req, res) => {
+    const Useremail = req.params.id
+
+    const sql = ""
+})
+
 // fetch book borrow data
 // BookBorrowedData
 
