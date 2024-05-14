@@ -252,7 +252,7 @@ const HomePage = () => {
             </div>
             <div className="text-center">
                 <Link to={'/ViewAllBooks'}>
-                    <button className={`bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400 ${Darkmode === true ? "" : ""}`}>Browse more books</button>    
+                    <button className={`py-2 px-8 rounded shadow-md duration-500 ${Darkmode === true ? "bg-[#2c3646]" : "bg-gray-300 hover:bg-gray-400"}`}>Browse more books</button>    
                 </Link>
             </div>       
         </div>
