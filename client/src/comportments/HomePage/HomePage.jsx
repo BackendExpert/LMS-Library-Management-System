@@ -213,7 +213,7 @@ const HomePage = () => {
         <div className={`lg:px-20 px-6 py-24  ${Darkmode === true ? 'dark-mode duration-500' : 'bg-white light-mode duration-500'}`}>
             <h1 className={`text-center text-4xl font-semibold text-gray-500 my-8 ${Darkmode === false ? 'text-gray-500' : 'text-white'}`}>Latest Books</h1>
             <div className="lg:flex my-24">
-                <div className={`bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full `}>
+                <div className={`bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full ${Darkmode === false ? 'text-gray-500' : 'text-gray-200 bg-[#2c3646]'}`}>
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
@@ -225,7 +225,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full">
+                <div className={`bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full ${Darkmode === false ? 'text-gray-500' : 'text-gray-200 bg-[#2c3646]'}`}>
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
@@ -237,7 +237,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full">
+                <div className={`bg-gray-200 py-8 px-4 mx-4 lg:my-0 my-12 rounded-lg shadow-xl lg:w-full ${Darkmode === false ? 'text-gray-500' : 'text-gray-200 bg-[#2c3646]'}`}>
                     <div className="my-8 mx-8">
                         <div className="">
                             <p className='font-semibold'>Book Name: </p>
@@ -252,7 +252,7 @@ const HomePage = () => {
             </div>
             <div className="text-center">
                 <Link to={'/ViewAllBooks'}>
-                    <button className='bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400'>Browse more books</button>    
+                    <button className={`bg-gray-300 py-2 px-8 rounded shadow-md duration-500 hover:bg-gray-400 ${Darkmode === true ? "" : ""}`}>Browse more books</button>    
                 </Link>
             </div>       
         </div>
