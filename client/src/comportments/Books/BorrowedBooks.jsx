@@ -54,6 +54,20 @@ const BorrowedBooks = () => {
         })
     }
 
+    // continue for book return
+    const HeadleContinue = (id, Email) => {
+        axios.post('http://localhost:8081/ReturnContinue/' + id, { Email })
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Rollback Successful")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+    }
+
     if(RoleUser === "SuperAdmin"){
         return (
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
