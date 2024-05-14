@@ -18,7 +18,7 @@ const MyProfile = () => {
 
     const MyData = [
         {id: 1, btnValue: "myBorrowd", name: "My Borroed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
-        {id: 2, btnValue: "mySelected", name: "My Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
+        // {id: 2, btnValue: "mySelected", name: "My Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
         
     ]
 
