@@ -144,6 +144,26 @@ const BorrowBookSearch = () => {
                                                                     
                                                                 </td>
                                                                 <td class="px-6 py-4">
+                                                                    {
+                                                                        (() => {
+                                                                            if(book.status === "Borrowed"){
+                                                                                return (
+                                                                                    <button onClick={() => headleReturn(book.bookISBN, book.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
+                                                                                )
+                                                                            }
+                                                                            else if(book.status === "Waiting"){
+                                                                                return (
+                                                                                    <div className="flex">
+                                                                                        <button onClick={() => CallRollBack(book.bookISBN, book.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                        <button className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
+                                                                                    </div>
+                                                                                )
+                                                                            }
+                                                                        })()
+                                                                    }
+                                                                    
+                                                                </td>
+                                                                <td class="px-6 py-4">
                                                                     <button onClick={() => headleReturn(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-blue-500 text-white rounded py-2 px-8 duration-500 hover:bg-blue-600">Return</button>
                                                                 </td>
                                                             </tr>
