@@ -45,7 +45,7 @@ const BorrowBookSearch = () => {
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Book Return Successfull")
-                    HeadleButtonClick(0)
+                    window.location.reload()
                 }
                 else{
                     alert(res.data.Error)
@@ -79,7 +79,7 @@ const BorrowBookSearch = () => {
         axios.post('http://localhost:8081/ReturnContinue/' + id, { Email })
         .then(res => {
             if(res.data.Status === "Success"){
-                alert("Rollback Successful")
+                alert("Continue Successfull")
                 window.location.reload()
             }
             else{
@@ -184,7 +184,7 @@ const BorrowBookSearch = () => {
                                                                                 return (
                                                                                     <div className="flex">
                                                                                         <button onClick={() => CallRollBack(borrowData.bookISBN, borrowData.borrowEmail)} className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
-                                                                                        <button onClick={() => HeadleContinue(book.bookISBN, book.borrowEmail)} className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
+                                                                                        <button onClick={() => HeadleContinue(borrowData.bookISBN, borrowData.borrowEmail)} className="mx-2 bg-green-500 text-white rounded py-2 px-8 duration-500 hover:bg-green-600">Continue</button>
                                                                                     </div>
                                                                                 )
                                                                             }
