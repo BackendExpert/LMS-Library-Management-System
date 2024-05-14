@@ -1527,24 +1527,35 @@ function onServerStart() {
             console.log(err)
         }
         else if(result) {
-            const IsDataOk = result[0].confarmRetuenDate
-            const dataObject = new Date(IsDataOk)
+            // const IsDataOk = result[0].confarmRetuenDate
+            const IsDataOk = "2024-05-14T08:10:45.364Z"
+            const dateObject = new Date(IsDataOk)
+            const dateOnly = dateObject.toISOString().split('T')[0];
 
-            console.log(dataObject)
+            const today = new Date()
+            const todayOnly = today.toISOString().split('T')[0];
+            
+
+            if(todayOnly === dateOnly){
+                console.log("Hellow")
+            }
+            else{
+                console.log(todayOnly, dateOnly)
+            }
         }
     })
 
-    // Assuming your date is in string format
-let dateString = "2024-05-14T10:30:00";
+//     // Assuming your date is in string format
+// let dateString = "2024-05-14T10:30:00";
 
-// Create a new Date object from the string
-let dateObject = new Date(dateString);
+// // Create a new Date object from the string
+// let dateObject = new Date(dateString);
 
-// Extract the date portion without the time
-let dateOnly = dateObject.toISOString().split('T')[0];
+// // Extract the date portion without the time
+// let dateOnly = dateObject.toISOString().split('T')[0];
 
-// Now dateOnly contains only the date portion without the time
-console.log(dateOnly); // Output: 2024-05-14
+// // Now dateOnly contains only the date portion without the time
+// console.log(dateOnly); // Output: 2024-05-14
 }
   
 
