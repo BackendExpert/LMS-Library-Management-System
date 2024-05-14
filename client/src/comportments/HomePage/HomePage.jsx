@@ -34,13 +34,15 @@ const HomePage = () => {
     }
 
     // use for all sites to set dark mode
-    localStorage.setItem("darkMode", Darkmode)
+
 
     
     // https://wallpapercave.com/wp/wp12420121.jpg
 
     // change to dark mode
     const [Darkmode, SerDarkmode] = useState(false)
+
+    localStorage.setItem("darkMode", Darkmode)
 
     const styles = {
         background: 'linear-gradient(to right, #001B3A, rgba(0,0,0,0.9)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
