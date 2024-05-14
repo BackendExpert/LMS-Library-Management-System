@@ -81,6 +81,14 @@ const SummaryDash = () => {
                 console.error('Error fetching data:', error);
             }
 
+            // count My Reject
+            try {
+                const MyRejectRequs = await axios.get('http://localhost:8081/CountRejectReqMy/' + EmailUser);
+                SetRejectReq(MyRejectRequs.data.BorrowedBooksMy);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
         }
         fetchData();
     }, [])
