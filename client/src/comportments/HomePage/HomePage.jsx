@@ -9,6 +9,9 @@ import SignIn from '../SignInSignUp/SignIn';
 import HomeQuote from './HomeQuote';
 import NIFSLogo from '../../assets/nifs_logo.png';
 
+// import styles
+import '../../styles/app.css'
+
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
 const HomePage = () => {
