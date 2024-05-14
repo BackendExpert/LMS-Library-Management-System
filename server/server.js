@@ -1522,47 +1522,48 @@ app.post('/ReturnContinue/:id', (req, res) => {
     }) 
     
 })
-function onServerStart() {
-    const sql = "SELECT * FROM book_borrow_request"
-    connection.query(sql, (err, result) => {
-        if(err){
-            console.log(err)
-        }
-        else if(result) {
-            // const IsDataOk = result[0].confarmRetuenDate
-            const IsDataOk = "2024-05-14T08:10:45.364Z"
-            const dateObject = new Date(IsDataOk)
-            const dateOnly = dateObject.toISOString().split('T')[0];
+// function onServerStart() {
+//     const sql = "SELECT * FROM book_borrow_request"
+//     connection.query(sql, (err, result) => {
+//         if(err){
+//             console.log(err)
+//         }
+//         else if(result) {
+//             // const IsDataOk = result[0].confarmRetuenDate
+//             const IsDataOk = "2024-06-13 11:58:41"
+//             const dateObject = new Date(IsDataOk)
+//             const dateOnly = dateObject.toISOString().split('T')[0];
 
-            const today = new Date()
-            const todayOnly = today.toISOString().split('T')[0];
+//             const todayyyy = "2024-06-13 11:58:41"
+//             const today = new Date(todayyyy)
+//             const todayOnly = today.toISOString().split('T')[0];
             
 
-            if(todayOnly === dateOnly){
-                console.log("Hellow")
+//             if(todayOnly === dateOnly){
+//                 console.log("Hellow")
 
-                var mailOptions = {
-                    from: process.env.EMAIL_USER,
-                    to: result[0].borrowEmail,
-                    subject: 'Notification From Library NIFS',
-                    text: 'Your Return Date is today on BookNumber : ' + result[0].bookISBN, 
-                };
+//                 var mailOptions = {
+//                     from: process.env.EMAIL_USER,
+//                     to: result[0].borrowEmail,
+//                     subject: 'Notification From Library NIFS',
+//                     text: 'Your Return Date is today on BookNumber : ' + result[0].bookISBN, 
+//                 };
 
-                transporter.sendMail(mailOptions, function(error, info){
-                    if (error) {
-                      console.log(error);
-                    } else {
-                      console.log('Email sent: ' + info.response);
-                      return res.json({Status: "Success"})
-                    }
-                });
+//                 transporter.sendMail(mailOptions, function(error, info){
+//                     if (error) {
+//                       console.log(error);
+//                     } else {
+//                       console.log('Email sent: ' + to + info.response);
+//                       return res.json({Status: "Success"})
+//                     }
+//                 });
 
-            }
-            else{
-                console.log(todayOnly, dateOnly)
-            }
-        }
-    })
+//             }
+//             else{
+//                 console.log(todayOnly, dateOnly)
+//             }
+//         }
+//     })
 
 //     // Assuming your date is in string format
 // let dateString = "2024-05-14T10:30:00";
@@ -1575,7 +1576,7 @@ function onServerStart() {
 
 // // Now dateOnly contains only the date portion without the time
 // console.log(dateOnly); // Output: 2024-05-14
-}
+// }
   
 
 // test with real email address above
