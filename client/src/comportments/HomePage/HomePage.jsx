@@ -187,7 +187,7 @@ const HomePage = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium exercitationem quis cupiditate veniam eligendi ut magnam expedita, similique consectetur, amet ratione sequi eos voluptatibus repellat cumque. Maiores, deserunt cumque. Laboriosam?
             </p>
         </div>
-        <div className="bg-gray-200 lg:px-24 px-10 py-20 ">
+        <div className={`lg:px-24 px-10 py-20 ${Darkmode === true ? 'dark-mode duration-500' : 'light-mode bg-gray-200 duration-500'}`}>
             <h1 className="text-center text-4xl font-semibold text-gray-500 mb-16">Our Services</h1>
             <div className="lg:flex justify-between my-4">
                 <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
