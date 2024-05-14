@@ -33,6 +33,9 @@ const HomePage = () => {
     
     // https://wallpapercave.com/wp/wp12420121.jpg
 
+    // change to dark mode
+    const [Darkmode, SerDarkmode] = useState(false)
+
     const styles = {
         background: 'linear-gradient(to right, #001B3A, rgba(0,0,0,0.9)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
         backgroundSize: 'cover',
