@@ -43,6 +43,7 @@ const HomePage = () => {
     const [Darkmode, SerDarkmode] = useState(false)
 
     localStorage.setItem("darkMode", Darkmode)
+    const [navOpen, SetnavOpen] = useState(false)
 
     const styles = {
         background: 'linear-gradient(to right, #001B3A, rgba(0,0,0,0.9)), url("https://wallpapercave.com/wp/wp12420121.jpg")',
@@ -51,16 +52,22 @@ const HomePage = () => {
       }
   return (
     <div>
-        <div className='py-14 lg:px-16 px-4 h-full lg:h-auto h-auto' style={styles}>
+        <div className='py-14 lg:px-16 px-0 h-full lg:h-auto h-auto' style={styles}>
             <div className="bg-none text-white mt-[-20px]">
                 <div className="lg:flex justify-between mx-16">
                     <div className="flex">
                         <div className="lg:flex">
                             <div className="lg:flex text-gray-300">
                                 <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
-                                <h1 className="my-4 whitespace-nowrap">NIFS Library</h1>
+                                
+                                
+                                <div onClick={()=>SetnavOpen(!navOpen)} className='text-3xl absolute right-8 top-12 cursor-pointer md:hidden'>
+                                    <MyIcons name={navOpen ? 'close':'menu'}></MyIcons>
+                                </div>
 
-                                {
+                                <ul className={`backdrop-blur-xl uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'top-24 ':'top-[-300px]'}`}>
+                                    <h1 className="whitespace-nowrap">NIFS Library</h1>
+                                    {
                                     (() => {
                                         if(RoleUser !== null && EmailUser !== null){
                                             return (
@@ -88,42 +95,45 @@ const HomePage = () => {
                                         }
                                     })()
                                 }
+
+                                    <div className="my-1">                   
+                                        <div className="">    
+                                        {
+                                            (() => {
+                                                if(RoleUser !== null && EmailUser !== null){
+                                                    return (
+                                                        <div className="flex">
+                                                            <p className="mx-2">{EmailUser}</p>
+                                                            <p className="font-semibold duration-500 hover:mr-2 cursor-pointer" onClick={logout}>Logout</p>
+                                                        </div>
+                                                        
+                                                    )
+                                                }
+                                                else{
+                                                    return (
+                                                        <div className=""></div>
+                                                    )
+                                                }
+                                            })()
+                                        }                 
+                                            <div className="my-4">
+                                                {
+                                                    Darkmode === false ? 
+                                                        <button onClick={() => SerDarkmode(true)}><MyIcons name='moon'></MyIcons></button>
+                                                    : 
+                                                        <button onClick={() => SerDarkmode(false)}><MyIcons name='sunny'></MyIcons></button>
+                                                }
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
                             </div>
                         </div>
                         
 
                     </div>
-                    <div className="my-1">                   
-                        <div className="">    
-                        {
-                            (() => {
-                                if(RoleUser !== null && EmailUser !== null){
-                                    return (
-                                        <div className="flex">
-                                            <p className="mx-2">{EmailUser}</p>
-                                            <p className="font-semibold duration-500 hover:mr-2 cursor-pointer" onClick={logout}>Logout</p>
-                                        </div>
-                                        
-                                    )
-                                }
-                                else{
-                                    return (
-                                        <div className=""></div>
-                                    )
-                                }
-                            })()
-                        }                 
-                            <div className="my-4">
-                                {
-                                    Darkmode === false ? 
-                                        <button onClick={() => SerDarkmode(true)}><MyIcons name='moon'></MyIcons></button>
-                                    : 
-                                        <button onClick={() => SerDarkmode(false)}><MyIcons name='sunny'></MyIcons></button>
-                                }
-                                
-                            </div>
-                        </div>
-                    </div>
+
                     
                 </div>
             </div>
