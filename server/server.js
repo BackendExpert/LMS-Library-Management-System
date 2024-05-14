@@ -1373,6 +1373,19 @@ app.post('/SearchBookBorrow', (req, res) => {
 
 })
 
+// Return book
+// ReturnBook
+
+app.post('/ReturnBook/:id', (req, res) => {
+    const BookISBN = req.params.id
+
+    const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
+    const status = "Borrowed"
+    const borrower =  req.body.Email
+
+    
+})
+
 // all end points end
 
 //check the server is working
