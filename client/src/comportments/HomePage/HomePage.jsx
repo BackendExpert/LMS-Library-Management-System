@@ -190,7 +190,7 @@ const HomePage = () => {
         <div className={`lg:px-24 px-10 py-20 ${Darkmode === true ? 'dark-mode duration-500' : 'light-mode bg-gray-200 duration-500'}`}>
             <h1 className={`text-center text-4xl font-semibold text-gray-500 mb-16 ${Darkmode === false ? 'text-gray-500' : 'text-white'}`}>Our Services</h1>
             <div className="lg:flex justify-between my-4">
-                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
+                <div className={`bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full  ${Darkmode === false ? 'text-gray-500' : 'text-gray-200 bg-[]'}`}>
                     <div className="flex">
                         <span className='my-4 mr-4'><MyIcons name='book' size='large'></MyIcons></span>
                         <div className="">
@@ -199,7 +199,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full">
+                <div className={`bg-white rounded py-10 px-8 shadow-md mx-2 lg:my-0 my-2 w-full  ${Darkmode === false ? 'text-gray-500' : 'text-white'}`}>
                     <div className="flex">
                         <span className='my-4 mr-2'><MyIcons name='globe' size='large'></MyIcons></span>
                         <div className="">
