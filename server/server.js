@@ -1520,7 +1520,10 @@ app.post('/ReturnContinue/:id', (req, res) => {
     }) 
     
 })
-
+app.get('/', (req, res) => {
+    console.log("hellow")
+});
+  
 
 
 // all end points end
