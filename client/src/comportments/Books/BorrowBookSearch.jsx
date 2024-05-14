@@ -39,6 +39,21 @@ const BorrowBookSearch = () => {
         })
     }
 
+        // return book
+        const headleReturn = (id, Email) => {
+            axios.post('http://localhost:8081/ReturnBook/' + id, { Email })
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Book Return Successfull")
+                    HeadleButtonClick(0)
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+    
+
     // headleclose for close result of submited form
     const headleclose = () => {
         SetIsFormSubmited(false)
