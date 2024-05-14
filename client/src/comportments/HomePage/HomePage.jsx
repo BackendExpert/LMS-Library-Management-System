@@ -66,7 +66,7 @@ const HomePage = () => {
 
                                 <ul className={`backdrop-blur-md py-4 lg:bg-transparent uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'left-0 ':'left-[-400px]'}`}>
                                 <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
-                                    <h1 className="whitespace-nowrap">NIFS Library</h1>
+                                    <h1 className="whitespace-nowrap lg:mx-8 mx-0">NIFS Library</h1>
                                     {
                                     (() => {
                                         if(RoleUser !== null && EmailUser !== null){
@@ -82,13 +82,13 @@ const HomePage = () => {
                                             return (
                                                 <div className="lg:flex lg:my-0 my-4">
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick(0)} className="my-4 cursor-pointer duration-500 hover:text-white">Home</h1>
+                                                        <h1 onClick={() => HeadleButtonClick(0)} className="lg:mx-8 mx-0 my-4 cursor-pointer duration-500 hover:text-white">Home</h1>
                                                     </div>
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('SignUp')} className="my-4 cursor-pointer duration-500 hover:text-white">Join</h1>
+                                                        <h1 onClick={() => HeadleButtonClick('SignUp')} className="lg:mx-8 mx-0 my-4 cursor-pointer duration-500 hover:text-white">Join</h1>
                                                     </div>
                                                     <div className="">
-                                                        <h1 onClick={() => HeadleButtonClick('SignIn')} className="my-4 cursor-pointer duration-500 hover:text-white">SignIn</h1>
+                                                        <h1 onClick={() => HeadleButtonClick('SignIn')} className="lg:mx-8 mx-0 my-4 cursor-pointer duration-500 hover:text-white">SignIn</h1>
                                                     </div>
                                                 </div>
                                             )
@@ -97,13 +97,12 @@ const HomePage = () => {
                                 }
 
                                     <div className="my-1">                   
-                                        <div className="">    
+                                        <div className="lg:flex">    
                                         {
                                             (() => {
                                                 if(RoleUser !== null && EmailUser !== null){
                                                     return (
                                                         <div className="flex">
-                                                            <p className="mx-2">{EmailUser}</p>
                                                             <p className="font-semibold duration-500 hover:mr-2 cursor-pointer" onClick={logout}>Logout</p>
                                                         </div>
                                                         
@@ -116,7 +115,7 @@ const HomePage = () => {
                                                 }
                                             })()
                                         }                 
-                                            <div className="my-4">
+                                            <div className="lg:mx-8 mx-0">
                                                 {
                                                     Darkmode === false ? 
                                                         <button onClick={() => SerDarkmode(true)}><MyIcons name='moon'></MyIcons></button>
