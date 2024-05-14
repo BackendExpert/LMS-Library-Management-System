@@ -1181,7 +1181,12 @@ app.post('/RejecttBookRequest/:id', (req, res) => {
 
 app.post('/BorrowAcceptBook/:id', (req, res) => {
     const BookISBN = req.params.id
-    console.log(BookISBN, req.body)
+    // console.log(BookISBN, req.body)
+
+    const today = new Date()
+    const after30 = today + 30
+    console.log(today, "After 30 Days"after30)
+
 
     // const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
     // const status = "Accept"
