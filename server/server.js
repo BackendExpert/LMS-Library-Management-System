@@ -1183,9 +1183,15 @@ app.post('/BorrowAcceptBook/:id', (req, res) => {
     const BookISBN = req.params.id
     // console.log(BookISBN, req.body)
 
-    const today = new Date()
-    const after30 = today + 30
-    console.log(today, "After 30 Days"after30)
+    let currentDate = new Date();
+
+    // Add 30 days to the current date
+    currentDate.setDate(currentDate.getDate() + 30);
+    
+    // Format the date if needed
+    let formattedDate = currentDate.toISOString().split('T')[0]; // This will give you the date in YYYY-MM-DD format
+    
+    console.log("Date after adding 30 days:", formattedDate);
 
 
     // const checkBook = "SELECT * FROM book_borrow_request WHERE bookISBN = ? && borrowEmail = ? && status = ?"
