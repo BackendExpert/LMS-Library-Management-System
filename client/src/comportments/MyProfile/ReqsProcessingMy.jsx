@@ -11,6 +11,15 @@ const ReqsProcessingMy = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
+    // fetch processing book requests
+    const [PorcessingReqs, SetProcessingReqs] = useState([])
+
+    useEffect(() => {
+        axios.post('http://localhost:8081/ProcessingReqsofMy/' + EmailUser)
+        .then(res => SetProcessingReqs(res.data))
+        .catch(err => console.log(err))
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null) {
         return (
             <div>
