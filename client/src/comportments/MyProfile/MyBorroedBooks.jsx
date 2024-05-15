@@ -11,6 +11,14 @@ const MyBorroedBooks = () => {
   const RoleUser = secureLocalStorage.getItem("Login1");
   const EmailUser = secureLocalStorage.getItem("login2");
 
+  // fetch borrowed data
+  const [MyBorrowed, SetMyBorrowed] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:8081/BorrowedMyBooks/' + EmailUser)
+    .then(res => SetMyBorrowed(res.data))
+    .catch(err => console.log(errr))
+  }, [])
+
   if(RoleUser !== null && EmailUser !== null) {
     return (
         <div>
