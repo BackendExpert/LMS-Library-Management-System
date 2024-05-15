@@ -10,7 +10,15 @@ const RejectMyRequests = () => {
     const RoleUser = secureLocalStorage.getItem("Login1");
     const EmailUser = secureLocalStorage.getItem("login2");
 
-    
+    // fetch data rejected or Cancelled requests
+    const [RejectMy, SetRejectMy] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/ReqCancelledorRejectMy/' + EmailUser)
+        .then(res => SetRejectMy(res.data))
+        .catch(err => console.log(err))
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null) {
         return (
             <div>
