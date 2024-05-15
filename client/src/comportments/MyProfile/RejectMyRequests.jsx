@@ -45,35 +45,30 @@ const RejectMyRequests = () => {
             
                                         </thead>
                                         <tbody>
-                                            {/* {
-                                                PorcessingReqs.map((Requests, index) => {
+                                            {
+                                                RejectMy.map((RejectRequests, index) => {
                                                     return (
                                                         <tr key={index}>
                                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                {Requests.bookISBN}
+                                                                {RejectRequests.bookISBN}
                                                             </th>
                                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                {Requests.borrowEmail}
+                                                                {RejectRequests.borrowEmail}
                                                             </th>
                                                             <td class="px-6 py-4">
-                                                                {Requests.borrow_at}
+                                                                {RejectRequests.borrow_at}
                                                             </td>   
                                                             <td class="px-6 py-4">
                                                                 {
                                                                     (() => {
-                                                                        if(Requests.status === "Request"){
+                                                                        if(RejectRequests.status === "Request"){
                                                                             return (
                                                                                 <p className="text-blue-500 font-semibold">Requested</p>
                                                                             )
                                                                         }
-                                                                        if(Requests.status === "Accept"){
+                                                                        if(RejectRequests.status === "Accept"){
                                                                             return (
                                                                                 <p className="text-green-500 font-semibold">Accept</p>
-                                                                            )
-                                                                        }
-                                                                        if(Requests.status === "Waiting"){
-                                                                            return (
-                                                                                <p className="text-yellow-500 font-semibold">Waiting</p>
                                                                             )
                                                                         }
                                                                     })()
@@ -82,7 +77,7 @@ const RejectMyRequests = () => {
                                                         </tr>
                                                     )
                                                 })
-                                            } */}
+                                            }
                                         </tbody>
                                     </table>
                                 </div>  
