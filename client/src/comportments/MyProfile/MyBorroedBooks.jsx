@@ -82,7 +82,7 @@ const MyBorroedBooks = () => {
 
                                                           // convert to days
                                                           // const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
-                                                          const deffInDays = 18
+                                                          const deffInDays = 25
 
                                                           if(ReturntoAt === today) {
                                                             return(
@@ -92,12 +92,12 @@ const MyBorroedBooks = () => {
                                                           else{
                                                             if(deffInDays >= 22){
                                                               return (
-                                                                <div className="text-red-500">{deffInDays}</div>
+                                                                <div className="text-green-500 font-semibold">{deffInDays}</div>
                                                               )
                                                             }
                                                             else if(deffInDays <= 21 && deffInDays >= 15){
                                                               return (
-                                                                <div className="text-red-500">{deffInDays}</div>
+                                                                <div className="text-yellow-500 font-semibold">{deffInDays}</div>
                                                               )
                                                             }
       
