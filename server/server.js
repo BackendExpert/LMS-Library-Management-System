@@ -1594,12 +1594,13 @@ app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
     const status = "Reject"
     const status1 = "Cancelled"
 
-    connection.query(sql, [status, status1], (err, result) => {
+    connection.query(sql, [status, status1, userEmail], (err, result) => {
         if(err) {
             return res.json({Error: "Internal Server Error"})
         }
         else{
             return res.json(result)
+            // console.log(result)
         }
     })
 })
