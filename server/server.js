@@ -1627,7 +1627,10 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
             const dateOnly = returndata.toISOString().split('T')[0];
             const newtoday = today.toISOString().split('T')[0]; 
 
-            // console.log(dateOnly, newtoday)
+            const lastDate = today
+            lastDate.setDate(today.getDate() -1)
+
+            console.log(dateOnly, newtoday, lastDate.toISOString().split('T')[0])
             
 
 
