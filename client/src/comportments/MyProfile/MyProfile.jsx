@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
+import MyStatus from "./MyStatus";
 
 const MyProfile = () => {
     const navigate = useNavigate() 
@@ -35,7 +36,7 @@ const MyProfile = () => {
                     {
                         MyData.map((data) => {
                             return (
-                                <div className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
+                                <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer text-center shadow-md bg-white border-2 border-gray-200 rounded-2xl py-8 px-8 w-full mx-2 lg:my-0 my-2 duration-500 hover:text-sm ${data.style}`}>                                       
                                     <p className="font-semibold text-xl">{data.icon}</p>   
                                     <p className="font-semibold pl-2 pt-2">{data.name}</p>
                                     <p className="font-semibold text-3xl pl-2 pt-1">{data.value}</p>
@@ -45,6 +46,15 @@ const MyProfile = () => {
                     }
                     </div>
                 </div>
+                {
+                    (() => {
+                        if(buttonValue === "myStatus"){
+                            return(
+                                <MyStatus />
+                            )
+                        }
+                    })()
+                }
             </div>
         )
     }
