@@ -61,14 +61,14 @@ const RejectMyRequests = () => {
                                                             <td class="px-6 py-4">
                                                                 {
                                                                     (() => {
-                                                                        if(RejectRequests.status === "Request"){
+                                                                        if(RejectRequests.status === "Reject"){
                                                                             return (
-                                                                                <p className="text-blue-500 font-semibold">Requested</p>
+                                                                                <p className="text-red-500 font-semibold">Reject</p>
                                                                             )
                                                                         }
-                                                                        if(RejectRequests.status === "Accept"){
+                                                                        if(RejectRequests.status === "Cancelled"){
                                                                             return (
-                                                                                <p className="text-green-500 font-semibold">Accept</p>
+                                                                                <p className="text-red-500 font-semibold">Cancelled</p>
                                                                             )
                                                                         }
                                                                     })()
