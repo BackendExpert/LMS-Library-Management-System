@@ -58,7 +58,23 @@ const ReqsProcessingMy = () => {
                                                             </th>
                                                             <td class="px-6 py-4">
                                                                 {Requests.borrow_at}
-                                                            </td>                                                            
+                                                            </td>   
+                                                            <td class="px-6 py-4">
+                                                                {
+                                                                    (() => {
+                                                                        if(Requests.status === "Request"){
+                                                                            return (
+                                                                                <p className="text-blue-500 font-semibold">Requested</p>
+                                                                            )
+                                                                        }
+                                                                        if(Requests.status === ""){
+                                                                            return (
+                                                                                
+                                                                            )
+                                                                        }
+                                                                    })()
+                                                                }
+                                                            </td>                                                          
                                                         </tr>
                                                     )
                                                 })
