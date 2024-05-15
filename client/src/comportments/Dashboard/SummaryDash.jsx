@@ -108,7 +108,8 @@ const SummaryDash = () => {
         {id: 8, btnvalue: "Users", name: "Users", link: "#", value: <CountUp end={AllUserCount}/>, icon: <Icons name="people" size="large"></Icons>, style: "text-green-500"}, 
         {id: 9, btnvalue: "myRequests", name: "My Book Requests", link: "#", value: <CountUp end={MyBookReqeusts}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-blue-500"}, 
         {id: 10, btnvalue: "ProcessingReq", name: "My Processing Requests", link: "#", value: <CountUp end={ProcessingRequests}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-yellow-500"}, 
-        {id: 11, btnvalue: "rejectReq", name: "My Reject Requests", link: "#", value: <CountUp end={RejectReq}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-red-500"}, 
+        {id: 11, btnvalue: "rejectReq", name: "My Reject Requests", link: "#", value: <CountUp end={RejectReq}/>, icon: <Icons name="help-circle" size="large"></Icons>, style: "text-red-500"},
+        {id: 11, btnvalue: "adminStats", name: "Status for SuperAdmin", link: "#", icon: <Icons name="stats-chart" size="large"></Icons>, style: "text-red-500"},  
     ]
 
     const [UserData, SetUserData] = useState([])
