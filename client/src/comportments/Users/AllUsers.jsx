@@ -119,8 +119,8 @@ const AllUsers = () => {
     // headleRollBack
     // this is use for rollback (set SuperAdmin again to user role)
 
-    const headleRollBack = () => {
-        axios.post('http://localhost:8081/UserRollBack/' + EmailUser)
+    const headleRollBack = (id) => {
+        axios.post('http://localhost:8081/UserRollBack/' + id)
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("The User Rollback Successful")
