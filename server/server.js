@@ -1641,6 +1641,9 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
             const borrower = result[0].borrowEmail
             const isbnNumber = result[0].bookISBN
 
+            const RetunAtToday = new Date(result[0].confarmRetuenDate)
+            const DateOnlyToday = RetunAtToday.toISOString().split('T')[0];
+
             if(newToday === onlyDate21){
                 // console.log("21 Days")
                 
@@ -1690,6 +1693,28 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
                 }
             }
             if(newToday === onlyDate7){
+                const isEmailSent = 0;
+                if(isEmailSent === 0){
+                    var mailOptions = {
+                        from: process.env.EMAIL_USER,
+                        to: borrower,
+                        subject: 'Notification From Library NIFS',
+                        text: 'You have only 7 days to return book ISBN : ' + isbnNumber, 
+                    };
+    
+                    transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                          isEmailSent = 1;
+                          return res.json(result)
+                          
+                        }
+                    });
+                }
+            }
+            if(newToday === DateOnlyToday) {
                 const isEmailSent = 0;
                 if(isEmailSent === 0){
                     var mailOptions = {
