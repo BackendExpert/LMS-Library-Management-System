@@ -1612,7 +1612,7 @@ app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
 app.get('/BorrowedMyBooks/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT * FROM book_borrow_request WHERE = ? && borrowEmail = ?"
+    const sql = "SELECT * FROM book_borrow_request WHERE status = ? && borrowEmail = ?"
     const status = "Borrowed"
 
     connection.query(sql, [status, userEmail], (err, result) => {
