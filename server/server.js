@@ -1622,21 +1622,38 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
         else{
             // return res.json(result)
 
+            const today = new Date()
+            const newToday = today.toISOString().split('T')[0];
             
             const RetunAt = new Date(result[0].confarmRetuenDate)
             // send email befor 21 days
-            RetunAt.setDate(RetunAt.getDate() - 21);
-            const onlyDate = RetunAt.toISOString().split('T')[0];
+            RetunAt.setDate(RetunAt.getDate() - 7);
+            const onlyDate21 = RetunAt.toISOString().split('T')[0];
 
-            // send email befor 21 days
-            RetunAt.setDate(RetunAt.getDate() - 21);
-            const onlyDate = RetunAt.toISOString().split('T')[0];
+            // send email befor 14 days
+            RetunAt.setDate(RetunAt.getDate() - 7);
+            const onlyDate14 = RetunAt.toISOString().split('T')[0];
 
-            // send email befor 21 days
-            RetunAt.setDate(RetunAt.getDate() - 21);
-            const onlyDate = RetunAt.toISOString().split('T')[0];
+            // send email befor 7 days
+            RetunAt.setDate(RetunAt.getDate() - 7);
+            const onlyDate7 = RetunAt.toISOString().split('T')[0];
 
-            console.log(RetunAt, onlyDate)
+            console.log(today, RetunAt, onlyDate7, onlyDate14, onlyDate21)
+            console.log(newToday)
+
+            if(newToday === onlyDate21){
+                console.log("21 Days")
+            }
+            if(newToday === onlyDate14){
+                console.log("21 Days")
+            }
+            if(newToday === onlyDate7){
+                console.log("21 Days")
+            }
+            else{
+                console.log('nooooooooooooooooo')
+            }
+            
             
 
         }
