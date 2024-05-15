@@ -211,7 +211,7 @@ const AllUsers = () => {
                                                                         else{
                                                                             return (
                                                                                 <div className="flex">
-                                                                                    <button className="text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
+                                                                                    <button onClick={() => headleSetSuperAdmin(user.Email)} className="text-white bg-red-500 py-2 px-4 rounded duration-500 hover:bg-red-600 hover:text-white hover:shadow-md">
                                                                                         Set as SuperAdmin
                                                                                     </button>
                                                                                     {
