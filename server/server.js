@@ -1640,9 +1640,28 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
 
             console.log(today, RetunAt, onlyDate7, onlyDate14, onlyDate21)
             console.log(newToday)
+            const borrower = result[0].borrowEmail
+            const isbnNumber = result[0].bookISBN
 
             if(newToday === onlyDate21){
-                console.log("21 Days")
+                // console.log("21 Days")
+                
+                var mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: borrower,
+                    subject: 'Notification From Library NIFS',
+                    text: 'You have only 21 days to return book ISBN : ' + isbnNumber, 
+                };
+
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                      console.log(error);
+                    } else {
+                      console.log('Email sent: ' + info.response);
+                      return res.json({Status: "Success"})
+                    }
+                });
+
             }
             if(newToday === onlyDate14){
                 console.log("21 Days")
