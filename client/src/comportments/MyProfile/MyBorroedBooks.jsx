@@ -72,7 +72,10 @@ const MyBorroedBooks = () => {
 
                                                     {                                                      
                                                       (() => {
-                                                          const ReturntoAt = new Date(myBooks.confarmRetuenDate)
+                                                          // const ReturntoAt = new Date(myBooks.confarmRetuenDate)
+                                                          // ReturntoAt.setHours(0,0,0,0)
+
+                                                          const ReturntoAt = new Date()
                                                           ReturntoAt.setHours(0,0,0,0)
 
                                                           const today = new Date()
@@ -81,12 +84,12 @@ const MyBorroedBooks = () => {
                                                           const haveDays = ReturntoAt.getTime() - today.getTime()
 
                                                           // convert to days
-                                                          // const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
-                                                          const deffInDays = 10
+                                                          const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
+                                                          // const deffInDays = 5
 
-                                                          if(ReturntoAt === today) {
+                                                          if(deffInDays === 0) {
                                                             return(
-                                                              <p className="">You have to Retun Book</p>
+                                                              <p className="text-red-500 font-semibold">You have to Retun Book within Today</p>
                                                             )
                                                           }
                                                           else{
@@ -103,6 +106,11 @@ const MyBorroedBooks = () => {
                                                             else if(deffInDays <= 14 && deffInDays >= 8){
                                                               return (
                                                                 <div className="text-yellow-500 font-semibold">{deffInDays}</div>
+                                                              )
+                                                            }
+                                                            else if(deffInDays <= 7){
+                                                              return (
+                                                                <div className="text-red-500 font-semibold">{deffInDays}</div>
                                                               )
                                                             }
       
