@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import MyStatus from "./MyStatus";
+import MyAllBorrowBooks from "./MyAllBorrowBooks";
 
 const MyProfile = () => {
     const navigate = useNavigate() 
@@ -51,6 +52,11 @@ const MyProfile = () => {
                         if(buttonValue === "myStatus"){
                             return(
                                 <MyStatus />
+                            )
+                        }
+                        if(buttonValue === "myBorrowd"){
+                            return(
+                                <MyAllBorrowBooks />
                             )
                         }
                     })()
