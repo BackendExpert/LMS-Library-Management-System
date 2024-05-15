@@ -9,6 +9,7 @@ import AllUsers from "../Users/AllUsers";
 import SearchBook from "../Books/SearchBook";
 import MyBorrowRequests from "../MyProfile/MyBorrowRequests";
 import BorrowRequests from "../Books/BorrowRequests";
+import ReqsProcessingMy from "../MyProfile/ReqsProcessingMy";
 
 
 const SummaryDash = () => {
@@ -193,6 +194,11 @@ const SummaryDash = () => {
                         if(buttonValue === "myRequests"){
                             return (
                                 <MyBorrowRequests />
+                            )
+                        }
+                        if(buttonValue === "ProcessingReq"){
+                            return (
+                                <ReqsProcessingMy />
                             )
                         }
 
