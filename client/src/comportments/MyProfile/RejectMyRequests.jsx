@@ -11,11 +11,11 @@ const RejectMyRequests = () => {
     const EmailUser = secureLocalStorage.getItem("login2");
 
     // fetch data rejected or Cancelled requests
-    const [RejectMy, SetRejectMy] = useState([])
+    const [RejectBKRequestsMy, SetRejectBKRequestsMy] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:8081/ReqCancelledorRejectMy/' + EmailUser)
-        .then(res => SetRejectMy(res.data))
+        .then(res => SetRejectBKRequestsMy(res.data))
         .catch(err => console.log(err))
     }, [])
 
@@ -46,7 +46,7 @@ const RejectMyRequests = () => {
                                         </thead>
                                         <tbody>
                                             {
-                                                RejectMy.map((RejectRequests, index) => {
+                                                RejectBKRequestsMy.map((RejectRequests, index) => {
                                                     return (
                                                         <tr key={index}>
                                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
