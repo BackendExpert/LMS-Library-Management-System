@@ -1625,6 +1625,25 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
     })
 })
 
+// user set as superadmin
+// SetAsSuperAdmin
+
+app.post('/SetAsSuperAdmin/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "UPDATE users SET Role = ? WHERE Email = ?"
+    const userRole = "SuperAdmin"
+
+    connection.query(sql, [userRole, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Intenal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+})
+
 
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
