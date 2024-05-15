@@ -1569,7 +1569,7 @@ app.get('/CountRejectReqMy/:id', (req, res) => {
 app.get('/ProcessingReqsofMy/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT * FROM "
+    const sql = "SELECT * FROM book_borrow_request WHERE "
 })
 
 
