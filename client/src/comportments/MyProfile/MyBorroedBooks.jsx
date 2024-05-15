@@ -25,7 +25,6 @@ const MyBorroedBooks = () => {
         <div>
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">My Borrowed Books</h1>
-                    {dataRetrun}
                     <div class="relative overflow-x-auto my-8">
                             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -69,8 +68,33 @@ const MyBorroedBooks = () => {
                                                     <p className="text-blue-500 font-semibold">{myBooks.status}</p>
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    {myBooks.borrow_at}
-                                                </td>   
+                                                    {/* {myBooks.borrow_at} */}
+
+                                                    {                                                      
+                                                      (() => {
+                                                          const ReturntoAt = new Date(myBooks.confarmRetuenDate)
+                                                          ReturntoAt.setHours(0,0,0,0)
+
+                                                          const today = new Date()
+                                                          today.setHours(0,0,0,0)
+
+                                                          if(ReturntoAt === today) {
+                                                            return(
+                                                              <p className="">You have to Retun Book</p>
+                                                            )
+                                                          }
+                                                          else{
+                                                            return (
+                                                              <div className="">you have days</div>
+                                                            )
+                                                          }
+                                                          
+                                                        
+                                                      })()                                                      
+                                                    }
+
+
+                                                 </td>   
                                                 <td class="px-6 py-4">
                                                     {myBooks.confarmRetuenDate}
                                                 </td>       
