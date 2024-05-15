@@ -1636,8 +1636,8 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
             RetunAt.setDate(RetunAt.getDate() - 7);
             const onlyDate7 = RetunAt.toISOString().split('T')[0];
 
-            console.log(today, RetunAt, onlyDate7, onlyDate14, onlyDate21)
-            console.log(newToday)
+            // console.log(today, RetunAt, onlyDate7, onlyDate14, onlyDate21)
+            // console.log(newToday)
             const borrower = result[0].borrowEmail
             const isbnNumber = result[0].bookISBN
 
