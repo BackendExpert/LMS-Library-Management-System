@@ -50,7 +50,15 @@ const ReqsProcessingMy = () => {
                                                 PorcessingReqs.map((Requests, index) => {
                                                     return (
                                                         <tr key={index}>
-                                                            
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {Requests.bookISBN}
+                                                            </th>
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {Requests.borrowEmail}
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                {Requests.borrow_at}
+                                                            </td>                                                            
                                                         </tr>
                                                     )
                                                 })
