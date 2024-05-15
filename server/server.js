@@ -1659,7 +1659,7 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
                         } else {
                           console.log('Email sent: ' + info.response);
                           isEmailSent = 1;
-                          return res.json({Status: "Success"})
+                          return res.json(result)
                         }
                     });
                 }
@@ -1684,7 +1684,7 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
                         } else {
                           console.log('Email sent: ' + info.response);
                           isEmailSent = 1;
-                          return res.json({Status: "Success"})
+                          return res.json(result)
                         }
                     });
                 }
@@ -1705,16 +1705,17 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
                         } else {
                           console.log('Email sent: ' + info.response);
                           isEmailSent = 1;
-                          return res.json({Status: "Success"})
+                          return res.json(result)
+                          
                         }
                     });
                 }
             }
             else{
-                console.log('nooooooooooooooooo')
+                return res.json(result)
             }
             
-            return res.json(result)
+            
 
         }
     })
