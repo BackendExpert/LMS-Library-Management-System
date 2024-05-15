@@ -72,7 +72,7 @@ const RejectMyRequests = () => {
                                                                             )
                                                                         }
                                                                     })()
-                                                                }
+                                                                }s
                                                             </td>                                                          
                                                         </tr>
                                                     )
