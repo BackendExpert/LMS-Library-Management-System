@@ -1584,6 +1584,25 @@ app.get('/ProcessingReqsofMy/:id', (req, res) => {
     })
 })
 
+// fetch requsert that reject or Cancelled
+// ReqCancelledorRejectMy
+
+app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT * FROM book_borrow_request WHERE status = ? || status = ? && borrowEmail = ?"
+    const status = "Reject"
+    const status1 = "Cancelled"
+
+    connection.query(sql, [status, status1], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return req.join(result)
+        }
+    })
+})
 
 
 // function onServerStart() {
