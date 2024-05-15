@@ -1569,7 +1569,19 @@ app.get('/CountRejectReqMy/:id', (req, res) => {
 app.get('/ProcessingReqsofMy/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT * FROM book_borrow_request WHERE "
+    const sql = "SELECT * FROM book_borrow_request WHERE status = ? || status = ? || status = ? && borrowEmail = ?"
+    const status = "Request"
+    const status1 = "Accept"
+    const status2 = "Waiting"
+
+    connection.query(sql, [status, status1, status2, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
 })
 
 
