@@ -214,7 +214,7 @@ const AllUsers = () => {
                                                                             return (
                                                                                 <div className="flex">
                                                                                     <p className="text-red-500 font-semibold">SuperAdmin</p>
-                                                                                    <button className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                    <button className="mx-2 bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
                                                                                 </div>                                                                               
                                                                             )
                                                                         }
