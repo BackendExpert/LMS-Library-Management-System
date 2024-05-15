@@ -1645,6 +1645,24 @@ app.post('/SetAsSuperAdmin/:id', (req, res) => {
 })
 
 
+// user Rollback
+// UserRollBack
+
+app.post('/UserRollBack/:id', (req, res) => {
+    const userEmail = req.params.id
+    const sql = "UPDATE users SET Role = ? WHERE Email = ?"
+    const status = "user"
+
+    connection.query(sql, [status, userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json({Status: "Success"})
+        }
+    })
+})
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
