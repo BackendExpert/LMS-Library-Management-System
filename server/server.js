@@ -1563,6 +1563,15 @@ app.get('/CountRejectReqMy/:id', (req, res) => {
     });
 })
 
+// fetch my processing book requests
+// ProcessingReqsofMy
+
+app.get('/ProcessingReqsofMy/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT * FROM "
+})
+
 
 
 // function onServerStart() {
