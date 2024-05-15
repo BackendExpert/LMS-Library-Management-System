@@ -10,6 +10,7 @@ import SearchBook from "../Books/SearchBook";
 import MyBorrowRequests from "../MyProfile/MyBorrowRequests";
 import BorrowRequests from "../Books/BorrowRequests";
 import ReqsProcessingMy from "../MyProfile/ReqsProcessingMy";
+import RejectMyRequests from "../MyProfile/RejectMyRequests";
 
 
 const SummaryDash = () => {
@@ -199,6 +200,11 @@ const SummaryDash = () => {
                         if(buttonValue === "ProcessingReq"){
                             return (
                                 <ReqsProcessingMy />
+                            )
+                        }
+                        if(buttonValue === "rejectReq"){
+                            return (
+                                <RejectMyRequests />
                             )
                         }
 
