@@ -1599,7 +1599,7 @@ app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
             return res.json({Error: "Internal Server Error"})
         }
         else{
-            return req.join(result)
+            return req.json(result)
         }
     })
 })

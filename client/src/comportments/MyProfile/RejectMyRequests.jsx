@@ -19,6 +19,7 @@ const RejectMyRequests = () => {
         .catch(err => console.log(err))
     }, [])
 
+
     if(RoleUser !== null && EmailUser !== null) {
         return (
             <div>
@@ -72,7 +73,7 @@ const RejectMyRequests = () => {
                                                                             )
                                                                         }
                                                                     })()
-                                                                }s
+                                                                }
                                                             </td>                                                          
                                                         </tr>
                                                     )
