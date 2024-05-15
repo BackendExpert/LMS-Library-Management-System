@@ -1620,7 +1620,14 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
             return res.json({Error: "Internal Server Error"})
         }
         else{
-            return res.json(result)
+            // return res.json(result)
+
+            const today = new Date()
+            const returndata = new Date(result[0].confarmRetuenDate)
+            const dateOnly = returndata.toISOString().split('T')[0];
+
+            
+
         }
     })
 })
