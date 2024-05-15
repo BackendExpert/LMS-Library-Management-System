@@ -81,7 +81,8 @@ const MyBorroedBooks = () => {
                                                           const haveDays = ReturntoAt.getTime() - today.getTime()
 
                                                           // convert to days
-                                                          const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
+                                                          // const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
+                                                          const deffInDays = 18
 
                                                           if(ReturntoAt === today) {
                                                             return(
@@ -89,9 +90,17 @@ const MyBorroedBooks = () => {
                                                             )
                                                           }
                                                           else{
-                                                            return (
-                                                              <div className="">{deffInDays}</div>
-                                                            )
+                                                            if(deffInDays >= 22){
+                                                              return (
+                                                                <div className="text-red-500">{deffInDays}</div>
+                                                              )
+                                                            }
+                                                            else if(deffInDays <= 21 && deffInDays >= 15){
+                                                              return (
+                                                                <div className="text-red-500">{deffInDays}</div>
+                                                              )
+                                                            }
+      
                                                           }
                                                           
                                                         
