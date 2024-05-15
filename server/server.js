@@ -1622,17 +1622,22 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
         else{
             // return res.json(result)
 
-            const today = new Date()
-            const returndata = new Date(result[0].confarmRetuenDate)
-            const dateOnly = returndata.toISOString().split('T')[0];
-            const newtoday = today.toISOString().split('T')[0]; 
-
-            const lastDate = today
-            lastDate.setDate(today.getDate() -1)
-
-            console.log(dateOnly, newtoday, lastDate.toISOString().split('T')[0])
             
+            const RetunAt = new Date(result[0].confarmRetuenDate)
+            // send email befor 21 days
+            RetunAt.setDate(RetunAt.getDate() - 21);
+            const onlyDate = RetunAt.toISOString().split('T')[0];
 
+            // send email befor 21 days
+            RetunAt.setDate(RetunAt.getDate() - 21);
+            const onlyDate = RetunAt.toISOString().split('T')[0];
+
+            // send email befor 21 days
+            RetunAt.setDate(RetunAt.getDate() - 21);
+            const onlyDate = RetunAt.toISOString().split('T')[0];
+
+            console.log(RetunAt, onlyDate)
+            
 
         }
     })
