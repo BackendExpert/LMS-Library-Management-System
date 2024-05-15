@@ -12,6 +12,7 @@ import BorrowRequests from "../Books/BorrowRequests";
 import ReqsProcessingMy from "../MyProfile/ReqsProcessingMy";
 import RejectMyRequests from "../MyProfile/RejectMyRequests";
 import MyBorroedBooks from "../MyProfile/MyBorroedBooks";
+import SystemStatus from "./SystemStatus";
 
 
 const SummaryDash = () => {
@@ -212,6 +213,11 @@ const SummaryDash = () => {
                         if(buttonValue === "myBorrowed"){
                             return (
                                 <MyBorroedBooks />
+                            )
+                        }
+                        if(buttonValue === "adminStats"){
+                            return (
+                                <SystemStatus />
                             )
                         }
 
