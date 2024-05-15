@@ -1661,7 +1661,6 @@ app.get('/BorrowedMyBooks/:id', (req, res) => {
                       return res.json({Status: "Success"})
                     }
                 });
-
             }
             if(newToday === onlyDate14){
                 console.log("21 Days")
