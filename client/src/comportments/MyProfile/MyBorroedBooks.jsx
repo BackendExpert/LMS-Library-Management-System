@@ -66,7 +66,14 @@ const MyBorroedBooks = () => {
                                                 </td>   
                                                 <td class="px-6 py-4">
                                                     <p className="text-blue-500 font-semibold">{myBooks.status}</p>
-                                                </td>                                              
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {myBooks.borrow_at}
+                                                </td>   
+                                                <td class="px-6 py-4">
+                                                    {myBooks.confarmRetuenDate}
+                                                </td>       
+
                                               </tr>
                                             )
                                           })
