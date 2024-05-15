@@ -67,9 +67,14 @@ const ReqsProcessingMy = () => {
                                                                                 <p className="text-blue-500 font-semibold">Requested</p>
                                                                             )
                                                                         }
-                                                                        if(Requests.status === ""){
+                                                                        if(Requests.status === "Accept"){
                                                                             return (
-                                                                                
+                                                                                <p className="text-green-500 font-semibold">Accept</p>
+                                                                            )
+                                                                        }
+                                                                        if(Requests.status === "Waiting"){
+                                                                            return (
+                                                                                <p className="text-yellow-500 font-semibold">Waiting</p>
                                                                             )
                                                                         }
                                                                     })()
