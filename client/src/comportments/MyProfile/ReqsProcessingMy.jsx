@@ -46,7 +46,15 @@ const ReqsProcessingMy = () => {
             
                                         </thead>
                                         <tbody>
-
+                                            {
+                                                PorcessingReqs.map((Requests, index) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </div>  
