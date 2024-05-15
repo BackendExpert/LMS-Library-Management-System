@@ -16,14 +16,18 @@ const MyBorroedBooks = () => {
   useEffect(() => {
     axios.get('http://localhost:8081/BorrowedMyBooks/' + EmailUser)
     .then(res => SetMyBorrowed(res.data))
-    .catch(err => console.log(errr))
+    .catch(err => console.log(err))
   }, [])
+
+
+    const dataRetrun = MyBorrowed[0].bookISBN
 
   if(RoleUser !== null && EmailUser !== null) {
     return (
         <div>
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">My Borrowed Books</h1>
+                {dataRetrun}
 
                     <div class="relative overflow-x-auto my-8">
                             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -68,9 +72,6 @@ const MyBorroedBooks = () => {
                                                     <p className="text-blue-500 font-semibold">{myBooks.status}</p>
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    {
-                                                      
-                                                    }
                                                     {myBooks.borrow_at}
                                                 </td>   
                                                 <td class="px-6 py-4">
