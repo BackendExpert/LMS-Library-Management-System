@@ -1329,8 +1329,9 @@ app.post('/SearchBookRequest', (req, res) => {
 app.get('/CountBorrowedBooks/:id', (req, res) => {
     const userEmail = req.params.id
 
-    const sql = "SELECT COUNT(ID) AS BorrowedBooks FROM book_borrow_request WHERE status = ? borrowEmail = ?";
+    const sql = "SELECT COUNT(ID) AS BorrowedBooks FROM book_borrow_request WHERE status = ? && borrowEmail = ?";
     const status = "Borrowed"
+
     connection.query(sql, [status, userEmail], (error, results) => {
       if (error) {
         console.error('Error fetching data:', error);
