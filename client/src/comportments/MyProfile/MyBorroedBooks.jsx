@@ -19,24 +19,13 @@ const MyBorroedBooks = () => {
     .catch(err => console.log(err))
   }, [])
 
-  // check data
-  const checkData = () => {
-    const dataRetrun = MyBorrowed[0].confarmRetuenDate
-    const ReturnBookAta = new Date(dataRetrun)
-    const today = new Date()
-
-
-    
-  }
-    
-
 
   if(RoleUser !== null && EmailUser !== null) {
     return (
         <div>
             <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
                 <h1 className="font-semibold text-gray-500 text-xl">My Borrowed Books</h1>
-
+                    {dataRetrun}
                     <div class="relative overflow-x-auto my-8">
                             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
