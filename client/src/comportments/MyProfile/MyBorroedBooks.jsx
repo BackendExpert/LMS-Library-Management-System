@@ -42,6 +42,9 @@ const MyBorroedBooks = () => {
                                                 Status
                                             </th>
                                             <th scope="col" class="px-6 py-3">
+                                                Days to Return
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
                                                 To return at
                                             </th>
                                         </tr>
