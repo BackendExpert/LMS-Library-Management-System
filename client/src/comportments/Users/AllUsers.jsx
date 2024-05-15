@@ -212,7 +212,10 @@ const AllUsers = () => {
                                                                         }
                                                                         if(users.Role === "SuperAdmin"){
                                                                             return (
-                                                                                <div className="text-red-500 font-semibold">SuperAdmin</div>
+                                                                                <div className="flex">
+                                                                                    <p className="text-red-500 font-semibold">SuperAdmin</p>
+                                                                                    <button className="bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                </div>                                                                               
                                                                             )
                                                                         }
                                                                         if(users.is_active === 0){
