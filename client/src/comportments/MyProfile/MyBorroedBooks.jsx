@@ -78,6 +78,11 @@ const MyBorroedBooks = () => {
                                                           const today = new Date()
                                                           today.setHours(0,0,0,0)
 
+                                                          const haveDays = ReturntoAt.getTime() - today.getTime()
+
+                                                          // convert to days
+                                                          const deffInDays = Math.ceil(haveDays / (1000 * 60 * 60 * 24))
+
                                                           if(ReturntoAt === today) {
                                                             return(
                                                               <p className="">You have to Retun Book</p>
@@ -85,7 +90,7 @@ const MyBorroedBooks = () => {
                                                           }
                                                           else{
                                                             return (
-                                                              <div className="">you have days</div>
+                                                              <div className="">{deffInDays}</div>
                                                             )
                                                           }
                                                           
