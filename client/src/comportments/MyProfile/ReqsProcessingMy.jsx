@@ -15,7 +15,7 @@ const ReqsProcessingMy = () => {
     const [PorcessingReqs, SetProcessingReqs] = useState([])
 
     useEffect(() => {
-        axios.post('http://localhost:8081/ProcessingReqsofMy/' + EmailUser)
+        axios.get('http://localhost:8081/ProcessingReqsofMy/' + EmailUser)
         .then(res => SetProcessingReqs(res.data))
         .catch(err => console.log(err))
     }, [])
