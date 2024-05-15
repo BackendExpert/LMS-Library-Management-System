@@ -1589,7 +1589,7 @@ app.get('/ProcessingReqsofMy/:id', (req, res) => {
 
 app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
     const userEmail = req.params.id
-
+    
     const sql = "SELECT * FROM book_borrow_request WHERE status = ? || status = ? && borrowEmail = ?"
     const status = "Reject"
     const status1 = "Cancelled"
@@ -1599,7 +1599,7 @@ app.get('/ReqCancelledorRejectMy/:id', (req, res) => {
             return res.json({Error: "Internal Server Error"})
         }
         else{
-            return req.json(result)
+            return res.json(result)
         }
     })
 })
