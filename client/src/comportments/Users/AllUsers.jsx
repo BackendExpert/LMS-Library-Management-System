@@ -213,8 +213,8 @@ const AllUsers = () => {
                                                                         if(users.Role === "SuperAdmin"){
                                                                             return (
                                                                                 <div className="flex">
-                                                                                    <p className="text-red-500 font-semibold">SuperAdmin</p>
-                                                                                    <button className="mx-2 bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
+                                                                                    <p className="mt-2 text-red-500 font-semibold">SuperAdmin</p>
+                                                                                    <button onClick={() => headleRollBack(users.Email)} className="mx-2 bg-red-500 text-white rounded py-2 px-8 duration-500 hover:bg-red-600">RollBack</button>
                                                                                 </div>                                                                               
                                                                             )
                                                                         }
