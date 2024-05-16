@@ -48,7 +48,15 @@ const MyAllBorrowBooks = () => {
 
                             </thead>
                             <tbody>
-
+                                {
+                                    myAllBooksLMS.map((myBooks, index) => {
+                                      return (
+                                        <tr key={index}>
+                                          
+                                        </tr>
+                                      )
+                                    })
+                                }
                             </tbody>
                         </table>
                     </div>  
