@@ -104,62 +104,62 @@ app.post('/SignUp', (req, res) => {
 
     // const checkEmail =  email.endsWith('@nifs.ac.lk');
 
-    // if(req.body.email.endsWith('@nifs.ac.lk')){
-
-    // }
-    // else{
-    //     return res.json({Error: "Your are not a NIFS Member"})
-    // }
-
-    const checkReject = "SELECT * FROM rejected_user_requests WHERE Email = ?"
-    connection.query(checkReject, [req.body.email], (err, result) => {
-        if(err) throw err
-
-        if(result.length === 0){
-            const checkSql = "SELECT * FROM users WHERE Email = ? || username = ?"
-            connection.query(checkSql, [req.body.email, req.body.username], (err, result) => {
-                if(err) throw err
-        
-                if(result.length === 0){
-                    
-                    bcrypt.hash(req.body.password, 10, (err, hashPass) => {
-                        if(err) throw err
-        
-                        const role = "user"
-                        const is_active = 0
-                        const is_lock = 0
-                        const create_at = new Date
-        
-                        const sql = "INSERT INTO users(username, Email, Password, Role, is_active, is_lock, create_at) VALUES (?)"
-                        const values = [    
-                            req.body.username,
-                            req.body.email,
-                            hashPass,
-                            role,
-                            is_active,
-                            is_lock,
-                            create_at
-                        ]
-        
-                        connection.query(sql, [values], (err, result) => {
-                            if(err) {
-                                return res.json({Error: "Error on Server"})
-                            }
-                            else{
-                                return res.json({Status: "Success"})
-                            }
+    if(req.body.email.endsWith('@nifs.ac.lk')){
+        const checkReject = "SELECT * FROM rejected_user_requests WHERE Email = ?"
+        connection.query(checkReject, [req.body.email], (err, result) => {
+            if(err) throw err
+    
+            if(result.length === 0){
+                const checkSql = "SELECT * FROM users WHERE Email = ? || username = ?"
+                connection.query(checkSql, [req.body.email, req.body.username], (err, result) => {
+                    if(err) throw err
+            
+                    if(result.length === 0){
+                        
+                        bcrypt.hash(req.body.password, 10, (err, hashPass) => {
+                            if(err) throw err
+            
+                            const role = "user"
+                            const is_active = 0
+                            const is_lock = 0
+                            const create_at = new Date
+            
+                            const sql = "INSERT INTO users(username, Email, Password, Role, is_active, is_lock, create_at) VALUES (?)"
+                            const values = [    
+                                req.body.username,
+                                req.body.email,
+                                hashPass,
+                                role,
+                                is_active,
+                                is_lock,
+                                create_at
+                            ]
+            
+                            connection.query(sql, [values], (err, result) => {
+                                if(err) {
+                                    return res.json({Error: "Error on Server"})
+                                }
+                                else{
+                                    return res.json({Status: "Success"})
+                                }
+                            })
                         })
-                    })
-                }
-                else{
-                    return res.json({Error: "You Already Registered"})
-                }
-            })
-        }
-        else{
-            return res.json({Error: "Your Entered Email Address already Rejected by Admin"})
-        }
-    })
+                    }
+                    else{
+                        return res.json({Error: "You Already Registered"})
+                    }
+                })
+            }
+            else{
+                return res.json({Error: "Your Entered Email Address already Rejected by Admin"})
+            }
+        })
+    }
+    else{
+        return res.json({Error: "Your are not a NIFS Member"})
+    }
+
+
 
  
 })
