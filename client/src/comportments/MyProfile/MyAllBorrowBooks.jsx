@@ -88,7 +88,10 @@ const MyAllBorrowBooks = () => {
                                                 }
                                             </td> 
                                             <td class="px-6 py-4">
-                                                {myBooks.borrow_at}
+                                                {myBooks.return_at}
+                                            </td> 
+                                            <td class="px-6 py-4">
+                                                {myBooks.confarmRetuenDate}
                                             </td> 
                                         </tr>
                                       )
