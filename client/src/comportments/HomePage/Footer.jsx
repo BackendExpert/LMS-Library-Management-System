@@ -35,26 +35,26 @@ const Footer = () => {
     <footer className='bg-[#1e293b] px-16 pt-12 pb-4 text-white'>
         <div className="lg:flex">
             <div className="lg:px-4 px-0 w-full">
-                <h1 className="text-xl font-semibold font-semibold text-gray-500 my-4 ">About us</h1>
+                <h1 className="text-xl font-semibold font-semibold my-4 lg:text-gray-400 text-white">About us</h1>
                 <img src={NIFSLogo} alt="" />
                 <p className="text-md lg:text-white text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate iste suscipit nesciunt, dolore inventore provident fuga incidunt quibusdam nobis tenetur culpa at! Facilis, rerum illo? Pariatur aperiam error corporis fuga.</p>
             </div>
             <div className="lg:px-4 px-0 w-full">
-                <h1 className="text-xl font-semibold font-semibold text-gray-400 my-4 ">Our Services</h1>
-                <div className="">
+                <h1 className="text-xl font-semibold font-semibold lg:text-gray-400 text-white my-4 ">Our Services</h1>
+                <div className="lg:text-white text-gray-400">
                     <p className="my-5">Book Borrowing</p>   
                     <p className="my-5">Online Book Selection</p>  
                 </div>
                 
             </div>
             <div className="lg:px-4 px-0 w-full">
-                <h1 className="text-xl font-semibold font-semibold text-gray-400 my-4 ">More About</h1>
+                <h1 className="text-xl font-semibold font-semibold lg:text-gray-400 text-white my-4 ">More About</h1>
                 <div className="">
                 {
                     footerData.map((data) => {
                         return (
                             <Link to={data.link}>
-                                <p className="my-5">{data.name}</p>
+                                <p className="my-5 lg:text-white text-gray-400">{data.name}</p>
                             </Link>
                         )
                     })
@@ -62,10 +62,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className="lg:px-4 px-0 w-full">
-                <h1 className="text-xl font-semibold font-semibold text-gray-400 my-4 ">Contact</h1>
-                <p className="my-5">lib@123.com</p>   
-                <p className="my-5">+94 XXXXXXXXX</p>  
-                <p className="my-5">Hanthana Road, kandy, Sri Lanka</p> 
+                <h1 className="text-xl font-semibold font-semibold my-4 lg:text-gray-400 text-white">Contact</h1>
+                <p className="my-5 lg:text-white text-gray-400">lib@123.com</p>   
+                <p className="my-5 lg:text-white text-gray-400">+94 XXXXXXXXX</p>  
+                <p className="my-5 lg:text-white text-gray-400">Hanthana Road, kandy, Sri Lanka</p> 
 
                 <h1 className='mt-8 font-semibold'></h1>
                 <div className="flex">
