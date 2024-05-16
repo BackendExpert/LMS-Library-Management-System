@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="lg:px-4 px-0 w-full">
                 <h1 className="text-xl font-semibold font-semibold text-gray-500 my-4 ">About us</h1>
                 <img src={NIFSLogo} alt="" />
-                <p className="text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate iste suscipit nesciunt, dolore inventore provident fuga incidunt quibusdam nobis tenetur culpa at! Facilis, rerum illo? Pariatur aperiam error corporis fuga.</p>
+                <p className="text-md lg:text-white text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate iste suscipit nesciunt, dolore inventore provident fuga incidunt quibusdam nobis tenetur culpa at! Facilis, rerum illo? Pariatur aperiam error corporis fuga.</p>
             </div>
             <div className="lg:px-4 px-0 w-full">
                 <h1 className="text-xl font-semibold font-semibold text-gray-400 my-4 ">Our Services</h1>
