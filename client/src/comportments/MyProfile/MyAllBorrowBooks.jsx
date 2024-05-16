@@ -10,6 +10,14 @@ const MyAllBorrowBooks = () => {
   const RoleUser = secureLocalStorage.getItem("Login1");
   const EmailUser = secureLocalStorage.getItem("login2");
 
+  // fetch my all borrowed books 
+  const [myAllBooksLMS, SetmyAllBooksLMS] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:8081/AllMyBooksLMS/' + EmailUser)
+    .then(res => SetmyAllBooksLMS(res.data))
+    .catch(err => console.log(err))
+  }, [])
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
