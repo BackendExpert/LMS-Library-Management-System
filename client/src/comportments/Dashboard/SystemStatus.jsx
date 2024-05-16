@@ -12,7 +12,10 @@ const SystemStatus = () => {
 
   // download all books data as csv
   const headleDownloadBooks = () => {
-    axios.post('http://localhost:8081/DownloadBooks', )
+    axios.post('http://localhost:8081/DownloadBooks', { responseType: 'blob' })
+    .then(res => {
+      
+    }) 
   }
 
 
