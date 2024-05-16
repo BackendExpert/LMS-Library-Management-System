@@ -17,11 +17,27 @@ const MyProfile = () => {
         SetButtonValue(clickValue)   
     }
 
+    const [CountmyAllBooks, SetCountmyAllBooks] = useState(0)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const CountMyAllBooks = await axios.get('http://localhost:8081/CountAllBookMy/' + EmailUser);
+                SetCountmyAllBooks(CountMyAllBooks.data.UserAll);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+        }
+        fetchData();
+    }, [])
+
+
     // all borrowed books
     // donload data
 
     const MyData = [
-        {id: 1, btnValue: "myBorrowd", name: "My Borroed", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
+        {id: 1, btnValue: "myBorrowd", name: "My Borroed", value: <CountUp end={CountmyAllBooks}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-green-500'},
         // {id: 2, btnValue: "mySelected", name: "My Selected", value: <CountUp end={20}/>, icon: <Icons name="book" size="large"></Icons>, style: 'text-red-500'},
         {id: 2, btnValue: "myStatus", name: "Download My Stats", icon: <Icons name="stats-chart" size="large"></Icons>, style: 'text-blue-500'},
     ]
