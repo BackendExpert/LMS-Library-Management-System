@@ -11,6 +11,7 @@ import NIFSLogo from '../../assets/nifs_logo.png';
 
 // import styles
 import '../../styles/app.css'
+import SearchBook from '../Books/SearchBook';
 
 // https://wallpapercave.com/wp/wp10395041.jpg
 // https://wallpapercave.com/wp/wp10395058.jpg
@@ -198,7 +199,7 @@ const HomePage = () => {
         <div className={`lg:py-16 py-20 text-center ${Darkmode === true ? 'dark-mode duration-500' : 'light-mode duration-500'}`}>
             <h1 className={`text-4xl font-semibold ${Darkmode === false ? 'text-gray-500' : 'text-white'}`}>The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
-                
+                <SearchBook />
             </p>
         </div>
         <div className={`lg:px-24 px-10 py-20 ${Darkmode === true ? 'dark-mode duration-500' : 'light-mode bg-gray-200 duration-500'}`}>
