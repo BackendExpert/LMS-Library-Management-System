@@ -1830,7 +1830,7 @@ app.get('/CountAllBookMy/:id', (req, res) => {
 app.get('/DownloadMyAllBooks/:id', (req, res) => {
     const userEmail = req.params.id
     
-    const sql = "SELECT * book_borrow_request WHERE borrowEmail = ?"
+    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
 
     connection.query(sql, [userEmail], (err, results, fields) => {
         if (err) throw err
