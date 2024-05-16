@@ -17,8 +17,18 @@ const MyStatus = () => {
   const headleDownloadData = (id) => {
     axios.post('http://localhost:8081/DownloadMyAllBooks/' + id, { responseType: 'blob' })
     .then(res => {
-      
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'data.csv');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     })
+
+    .catch(err => {
+      console.log(err)
+    }) 
   }
 
   
