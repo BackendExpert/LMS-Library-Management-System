@@ -88,7 +88,21 @@ const MyAllBorrowBooks = () => {
                                                 }
                                             </td> 
                                             <td class="px-6 py-4">
-                                                {myBooks.return_at}
+                                              {
+                                                (() => {
+                                                  if(myBooks.return_at === null){
+                                                    return (
+                                                      <p className="text-blue-500 font-semibold">---</p>
+                                                    )                                                    
+                                                  }
+                                                  else{
+                                                    return (
+                                                      <p className="text-blue-500 font-semibold">{myBooks.return_at}</p>
+                                                    )   
+                                                  }
+                                                })()
+                                              }
+                                                {}
                                             </td> 
                                             <td class="px-6 py-4">
                                                 {myBooks.confarmRetuenDate}
