@@ -196,7 +196,7 @@ const HomePage = () => {
             }
         </div> */}
         <hr />
-        <div className={`lg:py-16 py-20 text-center ${Darkmode === true ? 'dark-mode duration-500' : 'light-mode duration-500 text-gray-500'}`}>
+        <div className={`lg:py-16 py-20 text-center ${Darkmode === true ? 'dark-mode duration-500 text-gray-500' : 'light-mode duration-500 '}`}>
             <h1 className={`text-4xl font-semibold ${Darkmode === false ? 'text-gray-500' : 'text-white'}`}>The Library of NIFS</h1>
             <p className="lg:mx-36 mx-8 my-4">
                 <SearchBook />
