@@ -101,11 +101,23 @@ const MyAllBorrowBooks = () => {
                                                     )   
                                                   }
                                                 })()
-                                              }
-                                                {}
+                                              }                                                
                                             </td> 
                                             <td class="px-6 py-4">
-                                                {myBooks.confarmRetuenDate}
+                                            {
+                                                (() => {
+                                                  if(myBooks.confarmRetuenDate === null){
+                                                    return (
+                                                      <p className="text-blue-500 font-semibold">---</p>
+                                                    )                                                    
+                                                  }
+                                                  else{
+                                                    return (
+                                                      <p className="text-blue-500 font-semibold">{myBooks.confarmRetuenDate}</p>
+                                                    )   
+                                                  }
+                                                })()
+                                              }      
                                             </td> 
                                         </tr>
                                       )
