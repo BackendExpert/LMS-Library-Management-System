@@ -63,12 +63,17 @@ const MyAllBorrowBooks = () => {
                                                   (() => {
                                                     if(myBooks.status === "Returned"){
                                                       return (
-                                                        <p className="text-blue-500 font-semibold">Returned</p>
+                                                        <p className="text-green-500 font-semibold">Returned</p>
                                                       )
                                                     }
                                                     if(myBooks.status === "Borrowed"){
                                                       return (
-                                                        <p className="text-yellow-500 font-semibold">Borrowed</p>
+                                                        <p className="text-blue-500 font-semibold">Borrowed</p>
+                                                      )
+                                                    }
+                                                    if(myBooks.status === "Borrowed"){
+                                                      return (
+                                                        <p className="text-blue-500 font-semibold">Borrowed</p>
                                                       )
                                                     }
                                                   })()
