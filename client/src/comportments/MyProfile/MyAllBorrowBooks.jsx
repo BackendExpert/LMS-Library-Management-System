@@ -41,9 +41,7 @@ const MyAllBorrowBooks = () => {
                                     <th scope="col" class="px-6 py-3">
                                         Had ro return at
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        More Infor
-                                    </th>
+
                                 </tr>
 
                             </thead>
