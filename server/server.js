@@ -1784,6 +1784,24 @@ app.post('/UserRollBack/:id', (req, res) => {
     })
 })
 
+// fetch all books in book_borrow_request
+// AllMyBooksLMS
+
+app.get('/AllMyBooksLMS/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
+
+    connection.query(sql, [userEmail], (err, result) => {
+        if(err) {
+            return res.json({Error: "Internal Server Error"})
+        }
+        else{
+            return res.json(result)
+        }
+    })
+})
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
