@@ -10,6 +10,12 @@ const SystemStatus = () => {
   const RoleUser = secureLocalStorage.getItem("Login1");
   const EmailUser = secureLocalStorage.getItem("login2");
 
+  // download all books data as csv
+  const headleDownloadBooks = () => {
+    axios.post('http://localhost:8081/DownloadBooks', )
+  }
+
+
   if(RoleUser === "SuperAdmin"){
     return (
       <div className="bg-white rounded-2xl py-8 px-10 mt-6 shadow-md">
