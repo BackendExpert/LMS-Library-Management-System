@@ -14,7 +14,17 @@ const SystemStatus = () => {
   const headleDownloadBooks = () => {
     axios.post('http://localhost:8081/DownloadBooks', { responseType: 'blob' })
     .then(res => {
-      
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'AllBooks.csv');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }) 
+
+    .catch(err => {
+      console.log(err)
     }) 
   }
 
