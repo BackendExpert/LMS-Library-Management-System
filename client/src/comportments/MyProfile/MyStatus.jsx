@@ -15,7 +15,7 @@ const MyStatus = () => {
 
   // download my data borrowed all book
   const headleDownloadData = (id) => {
-    axios.post('http://localhost:8081/DownloadMyAllBooks/' + id, { responseType: 'blob' })
+    axios.get('http://localhost:8081/DownloadMyAllBooks/' + id, { responseType: 'blob' })
     .then(res => {
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const link = document.createElement('a');
