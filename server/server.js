@@ -1859,7 +1859,7 @@ app.get('/DownloadMyAllBooks/:id', (req, res) => {
 // DownloadBooks
 
 app.get('/DownloadBooks', (req, res) => {
-    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
+    const sql = "SELECT * FROM books"
     const csvData = []
 
     connection.query(sql, (err, result) => {
