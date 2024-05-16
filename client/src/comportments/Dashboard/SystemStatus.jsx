@@ -12,7 +12,7 @@ const SystemStatus = () => {
 
   // download all books data as csv
   const headleDownloadBooks = () => {
-    axios.post('http://localhost:8081/DownloadBooks', { responseType: 'blob' })
+    axios.get('http://localhost:8081/DownloadBooks', { responseType: 'blob' })
     .then(res => {
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const link = document.createElement('a');
