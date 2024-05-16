@@ -1802,6 +1802,26 @@ app.get('/AllMyBooksLMS/:id', (req, res) => {
     })
 })
 
+// count my all books
+// CountAllBookMy
+
+app.get('/CountAllBookMy/:id', (req, res) => {
+    const userEmail = req.params.id
+
+    const sql = "SELECT COUNT(ID) AS MyAllBooks FROM book_borrow_request WHERE borrowEmail = ?";
+
+    connection.query(sql, [userEmail], (error, results) => {
+      if (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).send({ message: 'Error fetching data' });
+        return;
+      }
+  
+      res.json({ MyAllBooks: results[0].MyAllBooks }); // Send count in JSON format
+    });
+    
+})
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
