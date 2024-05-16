@@ -58,6 +58,22 @@ const MyAllBorrowBooks = () => {
                                             <td class="px-6 py-4">
                                                 {myBooks.borrow_at}
                                             </td>   
+                                            <td class="px-6 py-4">
+                                                {
+                                                  (() => {
+                                                    if(myBooks.status === "Returned"){
+                                                      return (
+                                                        <p className="text-blue-500 font-semibold">Returned</p>
+                                                      )
+                                                    }
+                                                    if(myBooks.status === "Borrowed"){
+                                                      return (
+                                                        <p className="text-yellow-500 font-semibold">Borrowed</p>
+                                                      )
+                                                    }
+                                                  })()
+                                                }
+                                            </td> 
                                         </tr>
                                       )
                                     })
