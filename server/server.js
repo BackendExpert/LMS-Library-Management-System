@@ -1831,13 +1831,27 @@ app.get('/DownloadMyAllBooks/:id', (req, res) => {
     const userEmail = req.params.id
     
     const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
+    const csvData = []
 
-    connection.query(sql, [userEmail], (err, results, fields) => {
-        if (err) throw err
+    connection.query(sql, [userEmail], (err, result) => {
+        if (err) {
+            console.error('Error fetching data: ' + err.stack);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
 
-        const csv = parse(results);
-        fs.writeFileSync('data.csv', csv);
-        res.download('data.csv', 'data.csv');
+        // Convert data to CSV format
+        result.forEach(result => {
+            csvData.push(Object.values(result).join(','));
+        });
+    
+        // Set response headers for CSV download
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', 'attachment; filename="myLeaves.csv"');
+    
+        // Send CSV data to the client
+        res.send(csvData.join('\n'));      
+        // console.log(csvData)
     })
 })
 
