@@ -1884,6 +1884,36 @@ app.get('/DownloadBooks', (req, res) => {
     })
 })
 
+// download users data as csv
+// DownloadUsers
+
+app.get('/DownloadUsers', (req, res) => {
+    const sql = "SELECT * FROM users"
+    const csvData = []
+
+    connection.query(sql, (err, result) => {
+        if (err) {
+            console.error('Error fetching data: ' + err.stack);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        // Convert data to CSV format
+        result.forEach(result => {
+            csvData.push(Object.values(result).join(','));
+        });
+    
+        // Set response headers for CSV download
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', 'attachment; filename="users.csv"');
+    
+        // Send CSV data to the client
+        res.send(csvData.join('\n'));      
+        // console.log(csvData)
+    })
+})
+
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
