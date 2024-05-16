@@ -28,6 +28,24 @@ const SystemStatus = () => {
     }) 
   }
 
+  // download users data as csv
+  const headleDownloadUsers = () => {
+    axios.get('http://localhost:8081/DownloadUsers', { responseType: 'blob' })
+    .then(res => {
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'AllUsers.csv');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }) 
+
+    .catch(err => {
+      console.log(err)
+    }) 
+  }
+
 
   if(RoleUser === "SuperAdmin"){
     return (
@@ -40,6 +58,13 @@ const SystemStatus = () => {
                 <h1 className="text-gray-500">Books</h1>
                 <div className="m-2">
                   <button onClick={() => headleDownloadBooks()} className='py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600'>Download Data</button>
+                </div>
+              </div>
+
+              <div className="my-2">
+                <h1 className="text-gray-500">Users</h1>
+                <div className="m-2">
+                  <button onClick={() => headleDownloadUsers()} className='py-2 px-8 bg-blue-500 rounded text-white duration-500 hover:bg-blue-600'>Download Data</button>
                 </div>
               </div>
             </div>
