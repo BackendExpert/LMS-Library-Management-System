@@ -65,7 +65,7 @@ const HomePage = () => {
                                     <MyIcons name={navOpen ? 'close':'menu'}></MyIcons>
                                 </div>
 
-                                <ul className={`backdrop-blur-md py-4 lg:bg-transparent uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'left-0 ':'left-[-400px]'}`}>
+                                <ul className={`lg:h-0 h-screen backdrop-blur-md py-4 lg:bg-transparent uppercase md:flex md:items-center md:pb-0 pb-12 absolute lg:static left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${navOpen ? 'left-0 ':'left-[-400px]'}`}>
                                 <span className='mr-4'><img src={NIFSLogo} alt="" className='h-12 w-auto'/></span>
                                     <h1 className="whitespace-nowrap lg:mx-8 mx-0">NIFS Library</h1>
                                     {
@@ -74,7 +74,7 @@ const HomePage = () => {
                                             return (
                                                 <div className="">
                                                     <Link to={'/Dashboard'}>
-                                                        <h1 className="my-4 mx-8">Dashboard</h1>
+                                                        <h1 className="my-4">Dashboard</h1>
                                                     </Link>
                                                 </div>
                                             )
