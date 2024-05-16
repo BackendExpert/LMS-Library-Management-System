@@ -5,6 +5,8 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup';
 import MyStatus from "./MyStatus";
 import MyAllBorrowBooks from "./MyAllBorrowBooks";
+import axios from "axios";
+
 
 const MyProfile = () => {
     const navigate = useNavigate() 
@@ -23,7 +25,7 @@ const MyProfile = () => {
         const fetchData = async () => {
             try {
                 const CountMyAllBooks = await axios.get('http://localhost:8081/CountAllBookMy/' + EmailUser);
-                SetCountmyAllBooks(CountMyAllBooks.data.UserAll);
+                SetCountmyAllBooks(CountMyAllBooks.data.MyAllBooks);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
