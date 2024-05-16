@@ -1847,7 +1847,36 @@ app.get('/DownloadMyAllBooks/:id', (req, res) => {
     
         // Set response headers for CSV download
         res.setHeader('Content-Type', 'text/csv');
-        res.setHeader('Content-Disposition', 'attachment; filename="myLeaves.csv"');
+        res.setHeader('Content-Disposition', 'attachment; filename="myBooks.csv"');
+    
+        // Send CSV data to the client
+        res.send(csvData.join('\n'));      
+        // console.log(csvData)
+    })
+})
+
+// download all books data as csv
+// DownloadBooks
+
+app.get('/DownloadBooks', (req, res) => {
+    const sql = "SELECT * FROM book_borrow_request WHERE borrowEmail = ?"
+    const csvData = []
+
+    connection.query(sql, (err, result) => {
+        if (err) {
+            console.error('Error fetching data: ' + err.stack);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        // Convert data to CSV format
+        result.forEach(result => {
+            csvData.push(Object.values(result).join(','));
+        });
+    
+        // Set response headers for CSV download
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', 'attachment; filename="books.csv"');
     
         // Send CSV data to the client
         res.send(csvData.join('\n'));      
