@@ -170,7 +170,7 @@ const SearchBook = () => {
                                                         <tbody>
                                                             {
                                                                 SearchBookData.map((BookData, index) => {
-                                                                    if(BookData.Status !== "Disabled" && RoleUser === "user"){
+                                                                    if(BookData.Status !== "Disabled"){
                                                                         return (                                                                        
                                                                             <tr key={index}>
                                                                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
