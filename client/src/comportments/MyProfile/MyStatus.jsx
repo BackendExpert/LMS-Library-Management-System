@@ -16,7 +16,9 @@ const MyStatus = () => {
   // download my data borrowed all book
   const headleDownloadData = (id) => {
     axios.post('http://localhost:8081/DownloadMyAllBooks/' + id, { responseType: 'blob' })
-    
+    .then(res => {
+      
+    })
   }
 
   
