@@ -1822,6 +1822,14 @@ app.get('/CountAllBookMy/:id', (req, res) => {
     
 })
 
+// download my all book data as csv formet
+// DownloadMyAllBooks
+
+app.get('/DownloadMyAllBooks/:id', (req, res) => {
+    const userEmail = req.params.id
+    
+})
+
 // function onServerStart() {
 //     const sql = "SELECT * FROM book_borrow_request"
 //     connection.query(sql, (err, result) => {
