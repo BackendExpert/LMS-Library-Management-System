@@ -76,9 +76,9 @@ const MyAllBorrowBooks = () => {
                                                         <p className="text-red-500 font-semibold">Reject</p>
                                                       )
                                                     }
-                                                    if(myBooks.status === "Reject"){
+                                                    if(myBooks.status === "Cancelled"){
                                                       return (
-                                                        <p className="text-red-500 font-semibold">Reject</p>
+                                                        <p className="text-red-500 font-semibold">Cancelled</p>
                                                       )
                                                     }
                                                   })()
