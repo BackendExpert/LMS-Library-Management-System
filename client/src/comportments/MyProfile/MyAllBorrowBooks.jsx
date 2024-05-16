@@ -81,6 +81,11 @@ const MyAllBorrowBooks = () => {
                                                         <p className="text-red-500 font-semibold">Cancelled</p>
                                                       )
                                                     }
+                                                    if(myBooks.status === "Request"){
+                                                      return (
+                                                        <p className="text-yellow-500 font-semibold">Request</p>
+                                                      )
+                                                    }
                                                   })()
                                                 }
                                             </td> 
